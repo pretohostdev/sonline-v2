@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('agendamentos', function (Blueprint $table) {
             $table->id();
+            $table->date('data');
+            $table->enum('estado', [0, 1, 2]);
+            $table->text('observacao')->nullable();
             $table->timestamps();
+
+            $table->foreignId('cliente_id')->constrained('clientes');
         });
     }
 

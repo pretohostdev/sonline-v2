@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('conta_wises', function (Blueprint $table) {
             $table->id();
+            $table->date('data');
+            $table->enum('estado', [0, 1, 2]);
             $table->timestamps();
+
+            $table->foreignId('cliente_id')->constrained('clientes');
+            $table->foreignId('pagamento_id')->constrained('pagamentos');
         });
     }
 

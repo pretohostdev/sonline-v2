@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('vistos', function (Blueprint $table) {
             $table->id();
+            $table->string('tipo');
             $table->timestamps();
+
+            $table->foreignId('pagamento_id')->nullable()->constrained('pagamentos');
+            $table->foreignId('agendamento_id')->nullable()->constrained('agendamentos');
         });
     }
 

@@ -11,9 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('enderecos', function (Blueprint $table) {
+        Schema::create('pagamentos', function (Blueprint $table) {
             $table->id();
+            $table->decimal('valor', 8, 2);
+            $table->date('data');
+            $table->enum('estado', [0, 1, 2]); 
+            $table->date('dataVencimento');
             $table->timestamps();
+
+            $table->foreignId('cliente_id')->constrained('clientes');
         });
     }
 
@@ -22,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('enderecos');
+        Schema::dropIfExists('pagamentos');
     }
 };
