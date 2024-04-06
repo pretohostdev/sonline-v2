@@ -12,7 +12,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        return "Listando Clientes";
     }
 
     /**
@@ -21,6 +21,7 @@ class ClienteController extends Controller
     public function create()
     {
         //
+        return "View de Cadastro de novo Cliente";
     }
 
     /**
@@ -28,7 +29,7 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "Adicionando novo Cliente";
     }
 
     /**
@@ -36,7 +37,7 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        //
+        return "Mostrar um cliente";
     }
 
     /**
@@ -44,7 +45,7 @@ class ClienteController extends Controller
      */
     public function edit(Cliente $cliente)
     {
-        //
+        return "View de Editar um cliente";
     }
 
     /**
@@ -52,7 +53,7 @@ class ClienteController extends Controller
      */
     public function update(Request $request, Cliente $cliente)
     {
-        //
+        return "Editar um cliente no banco de dados";
     }
 
     /**
@@ -60,6 +61,6 @@ class ClienteController extends Controller
      */
     public function destroy(Cliente $cliente)
     {
-        //
+        return "Eliminar um cliente do Banco de dados";
     }
 }

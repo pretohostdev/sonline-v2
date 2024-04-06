@@ -2,6 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgendamentoController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ContaWiseController;
+use App\Http\Controllers\DocumentoController;
+use App\Http\Controllers\EnderecoController;
+use App\Http\Controllers\MoedaController;
+use App\Http\Controllers\PagamentoController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\VistoController;
+use App\Http\Controllers\RedirecionamentoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +24,21 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+Route::resources([
+    'admin' => AdminController::class,
+    'agendamento' => AgendamentoController::class,
+    'cliente' => ClienteController::class,
+    'contaWise' => ContaController::class,
+    'documento' => DocumentoController::class,
+    'endereco' => EnderecoController::class,
+    'moeda' => MoedaController::class,
+    'pagamento' => PagamentoController::class,
+    'produto' => ProdutoController::class,
+    'redirecionamento' => RedirecionamentoController::class,
+    'visto' => VistoController::class
+]);
 
 Route::get('/', function () {
     return view('welcome');
