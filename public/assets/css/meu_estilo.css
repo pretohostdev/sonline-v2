@@ -1,0 +1,15 @@
+body{
+    /* background-color: red; */
+}
+
+.posicao1{
+    z-index: 9999;
+}
+
+.posicao2{
+    z-index: 1;
+}
+
+.nav2{
+     background:#2c2e3e;
+}

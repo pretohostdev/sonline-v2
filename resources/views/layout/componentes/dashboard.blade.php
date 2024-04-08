@@ -1,4 +1,4 @@
-<aside class="app-navbar">
+<aside class="app-navbar posicao1">
     <!-- begin sidebar-nav -->
     <div class="sidebar-nav scrollbar scroll_light">
         <ul class="metismenu " id="sidebarNav">
