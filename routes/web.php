@@ -40,6 +40,11 @@ Route::resources([
     'visto' => VistoController::class
 ]);
 
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('sonline/', function () {
     return view('sonline');
 });

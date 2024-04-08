@@ -7,26 +7,29 @@
         <div class="navbar-header d-flex align-items-center">
             <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
             <a class="navbar-brand" href="index.html">
-                <img src="assets/img/logo.png" class="img-fluid logo-desktop" alt="logo" />
-                <img src="assets/img/logo-icon.png" class="img-fluid logo-mobile" alt="logo" />
+                <img src="{{asset('assets/img/logo.png')}}" class="imfg-fluid logo-desktop" alt="logo" />
+                <img src="{{asset('assets/img/logo-icon.png')}}" class="img-fluid logo-mobile" alt="logo" />
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="ti ti-align-left"></i>
+            <i class="fe fe-menu"></i>
         </button>
-        <!-- end navbar-header -->
-        <!-- begin navigation -->
+
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navigation d-flex">
                 <ul class="navbar-nav nav-left">
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link sidebar-toggle">
-                            <i class="ti ti-align-right"></i>
+                            {{-- <i class="ti ti-align-right"></i> --}}
+                            <i class="fe fe-menu"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mega Menu
-                            <i class="fa fa-angle-down"></i>
+                            {{-- <i class="fa fa-angle-down"></i> --}}
+                            <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <div class="row no-gutters">
@@ -128,13 +131,21 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="javascript:void(0)" class="nav-link " id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drop Down
-                            <i class="fa fa-angle-down"></i>
+                        <a href="javascript:void(0)" class="nav-link " id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social
+                            <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">Action</a>
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">Another action</a>
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">Something else here</a>
+                            <a class="dropdown-item nav-link" href="javascript:void(0)">
+                                Email 
+                                <i class="fe fe-mail"></i>
+                            </a>
+                            <a class="dropdown-item nav-link" href="javascript:void(0)">
+                                Facebook
+                                <i class="fe fe-facebook"></i>
+                            </a>
+                            <a class="dropdown-item nav-link" href="javascript:void(0)">Twitter
+                                <i class="fe fe-twitter"></i>
+                            </a>
                         </div>
                     </li>
                     <li class="nav-item full-screen d-none d-lg-block" id="btnFullscreen">
@@ -407,9 +418,45 @@
                         </div>
                     </li>
                 </ul>
+
+                {{-- Teste apenas --}}
+                <form class="form-inline my-2 my-lg-0 mr-2">
+                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
+                        <i class="fe fe-user"></i>
+                        Entrar
+                    </button>
+                  </form>
+
             </div>
         </div>
         <!-- end navigation -->
     </nav>
     <!-- end navbar -->
+
+
+
+    <div class="nav2">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#">Sonline</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="dripicons dripicons-align-right"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link text-mute" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Pricing</a>
+              </li>
+             
+            </ul>
+          </div>
+        </nav>
+      </div>  
+      {{-- Fim da segunda navegação --}}
+
 </header>
