@@ -22,13 +22,11 @@
                 <ul class="navbar-nav nav-left">
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link sidebar-toggle">
-                            {{-- <i class="ti ti-align-right"></i> --}}
                             <i class="fe fe-menu"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mega Menu
-                            {{-- <i class="fa fa-angle-down"></i> --}}
+                        <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nossos Serviços
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
@@ -161,14 +159,15 @@
                         </a>
                         <div class="dropdown-menu extended animated fadeIn" aria-labelledby="navbarDropdown">
                             <ul>
-                                <li class="dropdown-header bg-gradient p-4 text-white text-left">Messages
+                                {{-- <li class="dropdown-header bg-gradient p-4 text-white text-left">Messages
                                     <label class="label label-info label-round">6</label>
                                     <a href="#" class="float-right btn btn-square btn-inverse-light btn-xs m-0">
                                         <span class="font-13"> Mark all as read</span></a>
-                                </li>
+                                </li> --}}
+
                                 <li class="dropdown-body">
                                     <ul class="scrollbar scroll_dark max-h-240">
-                                        <li>
+                                        {{-- <li>
                                             <a href="javascript:void(0)">
                                                 <div class="notification d-flex flex-row align-items-center">
                                                     <div class="notify-icon bg-img align-self-center">
@@ -180,9 +179,9 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                         <li>
-                                            <a href="javascript:void(0)">
+                                            {{-- <a href="javascript:void(0)">
                                                 <div class="notification d-flex flex-row align-items-center">
                                                     <div class="notify-icon bg-img align-self-center">
                                                         <img class="img-fluid" src="assets/img/avtar/01.jpg" alt="user">
@@ -192,9 +191,9 @@
                                                         <small>Okay</small>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </a> --}}
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="javascript:void(0)">
                                                 <div class="notification d-flex flex-row align-items-center">
                                                     <div class="notify-icon bg-img align-self-center">
@@ -206,8 +205,8 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li>
-                                        <li>
+                                        </li> --}}
+                                        {{-- <li>
                                             <a href="javascript:void(0)">
                                                 <div class="notification d-flex flex-row align-items-center">
                                                     <div class="notify-icon bg-img align-self-center">
@@ -219,8 +218,8 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li>
-                                        <li>
+                                        </li> --}}
+                                        {{-- <li>
                                             <a href="javascript:void(0)">
                                                 <div class="notification d-flex flex-row align-items-center">
                                                     <div class="notify-icon bg-img align-self-center">
@@ -232,8 +231,8 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li>
-                                        <li>
+                                        </li> --}}
+                                        {{-- <li>
                                             <a href="javascript:void(0)">
                                                 <div class="notification d-flex flex-row align-items-center">
                                                     <div class="notify-icon bg-img align-self-center">
@@ -245,9 +244,10 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </li>
+
                                 <li class="dropdown-footer">
                                     <a class="font-13" href="javascript:void(0)"> View All messages </a>
                                 </li>
@@ -354,74 +354,12 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link search" href="javascript:void(0)">
-                            <i class="ti ti-search"></i>
-                        </a>
-                        <div class="search-wrapper">
-                            <div class="close-btn">
-                                <i class="ti ti-close"></i>
-                            </div>
-                            <div class="search-content">
-                                <form>
-                                    <div class="form-group">
-                                        <i class="ti ti-search magnifier"></i>
-                                        <input type="text" class="form-control autocomplete" placeholder="Search Here" id="autocomplete-ajax" autofocus="autofocus">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown user-profile">
-                        <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="assets/img/avtar/02.jpg" alt="avtar-img">
-                            <span class="bg-success user-status"></span>
-                        </a>
-                        <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
-                            <div class="bg-gradient px-4 py-3">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-1">
-                                        <h4 class="text-white mb-0">Alice Williams</h4>
-                                        <small class="text-white">Henry@example.com</small>
-                                    </div>
-                                    <a href="#" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i
-                                                    class="zmdi zmdi-power"></i></a>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
-                                    <i class="fa fa-user pr-2 text-success"></i> Profile</a>
-                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
-                                    <i class="fa fa-envelope pr-2 text-primary"></i> Inbox
-                                    <span class="badge badge-primary ml-auto">6</span>
-                                </a>
-                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
-                                    <i class=" ti ti-settings pr-2 text-info"></i> Settings
-                                </a>
-                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
-                                    <i class="fa fa-compass pr-2 text-warning"></i> Need help?</a>
-                                <div class="row mt-2">
-                                    <div class="col">
-                                        <a class="bg-light p-3 text-center d-block" href="#">
-                                            <i class="fe fe-mail font-20 text-primary"></i>
-                                            <span class="d-block font-13 mt-2">My messages</span>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a class="bg-light p-3 text-center d-block" href="#">
-                                            <i class="fe fe-plus font-20 text-primary"></i>
-                                            <span class="d-block font-13 mt-2">Compose new</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                  
                 </ul>
 
-                {{-- Teste apenas --}}
+                {{-- Botões no nav-bar --}}
                 <form class="form-inline my-2 my-lg-0 mr-2">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
                         <i class="fe fe-user"></i>
                         Entrar
                     </button>
@@ -433,8 +371,6 @@
     </nav>
     <!-- end navbar -->
 
-
-
     <div class="nav2">
         <nav class="navbar navbar-expand-lg">
           <a class="navbar-brand" href="#">Sonline</a>
@@ -444,19 +380,22 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link text-mute" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-mute" href="#">Início <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#">Features</a>
+                <a class="nav-link text-light" href="#">Serviços</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#">Pricing</a>
+                <a class="nav-link text-light" href="#">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Contactos</a>
               </li>
              
             </ul>
           </div>
-        </nav>
-      </div>  
+        </nav> 
+      </div>
       {{-- Fim da segunda navegação --}}
 
 </header>
