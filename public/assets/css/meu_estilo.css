@@ -1,27 +1,150 @@
 
-.posicao1{
-    z-index: 9999;
+@font-face {
+    src: url('../fonts/DIN Neuzeit Grotesk Light.ttf') format('tff');
+    font-family: 'Grotesk';
 }
 
-.posicao2{
-    z-index: 1;
+
+#lateral {
+
+    background: hsla(185, 64%, 51%, 1);
+
+    background: linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#30C5D2", endColorstr="#471069", GradientType=1);
 }
 
-.nav2{
-     background:#2c2e3e;
-     /* background-color: red; */
-     /* width: 50%; */
-     /* display: flex; */
-     /* justify-content: center; */
-     margin: 0 auto;
+.banner {
+    max-width: 100%;
+    /* border: 1px solid red; */
 }
 
-.app-main{
-    /* background:#2c2e3e; */
+.conteudo {
+    width: 100%;
+    /* border: 1px solid red; */
+    /* height: 300px; */
 }
 
-.container-fluid{
-    /* background: blue; */
-    /* display: flex; */
-    /* justify-content: center; */
+.conteudo_publico {
+    width: 100%;
+    background: #fff;
+}
+
+.btn-cor {
+    background: #007bff;
+}
+
+.btn-cor:hover {
+    background: #492bf3;
+}
+
+.agendamento-img {
+    height: 350px;
+    background-color: white;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.agendamento-content {
+    display: flex;
+    align-items: center;
+}
+
+.agendamento-header,
+.solicita-header {
+    padding: 2px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+
+    /* background: hsla(185, 64%, 51%, 1);
+
+    background: linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#30C5D2", endColorstr="#471069", GradientType=1); */
+}
+
+.solicita-moeda {
+    height: 350px;
+    /* background-color: #888; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.solita-moeda-img {
+    width: 250px;
+    height: 250px;
+    /* background-color: black; */
+}
+
+.solita-moeda-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.solita-moeda-content-interno h4 {
+    font-family: Grotesk;
+    font-size: 24pt;
+    color: var(--secondary);
+}
+
+.solita-moeda-content-interno p {
+    font-family: Grotesk;
+    font-size: 14pt;
+}
+
+.foo {
+    background: #fff;
+    /* position: absolute; */
+    padding: 1.5rem 2.3rem;
+    z-index: 0;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    height: 60px;
+    -webkit-box-shadow: 0 0 20px rgba(115, 105, 215, .15);
+    -moz-box-shadow: 0 0 20px rgba(115, 105, 215, .15);
+    box-shadow: 0 0 20px rgba(115, 105, 215, .15);
+    transition: all .3s ease-out
+}
+
+.app_publico {
+    width: 100%;
+    background-color: #fff;
+}
+
+.lista-horizontal {
+    overflow-x: auto;
+    /* Adiciona uma barra de rolagem horizontal */
+    white-space: nowrap;
+    /* Impede que os itens da lista quebrem para a próxima linha */
+}
+
+.lista-horizontal ul {
+    list-style-type: none;
+    /* Remove os estilos de marcadores padrão */
+    padding: 0;
+    margin: 0;
+}
+
+.lista-horizontal ul li {
+    display: inline-block;
+    /* Exibe os itens horizontalmente */
+    margin-right: 10px;
+    /* Adiciona um espaço entre os itens */
+    padding: 5px 10px;
+    /* Adiciona espaço interno aos itens */
+    /* border: 1px solid #ccc; */
+    /* Adiciona uma borda aos itens (opcional) */
 }

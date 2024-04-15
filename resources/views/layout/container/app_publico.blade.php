@@ -16,9 +16,9 @@
 </head>
 <body>
 
-     <div class="app">
+     <div class="app_publico">
           <!-- Início do wrap do sistema -->
-          <div class="app-wrap">
+          {{-- <div class="app-wrap"> --}}
 
              <!-- Início do pré-carregamento da página -->
             @include('layout.componentes.carregamentoPagina')
@@ -26,23 +26,23 @@
             <!-- Header do sistema --> 
             @yield('header')
             
-            <div class="app-container">
+            {{-- <div class="app-container"> --}}
                 @yield('dashboard')
                 
                 <!-- Esse é o corpo do sistema -->
-                <div class="app-main" id="main">
+                {{-- <div class="app-main" id="main"> --}}
                     @include('layout.componentes.carrocel')
                     
                     {{-- <div class="container-fluid"> --}}
-                        @yield("corpo")
+                        @yield("corpo_publico")
                     {{-- </div> --}}
-                </div>
+                {{-- </div> --}}
 
-            </div>
+            {{-- </div> --}}
 
             @yield('footer')
 
-          </div>
+          {{-- </div> --}}
 
      </div>
 
