@@ -5,6 +5,12 @@
 }
 
 
+.input_conversao:focus{
+    outline: none;
+}
+
+
+
 #lateral {
 
     background: hsla(185, 64%, 51%, 1);
@@ -62,16 +68,6 @@
     height: 50px;
     justify-content: center;
     align-items: center;
-
-    /* background: hsla(185, 64%, 51%, 1);
-
-    background: linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
-
-    background: -moz-linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
-
-    background: -webkit-linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
-
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#30C5D2", endColorstr="#471069", GradientType=1); */
 }
 
 .solicita-moeda {
@@ -148,3 +144,5 @@
     /* border: 1px solid #ccc; */
     /* Adiciona uma borda aos itens (opcional) */
 }
+
+

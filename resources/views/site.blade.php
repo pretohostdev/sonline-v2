@@ -97,42 +97,23 @@
     <div class="row mt-4 d-flex justify-content-center">
         <div class="col-lg-4 round">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="table-header d-flex justify-content-center align-items-center p-2">
-                            <h4 class="text-dark text-center m-0">Divisas</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
+                <div class="col-lg-12">
+                    <div class="table-responsive" style="overflow: auto; height:400px">
                         <table class="table table-hover mb-0">
                             <thead class="table-dark">
                                 <tr>
-                                    <th scope="col">REGIÃO</th>
+                                    {{-- <th scope="col">REGIÃO</th> --}}
                                     <th scope="col">MOEDA</th>
                                     <th scope="col">VALOR</th>
                                 </tr>
                             </thead>
-                            <tbody class="table-secondary">
-                                <tr>
-                                    <th class="text-dark">Angola</th>
-                                    <td class="text-dark">Mark</td>
-                                    <td class="text-dark">Otto</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Estados Unidos</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                </tr>
+                            <tbody class="table-secondary" id="tabelaMoeda">
+                                {{-- Corpo da tabela foi carregado com --}}
                             </tbody>
                         </table>
                     </div>
+
+                </div>
                 </div>
         </div>
 
@@ -151,29 +132,25 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light">AOA</span>
                             </div>
-                            <input type="text" class="form-control" id="inputKwanza">
+                            <input type="number" class="form-control input_conversao" id="inputKwanza" oninput="conversaoMoeda(id)">
                           </div>
 
                           <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-success text-light">USD</span>
                             </div>
-                            <input type="text" class="form-control" id="inputDolar">
+                            <input type="text" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
                           </div>
 
                           <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-dark text-light">EUR</span>
                             </div>
-                            <input type="text" class="form-control" id="inputEuro">
+                            <input type="text" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
                           </div>
-
-
 
                     </div>
                 </div>
-
-               
 
             </div>
 

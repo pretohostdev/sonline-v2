@@ -63,3 +63,8 @@ Route::get('sonline/', function () {
 Route::get('site/', function () {
     return view('site');
 })->name('site');
+
+Route::get('teste/', function () {
+    return view('teste');
+})->name('teste');
+

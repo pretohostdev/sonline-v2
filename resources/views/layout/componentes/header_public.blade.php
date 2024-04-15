@@ -19,13 +19,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navigation d-flex">
                 <ul class="navbar-nav nav-left">
-                    {{-- <li class="nav-item">
-                        <a href="javascript:void(0)" class="nav-link sidebar-toggle">
-                            <i class="fe fe-menu"></i>
-                        </a>
-                    </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links Rápidos
+                        <a class="nav-link" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links Rápidos
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
@@ -199,7 +194,7 @@
                 </ul>
 
                 <form class="form-inline my-2 my-lg-0 mr-2">
-                    <i class="fa fa-2x fa-user-circle-o"></i>
+                    <i class="fa fa-2x fa-user-o mr-1"></i>
                     <a href="{{route('login')}}" class="my-2 my-sm-0">
                         Entrar
                     </a>
