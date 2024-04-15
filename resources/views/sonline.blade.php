@@ -28,7 +28,7 @@
 <div class="conteudo">
     {{-- <h1>Teste</h1> --}}
     <div style="width: 100px; height:50px; background-color:black">
-        Tests
+        Claudio
     </div>
     {{-- <div class="row mt bg-dark" style="margin-top: 90px">
         <div class="col-md-12">
