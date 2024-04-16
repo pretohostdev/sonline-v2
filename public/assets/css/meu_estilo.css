@@ -4,11 +4,25 @@
     font-family: 'Grotesk';
 }
 
-
-.input_conversao:focus{
-    outline: none;
+#inputKwanza:focus {
+    box-shadow: none;
+    border-color: var(--danger);
 }
 
+#inputDolar:focus {
+    box-shadow: none;
+    border-color: var(--success);
+}
+
+#inputKwanza:focus {
+    box-shadow: none;
+    border-color: var(--dark);
+}
+
+/* .form-control :focus {
+    box-shadow: none;
+    border-color: #ced4da;
+} */
 
 
 #lateral {
@@ -146,3 +160,8 @@
 }
 
 
+/* Carregamentos */
+
+#spinnerTabela {
+    display: none;
+}

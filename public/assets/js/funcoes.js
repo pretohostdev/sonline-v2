@@ -92,8 +92,12 @@ var inputEuro = document.getElementById('inputEuro');
 
 carregarTabelaMoeda();
 
+
+
 function carregarTabelaMoeda(){
 
+var spinner = document.getElementById('spinnerTabela');
+    spinner.style.display = "block";   
 var tabela = document.getElementById('tabelaMoeda');
 
 fetch('https://v6.exchangerate-api.com/v6/b84dc72513a0e6bae9a6a925/latest/USD')
@@ -122,7 +126,8 @@ fetch('https://v6.exchangerate-api.com/v6/b84dc72513a0e6bae9a6a925/latest/USD')
 
                 tabela.appendChild(novaLinha);
 
-            
+                // Terminar o spinner
+                spinner.style.display = "none";
         }
   })
   .catch(error => {

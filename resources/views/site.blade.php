@@ -3,6 +3,8 @@
 @section('titulo', 'Principal')
 
 @push('styles')
+    {{-- Inclusão do Bootstrap 5 no projecto --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
@@ -96,7 +98,7 @@
 
     <div class="row mt-4 d-flex justify-content-center">
         <div class="col-lg-4 round">
-                <div class="row">
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="table-responsive" style="overflow: auto; height:400px">
                         <table class="table table-hover mb-0">
@@ -107,14 +109,22 @@
                                     <th scope="col">VALOR</th>
                                 </tr>
                             </thead>
+
                             <tbody class="table-secondary" id="tabelaMoeda">
                                 {{-- Corpo da tabela foi carregado com --}}
                             </tbody>
                         </table>
-                    </div>
 
+                        <div class="d-flex justify-content-center" id="spinnerTabela">
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                </div>
+
+            </div>
         </div>
 
         <div class="col-lg-4">
@@ -132,21 +142,21 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light">AOA</span>
                             </div>
-                            <input type="number" class="form-control input_conversao" id="inputKwanza" oninput="conversaoMoeda(id)">
+                            <input type="number" class="form-control" id="inputKwanza" oninput="conversaoMoeda(id)">
                           </div>
 
                           <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-success text-light">USD</span>
                             </div>
-                            <input type="text" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
+                            <input type="number" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
                           </div>
 
                           <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-dark text-light">EUR</span>
                             </div>
-                            <input type="text" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
+                            <input type="number" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
                           </div>
 
                     </div>
