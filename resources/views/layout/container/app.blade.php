@@ -11,7 +11,7 @@
     {{-- Inclusão de links Css --}}
     @stack('styles')
 
-    <title>@yield('titulo', 'sonline')</title>
+    <title>@yield('titulo', 'sonline Services')</title>
 
 </head>
 <body>
@@ -31,11 +31,11 @@
                 
                 <!-- Esse é o corpo do sistema -->
                 <div class="app-main" id="main">
-                    @include('layout.componentes.carrocel')
+                    {{-- @include('layout.componentes.carrocel') --}}
                     
-                    {{-- <div class="container-fluid"> --}}
+                    <div class="container-fluid">
                         @yield("corpo")
-                    {{-- </div> --}}
+                    </div>
                 </div>
 
             </div>

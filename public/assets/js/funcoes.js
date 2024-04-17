@@ -3,97 +3,8 @@ var inputKwanza = document.getElementById('inputKwanza');
 var inputDolar = document.getElementById('inputDolar');
 var inputEuro = document.getElementById('inputEuro');
 
-// inputKwanza.addEventListener('input', function(event){
-//     let valor = event.target.value;
-//     console.log('Entrada do usuário:', valor);
-
-//     let inputDolar = document.getElementById('inputDolar');
-//     let inputEuro = document.getElementById('inputEuro');
-
-//     var mgs = 'Erro ao acessar ao acesar a API';
-//     var url = "https://v6.exchangerate-api.com/v6/b84dc72513a0e6bae9a6a925/latest/USD";
-
-//       xhr = new XMLHttpRequest();
-//       xhr.open("GET", url, true);
-
-//         // Coloca aqui o recarregamento a página
-
-//         xhr.onreadystatechange = function() {
-//             if (xhr.readyState === XMLHttpRequest.DONE) {
-
-//                 if (xhr.status === 200) {
-//                     var dados = JSON.parse(xhr.responseText);
-
-//                     if(dados.result == "success"){
-//                         console.log("Dados obtidos com sucesso!");
-
-//                         // var moedas = dados.conversion_rates;
-//                         // for (var moeda in moedas) {
-//                         //     console.log(moeda + ": " + moedas[moeda]);
-//                         // }
-
-//                         // Selecione a tabela onde deseja adicionar as linhas e células
-
-//                         var tabela = document.getElementById('tabelaMoeda');
-
-//                         // Crie uma nova linha (tr)
-//                         var novaLinha = document.createElement('tr');
-
-//                         // Adicione células (td) à nova linha
-//                         for (var i = 0; i < 2; i++) {
-//                             var novaCelula = document.createElement('td');
-//                             novaCelula.textContent = 'Célula ' + (i + 1);
-//                             novaLinha.appendChild(novaCelula);
-//                         }
-
-                        
-
-//                     }
-//                     else{
-//                         console.log("Erro com os dados!");
-//                     }
-                    
-
-//                     // Termina o recarregamento da página em caso de sucesso
-//                 } else {
-//                     console.log("Erro ao acessar a API.");
-//                      // Termina o recarregamento da página em caso de falha
-//                 }
-//             } 
-//         };
-
-//         xhr.send();
-
-// });
-
-// inputDolar.addEventListener('input', function(event){
-//     let valor = event.target.value;
-//     console.log('Entrada do usuário:', valor);
-
-//     let inputKwanza = document.getElementById('InputDolar');
-//     let inputEuro = document.getElementById('InputEuro');
-
-//     let url = "https://v6.exchangerate-api.com/v6/b84dc72513a0e6bae9a6a925/latest/USD"
-// });
-
-// inputEuro.addEventListener('input', function(event){
-//     let valor = event.target.value;
-//     console.log('Entrada do usuário:', valor);
-
-//     let inputDolar = document.getElementById('inputDolar');
-//     let inputKwanza = document.getElementById('inputEuro');
-// });
-
-
-
-// function converterMoeda(moeda){
-//     console.log(moeda);
-// }
 
 carregarTabelaMoeda();
-
-
-
 function carregarTabelaMoeda(){
 
 var spinner = document.getElementById('spinnerTabela');
@@ -140,11 +51,10 @@ fetch('https://v6.exchangerate-api.com/v6/b84dc72513a0e6bae9a6a925/latest/USD')
    
 }
 
-// conversaoMoeda("USD", "AOA", "100");
+
 
 function conversaoMoeda(id){
 
-    
     if(id == "inputKwanza"){
 
         if(inputKwanza.value == ""){

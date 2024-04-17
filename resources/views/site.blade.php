@@ -12,8 +12,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
     <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 
-    {{-- Font Awesome alternativa --}}
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
+     {{-- Font e Icones alternativa --}}
+     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
+     
 @endpush
 
 @section('header')
