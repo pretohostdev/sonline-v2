@@ -48,20 +48,20 @@
                     </nav>
                 </div>
                 <div class="ml-auto d-flex align-items-center secondary-menu text-center">
-                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Todo list">
-                        <i class="fe fe-edit btn btn-icon text-primary"></i>
+                    <a href="{{ route('cliente.index') }}" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Clientes">
+                        <i class="fe fe-users btn btn-icon text-primary"></i>
                     </a>
-                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Projects">
-                        <i class="fa fa-lightbulb-o btn btn-icon text-success"></i>
+                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Solicitação de Moedas">
+                        <i class="fe fe-credit-card btn btn-icon text-success"></i>
                     </a>
-                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Task">
-                        <i class="fa fa-check btn btn-icon text-warning"></i>
+                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Abertura de conta">
+                        <i class="fa fa-cc-visa btn btn-icon text-warning"></i>
                     </a>
                     <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Calendar">
                         <i class="fa fa-calendar-o btn btn-icon text-cyan"></i>
                     </a>
-                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Analytics">
-                        <i class="fa fa-bar-chart-o btn btn-icon text-danger"></i>
+                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Produtos">
+                        <i class="fa fa-product-hunt btn btn-icon text-danger"></i>
                     </a>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                                     <div id="analytics7"></div>
                                 </div>
                                 <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
-                                    <h3 class="mb-0"><i class="icon-arrow-up-circle"></i> 15,640</h3>
+                                    <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>{{ $totalClientesAgendados }}</h3>
                                     <p>Agendamento Mensal</p>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@
                                     <div id="analytics8"></div>
                                 </div>
                                 <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
-                                    <h3 class="mb-0"><i class="icon-arrow-up-circle"></i> 16,656</h3>
+                                    <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>{{ $totalConta }}</h3>
                                     <p>Este Mes</p>
                                 </div>
                             </div>
@@ -167,17 +167,17 @@
             <div class="card card-statistics h-100 mb-0">
                 <div class="card-header d-flex justify-content-between">
                     <div class="card-heading">
-                        <h4 class="card-title">Crescimento Anual</h4>
+                        <h4 class="card-title">Total Inscritos</h4>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-xs-6">
-                            <h2>3.8k</h2>
-                            <span class="d-block mb-2 font-16">Total clientes anual</span>
+                            <h2>{{ $totalClientes }}</h2>
+                            <span class="d-block mb-2 font-16">Total clientes cadastrados</span>
                             <span class="d-block mb-2 mb-sm-5"><b class="text-primary">65.88%</b> dos clientes existentes</span>
-                            <p class="mb-3">Nosso crescimento é notável, impulsionado pela nossa paixão e compromisso com a excelência.!</p>
-                            <a class="btn btn-round btn-inverse-primary mb-3 mb-sm-0" href="#"><b>Ver lista </b></a>
+                            <p class="mb-3">Nosso crescimento é notável, impulsionado pela nossa paixão e compromisso com a excelência.</p>
+                            <a class="btn btn-round btn-inverse-primary mb-3 mb-sm-0" href="{{ route('cliente.index') }}"><b>Ver Clientes</b></a>
                         </div>
                         <div class="col-xs-6">
                             <div class="apexchart-wrapper">

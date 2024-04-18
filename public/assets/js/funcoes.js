@@ -1,14 +1,30 @@
 
+// Inicialização de todas as variáveis a serem usadas no sistema
+
+
+// As div que estão em volta dos inputs moedas
+var divKwanza = document.createElement("divKwanza");  
+var divDolar = document.createElement("divDolar");  
+var divEuro = document.createElement("divEuro");  
+
+// As div que estão dentros dos divMoedas
 var inputKwanza = document.getElementById('inputKwanza');
 var inputDolar = document.getElementById('inputDolar');
 var inputEuro = document.getElementById('inputEuro');
+
+// Spinners das moedas
+var spinnerInputKwanza = document.getElementById("spinnerInputKwanza");
+var spinnerInputDolar = document.getElementById("spinnerInputDolar");
+var spinnerInputEuro = document.getElementById("spinnerInputEuro");
 
 
 carregarTabelaMoeda();
 function carregarTabelaMoeda(){
 
+    // Carregamento dos Spinners
 var spinner = document.getElementById('spinnerTabela');
-    spinner.style.display = "block";   
+    spinner.style.display = "block";  
+    
 var tabela = document.getElementById('tabelaMoeda');
 
 fetch('https://v6.exchangerate-api.com/v6/b84dc72513a0e6bae9a6a925/latest/USD')
@@ -65,8 +81,13 @@ function conversaoMoeda(id){
 
             let qtd = inputKwanza.value;
 
+            spinnerInputDolar.style.display = "block";
+            spinnerInputEuro.style.display = "block";
+
             converte("AOA", "USD", qtd)
             .then(data => {
+                spinnerInputDolar.style.display = "none";
+                spinnerInputEuro.style.display = "none";
                 inputDolar.value = data.conversion_result;
             })
             .catch(error => {
@@ -92,8 +113,14 @@ function conversaoMoeda(id){
 
             let qtd = inputDolar.value;
 
+            spinnerInputKwanza.style.display = "block";
+            spinnerInputEuro.style.display = "block";
+
+
             converte("USD", "AOA", qtd)
             .then(data => {
+                spinnerInputKwanza.style.display = "none";
+                spinnerInputEuro.style.display = "none";
                 inputKwanza.value = data.conversion_result;
             })
             .catch(error => {
@@ -109,17 +136,25 @@ function conversaoMoeda(id){
             });
         }
     }
-    else{
+    else if(id == "inputEuro"){
+
+        console.log("Entraste em mim");
         if(inputEuro.value == ""){
             inputDolar.value = "";
             inputKwanza.value = "";
         }
         else{
 
-            let qtd = inputKwanza.value;
+            let qtd = inputEuro.value;
+
+            spinnerInputKwanza.style.display = "block";
+            spinnerInputDolar.style.display = "block";
 
             converte("EUR", "AOA", qtd)
             .then(data => {
+
+                spinnerInputKwanza.style.display = "none";
+                spinnerInputDolar.style.display = "none";
                 inputKwanza.value = data.conversion_result;
             })
             .catch(error => {

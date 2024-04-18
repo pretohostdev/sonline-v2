@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SonlineController;
 use App\Http\Controllers\AgendamentoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContaWiseController;
@@ -55,9 +56,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('sonline/', function () {
-    return view('sonline');
-})->name('sonline');
+Route::get('sonline/', [SonlineController::class, 'index'])->name('sonline');
 
 
 Route::get('site/', function () {

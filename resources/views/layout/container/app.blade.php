@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Página Principal do site" />
     <meta name="author" content="Cláudio Rufino - PETROHOST" />
-    
 
     {{-- Inclusão de links Css --}}
     @stack('styles')
@@ -31,7 +30,6 @@
                 
                 <!-- Esse é o corpo do sistema -->
                 <div class="app-main" id="main">
-                    {{-- @include('layout.componentes.carrocel') --}}
                     
                     <div class="container-fluid">
                         @yield("corpo")

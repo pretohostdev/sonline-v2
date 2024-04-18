@@ -160,8 +160,24 @@
 }
 
 
-/* Carregamentos */
+/* Carregamentos e Displays*/
 
-#spinnerTabela {
+/* #divDolar{
+    display: none;
+} */
+
+#spinnerTabela{
+    display: none;
+}
+
+#spinnerInputDolar{
+    display: none;
+}
+
+#spinnerInputKwanza{
+    display: none;
+}
+
+#spinnerInputEuro{
     display: none;
 }

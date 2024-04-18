@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('codigo');
             $table->string('simbolo');
             $table->string('pais');
+            $table->string('data');
             $table->timestamps();
 
             $table->foreignId('cliente_id')->constrained('clientes');

@@ -22,6 +22,8 @@ class MoedaFactory extends Factory
             'codigo'=> $this->faker->randomNumber($nbDigits = 5, $strict = false),
             'simbolo' => $this->faker->currencyCode,
             'pais' => $this->faker->country,
+            'data' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+
 
             'cliente_id'=> function(){
                 return Cliente::factory()->create()->id;
