@@ -10,8 +10,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
     <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 
-    {{-- Font Awesome alternativa --}}
+    {{-- Font e Icones alternativa --}}
     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
 @endpush
 
 
@@ -25,124 +26,172 @@
 
 @section("corpo")
 
-<div class="conteudo">
-    {{-- <h1>Teste</h1> --}}
-    <div style="width: 100px; height:50px; background-color:black">
-        Claudio
-    </div>
-    {{-- <div class="row mt bg-dark" style="margin-top: 90px">
+{{-- <div class="conteudo"> --}}
+   
+    <div class="row" style="margin-top:100px ">
         <div class="col-md-12">
-            <div class="agendamento-header">
-                <h4 class="text-dark m-0">AGENDAMENTO</h4>
+            <!-- begin page title -->
+            <div class="d-block d-lg-flex flex-nowrap align-items-center">
+                <div class="page-title mr-4 pr-4 border-right">
+                    <h1>Sonline</h1>
+                </div>
+                <div class="breadcrumb-bar align-items-center">
+                    <nav>
+                        <ol class="breadcrumb p-0 m-b-0">
+                            <li class="breadcrumb-item">
+                                <a href="index.html"></a>
+                            </li>
+                            <li>
+                                Página Principal
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="ml-auto d-flex align-items-center secondary-menu text-center">
+                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Todo list">
+                        <i class="fe fe-edit btn btn-icon text-primary"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Projects">
+                        <i class="fa fa-lightbulb-o btn btn-icon text-success"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Task">
+                        <i class="fa fa-check btn btn-icon text-warning"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Calendar">
+                        <i class="fa fa-calendar-o btn btn-icon text-cyan"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Analytics">
+                        <i class="fa fa-bar-chart-o btn btn-icon text-danger"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- end page title -->
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert border-0 alert-primary bg-gradient m-b-30 alert-dismissible fade show border-radius-none" role="alert">
+                <strong>Holy guacamole!</strong> Recomendamos a verificação constante das estatísticas abaixo.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="ti ti-close"></i>
+                </button>
             </div>
         </div>
-        <div class="col-md-6">
-          <div class="agendamento-img">
-            <img  src="{{asset('assets/img/agendamento.png')}}" alt="Imagem de agendamento">
-         </div>
-        </div> --}}
+    </div>
+    <!-- end row -->
 
-        {{-- <div class="col-md-6 col-xxl-3"> --}}
-            {{-- <div class="agendamento-content-header mt-2">
-                <div class="card card-statistics h-10 mb-0 widget-income-list">
-                    <div class="card-body d-flex align-itemes-center">
-                        <div class="media align-items-center w-100">
-                            <div class="text-left">
-                                <h3 class="mb-0">3000 </h3>
-                                <span>Total de Agendamento do mes em curso</span>
+    <!-- begin row -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card card-statistics">
+                <div class="row no-gutters">
+                    <div class="col-xxl-3 col-lg-6">
+                        <div class="p-20 border-lg-right border-bottom border-xxl-bottom-0">
+                            <div class="d-flex m-b-10">
+                                <p class="mb-0 font-regular text-muted font-weight-bold">Total Agendamento</p>
+                                <a class="mb-0 ml-auto font-weight-bold" href="#"><i class="ti ti-more-alt"></i> </a>
                             </div>
-                            <div class="img-icon bg-info ml-auto">
-                                <i class="fe fe-calendar text-white"></i>
+                            <div class="d-block d-sm-flex h-100 align-items-center">
+                                <div class="apexchart-wrapper">
+                                    <div id="analytics7"></div>
+                                </div>
+                                <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
+                                    <h3 class="mb-0"><i class="icon-arrow-up-circle"></i> 15,640</h3>
+                                    <p>Agendamento Mensal</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> --}}
-            {{-- <div class="agendamento-content mt-2">
-                <div class="alert alert-primary" role="alert">
-                    <h4 class="text-white">Faça o seu agendamento!</h4>
-                    <p class="text-white">Para fazer o seu agendamento de visto é necessário ter uma conta.
-                        Caso não tenhas uma conta, basta clicares no botão abaixo com o título criar conta.
-                        Caso já tenhas uma conta, podes clicar directamente no botão agendar.</p>
-                    <a type="button" href="" class="btn btn-light">Criar conta</a>
-                    <a type="button" href="" class="btn btn-light">Agendar Visto</a>
-                </div>
-             </div> --}}
-        {{-- </div> --}}
-    {{-- </div> --}}
-
-    {{-- <div class="row mt-4 mb-4"> --}}
-        {{-- <div class="col-md-12">
-            <div class="solicita-header d-flex justify-content-end">
-                <h4 class="text-light m-0" >SOLICITAÇÃO DE MOEDA</h4>
-            </div>
-        </div> --}}
-    
-    {{-- <div class="col-8">
-        <div class="solicita-moeda d-flex justify-content-end">
-            <div class="solita-moeda-content">
-                <div class="d-flex justify-content-end">
-                    <div class="w-70 solita-moeda-content-interno" >
-                        <h4>Solicite moeda</h4>
-                        <p class="text-justify">Oferecemos o serviço de solicitação de moeda estrangeira, com os melhores preços 
-                            do mercado. Procuramos estar a par de todas atualizações do câmbio afim de trazê-lo
-                            os preços mais justos possíveis, com o acréscimo de uma taxa que se adequa ao cenário
-                            atual.
-                        </p>
-                        <p class="text-justify">Se já possui uma conta, então pode solicitar uma moeda estrangeira,
-                            caso não, primeiro crie uma conta.
-                        </p>
-                        <a type="button" href="" class="btn btn-light mt-2">Criar conta</a>
-                        <a type="button" href="" class="btn btn-light mt-2">Agendar Visto</a>
+                    <div class="col-xxl-3 col-lg-6">
+                        <div class="p-20 border-xxl-right border-bottom border-xxl-bottom-0">
+                            <div class="d-flex m-b-10">
+                                <p class="mb-0 font-regular text-muted font-weight-bold">Total abertura de conta</p>
+                                <a class="mb-0 ml-auto font-weight-bold" href="#"><i class="ti ti-more-alt"></i> </a>
+                            </div>
+                            <div class="d-block d-sm-flex h-100 align-items-center">
+                                <div class="apexchart-wrapper">
+                                    <div id="analytics8"></div>
+                                </div>
+                                <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
+                                    <h3 class="mb-0"><i class="icon-arrow-up-circle"></i> 16,656</h3>
+                                    <p>Este Mes</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+                    <div class="col-xxl-3 col-lg-6">
+                        <div class="p-20 border-lg-right border-bottom border-lg-bottom-0">
+                            <div class="d-flex m-b-10">
+                                <p class="mb-0 font-regular text-muted font-weight-bold">Total solicitação de Moeda</p>
+                                <a class="mb-0 ml-auto font-weight-bold" href="#"><i class="ti ti-more-alt"></i> </a>
+                            </div>
+                            <div class="d-block d-sm-flex h-100 align-items-center">
+                                <div class="apexchart-wrapper">
+                                    <div id="analytics9"></div>
+                                </div>
+                                <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
+                                    <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>569</h3>
+                                    <p>Avg. Sales per day</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-lg-6">
+                        <div class="p-20">
+                            <div class="d-block d-sm-flex h-100 align-items-center">
+                                <div class="apexchart-wrapper">
+                                    <div id="analytics10"></div>
+                                </div>
+                                <div class="statistics ml-sm-auto mt-4 mt-sm-0 pr-sm-5">
+                                    <ul class="list-style-none p-0">
+                                        <li class="d-flex py-1">
+                                            <span><i class="fa fa-circle text-primary pr-2"></i> Redirect Visits</span> <span class="pl-2 font-weight-bold">456</span></li>
+                                        <li class="d-flex py-1"><span><i class="fa fa-circle text-warning pr-2"></i> New Visits</span> <span class="pl-2 font-weight-bold">256</span></li>
+                                        <li class="d-flex py-1"><span><i class="fa fa-circle text-info pr-2"></i> Direct Visits</span> <span class="pl-2 font-weight-bold">128</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    {{-- <div class="col-4">
-        <div class="solicita-moeda justify-content-center">
-            <div class="solita-moeda-img">
-                <img src="{{asset('assets/img/moeda.png')}}" alt="Solicitação de moedas">
-            </div>
-        </div>
-    </div> --}}
-    {{-- <div class="col">
-    <div class="card-deck m-b-30">
-        <div class="card">
-            <img class="card-img-top" src="assets/img/widget/07.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title">Sobre Agência</h4>
-                <p class="card-text">One of the main areas that I work on with my clients is shedding these non-supportive beliefs and replacing them with beliefs that will help them to accomplish their desires.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="assets/img/widget/06.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title">Filial da Amazon</h4>
-                <p class="card-text">An open discussion of your managerial board with our designers let's them gain a deeper insight of your plans, future goals and the preferred approach towards the achievement of those goals. </p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="assets/img/widget/05.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title">Redirecionamento de Produtos</h4>
-                <p class="card-text">This is the battle cry of author and journalist Robert Ringer. And he is absolutely correct. Not all of the decision-making, clarity, planning, focus and belief in the world, will get you to where you want to be, without taking action!</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
             </div>
         </div>
     </div>
-    </div> --}}
-    {{-- </div> --}}
-</div>
+
+    <div class="row">
+
+        <div class="col-xxl-5 m-b-30">
+            <div class="card card-statistics h-100 mb-0">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="card-heading">
+                        <h4 class="card-title">Crescimento Anual</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h2>3.8k</h2>
+                            <span class="d-block mb-2 font-16">Total clientes anual</span>
+                            <span class="d-block mb-2 mb-sm-5"><b class="text-primary">65.88%</b> dos clientes existentes</span>
+                            <p class="mb-3">Nosso crescimento é notável, impulsionado pela nossa paixão e compromisso com a excelência.!</p>
+                            <a class="btn btn-round btn-inverse-primary mb-3 mb-sm-0" href="#"><b>Ver lista </b></a>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="apexchart-wrapper">
+                                <div id="analytics2" class="chart-fit"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
 
 
 @endsection

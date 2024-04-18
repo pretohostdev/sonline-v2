@@ -147,25 +147,7 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav nav-right ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ti ti-email"></i>
-                        </a>
-                        <div class="dropdown-menu extended animated fadeIn" aria-labelledby="navbarDropdown">
-                            <ul>
-                                <li class="dropdown-body">
-                                    <ul class="scrollbar scroll_dark max-h-240">
-                                        <li>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="dropdown-footer">
-                                    <a class="font-13" href="javascript:void(0)"> View All messages </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    
                     <li class="nav-item mr-2">
                         <a class="nav-link" href="" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Início
@@ -194,7 +176,7 @@
                 </ul>
 
                 <form class="form-inline my-2 my-lg-0 mr-2">
-                    <i class="fa fa-2x fa-user-o mr-1"></i>
+                    <i class="ti ti-2x ti-user mr-1"></i>
                     <a href="{{route('login')}}" class="my-2 my-sm-0">
                         Entrar
                     </a>

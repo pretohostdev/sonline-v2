@@ -24,6 +24,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
     <div class="container-fluid bg-secondary">
         <div class="content bg-light">
             <h3>Estou funcionando com Bootstrap 4</h3>
@@ -33,3 +34,9 @@
     
 </body>
 </html>
+=======
+Login
+
+Testando
+Teste
+>>>>>>> 3638c90f9a83e303d2c7a469a94973be820169d7
