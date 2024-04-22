@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Endereco>
  */
+
+ use App\Models\Cliente;
 class EnderecoFactory extends Factory
 {
     /**
@@ -20,6 +22,10 @@ class EnderecoFactory extends Factory
             'pais' => $this->faker->country,
             'cidade'=> $this->faker->city,
             'bairro'=> $this->faker->streetAddress,
+
+            'cliente_id'=> function(){
+                return Cliente::factory()->create()->id;
+            }
         ];
     }
 }

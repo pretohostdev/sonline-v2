@@ -2,11 +2,13 @@
 <header class="app-header top-bar">
     <!-- begin navbar -->
     <nav class="navbar navbar-expand-md">
-                                                            {{-- style="background-color:white --}}
+            
+        {{-- style="background-color:white --}}
+
         <div class="navbar-header d-flex align-items-center bg-white"> 
             <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
-            <a class="navbar-brand" href="{{route('sonline')}}">
-                <img src="{{asset('assets/img/logo-pequeno.png')}}" class="imfg-fluid logo-desktop" alt="logo"/>
+            <a class="navbar-brand mt-3" href="{{route('sonline')}}">
+                <img src="{{asset('assets/img/logo-registar.png')}}" class="img-fluid logo-desktop" alt="logo"/>
                 <img src="{{asset('assets/img/logo-pequeno.png')}}" class="img-fluid logo-mobile" alt="logo" />
             </a>
         </div>
@@ -177,11 +179,13 @@
                         </a>
                     </li>
 
-                    <li class="nav-item ml-2">
-                        <a class="nav-link" href="{{route('login')}}">
-                            Sair
-                        </a>
-                    </li>
+                    <form action="{{route('logout')}}" method="GET">
+                        <li class="nav-item ml-4">
+                            <button class="btn_sair" style="">
+                                Sair
+                            </button>
+                        </li>
+                    </form>
                         
                     {{-- </form> --}}
                 </ul>
@@ -193,34 +197,5 @@
     </nav> 
 
     <!-- end navbar -->
-
-    {{-- <div class="nav2">
-        <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="#">Sonline</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="dripicons dripicons-align-right"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link text-mute" href="#">Início <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="#">Serviços</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="#">Sobre</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="#">Contactos</a>
-              </li>
-             
-            </ul>
-          </div>
-        </nav> 
-      </div> --}}
-      {{-- Fim da segunda navegação --}}
-
-      
 
 </header>

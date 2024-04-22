@@ -14,13 +14,12 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('password');
             $table->string('email')->unique();
-            $table->date('dataNascimento');
-            $table->string('contacto');
-            $table->enum('genero', ['Masculino', 'Feminino', 'Outro']);
+            $table->date('dataNascimento')->nullable();
+            $table->string('contacto')->nullable();
+            $table->enum('genero', ['Masculino', 'Feminino', 'Outro'])->nullable();
             $table->timestamps();
-
-            $table->foreignId('endereco_id')->constrained('enderecos'); /* Chave Estrangeira */
         });
     }
 

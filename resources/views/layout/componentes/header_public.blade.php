@@ -5,8 +5,8 @@
         <div class="navbar-header d-flex align-items-center bg-white"> 
             <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
             
-            <a class="navbar-brand" href="{{route('sonline')}}">
-                <img src="{{asset('assets/img/logo-pequeno.png')}}" class="imfg-fluid logo-desktop" alt="logo"/>
+            <a class="navbar-brand mt-3" href="{{route('sonline')}}">
+                <img src="{{asset('assets/img/logo-registar.png')}}" class="img-fluid logo-desktop" alt="logo"/>
                 <img src="{{asset('assets/img/logo-pequeno.png')}}" class="img-fluid logo-mobile" alt="logo" />
             </a>
         </div>

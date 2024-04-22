@@ -5,16 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+// use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 
-class Cliente extends Authenticatable
+class Cliente extends Model implements Authenticatable
 {
     use HasFactory;
+    use AuthenticableTrait;
 
     // Defina a tabela correspondente
     protected $table = 'clientes';
 
-    protected $fillable = ['name', 'email', 'dataNascimento', 'genero', 'contacto'];
+    protected $fillable = ['name', 'email', 'password', 'dataNascimento', 'genero', 'contacto'];
     protected $dates = ['dataNascimento'];
 
 

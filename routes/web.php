@@ -14,6 +14,7 @@ use App\Http\Controllers\PagamentoController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\VistoController;
 use App\Http\Controllers\RedirecionamentoController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ use App\Http\Controllers\RedirecionamentoController;
 
 
 Route::resources([
+    'login' => LoginController::class,
     'admin' => AdminController::class,
     'agendamento' => AgendamentoController::class,
     'cliente' => ClienteController::class,
@@ -49,6 +51,8 @@ Route::get('/registar', function () {
 Route::get('/login', function () {
     return view('login');
 })->name('login');
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 

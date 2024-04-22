@@ -20,14 +20,15 @@ class ClienteFactory extends Factory
 
         return [
             'name' => $this->faker->name,
+            'password' => $this->faker->password,
             'email'=> $this->faker->safeEmail,
             'dataNascimento'=> $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'genero'=> $this->faker->randomElement(['masculino', 'feminino', 'outro']),
             'contacto'  =>  $this->faker->phoneNumber,
 
-            'endereco_id'=> function(){
-                return Endereco::factory()->create()->id;
-            }
+            // 'endereco_id'=> function(){
+            //     return Endereco::factory()->create()->id;
+            // }
         ];
     }
 }
