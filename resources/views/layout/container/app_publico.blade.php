@@ -27,7 +27,7 @@
             @yield('header')
             
             {{-- <div class="app-container"> --}}
-                @yield('dashboard')
+                {{-- @yield('dashboard') --}}
                 
                 <!-- Esse é o corpo do sistema -->
                 {{-- <div class="app-main" id="main"> --}}

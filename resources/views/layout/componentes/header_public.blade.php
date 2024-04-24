@@ -1,7 +1,7 @@
 <!-- Inicio do Header do sistema -->
 <header class="app-header top-bar">
     <!-- begin navbar -->
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar navbar-expand-md navbar-info">
         <div class="navbar-header d-flex align-items-center bg-white"> 
             <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
             
@@ -26,99 +26,64 @@
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <div class="row no-gutters">
                                 <div class="col-sm-2 p-20">
-                                    <h4>UI Kit</h4>
+                                    <h4>Criar Conta</h4>
                                     <ul>
-                                        <li class="nav-link">
-                                            <a href="ui-alerts.html">Alerts</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="ui-button.html">Buttons</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="ui-cards.html">Cards</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="ui-carousel.html">Carousel</a>
-                                        </li>
-
-                                        <li class="nav-link">
-                                            <a href="ui-dropdowns.html">Dropdowns</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="ui-list-group.html">List Group</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="ui-modals.html">Modals</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="ui-progressbars.html">Progress Bars</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="ui-tabs.html">Tabs</a>
+                                        <li class="nav-link text-primary">
+                                            <a href="{{route('registar')}}">Clique aqui</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-2 p-20">
-                                    <h4>Pages</h4>
+                                    <h4>Entrar</h4>
                                     <ul>
-                                        <li class="nav-link">
-                                            <a href="page-account-settings.html">Account Settings</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="page-clients.html">Clients</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="page-contacts.html">Contacts</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="page-gallery.html">Gallery</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="page-pricing.html">Pricing</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="page-task-list.html">Task List</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="page-404.html">404</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="page-500.html">500</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="page-coming-soon.html">Coming Soon</a>
+                                        <li class="nav-link text-primary">
+                                            <a href="{{route('login')}}">Clique aqui</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-sm-4 p-20">
-                                    <h4>Contact Us</h4>
-                                    <div>
-                                        <form>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="Password1" placeholder="Enter Name">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" id="Email1" placeholder="Enter Email">
-                                            </div>
-                                            <div class="form-group">
-                                                <textarea class="form-control" placeholder="Message" id="Textarea1" rows="3"></textarea>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary text-uppercase">Submit</button>
-                                        </form>
-                                    </div>
+
+                                <div class="col-sm-3 p-20">
+                                    <h4>Contactos</h4>
+                                    <ul>
+                                        <li class="nav-link text-primary">
+                                            <a href="{{route('login')}}">Email:claudiorufino@gmail.com</a>
+                                        </li>
+
+                                        <li class="nav-link">
+                                            <a href="{{route('login')}}">Telefone 1:934962288</a>
+                                        </li>
+
+                                        <li class="nav-link">
+                                            <a href="{{route('login')}}">Telefone 2:945029144</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="col-sm-4">
-                                    <div class="chart-wrap">
-                                        <div class="p-20">
-                                            <h4 class="mb-1">Page Views</h4>
-                                            <p>Daily page visitors</p>
-                                            <h2 class="text-primary font-xxl mt-2">80+</h2>
-                                        </div>
-                                        <div class="apexchart-wrapper">
-                                            <div id="pageview"></div>
-                                        </div>
-                                    </div>
+
+                                <div class="col-sm-2 p-20">
+                                    <h4>Endereço</h4>
+                                    <ul>
+                                        <li class="nav-link">
+                                            <a href="javascript:void(0)">Cacuaco</a>
+                                        </li>
+
+                                        <li class="nav-link">
+                                            <a href="javascript:void(0)">Centralidade do sequele</a>
+                                        </li>
+
+                                        <li class="nav-link">
+                                            <a href="javascript:void(0)">bloco 4 prédio 7</a>
+                                        </li>
+
+                                        <li class="nav-link">
+                                            <a href="javascript:void(0)">apartamento 302A</a>
+                                        </li>
+
+                                        <li class="nav-link">
+                                            <a href="javascript:void(0)">junto à empresa Eco-fluxo</a>
+                                        </li>
+                                    </ul>
                                 </div>
+                                
                             </div>
                         </div>
                     </li>
@@ -146,38 +111,36 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="navbar-nav nav-right ml-auto">
+                <ul class="navbar-nav nav-right ml-auto" id="ul_nav">
                     
-                    <li class="nav-item mr-2">
-                        <a class="nav-link" href="" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item mr-3">
+                        <a class="nav-link" href="x">
                             Início
-                            </span>
                         </a>
                     </li>
 
                     <li class="nav-item mr-4">
-                        <a class="nav-link" href="javascript:void(0)" id="navbarDropdown3" role="button">
+                        <a class="nav-link" href="">
                             Serviços
                         </a>
                     </li>
 
-                    <li class="nav-item text-primary mr-2">
+                    <li class="nav-item text-primary mr-3">
                         <a class="nav-link" href="" id="" role="button">
                             Sobre
                         </a>
                     </li>
 
-                    <li class="nav-item mr-2">
+                    <li class="nav-item mr-3">
                         <a class="nav-link " href="" id="">
                             Contacto
-                            </span>
                         </a>
                     </li>
                 </ul>
 
-                <form class="form-inline my-2 my-lg-0 mr-2">
-                    <i class="ti ti-2x ti-user mr-1"></i>
-                    <a href="{{route('login')}}" class="my-2 my-sm-0">
+                <form class="form-inline my-2 mr-3">
+                    <i class="ti ti-2x ti-user mr-1 text-dark"></i>
+                    <a href="{{route('login')}}" class="my-2" style="color:#007bff">
                         Entrar
                     </a>
                   </form>

@@ -4,6 +4,39 @@
     font-family: 'Grotesk';
 }
 
+.agendamentoAnimacao {
+    visibility: hidden;
+}
+
+#ul_nav li a {
+    padding-bottom: 6px;
+    position: relative;
+    color: #007bff;
+}
+
+#ul_nav li a::after {
+    content: " ";
+    width: 0%;
+    position: absolute;
+    background-color: rgb(13, 65, 238) !important;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s ease-in-out;
+}
+
+#ul_nav li a:hover::after {
+    width: 60px;
+}
+
+/* Alterando a cor do ícone "prev" do Carousel */
+.carousel-control-prev-icon {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(330deg);
+}
+
+.carousel-control-next-icon {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(330deg);
+}
 #inputKwanza:focus {
     box-shadow: none;
     border-color: var(--danger);
@@ -52,6 +85,7 @@
 .conteudo_publico {
     width: 100%;
     background: #fff;
+        /* background: #d62525; */
 }
 
 .btn-cor {

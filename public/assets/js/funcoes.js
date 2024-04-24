@@ -18,6 +18,13 @@ var spinnerInputDolar = document.getElementById("spinnerInputDolar");
 var spinnerInputEuro = document.getElementById("spinnerInputEuro");
 
 
+window.sr = ScrollReveal({reset:true});
+
+sr.reveal('.tituloAnimado', {
+    rotate:{x:0, y:80, z:0},
+    duration:3000});
+
+
 carregarTabelaMoeda();
 function carregarTabelaMoeda(){
 
@@ -191,3 +198,18 @@ async function converte(moedaBase, moedaPretendida, qtd) {
         throw error; // Lança o erro para ser capturado por um bloco try/catch externo
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('loginButton').addEventListener('click', function () {
+        // Feche o modal manualmente após o clique no botão
+        // var verticalCenter = new bootstrap.Modal(document.getElementById('verticalCenter'));
+        // verticalCenter.hide();
+
+        // window.location.href = "{{ route('login') }}";
+
+        var loginUrl = this.getAttribute('data-login-url');
+
+    // Redireciona para a rota de login
+    window.location.href = loginUrl;
+    });
+});

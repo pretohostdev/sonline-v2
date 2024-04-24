@@ -3,18 +3,22 @@
 @section('titulo', 'Principal')
 
 @push('styles')
-    {{-- Inclusão do Bootstrap 5 no projecto --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
+{{-- Inclusão do Bootstrap 5 no projecto --}}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
+<link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
+<link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
-     {{-- Font e Icones alternativa --}}
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
+
+{{-- Animação --}}
+<script src="https://unpkg.com/scrollreveal"></script>    
+     
+{{-- Font e Icones alternativa --}}
+<link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
      
 @endpush
 
@@ -29,15 +33,15 @@
     
     <div class="row">
         <div class="col-md-12">
-            <div class="w-100 d-flex justify-content-center align-items-center" style="height: 600px; background-color:#342628">
-                <div style="text-align:center;">
-                    <h1 class="text-light">Sonline Service</h1>
+            <div class="w-100 d-flex justify-content-center align-items-center" style="height: 600px; background-color:#062f4f">
+                <div class="" style="text-align:center;">
+                    <h1 class="text-light tituloAnimado">Sonline Service</h1>
                     <p style="width: 500px; font-size:16pt;">
                         Descubra destinos incríveis, planeje suas aventuras e crie memórias inesquecíveis com os 
                         pacotes personalizados da nossa agência.
                     </p>
 
-                    <a href="" class="btn btn-round btn-light mt-4"> <span style="font-size: 13pt">Agendar viagem agora</span></a>
+                    <button class="btn btn-round btn-light mt-4" data-toggle="modal" data-target="#verticalCenter"> <span style="font-size: 13pt">Agendar viagem agora</span></button>
                 
                 </div>
             </div>
@@ -53,7 +57,7 @@
             <div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="text-light" style="">Agende seu visto</h1>
+                        <h1 class="text-light tituloAnimado" style="">Agende seu visto</h1>
                     </div>
                 </div>
                 <div class="row">
@@ -62,7 +66,7 @@
                             Com um processo simples e eficiente, oferecemos assistência especializada para que você agende seu visto 
                             sem complicações
                         </p>
-                        <a href="" class="btn btn-round btn-light mt-4"> <span style="font-size: 13pt">Agendar visto agora</span></a>
+                        <button class="btn btn-round btn-light mt-4" data-toggle="modal" data-target="#verticalCenter"> <span style="font-size: 13pt">Agendar visto agora</span></button>
                     </div>
                 </div>
             </div>
@@ -76,7 +80,7 @@
             <div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="text-light" style="">Solicite moeda</h1>
+                        <h1 class="text-light tituloAnimado" style="">Solicite moeda</h1>
                     </div>
                 </div>
                 <div class="row">
@@ -85,7 +89,8 @@
                             Com taxas competitivas e um processo simples, garantimos que você tenha a moeda certa 
                             em mãos antes de partir para seu destino.
                         </p>
-                        <a href="" class="btn btn-round btn-light mt-4"> <span style="font-size: 13pt">Solite moeda agora</span></a>
+
+                        <button class="btn btn-round btn-light mt-4" data-toggle="modal" data-target="#verticalCenter"> <span style="font-size: 13pt">Solicite moeda agora</span></button>
                     </div>
                 </div>
             </div>
@@ -96,6 +101,31 @@
             <img src="{{asset("assets/img/cambio.png")}}" alt="Agendar visto" class="w-100 h-100">
         </div>
 
+    </div>
+
+   
+
+    <!-- Modal solicitar Moeda -->
+    <div class="modal fade" id="verticalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="verticalCenterTitle">SOLICITAÇÃO</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-dark">
+                        Para solicitar o serviço em questão, precisa entrar com a sua conta, caso já tenha, ou
+                        criar uma conta para estar a par de tudo. Use os botão abaixo para entrar ou criar uma conta.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{route('login')}}" type="button" data-login-url="{{ route('login') }}" class="btn btn-primary btn-block" data-dismiss="modal" id="loginButton">Entrar</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row mt-4">
@@ -190,15 +220,15 @@
 
     <div class="row mt-2">
         <div class="col-md-12">
-            <div class="w-100 d-flex justify-content-center align-items-center" style="height: 600px; background-color:#342628">
+            <div class="w-100 d-flex justify-content-center align-items-center" style="height: 600px; background-color:#062f4f">
                 <div style="text-align:center;">
-                    <h1 class="text-light">Abertura de conta</h1>
+                    <h1 class="text-light tituloAnimado">Abertura de conta</h1>
                     <p style="width: 500px; font-size:16pt;">
                         Desfrute de acesso fácil aos serviços oferecidos pelo acesso a uma conta wise, seja para suas finanças 
                         pessoais ou empresariais.
                     </p>
 
-                    <a href="" class="btn btn-round btn-light mt-4"> <span style="font-size: 13pt">Solicitar abertura de conta</span></a>
+                    <button class="btn btn-round btn-light mt-4" data-toggle="modal" data-target="#verticalCenter"> <span style="font-size: 13pt">Solicitar abertura de conta</span></button>
                 
                 </div>
             </div>
@@ -211,7 +241,7 @@
             <div class="row">
                 <div class="col-lg-12 mr-auto">
                     <div class="d-flex justify-content-center align-items-center bg-dark">
-                        <img class="card-img-top" src="assets/img/filial.png" alt="Card image cap">
+                        <img class="card-img-top" src="assets/img/filial.jpg" alt="Card image cap">
                     </div>
                 </div>
             </div>
@@ -256,12 +286,11 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="" class="btn btn-block btn-dark">Solicitar Redirecionamento</a>
+                        <button href="" class="btn btn-block btn-dark" data-toggle="modal" data-target="#verticalCenter">Solicitar Redirecionamento</button>
                     </div>
                 </div>
         </div>
     </div>
-
 
 
     {{-- Lista de Produtos da Amazon --}}
