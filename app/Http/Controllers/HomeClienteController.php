@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Redirecionamento;
 use Illuminate\Http\Request;
 
-class RedirecionamentoController extends Controller
+class HomeClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('homeCliente');
     }
 
     /**
@@ -20,7 +19,7 @@ class RedirecionamentoController extends Controller
      */
     public function create()
     {
-        return view('redirecionamento.create');
+        //
     }
 
     /**
@@ -34,7 +33,7 @@ class RedirecionamentoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Redirecionamento $redirecionamento)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +41,7 @@ class RedirecionamentoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Redirecionamento $redirecionamento)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +49,7 @@ class RedirecionamentoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Redirecionamento $redirecionamento)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +57,7 @@ class RedirecionamentoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Redirecionamento $redirecionamento)
+    public function destroy(string $id)
     {
         //
     }

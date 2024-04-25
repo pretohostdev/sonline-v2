@@ -21,6 +21,7 @@ class ContaWiseController extends Controller
     public function create()
     {
         //
+        return view('contaWise.create');
     }
 
     /**
@@ -28,7 +29,20 @@ class ContaWiseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // $dados = json_decode($request->getContent(), true);
+
+        // try {
+        //     ContaWise::create([
+        //         'data' => $dados['data'],
+        //         'estado' => '0'
+        //     ]);
+        // } catch (\Exception $e) {
+        //     return response()->json($e);
+        // }
+
+        // Retornar uma resposta, se necessário
+        return response()->json(['message' => 'Dados salvos com sucesso'], 200);
     }
 
     /**

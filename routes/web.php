@@ -15,6 +15,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\VistoController;
 use App\Http\Controllers\RedirecionamentoController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\HomeClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,7 @@ Route::resources([
     'admin' => AdminController::class,
     'agendamento' => AgendamentoController::class,
     'cliente' => ClienteController::class,
-    'contaWise' => ContaController::class,
+    'contaWise' => ContaWiseController::class,
     'documento' => DocumentoController::class,
     'endereco' => EnderecoController::class,
     'moeda' => MoedaController::class,
@@ -61,6 +62,12 @@ Route::get('/', function () {
 });
 
 Route::get('sonline/', [SonlineController::class, 'index'])->name('sonline');
+
+Route::get('home/', [HomeClienteController::class, 'index'])->name('homeCliente');
+
+Route::get('conta/', [HomeClienteController::class, 'index']);
+
+
 
 
 Route::get('site/', function () {

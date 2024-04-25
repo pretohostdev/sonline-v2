@@ -43,7 +43,7 @@ class LoginController extends Controller
             // dd('Sucesso!');
             $request->session()->regenerate();
 
-            return redirect()->intended('sonline');
+            return redirect()->intended('home');
         }
 
         dd('Falha ao Logar');

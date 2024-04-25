@@ -20,7 +20,7 @@ class MoedaController extends Controller
      */
     public function create()
     {
-        //
+        return view('moeda.create');
     }
 
     /**

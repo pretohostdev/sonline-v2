@@ -27,9 +27,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links Rápidos
+                        {{-- <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links Rápidos
                             <i class="fe fe-chevron-down"></i>
-                        </a>
+                        </a> --}}
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <div class="row no-gutters">
                                 <div class="col-sm-2 p-20">

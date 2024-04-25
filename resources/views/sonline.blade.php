@@ -28,7 +28,7 @@
 
 {{-- <div class="conteudo"> --}}
    
-    <div class="row" style="margin-top:100px ">
+    <div class="row" style="margin-top:100px">
         <div class="col-md-12">
             <!-- begin page title -->
             <div class="d-block d-lg-flex flex-nowrap align-items-center">
@@ -39,7 +39,7 @@
                     <nav>
                         <ol class="breadcrumb p-0 m-b-0">
                             <li class="breadcrumb-item">
-                                <a href="index.html"></a>
+                                <a href="x"></a>
                             </li>
                             <li>
                                 Página Principal

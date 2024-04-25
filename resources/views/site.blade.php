@@ -1,6 +1,6 @@
 @extends('layout.container.app_publico')
 
-@section('titulo', 'Principal')
+@section('titulo', 'sonline')
 
 @push('styles')
 {{-- Inclusão do Bootstrap 5 no projecto --}}
@@ -213,8 +213,8 @@
 
             </div>
 
-
         </div>
+        
 
     </div>
 
@@ -313,8 +313,9 @@
                         <div class="card" style="width: 18rem;">
                             <img src="assets/img/produtos/telefone.png" class="card-img-top" alt="telefone">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
+                              <h5 class="card-title">Iphone</h5>
                               <p class="card-text" style="width: inherit">700$</p>
+                              <p>Código:#49980 - <span class="text-danger">Importante</span></p>
                               <a href="#" class="btn btn-block btn-info ">Comprar</a>
                             </div>
                           </div>
@@ -450,5 +451,7 @@
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
     <script src="{{asset('assets/js/funcoes.js')}}"></script>
+    <script src="{{asset('assets/js/animacao.js')}}"></script>
+    <script src="{{asset('assets/js/carregamento.js')}}"></script>
 @endpush
 

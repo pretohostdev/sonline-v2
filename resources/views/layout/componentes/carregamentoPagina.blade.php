@@ -4,7 +4,7 @@
 <div class="loader">
     <div class="h-100 d-flex justify-content-center">
         <div class="align-self-center">
-            <img src="assets/img/loader/loading.gif" alt="loader">
+            <img src="{{ asset('assets/img/loader/loading.gif') }}" alt="loader">
         </div>
     </div>
 </div>
