@@ -12,7 +12,7 @@ class Redirecionamento extends Model
      // Defina a tabela correspondente
      protected $table = 'redirecionamentos';
 
-     protected $fillable = ['data', 'estado'];
+     protected $fillable = ['data', 'estado', 'valor', 'paisOrigem', 'paisDestino'];
      protected $dates = ['data'];
 
      public function cliente()

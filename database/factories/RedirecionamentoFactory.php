@@ -21,6 +21,9 @@ class RedirecionamentoFactory extends Factory
         return [
             'data' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'estado'=> $this->faker->randomElement(['1', '2', '3']),
+            'valor'=> $this->faker->randomElement(['100', '200', '300']),
+            'paisOrigem'=> $this->faker->randomElement(['Angola', 'Portugal']),
+            'paisDestino'=> $this->faker->randomElement(['Angola', 'Portugal']),
 
             'cliente_id'=> function(){
                 return Cliente::factory()->create()->id;

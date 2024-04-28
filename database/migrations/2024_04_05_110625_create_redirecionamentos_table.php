@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->date('data');
             $table->enum('estado', [0, 1, 2]); 
+            $table->double('valor'); 
+            $table->string('paisOrigem'); 
+            $table->string('paisDestino'); 
             $table->timestamps();
 
             $table->foreignId('cliente_id')->constrained('clientes');

@@ -4,7 +4,7 @@
 
 @push('styles')
 
-    {{-- Inclusão do Bootstrap 5 no projecto --}}
+    {{-- Inclusão do Bootstrap 4 no projecto --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
@@ -44,7 +44,7 @@
                             <a href="x"></a>
                         </li>
                         <li>
-                            Solicitação de moeda
+                            Redirecionamento de produto
                         </li>
                     </ol>
                 </nav>
@@ -73,28 +73,51 @@
         <div class="col-xl-6">
             <div class="card card-statistics rounded">
                 <div class="card-body">
-                    <form action="" method="" id="formConta">
+                    <form action="" method="POST" id="formRedirecionamento">
                         {{-- @csrf --}}
+
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Seleciona a moeda</label>
-                            <select type="da" class="form-control" id="nomeMoeda">
-                                <option value="Dolar">Dolar</option>
-                                <option value="Euro">Euro</option>
-                                <option value="Kwanza">Kwanza</option>
+                            <label for="nomeProduto">Nome do produto</label>
+                            <input type="text" class="form-control" value="teste" id="nomeProduto" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">País de origem</label>
+                            <select type="da" class="form-control" id="paisOrigem">
+                                <option value="Dolar">Portugal</option>
+                                <option value="Euro">Angola</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Montante</label>
-                            <input type="number" class="form-control" value="" id="montade">
+                            <label for="exampleInputEmail1">País de destino</label>
+                            <select type="da" class="form-control" id="paisDestino">
+                                <option value="Dolar">Angola</option>
+                                <option value="Euro">Portugal</option>
+                            </select>
                         </div>
 
-                        <label for="">Comprovativo Bancário</label>
-                        <div class="card-body bg-secondary rounded">
-                            <input type="file" class="form-control-file" id="comprovativoBancario">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Método de envio</label>
+                            <select class="form-control" id="metodoEnvio">
+                                <option value="DHL">DHL</option>
+                                <option value="CTT">CTT</option>
+                            </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary mt-3">Enviar Pedido</button>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Peso <span style="color:#ddd; font-size:8pt">(em grama)</span></label>
+                            <input type="number" class="form-control" value="" id="peso">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Descrição do produto</label>
+                            <textarea class="form-control" value="" id="descricao"></textarea>
+                        </div>
+
+                       
+
+                        <button type="submit" class="btn btn-primary mt-3">Enviar pedido</button>
                     </form>
                 </div>
 
@@ -125,9 +148,11 @@
                         
                         <div class="input-group mb-3" id="divKwanza">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-danger text-light">AOA</span>
+                                <span class="input-group-text bg-danger text-light" id="tipoEnvio">
+                                    {{-- Preenchimento automático --}}
+                                </span>
                             </div>
-                            <input type="number" class="form-control" id="inputKwanza" oninput="conversaoMoeda(id)">
+                            <input type="text" class="form-control" id="pesoBase" readonly>
                         </div>
 
                           <div class="d-flex justify-content-center">
@@ -138,9 +163,9 @@
 
                           <div class="input-group mb-3" id="divDolar">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-success text-light">USD</span>
+                                <span class="input-group-text bg-danger text-light">Valor</span>
                             </div>
-                            <input type="number" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
+                            <input type="text" class="form-control" id="valorConvertido" oninput="conversaoMoeda(id)" readonly>
                           </div>
 
                           <div class="d-flex justify-content-center">
@@ -151,9 +176,16 @@
 
                           <div class="input-group mb-3" id="divEuro">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-dark text-light">EUR</span>
+                                <span class="input-group-text bg-danger text-light">Taxa de Serviço</span>
                             </div>
-                            <input type="number" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
+                            <input type="text" class="form-control" id="inputEuro" value="2,99€" readonly>
+                          </div>
+
+                          <div class="input-group mb-3" id="divEuro">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-danger text-light">Taxa de armazenamento</span>
+                            </div>
+                            <input type="text" class="form-control" id="inputEuro" value="4,99€" readonly>
                           </div>
 
                     </div>
@@ -163,12 +195,6 @@
 
         </div>
 
-        {{-- <div class="col-xl-5">
-
-        </div> --}}
-
-
-        
 
     </div>
 
@@ -176,21 +202,26 @@
     </div>
 
     <script>
-        document.getElementById('formConta').addEventListener('submit', function(event) {
+        document.getElementById('formRedirecionamento').addEventListener('submit', function(event) {
             
             event.preventDefault(); // Impedir o envio padrão do formulário
             console.log('Estou funcionando...');
 
             // Pegar os dados vindo do formulário
-            var dataEmissao = document.getElementById('dataEmissaoConta').value;
+            var nomeProduto = document.getElementById('nomeProduto').value;
+            var paisOrigem = document.getElementById('paisOrigem').value;
+            var paisDestino = document.getElementById('paisDestino').value;
+            var descricao = document.getElementById('descricao').value;
+            // var valorRedirecionamento = valorConvertido.value;
 
-            var comprovativo = document.getElementById('comprovativoBancario');
+            var valorRedirecionemto = valorConvertido.value.replace('€', '');
 
-            console.log('Comprovativo: ' + comprovativo.value);
-
-            // console.log('A data é: ' + data);
-            const conta = {
-                data: dataEmissao,
+            const redirecionamento = {
+                nomeProduto: nomeProduto,
+                paisOrigem:paisOrigem,
+                paisDestino:paisDestino,
+                valor: valorRedirecionemto,
+                descricao:descricao
             };
 
             fetch('http://localhost:8000/api/conta', {
@@ -198,7 +229,7 @@
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(conta),
+                body: JSON.stringify(redirecionamento),
             })
             .then(response => {
                 if (!response.ok) {
@@ -214,6 +245,61 @@
             });
 
         });
+
+        // Conversão relativo ao envio de mercadoria com base aos tipos de envio - HDL versus CCT
+        var metodoEnvio = document.getElementById('metodoEnvio');
+        var tipoEnvio = document.getElementById('tipoEnvio');
+
+        var pesoBase = document.getElementById('pesoBase');
+
+        var valorConvertido = document.getElementById('valorConvertido');
+
+        var peso = document.getElementById('peso');
+
+        // console.log(typeof(metodoEnvio.value))
+
+        if(metodoEnvio.value == "DHL"){
+            tipoEnvio.innerHTML = "DHL";
+            pesoBase.value = "1kg - 90€";
+            valorConvertido.value = "0";
+        }
+        else{
+            tipoEnvio.innerHTML = "CTT";
+            pesoBase.value = "1kg - 40€";
+            valorConvertido.value = "0";
+        }
+
+        metodoEnvio.addEventListener('change', function(){
+            var opcaoSelecionada = this.value;
+
+            if(opcaoSelecionada == "DHL"){
+                tipoEnvio.innerHTML = "DHL";
+                pesoBase.value = "1kg - 90€";
+                valorConvertido.value = "0";
+            }
+            else{
+                tipoEnvio.innerHTML = "CTT";
+                pesoBase.value = "1kg - 40€";
+                valorConvertido.value = "0";
+            }
+            
+            
+        });
+
+
+
+        peso.addEventListener('input', function(){
+            if(metodoEnvio.value == "DHL"){
+                valorConvertido.value = (peso.value*90)/1000 + "€";
+                console.log(peso.value)
+            }
+            else{
+                valorConvertido.value = (peso.value*40)/1000 + "€";
+            }
+        })
+
+
+
 
     </script>
 </div>

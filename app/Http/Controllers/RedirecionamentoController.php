@@ -28,7 +28,7 @@ class RedirecionamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response()->json(['message' => 'Dados salvos com sucesso'], 200);
     }
 
     /**
