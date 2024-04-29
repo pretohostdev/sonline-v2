@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('moedas', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('codigo');
-            $table->string('simbolo');
-            $table->string('pais');
+            $table->string('montante');
             $table->string('data');
             $table->timestamps();
 

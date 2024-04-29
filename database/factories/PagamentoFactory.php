@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Cliente;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -23,8 +23,8 @@ class PagamentoFactory extends Factory
             'estado'=> $this->faker->randomElement(['1', '2', '3']),
             'dataVencimento'=> $this->faker->date($format = 'Y-m-d', $max = 'now'),
 
-            'cliente_id'=> function(){
-                return Cliente::factory()->create()->id;
+            'user_id'=> function(){
+                return User::factory()->create()->id;
             }
         ];
     }

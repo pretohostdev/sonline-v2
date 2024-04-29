@@ -12,7 +12,12 @@ class Endereco extends Model
      // Defina a tabela correspondente
      protected $table = 'enderecos';
 
-     protected $fillable = ['pais', 'cidade', 'bairro'];
+     protected $fillable = [
+        'pais', 
+        'cidade', 
+        'bairro',
+        'user_id'
+    ];
 
      public function cliente()
     {

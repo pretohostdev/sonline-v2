@@ -62,38 +62,23 @@
                     <form id="formRedirecionamento">
 
                         <div class="form-group">
-<<<<<<< HEAD
-                            <label for="exampleInputEmail1">Selecione o país de origem do produto</label>
-                            <select type="da" class="form-control" id="pais">
-                                <option value="Portugal">Portugal</option>
-                                <option value="Angola">Angola</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Selecione o país de destino do produto</label>
-                            <select type="da" class="form-control" id="pais">
-                                <option value="Portugal">Portugal</option>
-                                <option value="Angola">Angola</option>
-=======
                             <label for="nomeProduto">Nome do produto</label>
-                            <input type="text" class="form-control" value="teste" id="nomeProduto" required>
+                            <input type="text" class="form-control" value="" id="nomeProduto" required>
                         </div>
 
                         <div class="form-group">
                             <label for="paisOrigem">País de origem</label>
                             <select type="da" class="form-control" id="paisOrigem">
-                                <option value="Dolar">Portugal</option>
-                                <option value="Euro">Angola</option>
->>>>>>> 5458b4947a20cc610a94aacb7d09c6970f1dff1b
+                                <option value="Portugal">Portugal</option>
+                                <option value="Angola">Angola</option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="paisDestino">País de destino</label>
                             <select type="da" class="form-control" id="paisDestino">
-                                <option value="Dolar">Angola</option>
-                                <option value="Euro">Portugal</option>
+                                <option value="Angola">Angola</option>
+                                <option value="Portugal">Portugal</option>
                             </select>
                         </div>
 
@@ -107,7 +92,7 @@
 
                         <div class="form-group">
                             <label for="peso">Peso <span style="color:#ddd; font-size:8pt">(em grama)</span></label>
-                            <input type="number" class="form-control" value="" id="peso">
+                            <input type="number" class="form-control" value="" id="peso" required>
                         </div>
 
                         <div class="form-group">
@@ -155,12 +140,6 @@
                 <div class="card-body">
                     <div class="form-group mb-0">
 
-                        {{-- <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputKwanzaRedirecionamento">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                        </div> --}}
-                        
                         <div class="input-group mb-3" id="divKwanzaRedirecionamento">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light" id="tipoEnvio">
@@ -170,12 +149,6 @@
                             <input type="text" class="form-control" id="pesoBase" readonly>
                         </div>
 
-                          {{-- <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputDolarRedirecionamento">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                          </div> --}}
-
                           <div class="input-group mb-3" id="divDolarRedirecionamento">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light">Valor</span>
@@ -183,11 +156,6 @@
                             <input type="text" class="form-control" id="valorConvertido" oninput="conversaoMoeda(id)" readonly>
                           </div>
 
-                          {{-- <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputEuroRedirecionamento">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                          </div> --}}
 
                           <div class="input-group mb-3" id="divTaxaServico">
                             <div class="input-group-prepend">

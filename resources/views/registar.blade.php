@@ -67,7 +67,7 @@
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Primeiro Nome*</label>
-                                                        <input type="text" class="form-control" placeholder="primeiro nome" value="Josue" name="primeiroNome" />
+                                                        <input type="text" class="form-control" placeholder="primeiro nome" value="Claudio" name="primeiroNome" />
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
@@ -105,10 +105,10 @@
                                                 </div>
 
 
-                                                <div class="col-12">
+                                                <div class="col-12 mt-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Email*</label>
-                                                        <input type="email" class="form-control" placeholder="Email" value="josue@gmail.com" name="email" />
+                                                        <input type="email" class="form-control" placeholder="Email" value="claudio@gmail.com" name="email" />
                                                     </div>
                                                 </div>
                                                 

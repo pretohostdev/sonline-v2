@@ -104,6 +104,11 @@ Route::middleware(['cliente'])->group(function(){
     Route::resource('user', UserController::class)->except(['store']);
     Route::get('home', [HomeClienteController::class, 'index'])->name('homeCliente');
     Route::resource('redirecionamento', RedirecionamentoController::class);
+
+    Route::get('/estadoMoeda', [MoedaController::class, 'estado'])->name('moeda.estado');
+
+    Route::get('/estadoRedirecionamento', [RedirecionamentoController::class, 'estado'])->name('redirecionamento.estado');
+
 });
 
 Route::post('user', [UserController::class, 'store'])->name('user.store');

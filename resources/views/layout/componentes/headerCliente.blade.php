@@ -155,42 +155,14 @@
                 </ul>
                 <ul class="navbar-nav nav-right ml-auto">
                    
-                    <li class="nav-item mr-2">
-                        <a class="nav-link" href="" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Início
+                    <form class="form-inline my-2 mr-3">
+                        <i class="ti ti-2x ti-user mr-1 text-primary"></i>
+                        <a href="{{route('logout')}}" class="my-2" style="color:#007bff">
+                            Sair
                         </a>
-                    </li>
-
-                    <li class="nav-item mr-4">
-                        <a class="nav-link" href="javascript:void(0)" id="navbarDropdown3" role="button">
-                            Serviços
-                        </a>
-                    </li>
-
-                    <li class="nav-item text-primary mr-2">
-                        <a class="nav-link" href="" id="" role="button">
-                            Sobre
-                        </a>
-                    </li>
-
-                    <li class="nav-item mr-2">
-                        <a class="nav-link " href="" id="">
-                            Contacto
-                        </a>
-                    </li>
-
-                    <form action="{{route('logout')}}" method="GET">
-                        <li class="nav-item ml-4">
-                            <button class="btn_sair" style="">
-                                Sair
-                            </button>
-                        </li>
                     </form>
                         
-                    {{-- </form> --}}
                 </ul>
-
-                
 
             </div>
         </div>

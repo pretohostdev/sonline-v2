@@ -4,7 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Redirecionamento;
 use App\Models\Produto;
+use App\Models\User;
 use Illuminate\Http\Request;
+
+use Illuminate\Database\Eloquent\Builder;
+
+
 
 use Carbon\Carbon; // Classe para lidar a data actual em Laravel
 
@@ -122,5 +127,43 @@ class RedirecionamentoController extends Controller
     public function destroy(Redirecionamento $redirecionamento)
     {
         //
+    }
+
+    public function estado()
+    {
+        $id = Auth::id();
+
+        $redirecionamento = Redirecionamento::find($id);
+
+        $cliente = User::find($id);
+
+        // Verificar se o cliente já efectuou algum redirecionamento de produto
+        if(isset($cliente->redirecionamento->id)){
+            $redirecionamento = (Object)[
+                'data' => $redirecionamento->data,
+                'estado' => $redirecionamento->estado,
+                'valor' => $redirecionamento->valor,
+                'paisOrigem' => $redirecionamento->paisOrigem,
+                'paisDestino' => $redirecionamento->paisDestino,
+                'listaRedirecionamentos' => $clientesComRedirecionamento
+            ];
+        }
+        else{
+                $redirecionamento = (Object)[
+                    'data' => '',
+                    'estado' => '',
+                    'valor' => '',
+                    'paisOrigem' => '',
+                    'paisDestino' => '',
+                    'listaRedirecionamentos' => []
+                ];
+        }
+
+
+        $clientesComRedirecionamento = $cliente->redirecionamentos;
+
+        
+
+        return view('redirecionamento.show', compact('redirecionamento'));
     }
 }

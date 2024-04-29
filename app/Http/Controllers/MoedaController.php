@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Moeda;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
+
 
 class MoedaController extends Controller
 {
@@ -61,5 +65,37 @@ class MoedaController extends Controller
     public function destroy(Moeda $moeda)
     {
         //
+    }
+
+    public function estado()
+    {
+        $id = Auth::id();
+        $cliente = User::find($id);
+
+        // $clientesSolicitaramMoeda = $cliente->moedas;
+
+         // Verificar se o cliente já efectuou algum redirecionamento de produto
+         if(isset($cliente->moeda->id)){
+            $moeda = (Object)[
+                'data' => $redirecionamento->data,
+                'estado' => $redirecionamento->estado,
+                'valor' => $redirecionamento->valor,
+                'paisOrigem' => $redirecionamento->paisOrigem,
+                'paisDestino' => $redirecionamento->paisDestino,
+                'listaRedirecionamentos' => $clientesComRedirecionamento
+            ];
+        }
+        else{
+                $moeda = (Object)[
+                    'data' => '',
+                    'estado' => '',
+                    'valor' => '',
+                    'paisOrigem' => '',
+                    'paisDestino' => '',
+                    'listaRedirecionamentos' => []
+                ];
+        }
+
+        return view('moeda.show', compact('moeda'));
     }
 }

@@ -12,7 +12,11 @@ class Visto extends Model
      // Defina a tabela correspondente
      protected $table = 'vistos';
 
-     protected $fillable = ['tipo'];
+     protected $fillable = [
+        'tipo',
+        'dataPrevista',
+        'paisDesejado',
+    ];
  
 
     public function agendamento()

@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Cliente;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,14 +19,12 @@ class MoedaFactory extends Factory
     {
         return [
             'nome' => $this->faker->name,
-            'codigo'=> $this->faker->randomNumber($nbDigits = 5, $strict = false),
-            'simbolo' => $this->faker->currencyCode,
-            'pais' => $this->faker->country,
+            'montante' => $this->faker->name,
             'data' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
 
 
-            'cliente_id'=> function(){
-                return Cliente::factory()->create()->id;
+            'user_id'=> function(){
+                return User::factory()->create()->id;
             }
             
         ];

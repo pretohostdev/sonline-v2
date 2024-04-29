@@ -113,23 +113,26 @@
                                         <h5 class="mb-0 py-2">Editar dados pessoais</h5>
                                     </div>
                                     <div class="p-4">
-                                        <form id="formEditarDados">
+                                        <form action="{{ route('user.update', $cliente->id) }}" method="POST" id="formEditarDados">
+                                            @csrf
+                                            @method('PUT')
+
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="nome">Nome completo</label>
-                                                    <input type="text" class="form-control" id="nomeCompleto" value="{{$cliente->nome}}">
+                                                    <input type="text" class="form-control" name="nome" id="nomeCompleto" value="{{$cliente->nome}}">
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label for="email">Email</label>
-                                                    <input type="text" class="form-control" id="email" value="{{$cliente->email}}" readonly>
+                                                    <input type="text" class="form-control" name="email" id="email" value="{{$cliente->email}}" readonly>
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label for="contacto">Número do Telefone</label>
-                                                    <input type="text" class="form-control" id="contacto" value="{{$cliente->contacto}}">
+                                                    <input type="text" class="form-control" name="contacto" id="contacto" value="{{$cliente->contacto}}">
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label for="genero">Gênero</label>
-                                                    <input type="email" class="form-control" id="genero" value="{{$cliente->genero}}" readonly>
+                                                    <input type="email" class="form-control" name="genero" id="genero" value="{{$cliente->genero}}" readonly>
                                                 </div>
                                             </div>
 
@@ -138,28 +141,28 @@
                                                     <label class="mb-1">Data de Nascimento</label>
                                                 </div>
                                                 <div class="form-group col-md-4">
-                                                    <input id="diaNascimento" class="form-control" value="{{$cliente->diaNascimento}}">
+                                                    <input id="diaNascimento" class="form-control" name="diaNascimento" value="{{$cliente->diaNascimento}}">
                                                 </div>
                                                 <div class="form-group col-md-4">
-                                                    <input id="mesNascimento" class="form-control" value="{{$cliente->mesNascimento}}">
+                                                    <input id="mesNascimento" class="form-control" name="mesNascimento" value="{{$cliente->mesNascimento}}">
                                                 </div>
 
                                                 <div class="form-group col-md-4">
-                                                    <input id="anoNascimento" class="form-control" value="{{$cliente->anoNascimento}}">
+                                                    <input id="anoNascimento" class="form-control" name="anoNascimento" value="{{$cliente->anoNascimento}}">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-4">
                                                     <label for="pais">País</label>
-                                                    <input id="pais" class="form-control" value="{{$cliente->pais}}">
+                                                    <input id="pais" class="form-control" name="pais" value="{{$cliente->pais}}" required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="cidade">Cidade</label>
-                                                    <input id="cidade" class="form-control" value="{{$cliente->cidade}}">
+                                                    <input id="cidade" class="form-control" name="cidade" value="{{$cliente->cidade}}" required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="bairro">Bairro</label>
-                                                    <input type="text" class="form-control" id="bairro" value="{{$cliente->bairro}}">
+                                                    <input type="text" class="form-control" name="bairro" id="bairro" value="{{$cliente->bairro}}" required>
                                                 </div>
 
                                                 <div class="form-group col-md-4">
@@ -196,11 +199,11 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="" class="btn btn-block btn-secondary" id="estadoVisto" >Estado da solicitação da moeda</a>
+                                                <a href="{{ route('moeda.estado') }}" class="btn btn-block btn-secondary" id="estadoVisto" >Estado da solicitação da moeda</a>
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="" class="btn btn-block btn-secondary" id="estadoVisto" >Estado do redirecionamento de Produto</a>
+                                                <a href="{{ route('redirecionamento.estado') }}" class="btn btn-block btn-secondary" id="estadoVisto" >Estado do redirecionamento de Produto</a>
                                             </div>
                                             
                                         </form>
@@ -217,10 +220,10 @@
 </div>
 
     <script>
-        document.getElementById('formEditarDados').addEventListener('submit', function(event) {
+        // document.getElementById('formEditarDados').addEventListener('submit', function(event) {
             
-            event.preventDefault(); // Impedir o envio padrão do formulário
-            console.log('Estou funcionando...');
+            // event.preventDefault(); // Impedir o envio padrão do formulário
+            // console.log('Estou funcionando...');
 
             // var spinnerRedirecionar = document.getElementById('spinnerRedirecionar');
             //     spinnerRedirecionar.style.display = "block";
@@ -228,57 +231,52 @@
             // var mensagemSucesso = document.getElementById('mensagemSucesso');
 
             // Pegar os dados vindo do formulário
-            var nomCompleto = document.getElementById('nomeCompleto').value;
-            var contacto = document.getElementById('contacto').value;
-            var diaNascimento = document.getElementById('diaNascimento').value;
-            var mesNascimento = document.getElementById('mesNascimento').value;
-            var anoNascimento = document.getElementById('anoNascimento').value;
-            var cidade = document.getElementById('cidade').value;             
-            var bairro = document.getElementById('bairro').value;             
-            var pais = document.getElementById('pais').value;             
+            // var nomCompleto = document.getElementById('nomeCompleto').value;
+            // var contacto = document.getElementById('contacto').value;
+            // var diaNascimento = document.getElementById('diaNascimento').value;
+            // var mesNascimento = document.getElementById('mesNascimento').value;
+            // var anoNascimento = document.getElementById('anoNascimento').value;
+            // var cidade = document.getElementById('cidade').value;             
+            // var bairro = document.getElementById('bairro').value;             
+            // var pais = document.getElementById('pais').value;             
             
-            var user_id =  document.getElementById('user_id').value;
+            // var user_id =  document.getElementById('user_id').value;
             
-            const cliente = {
-                nome: nomeCompleto,
-                contacto:contacto,
-                diaNascimento:diaNascimento,
-                mesNascimento: mesNascimento,
-                anoNascimento:anoNascimento,
-                pais:pais,
-                cidade:cidade,
-                bairro:bairro,
-                id: user_id,
-            };
+            // const cliente = {
+            //     nome: nomeCompleto,
+            //     contacto:contacto,
+            //     diaNascimento:diaNascimento,
+            //     mesNascimento: mesNascimento,
+            //     anoNascimento:anoNascimento,
+            //     pais:pais,
+            //     cidade:cidade,
+            //     bairro:bairro,
+            //     id: user_id,
+            // };
 
-            var url = 'http://localhost:8000/api/atualizar/' + user_id;
-            fetch(url, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(cliente),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao salvar os dados');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if(data.cadastrado == 'true'){
-                    console.log('Cadastrado com sucesso');
-                    spinnerRedirecionar.style.display = "none";
-                    mensagemSucesso.style.display = "block";
-                }else{
-                    console.log('Não cadastrado');
-                }
-            })
-            .catch(error => {
-                console.error(error);
-            });
+            // async function atualizarDados(){
+            // const response = await fetch('http://localhost:8000/api/user/'+user_id,
+            // {
+            //     method:'PUT',
+            //     headers: {
+            //         'Accept': 'application/json'
+            //     }
+            // });
+            // const dados = await response.json();
+            // return dados;
+        // }
 
-        });
+        // const dadosAtualizados = atualizarDados();
+
+        // dadosAtualizados.then(
+        //     dados=>{
+        //         console.log(dados);
+        //     }
+        // );
+            
+            
+
+        // });
     </script>
 
 </div>

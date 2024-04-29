@@ -1,6 +1,6 @@
 @extends('layout.container.app')
 
-@section('titulo', 'Estado Solicitação de moeda')
+@section('titulo', 'Estado redirecionamento')
 
 @push('styles')
 
@@ -82,7 +82,7 @@
                                 <div class="accordion" id="accordionsimplefill">
                                     <div class="mb-2 acd-group">
                                         
-                                        @if($moeda->estado == '0')
+                                        @if($redirecionamento->estado == '0')
                                             <div class="card-header bg-primary rounded-0">
                                                 <h5 class="mb-0">
                                                     <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Pendente</a>
@@ -100,7 +100,7 @@
                                                 </div>
                                             </div>
                                         
-                                        @elseif($moeda->estado == '1')
+                                        @elseif($redirecionamento->estado == '1')
                                             <div class="card-header bg-success rounded-0">
                                                 <h5 class="mb-0">
                                                     <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Confirmado</a>
@@ -148,10 +148,10 @@
 
                                                 <div class="col-lg-6">
                                                     <ul class="list-group">
-                                                        <li class="list-group-item">Valor pago: <span class="text-dark">{{ $moeda->valor }} €</span> </li>
-                                                        <li class="list-group-item">País de origem do produto: <span class="text-dark">{{ $moeda->paisOrigem }}</span> </li>
-                                                        <li class="list-group-item">Data de destino do produto: <span class="text-dark">{{ $moeda->paisDestino }}</span> </li>
-                                                        <li class="list-group-item">Data do redirecionamento: <span class="text-dark">{{ $moeda->data }}</span> </li>
+                                                        <li class="list-group-item">Valor pago: <span class="text-dark">{{ $redirecionamento->valor }} €</span> </li>
+                                                        <li class="list-group-item">País de origem do produto: <span class="text-dark">{{ $redirecionamento->paisOrigem }}</span> </li>
+                                                        <li class="list-group-item">Data de destino do produto: <span class="text-dark">{{ $redirecionamento->paisDestino }}</span> </li>
+                                                        <li class="list-group-item">Data do redirecionamento: <span class="text-dark">{{ $redirecionamento->data }}</span> </li>
                                                     </ul>
                                                 </div>
                                                
@@ -181,7 +181,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach ($moeda->listaRedirecionamentos as $red)
+                                                        @foreach ($redirecionamento->listaRedirecionamentos as $red)
                                                         <tr>
                                                             <td>{{ $red->data }}</td>
                                                             <td>{{ $red->paisOrigem  }}</td>

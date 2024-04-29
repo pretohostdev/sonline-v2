@@ -12,7 +12,11 @@ class Moeda extends Model
     // Defina a tabela correspondente
     protected $table = 'moedas';
 
-    protected $fillable = ['nome', 'codigo', 'simbolo', 'pais', 'data'];
+    protected $fillable = [
+        'nome', 
+        'data',
+        'montante'
+    ];
 
     public function cliente()
     {

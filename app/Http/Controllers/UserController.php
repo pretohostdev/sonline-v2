@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Endereco;
 
 use Illuminate\Support\Facades\Hash; // Adicionar senhas criptografadas
 use Illuminate\Support\Facades\Validator; // Classe específica para fazer a validação dos campos
@@ -99,21 +100,41 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $cliente)
+    public function update($id, Request $request)
     {
-        // return "Editar um cliente no banco de dados";
-        
-        return response()->json(['cadastrado' => 'true'], 200);
-    }
+        $cliente = User::find($id);
 
-    public function atualizar(Request $request, $id)
-    {
-        // return "Editar um cliente no banco de dados";
-        try {
-            return response()->json(['cadastrado' => 'true'], 200);
-        } catch (\Throwable $error) {
-            return response()->json(['cadastrado' => $error], 200);
+        // Ogranizar a data de nascimento
+        $dataNascimento = $request->anoNascimento . "-". $request->mesNascimento . "-" . $request->diaNascimento;
+
+        // return $dataNascimento;
+        
+        $cliente->name = $request->nome;
+        $cliente->genero = $request->genero;
+        $cliente->contacto = $request->contacto;
+        $cliente->dataNascimento = $dataNascimento;
+
+        // Se o id não estiver definido, significa que a tabela Endereço ainda não possui dados
+        if(!isset($cliente->endereco->id)){
+            $endereco = Endereco::create([
+                'pais'=> $request->pais,
+                'cidade' => $request->cidade,
+                'bairro' => $request->bairro,
+                'user_id' =>$id
+            ]);
         }
+        else{ // Caso o endereço já esteja definido
+             
+            $cliente->endereco->pais = $request->pais;
+            $cliente->endereco->cidade = $request->cidade;
+            $cliente->endereco->bairro = $request->bairro;
+            $cliente->endereco->save();
+        }
+
+        $cliente->save();
+        
+        return "Dados atualizado com successo!";
+        // return "Clicou em atualizar dados " . $id;
     }
 
     /**

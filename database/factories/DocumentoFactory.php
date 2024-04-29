@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Cliente;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,8 +21,8 @@ class DocumentoFactory extends Factory
             'nome' => $this->faker->name,
             'imagem'=> $this->faker->imageUrl(),
 
-            'cliente_id'=> function(){
-                return Cliente::factory()->create()->id;
+            'user_id'=> function(){
+                return User::factory()->create()->id;
             }
         ];
     }

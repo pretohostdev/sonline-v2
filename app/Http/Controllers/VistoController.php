@@ -20,7 +20,7 @@ class VistoController extends Controller
      */
     public function create()
     {
-        //
+        return view('visto.create');
     }
 
     /**

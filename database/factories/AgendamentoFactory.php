@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Cliente;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,8 +22,8 @@ class AgendamentoFactory extends Factory
             'estado'=> $this->faker->randomElement(['1', '2', '3']),
             'observacao'=> $this->faker->text,
 
-            'cliente_id'=> function(){
-                return Cliente::factory()->create()->id;
+            'user_id'=> function(){
+                return User::factory()->create()->id;
             }
         ];
     }

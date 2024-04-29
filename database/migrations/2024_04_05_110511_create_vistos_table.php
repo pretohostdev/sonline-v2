@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('vistos', function (Blueprint $table) {
             $table->id();
             $table->string('tipo');
+            $table->string('dataPrevista');
+            $table->string('paisDesejado');
             $table->timestamps();
 
             $table->foreignId('pagamento_id')->nullable()->constrained('pagamentos');

@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 
-use App\Models\Cliente;
+use App\Models\User;
 use App\Models\Pagamento;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,8 +23,8 @@ class ContaWiseFactory extends Factory
             'data' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'estado'=>$this->faker->randomElement(['1', '2', '3']),
 
-            'cliente_id'=> function(){
-                return Cliente::factory()->create()->id;
+            'user_id'=> function(){
+                return User::factory()->create()->id;
             },
 
             'pagamento_id'=> function(){

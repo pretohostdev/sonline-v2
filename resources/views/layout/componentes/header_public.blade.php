@@ -143,7 +143,7 @@
                     <a href="{{route('login')}}" class="my-2" style="color:#007bff">
                         Entrar
                     </a>
-                  </form>
+                </form>
 
             </div>
         </div>

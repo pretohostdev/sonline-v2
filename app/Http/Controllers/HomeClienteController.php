@@ -22,14 +22,20 @@ class HomeClienteController extends Controller
 
         $cliente = User::find($id);
 
+        // Considerando que a tabela Endereço ainda não foi cadastrada
+
+        $pais = !isset($cliente->endereco->pais) ? "" : $cliente->endereco->pais;
+        $cidade = !isset($cliente->endereco->cidade) ? "" : $cliente->endereco->cidade;
+        $bairro = !isset($cliente->endereco->bairro) ? "" : $cliente->endereco->bairro;
+            // $pais = "";
+        
+
         // $dia_nascimento = $cliente->dataNascimento;
         $data = Carbon::createFromFormat('Y-m-d', $cliente->dataNascimento); // Cria um objeto Carbon com uma data específica
 
         $dia = $data->day; // Obtém apenas o dia da data
         $mes = $data->month;
         $ano = $data->year;
-
-        // return $ano; // Exibe o dia
 
         $cliente = (Object)[
             'id' => $cliente->id,
@@ -40,12 +46,11 @@ class HomeClienteController extends Controller
             'diaNascimento' => $dia,
             'mesNascimento' =>$mes,
             'anoNascimento' => $ano,
-            'pais' => $cliente->endereco->pais,
-            'cidade' => $cliente->endereco->cidade,
-            'bairro' => $cliente->endereco->bairro
+            'pais' => $pais,
+            'cidade' => $cidade,
+            'bairro' => $bairro
         ];
 
-        // return $cliente->endereco->pais;
         return view('homeCliente', compact('cliente'));
     }
 

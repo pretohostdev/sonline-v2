@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Cliente;
+use App\Models\User;
 use App\Models\Produto;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -25,8 +25,8 @@ class RedirecionamentoFactory extends Factory
             'paisOrigem'=> $this->faker->randomElement(['Angola', 'Portugal']),
             'paisDestino'=> $this->faker->randomElement(['Angola', 'Portugal']),
 
-            'cliente_id'=> function(){
-                return Cliente::factory()->create()->id;
+            'user_id'=> function(){
+                return User::factory()->create()->id;
             }
             ,
             'produto_id'=> function(){

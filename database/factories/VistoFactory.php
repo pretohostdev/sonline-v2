@@ -20,6 +20,8 @@ class VistoFactory extends Factory
     {
         return [
             'tipo' => $this->faker->name,
+            'dataPrevista' => $this->faker->name,
+            'paisDesejado' => $this->faker->name,
 
             'pagamento_id'=> function(){
                 return Pagamento::factory()->create()->id;
