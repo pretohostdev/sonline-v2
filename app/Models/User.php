@@ -21,7 +21,47 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'tipo',
+        'dataNascimento', 
+        'genero', 
+        'contacto'
     ];
+
+
+    public function endereco()
+    {
+        return $this->hasOne(Endereco::class);
+    }
+
+    public function documentos()
+    {
+        return $this->hasMany(Documento::class);
+    }
+
+    public function agendamento()
+    {
+        return $this->hasOne(Agendamento::class);
+    }
+
+    public function moedas()
+    {
+        return $this->hasMany(Moeda::class);
+    }
+
+    public function contaWise()
+    {
+        return $this->hasOne(ContaWise::class);
+    }
+
+    public function pagamentos()
+    {
+        return $this->hasMany(Pagamento::class);
+    }
+
+    public function redirecionamentos()
+    {
+        return $this->hasMany(Redirecionamento::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

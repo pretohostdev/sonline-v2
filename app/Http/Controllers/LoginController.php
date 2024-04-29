@@ -38,7 +38,7 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
  
-        if (Auth::guard('cliente')->attempt($credenciais)) {
+        if (Auth::attempt($credenciais)) {
 
             // dd('Sucesso!');
             $request->session()->regenerate();

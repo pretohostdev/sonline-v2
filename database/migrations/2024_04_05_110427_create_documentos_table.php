@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('imagem');
             $table->timestamps();
 
-            $table->foreignId('cliente_id')->constrained('clientes');
+            $table->foreignId('user_id')->constrained('users');
         });
     }
 

@@ -26,3 +26,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/conta', [ContaWiseController::class, 'store']);
 Route::post('/redirecionamento', [RedirecionamentoController::class, 'store']);
+
+Route::put('/atualizar/{id}', [UserController::class, 'atualizar']);

@@ -5,7 +5,7 @@
 @push('styles')
 
     {{-- Inclusão do Bootstrap 4 no projecto --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -49,23 +49,9 @@
                     </ol>
                 </nav>
             </div>
-            <div class="ml-auto d-flex align-items-center secondary-menu text-center">
-                <a href="{{ route('cliente.index') }}" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Clientes">
-                    <i class="fe fe-users btn btn-icon text-primary"></i>
-                </a>
-                <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Solicitação de Moedas">
-                    <i class="fe fe-credit-card btn btn-icon text-success"></i>
-                </a>
-                <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Abertura de conta">
-                    <i class="fa fa-cc-visa btn btn-icon text-warning"></i>
-                </a>
-                <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Calendar">
-                    <i class="fa fa-calendar-o btn btn-icon text-cyan"></i>
-                </a>
-                <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Produtos">
-                    <i class="fa fa-product-hunt btn btn-icon text-danger"></i>
-                </a>
-            </div>
+            
+            @include('layout.componentes.cabecalho_2')
+
         </div>
 
     <div class="row">
@@ -73,8 +59,7 @@
         <div class="col-xl-6">
             <div class="card card-statistics rounded">
                 <div class="card-body">
-                    <form action="" method="POST" id="formRedirecionamento">
-                        {{-- @csrf --}}
+                    <form id="formRedirecionamento">
 
                         <div class="form-group">
                             <label for="nomeProduto">Nome do produto</label>
@@ -82,7 +67,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">País de origem</label>
+                            <label for="paisOrigem">País de origem</label>
                             <select type="da" class="form-control" id="paisOrigem">
                                 <option value="Dolar">Portugal</option>
                                 <option value="Euro">Angola</option>
@@ -90,7 +75,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">País de destino</label>
+                            <label for="paisDestino">País de destino</label>
                             <select type="da" class="form-control" id="paisDestino">
                                 <option value="Dolar">Angola</option>
                                 <option value="Euro">Portugal</option>
@@ -98,7 +83,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Método de envio</label>
+                            <label for="metodoEnvio">Método de envio</label>
                             <select class="form-control" id="metodoEnvio">
                                 <option value="DHL">DHL</option>
                                 <option value="CTT">CTT</option>
@@ -106,15 +91,18 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Peso <span style="color:#ddd; font-size:8pt">(em grama)</span></label>
+                            <label for="peso">Peso <span style="color:#ddd; font-size:8pt">(em grama)</span></label>
                             <input type="number" class="form-control" value="" id="peso">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Descrição do produto</label>
-                            <textarea class="form-control" value="" id="descricao"></textarea>
+                            <input type="hidden" class="form-control" value="{{$user_id}}" id="user_id">
                         </div>
 
+                        <div class="form-group">
+                            <label for="descricao">Descrição do produto</label>
+                            <textarea class="form-control" id="descricao" required></textarea>
+                        </div>
                        
 
                         <button type="submit" class="btn btn-primary mt-3">Enviar pedido</button>
@@ -122,8 +110,20 @@
                 </div>
 
                 {{-- Spinner do cadastramento da solicitação de abertura de conta wise --}}
-                <div class="d-flex justify-content-center bg-info">
-                    Testando apenas
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border text-dark" role="status" id="spinnerRedirecionar">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                </div>
+
+                {{-- Mensagem de envio com sucesso --}}
+                <div id="mensagemSucesso">
+                    <div class="alert alert-info d-flex alert-dismissible fade show" role="alert">
+                        Pedido de redirecionamento enviado com sucesso!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="ti ti-close"></i>
+                        </button>
+                    </div>
                 </div>
 
             </div>
@@ -140,13 +140,13 @@
                 <div class="card-body">
                     <div class="form-group mb-0">
 
-                        <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputKwanza">
+                        {{-- <div class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status" id="spinnerInputKwanzaRedirecionamento">
                                 <span class="sr-only">Loading...</span>
                             </div>
-                        </div>
+                        </div> --}}
                         
-                        <div class="input-group mb-3" id="divKwanza">
+                        <div class="input-group mb-3" id="divKwanzaRedirecionamento">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light" id="tipoEnvio">
                                     {{-- Preenchimento automático --}}
@@ -155,37 +155,37 @@
                             <input type="text" class="form-control" id="pesoBase" readonly>
                         </div>
 
-                          <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputDolar">
+                          {{-- <div class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status" id="spinnerInputDolarRedirecionamento">
                                 <span class="sr-only">Loading...</span>
                             </div>
-                          </div>
+                          </div> --}}
 
-                          <div class="input-group mb-3" id="divDolar">
+                          <div class="input-group mb-3" id="divDolarRedirecionamento">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light">Valor</span>
                             </div>
                             <input type="text" class="form-control" id="valorConvertido" oninput="conversaoMoeda(id)" readonly>
                           </div>
 
-                          <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputEuro">
+                          {{-- <div class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status" id="spinnerInputEuroRedirecionamento">
                                 <span class="sr-only">Loading...</span>
                             </div>
-                          </div>
+                          </div> --}}
 
-                          <div class="input-group mb-3" id="divEuro">
+                          <div class="input-group mb-3" id="divTaxaServico">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light">Taxa de Serviço</span>
                             </div>
-                            <input type="text" class="form-control" id="inputEuro" value="2,99€" readonly>
+                            <input type="text" class="form-control" id="inputTaxaServico" value="2,99€" readonly>
                           </div>
 
-                          <div class="input-group mb-3" id="divEuro">
+                          <div class="input-group mb-3" id="divTaxaArmazenamento">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light">Taxa de armazenamento</span>
                             </div>
-                            <input type="text" class="form-control" id="inputEuro" value="4,99€" readonly>
+                            <input type="text" class="form-control" id="inputTaxaArmazenamento" value="4,99€" readonly>
                           </div>
 
                     </div>
@@ -207,24 +207,34 @@
             event.preventDefault(); // Impedir o envio padrão do formulário
             console.log('Estou funcionando...');
 
+            var spinnerRedirecionar = document.getElementById('spinnerRedirecionar');
+                spinnerRedirecionar.style.display = "block";
+
+            var mensagemSucesso = document.getElementById('mensagemSucesso');
+
             // Pegar os dados vindo do formulário
             var nomeProduto = document.getElementById('nomeProduto').value;
             var paisOrigem = document.getElementById('paisOrigem').value;
             var paisDestino = document.getElementById('paisDestino').value;
             var descricao = document.getElementById('descricao').value;
+            var user_id =  document.getElementById('user_id').value;
             // var valorRedirecionamento = valorConvertido.value;
 
             var valorRedirecionemto = valorConvertido.value.replace('€', '');
+
+
+            // console.log(nomeProduto)
 
             const redirecionamento = {
                 nomeProduto: nomeProduto,
                 paisOrigem:paisOrigem,
                 paisDestino:paisDestino,
                 valor: valorRedirecionemto,
-                descricao:descricao
+                descricao:descricao,
+                user_id: user_id,
             };
 
-            fetch('http://localhost:8000/api/conta', {
+            fetch('http://localhost:8000/api/redirecionamento', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -238,7 +248,13 @@
                 return response.json();
             })
             .then(data => {
-                console.log(data.message); // Mensagem de sucesso
+                if(data.cadastrado == 'true'){
+                    console.log('Cadastrado com sucesso');
+                    spinnerRedirecionar.style.display = "none";
+                    mensagemSucesso.style.display = "block";
+                }else{
+                    console.log('Não cadastrado');
+                }
             })
             .catch(error => {
                 console.error(error);
@@ -255,8 +271,6 @@
         var valorConvertido = document.getElementById('valorConvertido');
 
         var peso = document.getElementById('peso');
-
-        // console.log(typeof(metodoEnvio.value))
 
         if(metodoEnvio.value == "DHL"){
             tipoEnvio.innerHTML = "DHL";
@@ -286,19 +300,16 @@
             
         });
 
-
-
         peso.addEventListener('input', function(){
             if(metodoEnvio.value == "DHL"){
                 valorConvertido.value = (peso.value*90)/1000 + "€";
-                console.log(peso.value)
             }
             else{
                 valorConvertido.value = (peso.value*40)/1000 + "€";
             }
         })
 
-
+        
 
 
     </script>
@@ -315,5 +326,5 @@
 @push('scripts')
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
-    <script src="{{asset('assets/js/funcoes.js')}}"></script>
+    {{-- <script src="{{asset('assets/js/funcoes.js')}}"></script> --}}
 @endpush

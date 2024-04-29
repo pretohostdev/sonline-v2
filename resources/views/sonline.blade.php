@@ -48,7 +48,7 @@
                     </nav>
                 </div>
                 <div class="ml-auto d-flex align-items-center secondary-menu text-center">
-                    <a href="{{ route('cliente.index') }}" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Clientes">
+                    <a href="{{ route('user.index') }}" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Clientes">
                         <i class="fe fe-users btn btn-icon text-primary"></i>
                     </a>
                     <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Solicitação de Moedas">
@@ -177,7 +177,7 @@
                             <span class="d-block mb-2 font-16">Total clientes cadastrados</span>
                             <span class="d-block mb-2 mb-sm-5"><b class="text-primary">65.88%</b> dos clientes existentes</span>
                             <p class="mb-3">Nosso crescimento é notável, impulsionado pela nossa paixão e compromisso com a excelência.</p>
-                            <a class="btn btn-round btn-inverse-primary mb-3 mb-sm-0" href="{{ route('cliente.index') }}"><b>Ver Clientes</b></a>
+                            <a class="btn btn-round btn-inverse-primary mb-3 mb-sm-0" href="{{ route('user.index') }}"><b>Ver Clientes</b></a>
                         </div>
                         <div class="col-xs-6">
                             <div class="apexchart-wrapper">

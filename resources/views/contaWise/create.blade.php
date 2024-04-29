@@ -49,23 +49,9 @@
                     </ol>
                 </nav>
             </div>
-            <div class="ml-auto d-flex align-items-center secondary-menu text-center">
-                <a href="{{ route('cliente.index') }}" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Clientes">
-                    <i class="fe fe-users btn btn-icon text-primary"></i>
-                </a>
-                <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Solicitação de Moedas">
-                    <i class="fe fe-credit-card btn btn-icon text-success"></i>
-                </a>
-                <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Abertura de conta">
-                    <i class="fa fa-cc-visa btn btn-icon text-warning"></i>
-                </a>
-                <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Calendar">
-                    <i class="fa fa-calendar-o btn btn-icon text-cyan"></i>
-                </a>
-                <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Produtos">
-                    <i class="fa fa-product-hunt btn btn-icon text-danger"></i>
-                </a>
-            </div>
+
+            @include('layout.componentes.cabecalho_2')
+
         </div>
 
     <div class="row">
@@ -73,7 +59,6 @@
             <div class="card card-statistics">
                 <div class="card-body">
                     <form action="" method="" id="formConta">
-                        {{-- @csrf --}}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Dada de emissão</label>
                             <input type="date" class="form-control" placeholder="Enter email" id="dataEmissaoConta" value="{{ date('Y-m-d') }}">

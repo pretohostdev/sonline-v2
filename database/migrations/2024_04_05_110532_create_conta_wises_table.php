@@ -17,7 +17,7 @@ return new class extends Migration
             $table->enum('estado', [0, 1, 2]);
             $table->timestamps();
 
-            $table->foreignId('cliente_id')->constrained('clientes');
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('pagamento_id')->constrained('pagamentos');
         });
     }

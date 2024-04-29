@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Redirecionamento;
+use App\Models\Produto;
 use Illuminate\Http\Request;
+
+use Carbon\Carbon; // Classe para lidar a data actual em Laravel
+
+use Illuminate\Support\Facades\DB; // Para fazer o controlo da transação do banco de dados
+use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
 
 class RedirecionamentoController extends Controller
 {
@@ -12,7 +18,9 @@ class RedirecionamentoController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::id();
+        
+        return $id;
     }
 
     /**
@@ -20,7 +28,8 @@ class RedirecionamentoController extends Controller
      */
     public function create()
     {
-        return view('redirecionamento.create');
+        $user_id = Auth::id();
+        return view('redirecionamento.create', compact('user_id'));
     }
 
     /**
@@ -28,7 +37,59 @@ class RedirecionamentoController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(['message' => 'Dados salvos com sucesso'], 200);
+        // Adicionar dados a tabela Produto
+        $id = Auth::id();
+
+         $dados = json_decode($request->getContent(), true);
+
+        try {
+
+            $produto = Produto::create([
+                'nome' => $dados['nomeProduto'],
+                'descricao' => $dados['descricao'],
+            ]);
+
+            // Iniciando a transação
+            DB::beginTransaction();
+
+            // try{
+                
+                // $usuarioId = Auth::id();  // Obter o ID do usuário autenticado
+                $idProduto = $produto->latest()->value('id');  // Obter o último ID do produto
+                $data = Carbon::today()->format('Y-m-d'); 
+
+
+                try {
+                    
+                    $redirecionamento = Redirecionamento::create([
+                        'data' => $data,
+                        'estado' => '0',
+                        'valor' => $dados['valor'],
+                        'paisOrigem' => $dados['paisOrigem'],
+                        'paisDestino' => $dados['paisDestino'],
+                        'user_id' => $dados['user_id'],
+                        'produto_id' => $idProduto
+                    ]);
+
+                    DB::commit();  // Commit da transação se todas as operações forem bem-sucedidas
+                    return response()->json(['cadastrado' => 'true'], 200);
+
+                } catch (\Exception $e) {
+
+                    DB::rollback();
+                    return response()->json(['cadastrado' => $e]);
+                }
+                
+                
+            // }
+            // catch (\Exception $e) {
+            //     return response()->json(['cadastrado' => $e]);
+            // }
+           
+        } catch (\Exception $error) {
+            return response()->json(['cadastrado' => $error]);
+        }
+
     }
 
     /**

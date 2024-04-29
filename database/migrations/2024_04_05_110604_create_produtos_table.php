@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->text('descricao');
-            $table->decimal('preco', 10, 2);
-            $table->string('marca');
-            $table->string('imagem');
+            $table->decimal('preco', 10, 2)->nullable();
+            $table->string('marca')->nullable();
+            $table->string('imagem')->nullable();
             $table->timestamps();
         });
     }

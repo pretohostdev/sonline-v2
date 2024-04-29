@@ -54,12 +54,6 @@
     border-color: var(--dark);
 }
 
-/* .form-control :focus {
-    box-shadow: none;
-    border-color: #ced4da;
-} */
-
-
 #lateral {
 
     background: hsla(185, 64%, 51%, 1);
@@ -218,11 +212,19 @@
     display: none;
 }
 
+#spinnerRedirecionar {
+    display: none;
+}
+
+#mensagemSucesso {
+    display: none;
+}
 .btn_sair {
     border: none;
     background: none;
     margin-top: 40%;
 }
+
 
 .btn_sair:hover {
     cursor: pointer;
