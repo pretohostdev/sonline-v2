@@ -76,11 +76,18 @@
                     <form action="" method="" id="formConta">
                         {{-- @csrf --}}
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Seleciona a moeda</label>
-                            <select type="da" class="form-control" id="nomeMoeda">
-                                <option value="Dolar">Dolar</option>
-                                <option value="Euro">Euro</option>
-                                <option value="Kwanza">Kwanza</option>
+                            <label for="exampleInputEmail1">Selecione o país de origem do produto</label>
+                            <select type="da" class="form-control" id="pais">
+                                <option value="Portugal">Portugal</option>
+                                <option value="Angola">Angola</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Selecione o país de destino do produto</label>
+                            <select type="da" class="form-control" id="pais">
+                                <option value="Portugal">Portugal</option>
+                                <option value="Angola">Angola</option>
                             </select>
                         </div>
 
