@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SonlineController;
 use App\Http\Controllers\AgendamentoController;
@@ -29,19 +30,21 @@ use App\Http\Controllers\HomeClienteController;
 */
 
 
+// Route::resources([
+//     'login' => LoginController::class,
+//     'agendamento' => AgendamentoController::class,
+//     'contaWise' => ContaWiseController::class,
+//     'documento' => DocumentoController::class,
+//     'endereco' => EnderecoController::class,
+//     'moeda' => MoedaController::class,
+//     'pagamento' => PagamentoController::class,
+//     'produto' => ProdutoController::class,
+//     'redirecionamento' => RedirecionamentoController::class,
+//     'visto' => VistoController::class
+// ]);
+
 Route::resources([
     'login' => LoginController::class,
-    'admin' => AdminController::class,
-    'agendamento' => AgendamentoController::class,
-    'cliente' => ClienteController::class,
-    'contaWise' => ContaWiseController::class,
-    'documento' => DocumentoController::class,
-    'endereco' => EnderecoController::class,
-    'moeda' => MoedaController::class,
-    'pagamento' => PagamentoController::class,
-    'produto' => ProdutoController::class,
-    'redirecionamento' => RedirecionamentoController::class,
-    'visto' => VistoController::class
 ]);
 
 Route::get('/registar', function () {
@@ -61,11 +64,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('sonline/', [SonlineController::class, 'index'])->name('sonline');
 
-Route::get('home/', [HomeClienteController::class, 'index'])->name('homeCliente');
 
-Route::get('conta/', [HomeClienteController::class, 'index']);
+
+
+// Route::get('conta/', [HomeClienteController::class, 'index']);
 
 
 
@@ -78,3 +81,29 @@ Route::get('teste/', function () {
     return view('teste');
 })->name('teste');
 
+Route::middleware(['admin'])->group(function(){
+    Route::get('admin', function(){
+        dd('Vc é um admin');
+    });
+
+    Route::get('sonline/', [SonlineController::class, 'index'])->name('sonline');
+});
+
+Route::middleware(['cliente'])->group(function(){
+
+    Route::resources([
+        'contaWise' => ContaWiseController::class,
+        'documento' => DocumentoController::class,
+        'endereco' => EnderecoController::class,
+        'moeda' => MoedaController::class,
+        'pagamento' => PagamentoController::class,
+        'produto' => ProdutoController::class,
+        'visto' => VistoController::class
+    ]);
+
+    Route::resource('user', UserController::class)->except(['store']);
+    Route::get('home', [HomeClienteController::class, 'index'])->name('homeCliente');
+    Route::resource('redirecionamento', RedirecionamentoController::class);
+});
+
+Route::post('user', [UserController::class, 'store'])->name('user.store');

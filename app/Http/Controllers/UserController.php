@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 use Illuminate\Support\Facades\Hash; // Adicionar senhas criptografadas
 use Illuminate\Support\Facades\Validator; // Classe específica para fazer a validação dos campos
 
-class ClienteController extends Controller
+class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('cliente.index');
+        return view('user.index');
     }
 
     /**
@@ -86,7 +83,7 @@ class ClienteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cliente $cliente)
+    public function show(User $cliente)
     {
         return "Mostrar um cliente";
     }
@@ -94,23 +91,35 @@ class ClienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cliente $cliente)
+    public function edit(User $cliente)
     {
-        return "View de Editar um cliente";
+        return view('user.edit');
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request, User $cliente)
     {
-        return "Editar um cliente no banco de dados";
+        // return "Editar um cliente no banco de dados";
+        
+        return response()->json(['cadastrado' => 'true'], 200);
+    }
+
+    public function atualizar(Request $request, $id)
+    {
+        // return "Editar um cliente no banco de dados";
+        try {
+            return response()->json(['cadastrado' => 'true'], 200);
+        } catch (\Throwable $error) {
+            return response()->json(['cadastrado' => $error], 200);
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cliente $cliente)
+    public function destroy(User $cliente)
     {
         return "Eliminar um cliente do Banco de dados";
     }

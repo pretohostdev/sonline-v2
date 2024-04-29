@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContaWiseController;
+use App\Http\Controllers\RedirecionamentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // APIs para acessar minhas rotas de forma assincronas 
 
 Route::post('/conta', [ContaWiseController::class, 'store']);
+Route::post('/redirecionamento', [RedirecionamentoController::class, 'store']);
+
+Route::put('/atualizar/{id}', [UserController::class, 'atualizar']);

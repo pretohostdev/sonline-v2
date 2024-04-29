@@ -37,9 +37,11 @@
 .carousel-control-next-icon {
     filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(330deg);
 }
-#inputKwanza:focus {
+#inputKwanza:focus,
+#pesoBase:focus,
+#valorConvertido:focus {
     box-shadow: none;
-    border-color: var(--danger);
+    border-color: var(--secondary);
 }
 
 #inputDolar:focus {
@@ -47,16 +49,10 @@
     border-color: var(--success);
 }
 
-#inputKwanza:focus {
+#inputEuro:focus {
     box-shadow: none;
     border-color: var(--dark);
 }
-
-/* .form-control :focus {
-    box-shadow: none;
-    border-color: #ced4da;
-} */
-
 
 #lateral {
 
@@ -216,11 +212,19 @@
     display: none;
 }
 
+#spinnerRedirecionar {
+    display: none;
+}
+
+#mensagemSucesso {
+    display: none;
+}
 .btn_sair {
     border: none;
     background: none;
     margin-top: 40%;
 }
+
 
 .btn_sair:hover {
     cursor: pointer;

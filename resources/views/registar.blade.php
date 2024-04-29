@@ -61,7 +61,7 @@
                                             </div>
                                         @endif
 
-                                        <form action="{{route('cliente.store')}}" method="POST" class="mt-2 mt-sm-5">
+                                        <form action="{{route('user.store')}}" method="POST" class="mt-2 mt-sm-5">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">

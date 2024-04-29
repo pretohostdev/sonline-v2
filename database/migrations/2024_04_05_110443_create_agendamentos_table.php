@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('observacao')->nullable();
             $table->timestamps();
 
-            $table->foreignId('cliente_id')->constrained('clientes');
+            $table->foreignId('user_id')->constrained('users');
         });
     }
 

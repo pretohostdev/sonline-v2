@@ -75,15 +75,15 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'clientes' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Cliente::class,
-        ],
+        // 'clientes' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\Cliente::class,
+        // ],
     
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
-        ],
+        // 'admins' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\Admin::class,
+        // ],
 
         // 'users' => [
         //     'driver' => 'database',

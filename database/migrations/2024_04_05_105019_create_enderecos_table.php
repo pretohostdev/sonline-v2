@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('bairro');
             $table->timestamps();
 
-            $table->foreignId('cliente_id')->constrained('clientes'); /* Chave Estrangeira */
+            $table->foreignId('user_id')->constrained('users'); /* Chave Estrangeira */
         });
     }
 

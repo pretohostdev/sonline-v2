@@ -12,12 +12,21 @@ class Redirecionamento extends Model
      // Defina a tabela correspondente
      protected $table = 'redirecionamentos';
 
-     protected $fillable = ['data', 'estado'];
+     protected $fillable = [
+        'data', 
+        'estado', 
+        'valor', 
+        'paisOrigem', 
+        'paisDestino',
+
+        'user_id',  /* Chave Estrangeira */
+        'produto_id'  /* Chave Estrangeira */
+     ];
      protected $dates = ['data'];
 
      public function cliente()
     {
-        return $this->belongsTo(Cliente::class);
+        return $this->belongsTo(User::class);
     }
 
     public function produto()
