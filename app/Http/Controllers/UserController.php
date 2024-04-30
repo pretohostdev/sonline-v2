@@ -32,53 +32,60 @@ class UserController extends Controller
     {
         // Validação dos dados recebidos
 
-        $validacao = Validator::make($request->all(), [
-            'email' => 'required|string|email|unique:admins|max:255',
-            'password' => 'required|string|min:5',
-        ],
-        [
-            'email.email' => 'O campo e-mail deve ser um endereço de e-mail válido.',
-            'email.unique' => 'Este endereço de e-mail já está sendo utilizado.',
-            'password.min' => 'O campo senha deve ter no mínimo 8 caracteres.',
-        ]
-    );
+        // $validacao = Validator::make($request->all(), [
+        //     'email' => 'required|string|email|unique:admins|max:255',
+        //     'password' => 'required|string|min:5',
+        //     ],
+        //     [
+        //         'email.email' => 'O campo e-mail deve ser um endereço de e-mail válido.',
+        //         'email.unique' => 'Este endereço de e-mail já está sendo utilizado.',
+        //         'password.min' => 'O campo senha deve ter no mínimo 8 caracteres.',
+        //     ]
+        // );
 
-        if ($validacao->fails()) {
-            return redirect()->back()->withErrors($validacao)->withInput();
-        }
+        // if ($validacao->fails()) {
+        //     return redirect()->back()->withErrors($validacao)->withInput();
+        // }
 
 
-        $primeiroNome = $request->primeiroNome;
-        $ultimoNome = $request->ultimoNome;
+        // $primeiroNome = $request->primeiroNome;
+        // $ultimoNome = $request->ultimoNome;
 
-        $name = $primeiroNome . " " . $ultimoNome;
+        // $name = $primeiroNome . " " . $ultimoNome;
 
-        $email = $request->email;
-        $senha = $request->password;
+        // $email = $request->email;
+        // $senha = $request->password;
 
-        $contacto = $request->contacto;
-        $genero = $request->genero;
+        // $contacto = $request->contacto;
+        // $genero = $request->genero;
 
-        $dataNascimento = $request->dataNascimento;
+        // $dataNascimento = $request->dataNascimento;
 
         // return $dataNascimento;
+        $dados = json_decode($request->getContent(), true);
         
-        $registar = User::create([
-            'name'=> $name,
-            'email' => $email,
-            'tipo' => 'cliente',
-            'password' => Hash::make($senha),
-            'contacto' => $contacto,
-            'genero' => $genero,
-            'dataNascimento' => $dataNascimento
-        ]);
+        try {
+            $registar = User::create([
+                'name'=> $dados['nome'],
+                'email' => $dados['email'],
+                'tipo' => 'cliente',
+                'password' => Hash::make($dados['senha']),
+                'contacto' => $dados['contacto'],
+                'genero' => $dados['genero'],
+                'dataNascimento' => $dados['dataNascimento']
+            ]);
 
-        if($registar){
-            return "Sucesso";
+            return response()->json(['cadastrado' => $registar], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['cadastrado' => $th], 200);
         }
+       
 
+        // return "Erro ao cadastrar cliente";
 
-        return "Erro ao cadastrar cliente";
+        
+
+        
     }
 
     /**

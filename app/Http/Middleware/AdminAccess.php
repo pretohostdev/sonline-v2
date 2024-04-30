@@ -20,7 +20,7 @@ class AdminAccess
         if(Auth::check() && (Auth::user()->tipo == 'admin')){
             return $next($request);
         }
-
-        dd('Usuário sem permissão');
+        
+        return redirect()->route('acessoNegado');
     }
 }

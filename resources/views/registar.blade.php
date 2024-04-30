@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-
-<head>
+    
+    <head>
     <title>Registar</title>
+    {{-- Bootstrap 5 para lhe dar com  --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Sistema da sonline Service." />
-    <meta name="author" content="SOnline Service" />
+    <meta name="author" content="petroHost" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- app favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.ico">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <!-- plugin stylesheets -->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors.css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" >
     <!-- app style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" >
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/registar.css')}}" >
+
 
     {{-- Font e Icones alternativa --}}
     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
@@ -61,26 +66,26 @@
                                             </div>
                                         @endif
 
-                                        <form action="{{route('user.store')}}" method="POST" class="mt-2 mt-sm-5">
-                                            @csrf
+                                        <form action="" method="" class="mt-2 mt-sm-5" id="formRegistar">
+                                            {{-- @csrf --}}
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Primeiro Nome*</label>
-                                                        <input type="text" class="form-control" placeholder="primeiro nome" value="Claudio" name="primeiroNome" />
+                                                        <input type="text" class="form-control" placeholder="primeiro nome" value="Claudio" name="primeiroNome" id="primeiroNome">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Último Nome*</label>
-                                                        <input type="text" class="form-control" placeholder="último nome" value="Rufino" name="ultimoNome" />
+                                                        <input type="text" class="form-control" placeholder="último nome" value="Rufino" name="ultimoNome" id="ultimoNome">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Género*</label>
-                                                        <select name="genero" class="form-control">
+                                                        <select name="genero" class="form-control" id="genero">
                                                             @foreach(['Masculino', 'Feminino'] as $genero)
                                                                 <option value="{{ $genero }}">{{ $genero }}</option>
                                                             @endforeach
@@ -92,14 +97,14 @@
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Contacto*</label>
-                                                        <input type="text" class="form-control" placeholder="contacto" value="934962288" name="contacto" />
+                                                        <input type="text" class="form-control" placeholder="contacto" value="934962288" name="contacto" id="contacto">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-12">
                                                 <label class="control-label">Data de nascimento*</label>
                                                 <div class="input-group date display-years" data-date-format="dd-mm-yyyy" data-date="14-06-2018">
-                                                    <input class="form-control" type="text" placeholder="2018-12-12" value="2018-12-12" name="dataNascimento">
+                                                    <input class="form-control" type="text" placeholder="2018-12-12" value="2018-12-12" name="dataNascimento" id="dataNascimento">
                                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                 </div>
                                                 </div>
@@ -108,14 +113,14 @@
                                                 <div class="col-12 mt-2">
                                                     <div class="form-group">
                                                         <label class="control-label">Email*</label>
-                                                        <input type="email" class="form-control" placeholder="Email" value="claudio@gmail.com" name="email" />
+                                                        <input type="email" class="form-control" placeholder="Email" value="claudio@gmail.com" name="email" id="email">
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Senha'*</label>
-                                                        <input type="password" class="form-control" placeholder="senha" value="12345" name="password" />
+                                                        <input type="password" class="form-control" placeholder="senha" value="12345" name="password" id="senha">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -126,13 +131,31 @@
                                                         </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 mt-3">
+                                                
+                                                <div class="col-12 mt-3" id="divRegistar">
                                                     <button type="submit" class="btn btn-primary text-uppercase">Registar</button>
+
+                                                    <div class="spinner-border text-dark" role="status" id="spinnerRegistar" style="margin-right: 10px">
+                                                        <span class="sr-only">Loading...</span>
+                                                    </div>
+
                                                 </div>
+
                                                 </form>
-                                                <div class="col-12  mt-3">
+                                                <div class="col-12 mt-3">
                                                     <p>Já tem uma conta ?<a href="{{route('login')}}" class="text-primary"> Entrar</a></p>
                                                 </div>
+
+                                                {{-- Mensagem de envio com sucesso --}}
+                                                    <div id="registoMensagem" class="mt-4">
+                                                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                                            Usuário cadastrado com sucesso!
+                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                                <i class="ti ti-close"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
                                             </div>
                                     </div>
                                 </div>
@@ -150,6 +173,79 @@
             </div>
         </div>
         <!-- end app-wrap -->
+        <script>
+            // Obteção das  variáveis
+            var primeiroNome = document.getElementById('primeiroNome').value;
+            var ultimoNome = document.getElementById('ultimoNome').value;
+            var genero = document.getElementById('genero').value;
+            var contacto = document.getElementById('contacto').value;
+            var dataNascimento = document.getElementById('dataNascimento').value;
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+
+            var nomeCompleto = primeiroNome + " " + ultimoNome;
+            
+
+            const cliente = {
+                email:email,
+                senha: senha,
+                genero:genero,
+                contacto:contacto,
+                nome: nomeCompleto,
+                dataNascimento:dataNascimento,
+            };
+
+            
+            async function cadastrar(cliente){
+                
+                // try {
+                    const response = await fetch('http://localhost:8000/api/cadastrar',
+                    {
+                        method:'POST',
+                        headers: {
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(cliente),
+                    });
+                    const dados = await response.json();
+                    return dados;
+                // } catch (error) {
+                    // console.log(error);
+                    // return error;
+                // }
+               
+            }
+
+            var formRegistar = document.getElementById('formRegistar');
+
+            formRegistar.addEventListener('submit', function(event){
+
+                event.preventDefault(); // Impedir o envio padrão do formulário
+                // console.log('Estou funcionando...');
+
+                var spinnerRegistar = document.getElementById('spinnerRegistar');
+                spinnerRegistar.style.display = "block";
+
+
+                cadastrado = cadastrar(cliente);
+                cadastrado.then(
+                    data => {
+                        if(data.cadastrado == 'true'){
+                            console.log('Cadastrado com sucesso');
+                        }
+                        else{
+                            console.log('Erro ao cadastrar: ' + data.cadastrado);
+                        }
+                        spinnerRegistar.style.display = "none";
+                    }
+                )
+
+            });
+
+
+        
+    </script>
+        
     </div>
     <!-- end app -->
 

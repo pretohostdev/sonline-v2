@@ -21,6 +21,6 @@ class ClienteAccess
             return $next($request);
         }
 
-        dd('Usuário sem permissão');
+        return redirect()->route('acessoNegado');
     }
 }

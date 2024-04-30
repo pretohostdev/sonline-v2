@@ -1,0 +1,12 @@
+#divRegistar {
+    display: flex;
+    justify-content: space-between;
+}
+
+#registoMensagem {
+    display: none;
+}
+
+#spinnerRegistar {
+    display: none;
+}

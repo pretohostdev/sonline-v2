@@ -206,8 +206,6 @@
             var valorRedirecionemto = valorConvertido.value.replace('€', '');
 
 
-            // console.log(nomeProduto)
-
             const redirecionamento = {
                 nomeProduto: nomeProduto,
                 paisOrigem:paisOrigem,
@@ -232,7 +230,6 @@
             })
             .then(data => {
                 if(data.cadastrado == 'true'){
-                    console.log('Cadastrado com sucesso');
                     spinnerRedirecionar.style.display = "none";
                     mensagemSucesso.style.display = "block";
                 }else{

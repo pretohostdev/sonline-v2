@@ -111,4 +111,8 @@ Route::middleware(['cliente'])->group(function(){
 
 });
 
+Route::get('acessonegado', function(){
+    return view('acessoNegado');
+})->name('acessoNegado');
+
 Route::post('user', [UserController::class, 'store'])->name('user.store');
