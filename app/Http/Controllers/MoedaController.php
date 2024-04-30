@@ -70,30 +70,33 @@ class MoedaController extends Controller
     public function estado()
     {
         $id = Auth::id();
+
+        // return $id;
+
+        $moeda = Moeda::find($id);
         $cliente = User::find($id);
 
-        // $clientesSolicitaramMoeda = $cliente->moedas;
+        // Verificar se o cliente já efectuou algum redirecionamento de produto
+        if($cliente->moedas->count() > 0){
 
-         // Verificar se o cliente já efectuou algum redirecionamento de produto
-         if(isset($cliente->moeda->id)){
+            $clientesComSolicitacoaMoeda = $cliente->moedas;
             $moeda = (Object)[
-                'data' => $redirecionamento->data,
-                'estado' => $redirecionamento->estado,
-                'valor' => $redirecionamento->valor,
-                'paisOrigem' => $redirecionamento->paisOrigem,
-                'paisDestino' => $redirecionamento->paisDestino,
-                'listaRedirecionamentos' => $clientesComRedirecionamento
+                'nome' => $moeda->nome,
+                'montante' => $moeda->montante,
+                'estado' => $moeda->estado,
+                'data' => $moeda->data,
+                'listaSolicitacoaMoedas' =>  $clientesComSolicitacoaMoeda
             ];
         }
         else{
-                $moeda = (Object)[
-                    'data' => '',
-                    'estado' => '',
-                    'valor' => '',
-                    'paisOrigem' => '',
-                    'paisDestino' => '',
-                    'listaRedirecionamentos' => []
-                ];
+
+            $moeda = (Object)[
+                'nome' => '',
+                'montate' => '',
+                'data' => '',
+                'listaSolicitacoaMoedas' => []
+            ];   
+           
         }
 
         return view('moeda.show', compact('moeda'));

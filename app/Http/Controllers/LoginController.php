@@ -29,10 +29,6 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        // Autenticação do usuário
-
-        // dd($request->password);
-
         $credenciais = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],

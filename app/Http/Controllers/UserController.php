@@ -75,9 +75,9 @@ class UserController extends Controller
                 'dataNascimento' => $dados['dataNascimento']
             ]);
 
-            return response()->json(['cadastrado' => $registar], 200);
-        } catch (\Throwable $th) {
-            return response()->json(['cadastrado' => $th], 200);
+            return response()->json(['cadastrado' => 'true'], 200);
+        } catch (\Throwable $erro) {
+            return response()->json(['cadastrado' => $erro], 200);
         }
        
 
@@ -150,5 +150,16 @@ class UserController extends Controller
     public function destroy(User $cliente)
     {
         return "Eliminar um cliente do Banco de dados";
+    }
+
+    public function existeEmail($email){
+
+        $encontrado = User::where('email', $email)->exists();
+
+        if ($encontrado) {
+            return response()->json(['existe'=>'true']);
+        } else {
+            return response()->json(['existe'=>'false']);
+        }
     }
 }

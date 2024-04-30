@@ -124,7 +124,7 @@
 
                           <div class="input-group mb-3" id="divDolar">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-success text-light">USD</span>
+                                <span class="input-group-text bg-primary text-light">USD</span>
                             </div>
                             <input type="number" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
                           </div>
@@ -137,7 +137,7 @@
 
                           <div class="input-group mb-3" id="divEuro">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-dark text-light">EUR</span>
+                                <span class="input-group-text bg-success text-light">EUR</span>
                             </div>
                             <input type="number" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
                           </div>

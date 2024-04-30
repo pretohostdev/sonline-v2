@@ -7,7 +7,7 @@
 
         <div class="navbar-header d-flex align-items-center bg-white"> 
             <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
-            <a class="navbar-brand mt-3" href="{{route('sonline')}}">
+            <a class="navbar-brand mt-3" href="javascript:void(0)">
                 <img src="{{asset('assets/img/logo-registar.png')}}" class="img-fluid logo-desktop" alt="logo"/>
                 <img src="{{asset('assets/img/logo-pequeno.png')}}" class="img-fluid logo-mobile" alt="logo" />
             </a>
@@ -22,14 +22,12 @@
             <div class="navigation d-flex">
                 <ul class="navbar-nav nav-left">
                     <li class="nav-item">
-                        <a href="javascript:void(0)" class="nav-link sidebar-toggle">
+                        <a href="javascript:void(0)" class="nav-link sidebar-toggle text-primary">
                             <i class="fe fe-menu"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        {{-- <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links Rápidos
-                            <i class="fe fe-chevron-down"></i>
-                        </a> --}}
+                        
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <div class="row no-gutters">
                                 <div class="col-sm-2 p-20">
@@ -130,19 +128,19 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="javascript:void(0)" class="nav-link " id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social
+                        <a href="javascript:void(0)" class="nav-link text-primary" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">
+                            <a class="dropdown-item nav-link text-primary" href="javascript:void(0)">
                                 Email 
                                 <i class="fe fe-mail"></i>
                             </a>
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">
+                            <a class="dropdown-item nav-link text-primary" href="javascript:void(0)">
                                 Facebook
                                 <i class="fe fe-facebook"></i>
                             </a>
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">Twitter
+                            <a class="dropdown-item nav-link text-primary" href="javascript:void(0)">Twitter
                                 <i class="fe fe-twitter"></i>
                             </a>
                         </div>
@@ -155,9 +153,9 @@
                 </ul>
                 <ul class="navbar-nav nav-right ml-auto">
                    
-                    <form class="form-inline my-2 mr-3">
+                    <form class="form-inline my-2 mr-3 btnClienteSair">
                         <i class="ti ti-2x ti-user mr-1 text-primary"></i>
-                        <a href="{{route('logout')}}" class="my-2" style="color:#007bff">
+                        <a href="{{route('logout')}}" class="my-2 text-primary">
                             Sair
                         </a>
                     </form>

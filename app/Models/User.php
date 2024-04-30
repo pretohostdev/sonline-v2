@@ -49,9 +49,15 @@ class User extends Authenticatable
         return $this->hasMany(Moeda::class);
     }
 
+    public function vistos()
+    {
+        return $this->hasMany(Visto::class);
+    }
+
+
     public function contaWise()
     {
-        return $this->hasOne(ContaWise::class);
+        return $this->hasMany(ContaWise::class);
     }
 
     public function pagamentos()

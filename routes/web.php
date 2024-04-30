@@ -64,13 +64,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
-
 // Route::get('conta/', [HomeClienteController::class, 'index']);
-
-
 
 
 Route::get('site/', function () {
@@ -105,8 +99,11 @@ Route::middleware(['cliente'])->group(function(){
     Route::get('home', [HomeClienteController::class, 'index'])->name('homeCliente');
     Route::resource('redirecionamento', RedirecionamentoController::class);
 
-    Route::get('/estadoMoeda', [MoedaController::class, 'estado'])->name('moeda.estado');
 
+    // ROTA DOS ESTADOS 
+    Route::get('/estadoMoeda', [MoedaController::class, 'estado'])->name('moeda.estado');
+    Route::get('/estadoVisto', [VistoController::class, 'estado'])->name('visto.estado');
+    Route::get('/estadoConta', [ContaWiseController::class, 'estado'])->name('conta.estado');
     Route::get('/estadoRedirecionamento', [RedirecionamentoController::class, 'estado'])->name('redirecionamento.estado');
 
 });

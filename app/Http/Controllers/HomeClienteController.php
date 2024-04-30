@@ -22,6 +22,15 @@ class HomeClienteController extends Controller
 
         $cliente = User::find($id);
 
+
+        // Dados totais do cliente em relação outra tabelas
+
+        // $totalMoedas = $cliente->moedas->count();
+        // $totalContas = $cliente->contaWise->count();
+        // $totalRedirecionamento = $cliente->redirecionamentos->count();
+
+        // return $totalconta;
+
         // Considerando que a tabela Endereço ainda não foi cadastrada
 
         $pais = !isset($cliente->endereco->pais) ? "" : $cliente->endereco->pais;
@@ -48,7 +57,12 @@ class HomeClienteController extends Controller
             'anoNascimento' => $ano,
             'pais' => $pais,
             'cidade' => $cidade,
-            'bairro' => $bairro
+            'bairro' => $bairro,
+
+            // Dados totais
+            'totalMoedas' =>  $cliente->moedas->count(),
+            'totalContas' =>  $cliente->contaWise->count(),
+            'totalRedirecionamentos' => $cliente->redirecionamentos->count()
         ];
 
         return view('homeCliente', compact('cliente'));

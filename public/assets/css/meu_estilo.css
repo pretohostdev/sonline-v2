@@ -235,3 +235,10 @@
 #ma {
     background-color: #007bff !important;
 }
+
+.btnClienteSair:hover{
+    cursor: pointer;
+    font-style: underline;
+    background-color: transparent;
+    
+}

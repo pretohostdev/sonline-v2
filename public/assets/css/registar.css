@@ -10,3 +10,13 @@
 #spinnerRegistar {
     display: none;
 }
+
+.error-message {
+    color: #ce0909;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 9pt;
+    margin-left: 5px;
+    font-style: italic;
+    position: relative;
+    bottom: 10px;
+}

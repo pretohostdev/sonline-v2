@@ -13,7 +13,7 @@
     <meta name="author" content="petroHost" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- app favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <!-- plugin stylesheets -->
@@ -45,40 +45,29 @@
                     <div class="container-fluid p-0">
                         <div class="row no-gutters">
                             <div class="col-sm-6 col-lg-5 col-xxl-3  align-self-center order-2 order-sm-1">
-                                <div class="d-flex align-items-center h-100-vh">
+                                <div class="d-flex align-items-center">
                                     
                                     <div class="register p-5">
 
-                                        <div class="d-flex justify-content-center mt-4">
-                                            <img src="{{asset('assets/img/logo-registar.png')}}" alt="">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{asset('assets/img/logo-registar.png')}}" alt="logo da empresa">
                                         </div>   
 
                                         <p class="text-center">Seja bem vindo, crie uma conta.</p>
 
-
-                                        @if ($errors->any())
-                                            <div class="alert alert-danger">
-                                                <ul>
-                                                    @foreach ($errors->all() as $error)
-                                                        <li>{{ $error }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        @endif
-
-                                        <form action="" method="" class="mt-2 mt-sm-5" id="formRegistar">
-                                            {{-- @csrf --}}
+                                        <form class="mt-2 mt-sm-4" id="formRegistar">
+                                            @csrf
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Primeiro Nome*</label>
-                                                        <input type="text" class="form-control" placeholder="primeiro nome" value="Claudio" name="primeiroNome" id="primeiroNome">
+                                                        <input type="text" class="form-control" placeholder="" name="primeiroNome" id="primeiroNome" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Último Nome*</label>
-                                                        <input type="text" class="form-control" placeholder="último nome" value="Rufino" name="ultimoNome" id="ultimoNome">
+                                                        <input type="text" class="form-control" placeholder="" name="ultimoNome" id="ultimoNome" required>
                                                     </div>
                                                 </div>
 
@@ -97,32 +86,35 @@
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Contacto*</label>
-                                                        <input type="text" class="form-control" placeholder="contacto" value="934962288" name="contacto" id="contacto">
+                                                        <input type="text" class="form-control"  name="contacto" id="contacto" required>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-12">
                                                 <label class="control-label">Data de nascimento*</label>
-                                                <div class="input-group date display-years" data-date-format="dd-mm-yyyy" data-date="14-06-2018">
-                                                    <input class="form-control" type="text" placeholder="2018-12-12" value="2018-12-12" name="dataNascimento" id="dataNascimento">
+                                                <div class="input-group">
+                                                    <input class="form-control" type="date" placeholder="2018-12-12" value="2018-12-12" name="dataNascimento" id="dataNascimento">
                                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                 </div>
                                                 </div>
 
 
-                                                <div class="col-12 mt-2">
-                                                    <div class="form-group">
+                                                <div class="col-12">
+                                                    <div class="form-group mt-2">
                                                         <label class="control-label">Email*</label>
-                                                        <input type="email" class="form-control" placeholder="Email" value="claudio@gmail.com" name="email" id="email">
+                                                        <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
                                                     </div>
                                                 </div>
+                                                <span id="emailMensagem" class="error-message"></span>
                                                 
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Senha'*</label>
-                                                        <input type="password" class="form-control" placeholder="senha" value="12345" name="password" id="senha">
+                                                        <input type="password" class="form-control" placeholder="senha" name="password" id="senha" required>
                                                     </div>
                                                 </div>
+                                                <span id="senhaMensagem" class="error-message"></span>
+
                                                 <div class="col-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -133,10 +125,20 @@
                                                 </div>
                                                 
                                                 <div class="col-12 mt-3" id="divRegistar">
-                                                    <button type="submit" class="btn btn-primary text-uppercase">Registar</button>
+                                                    <button type="submit" class="btn btn-primary text-uppercase" id="btn_testar">Registar</button>
 
                                                     <div class="spinner-border text-dark" role="status" id="spinnerRegistar" style="margin-right: 10px">
                                                         <span class="sr-only">Loading...</span>
+                                                    </div>
+
+                                                    {{-- Mensagem de envio com sucesso --}}
+                                                    <div id="registoMensagem">
+                                                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                                                            Usuário cadastrado com sucesso!
+                                                            <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close">
+                                                                <i class="ti ti-close"></i>
+                                                            </button>
+                                                        </div>
                                                     </div>
 
                                                 </div>
@@ -146,15 +148,7 @@
                                                     <p>Já tem uma conta ?<a href="{{route('login')}}" class="text-primary"> Entrar</a></p>
                                                 </div>
 
-                                                {{-- Mensagem de envio com sucesso --}}
-                                                    <div id="registoMensagem" class="mt-4">
-                                                        <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                                            Usuário cadastrado com sucesso!
-                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                                <i class="ti ti-close"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                                
 
                                             </div>
                                     </div>
@@ -174,31 +168,49 @@
         </div>
         <!-- end app-wrap -->
         <script>
-            // Obteção das  variáveis
-            var primeiroNome = document.getElementById('primeiroNome').value;
-            var ultimoNome = document.getElementById('ultimoNome').value;
-            var genero = document.getElementById('genero').value;
-            var contacto = document.getElementById('contacto').value;
-            var dataNascimento = document.getElementById('dataNascimento').value;
-            var email = document.getElementById('email').value;
-            var senha = document.getElementById('senha').value;
 
-            var nomeCompleto = primeiroNome + " " + ultimoNome;
-            
+            var email = document.getElementById('email');
+            email.addEventListener('blur', function(){
 
-            const cliente = {
-                email:email,
-                senha: senha,
-                genero:genero,
-                contacto:contacto,
-                nome: nomeCompleto,
-                dataNascimento:dataNascimento,
-            };
+                const email = this.value;
+                const pesquisaEmail = existeEmail(email);
+                const emailMsg = document.getElementById('emailMensagem');
 
-            
+                pesquisaEmail
+                .then(
+                    valor =>
+                    {
+                        if(valor.existe == 'true') // Verifique se número da casa já está no sistema
+                            emailMsg.innerHTML = "Email já existente!";
+                        else{
+                            emailMsg.innerHTML = "";
+                        }
+                    }
+                );
+            }); 
+
+            async function existeEmail(email){
+        
+                try{
+                    var mgs = 'Erro ao acessar o Banco de dados';
+
+                    const resposta = await fetch('http://localhost:8000/api/existeEmail/'+ email,
+                    {
+                        method:'get',
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    const resp = await resposta.json();
+                    return resp;
+                }catch(e){
+                    console.log(e);
+                }
+            }
+
             async function cadastrar(cliente){
                 
-                // try {
+                try {
                     const response = await fetch('http://localhost:8000/api/cadastrar',
                     {
                         method:'POST',
@@ -209,41 +221,77 @@
                     });
                     const dados = await response.json();
                     return dados;
-                // } catch (error) {
-                    // console.log(error);
-                    // return error;
-                // }
+                } catch (error) {
+                    return error;
+                }
                
             }
 
-            var formRegistar = document.getElementById('formRegistar');
+        var formRegistar = document.getElementById('formRegistar');
 
-            formRegistar.addEventListener('submit', function(event){
+        formRegistar.addEventListener('submit', function(event){
 
-                event.preventDefault(); // Impedir o envio padrão do formulário
-                // console.log('Estou funcionando...');
+            event.preventDefault(); 
 
-                var spinnerRegistar = document.getElementById('spinnerRegistar');
-                spinnerRegistar.style.display = "block";
+            // Obteção dos valores das variáveis
+            var senha = document.getElementById('senha').value;
+            var email = document.getElementById('email').value;
+            var genero = document.getElementById('genero').value;
+            var contacto = document.getElementById('contacto').value;
+            var ultimoNome = document.getElementById('ultimoNome').value;
+            var primeiroNome = document.getElementById('primeiroNome').value;
+            var dataNascimento = document.getElementById('dataNascimento').value;
 
+            var nomeCompleto = primeiroNome + " " + ultimoNome;
 
-                cadastrado = cadastrar(cliente);
-                cadastrado.then(
-                    data => {
+            const cliente = {
+                    email:email,
+                    senha: senha,
+                    genero:genero,
+                    contacto:contacto,
+                    nome: nomeCompleto,
+                    dataNascimento:dataNascimento,  
+            };
+
+            var spinnerRegistar = document.getElementById('spinnerRegistar');
+            spinnerRegistar.style.display = "block";
+
+            var registoMensagem = document.getElementById('registoMensagem');
+
+            cadastrado = cadastrar(cliente);
+
+            console.log(cadastrado);
+            cadastrado.then(
+                data => {
                         if(data.cadastrado == 'true'){
                             console.log('Cadastrado com sucesso');
                         }
                         else{
                             console.log('Erro ao cadastrar: ' + data.cadastrado);
                         }
-                        spinnerRegistar.style.display = "none";
-                    }
-                )
+                    spinnerRegistar.style.display = "none";
+                    registoMensagem.style.display = "block";
+                }
+            );
 
-            });
+        });
 
 
-        
+        // Validar o campo de senha
+        var senha = document.getElementById('senha');
+
+        senha.addEventListener('input', function(event){
+            const senha = this.value;
+            const senhaMsg = document.getElementById('senhaMensagem');
+
+            if(senha.length < 6){
+                senhaMsg.innerHTML = "Senha deve ter no mínimo 6 caracteres!";
+            }
+            else{
+                senhaMsg.innerHTML = "";
+            }
+        });
+
     </script>
         
     </div>

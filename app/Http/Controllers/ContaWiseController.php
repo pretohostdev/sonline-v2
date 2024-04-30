@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\ContaWise;
 use Illuminate\Http\Request;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
+
+
 class ContaWiseController extends Controller
 {
     /**
@@ -76,4 +80,40 @@ class ContaWiseController extends Controller
     {
         //
     }
+
+    public function estado()
+    {
+
+        // return "Clicou no estado da solicitação da conta";
+        $id = Auth::id();
+
+        $conta = ContaWise::find($id);
+        $cliente = User::find($id);
+
+        // Verificar se o cliente já efectuou alguma solicitação de abertura de conta
+        if($cliente->contaWise->count() > 0){
+
+            $clientesComSolicitacaoConta = $cliente->contaWise;
+
+            $conta = (Object)[
+                'nome' => $cliente->name,
+                'data' => $conta->data,
+                'estado' => $conta->estado,
+                'listaSolicitacaoConta' =>  $clientesComSolicitacaoConta
+            ];
+        }
+        else{
+
+            $conta = (Object)[
+                'nome' => '',
+                'data' => '',
+                'estado' => '',
+                'listaSolicitacaoConta' => []
+            ];   
+           
+        }
+
+        return view('contaWise.show', compact('conta'));
+    }
+
 }

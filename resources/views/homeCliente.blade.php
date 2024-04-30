@@ -70,7 +70,7 @@
                                                 <img src="assets/img/avtar/01.jpg" class="img-fluid" alt="users-avatar">
                                             </div>
                                             <div class="profile pt-4">
-                                                <h4 class="mb-1">Cláudio Rufino</h4>
+                                                <h4 class="mb-1">{{ $cliente->nome }}</h4>
                                                 <p>cliente</p>
                                             </div>
                                         </div>
@@ -80,31 +80,31 @@
                                         <ul class="nav justify-content-center text-center">
                                             <li class="nav-item border-right px-3">
                                                 <div>
-                                                    <h4 class="mb-0">90</h4>
-                                                    <p>Post</p>
+                                                    <h4 class="mb-0">{{ $cliente->totalMoedas }}</h4>
+                                                    <p>Moedas</p>
                                                 </div>
                                             </li>
 
                                             <li class="nav-item border-right px-3">
                                                 <div>
-                                                    <h4 class="mb-0">1.5K</h4>
-                                                    <p>Messages</p>
+                                                    <h4 class="mb-0">{{ $cliente->totalContas }}</h4>
+                                                    <p>Conta</p>
                                                 </div>
                                             </li>
 
                                             <li class="nav-item px-3">
                                                 <div>
-                                                    <h4 class="mb-0">4.4K</h4>
-                                                    <p>Members</p>
+                                                    <h4 class="mb-0">{{ $cliente->totalRedirecionamentos }}</h4>
+                                                    <p>Redire...</p>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
 
-                                    <div class="profile-btn text-center">
+                                    {{-- <div class="profile-btn text-center">
                                         <div><button class="btn btn-light text-primary mb-2">Atualizar foto</button></div>
                                         <div><button class="btn btn-danger">Delete</button></div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="col-xl-5 col-md-6 col-12 border-t border-right">
@@ -191,19 +191,19 @@
                                     <div class="p-4">
                                         <form>
                                             <div class="form-group">
-                                                <a href="" class="btn btn-block btn-secondary" id="estadoVisto" >Estado do visto</a>
+                                                <a href="{{ route('visto.estado') }}" class="btn btn-block btn-primary" id="estadoVisto" >Estado do visto</a>
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="" class="btn btn-block btn-secondary" id="estadoVisto" >Estado da abertura de conta</a>
+                                                <a href="{{ route('conta.estado') }}" class="btn btn-block btn-primary" id="estadoVisto" >Estado da abertura de conta</a>
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="{{ route('moeda.estado') }}" class="btn btn-block btn-secondary" id="estadoVisto" >Estado da solicitação da moeda</a>
+                                                <a href="{{ route('moeda.estado') }}" class="btn btn-block btn-primary" id="estadoVisto" >Estado da solicitação da moeda</a>
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="{{ route('redirecionamento.estado') }}" class="btn btn-block btn-secondary" id="estadoVisto" >Estado do redirecionamento de Produto</a>
+                                                <a href="{{ route('redirecionamento.estado') }}" class="btn btn-block btn-primary" id="estadoVisto" >Estado do redirecionamento de Produto</a>
                                             </div>
                                             
                                         </form>

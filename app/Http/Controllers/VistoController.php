@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Visto;
+use App\Models\User;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
+
 
 class VistoController extends Controller
 {
@@ -62,4 +66,42 @@ class VistoController extends Controller
     {
         //
     }
+
+    public function estado()
+    {
+        $id = Auth::id();
+
+        // return $id;
+
+        $visto = Visto::find($id);
+        $cliente = User::find($id);
+
+        // Verificar se o cliente já efectuou algum redirecionamento de produto
+        if($cliente->vistos->count() > 0){
+
+            $clientesComSolicitaVisto = $cliente->vistos;
+
+            $visto = (Object)[
+                'tipo' => $visto->tipo,
+                'dataSolicitacao' => $visto->dataSolicitacao,
+                'dataPrevista' => $visto->dataPrevista,
+                'paisDesejado' => $visto->paisDesejado,
+                'listaSolicitacaoVistos' =>  $clientesComSolicitaVisto
+            ];
+        }
+        else{
+            
+            $visto = (Object)[
+                'tipo' => '',
+                'dataSolicitacao' => '',
+                'dataPrevista' => '',
+                'paisDesejado' => '',
+                'listaSolicitacaoVistos' =>  []
+            ];   
+
+        }
+
+        return view('visto.show', compact('visto'));
+    }
+
 }

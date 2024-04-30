@@ -57,7 +57,7 @@
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Senha*</label>
-                                                        <input type="password" class="form-control" placeholder="Senha" name="password" value="12345" />
+                                                        <input type="password" class="form-control" placeholder="Senha" name="password" value="123456" />
                                                     </div>
                                                 </div>
                                                 <div class="col-12">

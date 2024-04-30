@@ -44,19 +44,13 @@
             <!--start look screen contant-->
             <div class="error-contant">
                 <div class="error-innr">
-                    <div class="container">
-                        <div class="row justify-content-center align-items-center">
+                    <div class="container d-flex justify-content-center align-items-center h-100-vh">
+                        <div class="row d-flex justify-content-center">
                             <div class="col-md-8 text-center">
-
-
                                 <div class="error-text">
-
-
-                                    <img src="{{asset('assets/img/acesso-negado.png')}}" alt="">
-
-                                    <h3 class="m-t-30 text-light">Acesso negado!</h3>
+                                    <h3 class="m-t-30 text-light">ACESSO NEGADO!</h3>
                                     <p>Você não tem permissão para acessar essa página, ela é usada apenas para pessoas autorizadas.</p>
-                                    <a href="{{route('login')}}" class="btn btn-round btn-info mt-3">Fazer login</a>
+                                    <a href="{{route('login')}}" class="btn btn-round btn-outline-light mt-3">Fazer login</a>
                                 </div>
                             </div>
                         </div>

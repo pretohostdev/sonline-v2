@@ -24,9 +24,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
-        // Admin::factory(2)->create();
         Agendamento::factory(2)->create();
-        // Cliente::factory(2)->create();
         ContaWise::factory(2)->create();
         Documento::factory(2)->create();
         Endereco::factory(2)->create();

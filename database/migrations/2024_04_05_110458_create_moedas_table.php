@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('moedas', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('montante');
             $table->string('data');
+            $table->string('montante');
+            $table->enum('estado', ['0', '1', '2']); 
             $table->timestamps();
 
             $table->foreignId('user_id')->constrained('users');

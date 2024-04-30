@@ -82,58 +82,64 @@
                                 <div class="accordion" id="accordionsimplefill">
                                     <div class="mb-2 acd-group">
                                         
-                                        @if($moeda->estado == '0')
-                                            <div class="card-header bg-primary rounded-0">
+                                        @if (isset($moeda->estado))
+                                            
+                                                @if($moeda->estado == '0')
+                                                <div class="card-header bg-primary rounded-0">
+                                                    <h5 class="mb-0">
+                                                        <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Pendente</a>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
+                                                    <div class="card-body">
+                                                        <p>
+                                                            O estado <span class="text-dark">pendente</span>  significa que o seu pedido está sendo analizado pela nossa equipa
+                                                            para confirmar a verecidade dos dados. Esperamos que essa verificação ocorra o mais
+                                                            rápido possível para podermos atendê-lo logo.
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                            
+                                            @elseif($moeda->estado == '1')
+                                                <div class="card-header bg-success rounded-0">
+                                                    <h5 class="mb-0">
+                                                        <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Confirmado</a>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
+                                                    <div class="card-body">
+                                                        <p>
+                                                            O estado <span class="text-dark">confirmado</span> significa que o seu pedido já foi analizado pela nossa equipa
+                                                        e confirmou a verecidade dos seus dados. Em breve lhe mandaremos uma mensagem de email, confirmando a sua operação.
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                            @else
+                                            <div class="card-header bg-danger rounded-0">
                                                 <h5 class="mb-0">
-                                                    <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Pendente</a>
+                                                    <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Cancelado</a>
                                                 </h5>
                                             </div>
 
                                             <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
                                                 <div class="card-body">
                                                     <p>
-                                                        O estado <span class="text-dark">pendente</span>  significa que o seu pedido está sendo analizado pela nossa equipa
-                                                        para confirmar a verecidade dos dados. Esperamos que essa verificação ocorra o mais
-                                                        rápido possível para podermos atendê-lo logo.
+                                                        O estado <span class="text-dark">cancelado</span> significa que o seu pedido já foi analizado pela nossa equipa
+                                                        e não conseguiu confirmar a verecidade dos seus dados. Desejamos que reveja seus dados e envia-nos no.
                                                     </p>
-    
+
                                                 </div>
                                             </div>
-                                        
-                                        @elseif($moeda->estado == '1')
-                                            <div class="card-header bg-success rounded-0">
-                                                <h5 class="mb-0">
-                                                    <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Confirmado</a>
-                                                </h5>
-                                            </div>
 
-                                            <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
-                                                <div class="card-body">
-                                                    <p>
-                                                        O estado <span class="text-dark">confirmado</span> significa que o seu pedido já foi analizado pela nossa equipa
-                                                       e confirmou a verecidade dos seus dados. Em breve lhe mandaremos uma mensagem de email, confirmando a sua operação.
-                                                    </p>
-    
-                                                </div>
-                                            </div>
-                                        @else
-                                        <div class="card-header bg-danger rounded-0">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Cancelado</a>
-                                            </h5>
-                                        </div>
+                                            @endif
 
-                                        <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
-                                            <div class="card-body">
-                                                <p>
-                                                    O estado <span class="text-dark">cancelado</span> significa que o seu pedido já foi analizado pela nossa equipa
-                                                    e não conseguiu confirmar a verecidade dos seus dados. Desejamos que reveja seus dados e envia-nos no.
-                                                </p>
+                                        @endif
 
-                                            </div>
-                                        </div>
-
-                                        @endif          
+                                                  
                                         
                                     </div>
 
@@ -147,12 +153,14 @@
                                             <div class="card-body d-flex justify-content-center">
 
                                                 <div class="col-lg-6">
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item">Valor pago: <span class="text-dark">{{ $moeda->valor }} €</span> </li>
-                                                        <li class="list-group-item">País de origem do produto: <span class="text-dark">{{ $moeda->paisOrigem }}</span> </li>
-                                                        <li class="list-group-item">Data de destino do produto: <span class="text-dark">{{ $moeda->paisDestino }}</span> </li>
-                                                        <li class="list-group-item">Data do redirecionamento: <span class="text-dark">{{ $moeda->data }}</span> </li>
-                                                    </ul>
+                                                    @if (isset($moeda->valor))
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item">Valor pago: <span class="text-dark">{{ $moeda->valor }} €</span> </li>
+                                                            <li class="list-group-item">País de origem do produto: <span class="text-dark">{{ $moeda->paisOrigem }}</span> </li>
+                                                            <li class="list-group-item">Data de destino do produto: <span class="text-dark">{{ $moeda->paisDestino }}</span> </li>
+                                                            <li class="list-group-item">Data do redirecionamento: <span class="text-dark">{{ $moeda->data }}</span> </li>
+                                                        </ul>
+                                                    @endif
                                                 </div>
                                                
                                                 
@@ -173,21 +181,17 @@
                                                 <table class="table mb-0">
                                                     <thead class="bg-secondary">
                                                         <tr style="color:white">
-                                                            <th scope="col">Data</th>
-                                                            <th scope="col">País de origem</th>
-                                                            <th scope="col">País de destino</th>
-                                                            <th scope="col">Valor</th>
-                                                            <th scope="col">Estado</th>
+                                                            <th scope="col">Nome da moeda</th>
+                                                            <th scope="col">Montante</th>
+                                                            <th scope="col">Data de Solicitação</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach ($moeda->listaRedirecionamentos as $red)
+                                                        @foreach ($moeda->listaSolicitacoaMoedas as $m)
                                                         <tr>
-                                                            <td>{{ $red->data }}</td>
-                                                            <td>{{ $red->paisOrigem  }}</td>
-                                                            <td>{{ $red->paisDestino }}</td>
-                                                            <td>{{ $red->valor }}</td>
-                                                            <td>{{ $red->estado }}</td>
+                                                            <td>{{ $m->nome }}</td>
+                                                            <td>{{ $m->montante  }}</td>
+                                                            <td>{{ $m->data }}</td>
                                                         </tr>
                                                         @endforeach
                                                         

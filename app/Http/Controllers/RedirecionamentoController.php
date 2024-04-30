@@ -45,7 +45,7 @@ class RedirecionamentoController extends Controller
         // Adicionar dados a tabela Produto
         $id = Auth::id();
 
-         $dados = json_decode($request->getContent(), true);
+        $dados = json_decode($request->getContent(), true);
 
         try {
 
@@ -134,11 +134,15 @@ class RedirecionamentoController extends Controller
         $id = Auth::id();
 
         $redirecionamento = Redirecionamento::find($id);
-
         $cliente = User::find($id);
 
+        // return $redirecionamento;
+
         // Verificar se o cliente já efectuou algum redirecionamento de produto
-        if(isset($cliente->redirecionamento->id)){
+        if($cliente->redirecionamentos->count() > 0){
+
+            $clientesComRedirecionamento = $cliente->redirecionamentos;
+
             $redirecionamento = (Object)[
                 'data' => $redirecionamento->data,
                 'estado' => $redirecionamento->estado,
@@ -147,22 +151,19 @@ class RedirecionamentoController extends Controller
                 'paisDestino' => $redirecionamento->paisDestino,
                 'listaRedirecionamentos' => $clientesComRedirecionamento
             ];
+            
         }
         else{
-                $redirecionamento = (Object)[
-                    'data' => '',
-                    'estado' => '',
-                    'valor' => '',
-                    'paisOrigem' => '',
-                    'paisDestino' => '',
-                    'listaRedirecionamentos' => []
-                ];
+            
+            $redirecionamento = (Object)[
+                'data' => '',
+                'estado' => '',
+                'valor' => '',
+                'paisOrigem' => '',
+                'paisDestino' => '',
+                'listaRedirecionamentos' => []
+            ];
         }
-
-
-        $clientesComRedirecionamento = $cliente->redirecionamentos;
-
-        
 
         return view('redirecionamento.show', compact('redirecionamento'));
     }

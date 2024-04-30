@@ -15,6 +15,7 @@ class Moeda extends Model
     protected $fillable = [
         'nome', 
         'data',
+        'estado',
         'montante'
     ];
 

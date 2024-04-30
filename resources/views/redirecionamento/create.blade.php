@@ -142,7 +142,7 @@
 
                         <div class="input-group mb-3" id="divKwanzaRedirecionamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-danger text-light" id="tipoEnvio">
+                                <span class="input-group-text bg-primary text-light" id="tipoEnvio">
                                     {{-- Preenchimento automático --}}
                                 </span>
                             </div>
@@ -151,7 +151,7 @@
 
                           <div class="input-group mb-3" id="divDolarRedirecionamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-danger text-light">Valor</span>
+                                <span class="input-group-text bg-primary text-light">Valor</span>
                             </div>
                             <input type="text" class="form-control" id="valorConvertido" oninput="conversaoMoeda(id)" readonly>
                           </div>
@@ -159,14 +159,14 @@
 
                           <div class="input-group mb-3" id="divTaxaServico">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-danger text-light">Taxa de Serviço</span>
+                                <span class="input-group-text bg-primary text-light">Taxa de Serviço</span>
                             </div>
                             <input type="text" class="form-control" id="inputTaxaServico" value="2,99€" readonly>
                           </div>
 
                           <div class="input-group mb-3" id="divTaxaArmazenamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-danger text-light">Taxa de armazenamento</span>
+                                <span class="input-group-text bg-primary text-light">Taxa de armazenamento</span>
                             </div>
                             <input type="text" class="form-control" id="inputTaxaArmazenamento" value="4,99€" readonly>
                           </div>
@@ -201,7 +201,6 @@
             var paisDestino = document.getElementById('paisDestino').value;
             var descricao = document.getElementById('descricao').value;
             var user_id =  document.getElementById('user_id').value;
-            // var valorRedirecionamento = valorConvertido.value;
 
             var valorRedirecionemto = valorConvertido.value.replace('€', '');
 

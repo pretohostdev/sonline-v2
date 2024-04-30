@@ -82,59 +82,62 @@
                                 <div class="accordion" id="accordionsimplefill">
                                     <div class="mb-2 acd-group">
                                         
-                                        @if($redirecionamento->estado == '0')
-                                            <div class="card-header bg-primary rounded-0">
-                                                <h5 class="mb-0">
-                                                    <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Pendente</a>
-                                                </h5>
-                                            </div>
-
-                                            <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
-                                                <div class="card-body">
-                                                    <p>
-                                                        O estado <span class="text-dark">pendente</span>  significa que o seu pedido está sendo analizado pela nossa equipa
-                                                        para confirmar a verecidade dos dados. Esperamos que essa verificação ocorra o mais
-                                                        rápido possível para podermos atendê-lo logo.
-                                                    </p>
-    
-                                                </div>
-                                            </div>
+                                        @if (isset($redirecionamento->id))
                                         
-                                        @elseif($redirecionamento->estado == '1')
-                                            <div class="card-header bg-success rounded-0">
-                                                <h5 class="mb-0">
-                                                    <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Confirmado</a>
-                                                </h5>
-                                            </div>
+                                                @if($redirecionamento->estado == '0')
+                                                    <div class="card-header bg-primary rounded-0">
+                                                        <h5 class="mb-0">
+                                                            <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Pendente</a>
+                                                        </h5>
+                                                    </div>
 
-                                            <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
-                                                <div class="card-body">
-                                                    <p>
-                                                        O estado <span class="text-dark">confirmado</span> significa que o seu pedido já foi analizado pela nossa equipa
-                                                       e confirmou a verecidade dos seus dados. Em breve lhe mandaremos uma mensagem de email, confirmando a sua operação.
-                                                    </p>
-    
-                                                </div>
-                                            </div>
-                                        @else
-                                        <div class="card-header bg-danger rounded-0">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Cancelado</a>
-                                            </h5>
-                                        </div>
+                                                    <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
+                                                        <div class="card-body">
+                                                            <p>
+                                                                O estado <span class="text-dark">pendente</span>  significa que o seu pedido está sendo analizado pela nossa equipa
+                                                                para confirmar a verecidade dos dados. Esperamos que essa verificação ocorra o mais
+                                                                rápido possível para podermos atendê-lo logo.
+                                                            </p>
 
-                                        <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
-                                            <div class="card-body">
-                                                <p>
-                                                    O estado <span class="text-dark">cancelado</span> significa que o seu pedido já foi analizado pela nossa equipa
-                                                    e não conseguiu confirmar a verecidade dos seus dados. Desejamos que reveja seus dados e envia-nos no.
-                                                </p>
+                                                        </div>
+                                                    </div>
+                                            
+                                                @elseif($redirecionamento->estado == '1')
+                                                    <div class="card-header bg-success rounded-0">
+                                                        <h5 class="mb-0">
+                                                            <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Confirmado</a>
+                                                        </h5>
+                                                    </div>
 
-                                            </div>
-                                        </div>
+                                                    <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
+                                                        <div class="card-body">
+                                                            <p>
+                                                                O estado <span class="text-dark">confirmado</span> significa que o seu pedido já foi analizado pela nossa equipa
+                                                            e confirmou a verecidade dos seus dados. Em breve lhe mandaremos uma mensagem de email, confirmando a sua operação.
+                                                            </p>
 
-                                        @endif          
-                                        
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <div class="card-header bg-danger rounded-0">
+                                                        <h5 class="mb-0">
+                                                            <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Cancelado</a>
+                                                        </h5>
+                                                    </div>
+
+                                                    <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
+                                                        <div class="card-body">
+                                                            <p>
+                                                                O estado <span class="text-dark">cancelado</span> significa que o seu pedido já foi analizado pela nossa equipa
+                                                                e não conseguiu confirmar a verecidade dos seus dados. Desejamos que reveja seus dados e envia-nos no.
+                                                            </p>
+
+                                                        </div>
+                                                    </div>
+                                                @endif
+
+                                        @endif
+
                                     </div>
 
                                 </div>
@@ -147,12 +150,17 @@
                                             <div class="card-body d-flex justify-content-center">
 
                                                 <div class="col-lg-6">
+                                                    @if (isset($redirecionamento->id))
+                                                        
                                                     <ul class="list-group">
                                                         <li class="list-group-item">Valor pago: <span class="text-dark">{{ $redirecionamento->valor }} €</span> </li>
                                                         <li class="list-group-item">País de origem do produto: <span class="text-dark">{{ $redirecionamento->paisOrigem }}</span> </li>
                                                         <li class="list-group-item">Data de destino do produto: <span class="text-dark">{{ $redirecionamento->paisDestino }}</span> </li>
                                                         <li class="list-group-item">Data do redirecionamento: <span class="text-dark">{{ $redirecionamento->data }}</span> </li>
                                                     </ul>
+
+                                                    @endif
+                                                    
                                                 </div>
                                                
                                                 
