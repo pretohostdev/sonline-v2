@@ -87,7 +87,8 @@ class ContaWiseController extends Controller
         // return "Clicou no estado da solicitação da conta";
         $id = Auth::id();
 
-        $conta = ContaWise::find($id);
+        $conta = ContaWise::where('user_id', $id)->latest()->first();
+
         $cliente = User::find($id);
 
         // Verificar se o cliente já efectuou alguma solicitação de abertura de conta

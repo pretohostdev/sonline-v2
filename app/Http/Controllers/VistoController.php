@@ -71,12 +71,10 @@ class VistoController extends Controller
     {
         $id = Auth::id();
 
-        // return $id;
-
-        $visto = Visto::find($id);
+        $conta = Visto::where('user_id', $id)->latest()->first();
         $cliente = User::find($id);
 
-        // Verificar se o cliente já efectuou algum redirecionamento de produto
+        // Verificar se o cliente já efectuou alguma solicitação de visto
         if($cliente->vistos->count() > 0){
 
             $clientesComSolicitaVisto = $cliente->vistos;

@@ -105,7 +105,7 @@
                         </div>
                        
 
-                        <button type="submit" class="btn btn-primary mt-3">Enviar pedido</button>
+                        <button type="submit" class="btn bg-gradient text-light mt-3">Enviar pedido</button>
                     </form>
                 </div>
 
@@ -118,7 +118,7 @@
 
                 {{-- Mensagem de envio com sucesso --}}
                 <div id="mensagemSucesso">
-                    <div class="alert alert-info d-flex alert-dismissible fade show" role="alert">
+                    <div class="alert bg-gradient text-light d-flex alert-dismissible fade show" role="alert">
                         Pedido de redirecionamento enviado com sucesso!
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <i class="ti ti-close"></i>
@@ -142,7 +142,7 @@
 
                         <div class="input-group mb-3" id="divKwanzaRedirecionamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-primary text-light" id="tipoEnvio">
+                                <span class="input-group-text bg-gradient text-light" id="tipoEnvio">
                                     {{-- Preenchimento automático --}}
                                 </span>
                             </div>
@@ -151,7 +151,7 @@
 
                           <div class="input-group mb-3" id="divDolarRedirecionamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-primary text-light">Valor</span>
+                                <span class="input-group-text bg-gradient text-light">Valor</span>
                             </div>
                             <input type="text" class="form-control" id="valorConvertido" oninput="conversaoMoeda(id)" readonly>
                           </div>
@@ -159,14 +159,14 @@
 
                           <div class="input-group mb-3" id="divTaxaServico">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-primary text-light">Taxa de Serviço</span>
+                                <span class="input-group-text bg-gradient text-light">Taxa de Serviço</span>
                             </div>
                             <input type="text" class="form-control" id="inputTaxaServico" value="2,99€" readonly>
                           </div>
 
                           <div class="input-group mb-3" id="divTaxaArmazenamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-primary text-light">Taxa de armazenamento</span>
+                                <span class="input-group-text bg-gradient text-light">Taxa de armazenamento</span>
                             </div>
                             <input type="text" class="form-control" id="inputTaxaArmazenamento" value="4,99€" readonly>
                           </div>

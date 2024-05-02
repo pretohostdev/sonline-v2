@@ -25,7 +25,7 @@ class User extends Authenticatable
         'dataNascimento', 
         'genero', 
         'contacto',
-        'id_redirecionamento'
+        'img'
     ];
 
 

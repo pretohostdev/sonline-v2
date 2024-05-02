@@ -31,6 +31,6 @@ class Redirecionamento extends Model
 
     public function produto()
     {
-        return $this->hasOne(Produto::class);
+        return $this->belongsTo(Produto::class);
     }
 }

@@ -12,10 +12,17 @@ class Produto extends Model
     // Defina a tabela correspondente
     protected $table = 'produtos';
 
-    protected $fillable = ['nome','descricao','preco','marca','imagem'];
+    protected $fillable = [
+        'nome',
+        'descricao',
+        'preco',
+        'marca',
+        'imagem',
+        'redirecionamento_id'
+    ];
 
     public function redirecionamento()
     {
-        return $this->belongsTo(Redirecionamento::class);
+        return $this->hasOne(Redirecionamento::class);
     }
 }

@@ -181,6 +181,7 @@
                                                 <table class="table mb-0">
                                                     <thead class="bg-secondary">
                                                         <tr style="color:white">
+                                                            <th scope="col">Produto</th>
                                                             <th scope="col">Data</th>
                                                             <th scope="col">País de origem</th>
                                                             <th scope="col">País de destino</th>
@@ -191,6 +192,7 @@
                                                     <tbody>
                                                         @foreach ($redirecionamento->listaRedirecionamentos as $red)
                                                         <tr>
+                                                            <td>{{ $red->produto->nome }}</td>
                                                             <td>{{ $red->data }}</td>
                                                             <td>{{ $red->paisOrigem  }}</td>
                                                             <td>{{ $red->paisDestino }}</td>

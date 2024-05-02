@@ -133,23 +133,26 @@ class RedirecionamentoController extends Controller
     {
         $id = Auth::id();
 
-        $redirecionamento = Redirecionamento::find($id);
+        
+        $redirecionamento = Redirecionamento::where('user_id', $id)->latest()->first();
+        
         $cliente = User::find($id);
 
-        // return $redirecionamento;
+        $clienteRedirecionamento = User::with('redirecionamentos.produto')->find($id);
 
         // Verificar se o cliente já efectuou algum redirecionamento de produto
-        if($cliente->redirecionamentos->count() > 0){
+        if($clienteRedirecionamento->redirecionamentos->count() > 0){
 
-            $clientesComRedirecionamento = $cliente->redirecionamentos;
+            $listaRedirecionamento = $clienteRedirecionamento->redirecionamentos;
 
             $redirecionamento = (Object)[
+                'id' => $redirecionamento->id,
                 'data' => $redirecionamento->data,
                 'estado' => $redirecionamento->estado,
                 'valor' => $redirecionamento->valor,
                 'paisOrigem' => $redirecionamento->paisOrigem,
                 'paisDestino' => $redirecionamento->paisDestino,
-                'listaRedirecionamentos' => $clientesComRedirecionamento
+                'listaRedirecionamentos' => $listaRedirecionamento
             ];
             
         }

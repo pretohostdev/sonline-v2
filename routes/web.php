@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\SonlineController;
+// use App\Http\Controllers\SonlineController;
 use App\Http\Controllers\AgendamentoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContaWiseController;
@@ -75,12 +75,18 @@ Route::get('teste/', function () {
     return view('teste');
 })->name('teste');
 
+
+
+
+
 Route::middleware(['admin'])->group(function(){
     Route::get('admin', function(){
         dd('Vc é um admin');
     });
 
-    Route::get('sonline/', [SonlineController::class, 'index'])->name('sonline');
+    Route::get('homeAdmin/', [AdminController::class, 'index'])->name('homeAdmin');
+    Route::get('listarCliente/', [AdminController::class, 'listarCliente'])->name('admin.user.index');
+    Route::get('EditarCliente/', [AdminController::class, 'EditarCliente'])->name('admin.user.editar');
 });
 
 Route::middleware(['cliente'])->group(function(){
@@ -96,7 +102,7 @@ Route::middleware(['cliente'])->group(function(){
     ]);
 
     Route::resource('user', UserController::class)->except(['store']);
-    Route::get('home', [HomeClienteController::class, 'index'])->name('homeCliente');
+    Route::get('homeCliente', [HomeClienteController::class, 'index'])->name('homeCliente');
     Route::resource('redirecionamento', RedirecionamentoController::class);
 
 

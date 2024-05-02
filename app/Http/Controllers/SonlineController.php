@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Moeda;
-use App\Models\Cliente;
+use App\Models\User;
 use App\Models\Agendamento;
 
 use Illuminate\Support\Carbon; // Essa classe vai ajudar a trabalhar com datas
@@ -17,49 +17,49 @@ class SonlineController extends Controller
      */
     public function index()
     {
-        $ano = Carbon::now()->year; // Pega o ano actual
-        $mes = Carbon::now()->month; // Pega o mes actual
+    //     $ano = Carbon::now()->year; // Pega o ano actual
+    //     $mes = Carbon::now()->month; // Pega o mes actual
 
-        // Obter todos os clientes que efectuaram a agendamento no ano e mes em curso
+    //     // Obter todos os clientes que efectuaram a agendamento no ano e mes em curso
        
-        $totalClientesAgendados = Cliente::whereHas('agendamento', function ($query) use ($ano, $mes) {
-            $query->whereYear('data', '=', $ano)
-            ->whereMonth('data', '=', $mes);
-        })->get();
+    //     $totalClientesAgendados = User::whereHas('agendamento', function ($query) use ($ano, $mes) {
+    //         $query->whereYear('data', '=', $ano)
+    //         ->whereMonth('data', '=', $mes);
+    //     })->get();
 
-        $totalAgendados = $totalClientesAgendados->count() > 0 ? $totalClientesAgendados->count() : 0;
+    //     $totalAgendados = $totalClientesAgendados->count() > 0 ? $totalClientesAgendados->count() : 0;
 
-        // Obter todos os clientes que solicitaram a abertura de conta no ano e mes em curso
+    //     // Obter todos os clientes que solicitaram a abertura de conta no ano e mes em curso
 
-        $totalClientesConta = Cliente::whereHas('contaWise', function ($query) use ($ano, $mes) {
-            $query->whereYear('data', '=', $ano)
-            ->whereMonth('data', '=', $mes);
-        })->get();
+    //     $totalClientesConta = User::whereHas('contaWise', function ($query) use ($ano, $mes) {
+    //         $query->whereYear('data', '=', $ano)
+    //         ->whereMonth('data', '=', $mes);
+    //     })->get();
 
-        $totalConta = $totalClientesConta->count()? $totalClientesConta->count(): 0;
+    //     $totalConta = $totalClientesConta->count()? $totalClientesConta->count(): 0;
 
-        // Obter todos os clientes que solicitaram moedas
+    //     // Obter todos os clientes que solicitaram moedas
 
-        $totalClientesMoeda = Cliente::whereHas('moedas', function ($query) use ($ano, $mes) {
-            $query->whereYear('data', '=', $ano)
-            ->whereMonth('data', '=', $mes);
-        })->get();
+    //     $totalClientesMoeda = User::whereHas('moedas', function ($query) use ($ano, $mes) {
+    //         $query->whereYear('data', '=', $ano)
+    //         ->whereMonth('data', '=', $mes);
+    //     })->get();
 
-        $totalMoeda = $totalClientesMoeda->count() > 0 ? $totalClientesMoeda->count(): 0;
+    //     $totalMoeda = $totalClientesMoeda->count() > 0 ? $totalClientesMoeda->count(): 0;
 
 
-        // Total de clientes inscritos no mes em curso
+    //     // Total de clientes inscritos no mes em curso
 
-        $totalClientes = Cliente::all()->count() > 0 ?  Cliente::all()->count() : 0;
+    //     $totalClientes = User::all()->count() > 0 ?  User::all()->count() : 0;
 
-         $dados = [
-            'totalClientesAgendados' => $totalAgendados,
-            'totalConta' => $totalConta,
-            'totalMoedas' => $totalMoeda,
-            'totalClientes' => $totalClientes
-        ];
+    //      $dados = [
+    //         'totalClientesAgendados' => $totalAgendados,
+    //         'totalConta' => $totalConta,
+    //         'totalMoedas' => $totalMoeda,
+    //         'totalClientes' => $totalClientes
+    //     ];
 
-        return view('sonline', $dados);
+    //     return view('sonline', $dados);
     }
 
     /**

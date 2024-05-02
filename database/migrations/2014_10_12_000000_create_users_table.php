@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('genero');
             $table->string('tipo');
             $table->string('contacto');
+            $table->string('img')->nullable();
             $table->string('dataNascimento');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

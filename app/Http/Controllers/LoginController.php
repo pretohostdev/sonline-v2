@@ -36,18 +36,22 @@ class LoginController extends Controller
  
         if (Auth::attempt($credenciais)) {
 
-            // dd('Sucesso!');
             $request->session()->regenerate();
 
-            return redirect()->intended('home');
+            // Verificar o tipo de usuário
+            $usuario = Auth::user();
+
+            if ($usuario->tipo == 'cliente') {
+                return redirect()->intended('homeCliente');
+            }
+            else{
+                return redirect()->intended('homeAdmin');
+            }
+
         }
 
         dd('Falha ao Logar');
         return "Erro ao tentar cadastrar";
- 
-        // return back()->withErrors([
-        //     'email' => 'The provided credentials do not match our records.',
-        // ])->onlyInput('email');
     }
 
     /**

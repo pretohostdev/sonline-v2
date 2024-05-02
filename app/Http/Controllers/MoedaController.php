@@ -71,9 +71,8 @@ class MoedaController extends Controller
     {
         $id = Auth::id();
 
-        // return $id;
-
-        $moeda = Moeda::find($id);
+        $conta = Moeda::where('user_id', $id)->latest()->first();
+        
         $cliente = User::find($id);
 
         // Verificar se o cliente já efectuou algum redirecionamento de produto

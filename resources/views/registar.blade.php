@@ -45,7 +45,7 @@
                     <div class="container-fluid p-0">
                         <div class="row no-gutters">
                             <div class="col-sm-6 col-lg-5 col-xxl-3  align-self-center order-2 order-sm-1">
-                                <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center h-100-vh">
                                     
                                     <div class="register p-5">
 
@@ -125,30 +125,29 @@
                                                 </div>
                                                 
                                                 <div class="col-12 mt-3" id="divRegistar">
-                                                    <button type="submit" class="btn btn-primary text-uppercase" id="btn_testar">Registar</button>
+                                                    <button type="submit" class="btn bg-gradient text-uppercase text-light" id="btn_testar">Registar</button>
 
-                                                    <div class="spinner-border text-dark" role="status" id="spinnerRegistar" style="margin-right: 10px">
+                                                    <div class="spinner-border text-primary" role="status" id="spinnerRegistar" style="margin-right: 10px">
                                                         <span class="sr-only">Loading...</span>
-                                                    </div>
-
-                                                    {{-- Mensagem de envio com sucesso --}}
-                                                    <div id="registoMensagem">
-                                                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                                                            Usuário cadastrado com sucesso!
-                                                            <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close">
-                                                                <i class="ti ti-close"></i>
-                                                            </button>
-                                                        </div>
                                                     </div>
 
                                                 </div>
 
                                                 </form>
+
+                                                {{-- Mensagem de envio com sucesso --}}
+                                                <div id="registoMensagem" class="mt-2">
+                                                    <div class="alert alert-dismissible fade show rounded text-center  bg-gradient" role="alert" style="color:white">
+                                                        Usuário cadastrado com sucesso!
+                                                        <button type="button" class="close mb-2" data-dismiss="alert" aria-label="Close">
+                                                            <i class="ti ti-close"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
                                                 <div class="col-12 mt-3">
                                                     <p>Já tem uma conta ?<a href="{{route('login')}}" class="text-primary"> Entrar</a></p>
                                                 </div>
-
-                                                
 
                                             </div>
                                     </div>
@@ -172,16 +171,32 @@
             var email = document.getElementById('email');
             email.addEventListener('blur', function(){
 
-                const email = this.value;
-                const pesquisaEmail = existeEmail(email);
+                const valor = this.value;
+                const pesquisaEmail = existeEmail(valor);
                 const emailMsg = document.getElementById('emailMensagem');
 
                 pesquisaEmail
                 .then(
                     valor =>
                     {
-                        if(valor.existe == 'true') // Verifique se número da casa já está no sistema
+                        if(valor.existe == 'true'){ // Verifique se número da casa já está no sistema
                             emailMsg.innerHTML = "Email já existente!";
+                            // email.value = "";
+                            // console.log(email);
+
+                            function operacao() {
+                                console.log("Operação realizada!");
+                                email.value = "";
+                            }
+
+                            // Criando o intervalo de 1 segundo para apagar o email entrado
+                            var intervalo = setInterval(()=>{email.value = ""}, 1000);
+
+                            // Parando o intervalo após 5 segundos
+                            setTimeout(function() {
+                                clearInterval(intervalo);
+                            }, 1000);
+                        }
                         else{
                             emailMsg.innerHTML = "";
                         }

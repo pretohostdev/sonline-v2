@@ -1,6 +1,6 @@
 @extends('layout.container.app')
 
-@section('titulo', 'Principal')
+@section('titulo', 'Inicio')
 
 @push('styles')
 
@@ -67,7 +67,7 @@
                                     <div class="profile-img text-center rounded-circle">
                                         <div class="pt-5">
                                             <div class="bg-img m-auto">
-                                                <img src="assets/img/avtar/01.jpg" class="img-fluid" alt="users-avatar">
+                                                <img src="{{asset('assets/img/perfil.png')}}" class="img-fluid" alt="users-avatar">
                                             </div>
                                             <div class="profile pt-4">
                                                 <h4 class="mb-1">{{ $cliente->nome }}</h4>
@@ -101,10 +101,6 @@
                                         </ul>
                                     </div>
 
-                                    {{-- <div class="profile-btn text-center">
-                                        <div><button class="btn btn-light text-primary mb-2">Atualizar foto</button></div>
-                                        <div><button class="btn btn-danger">Delete</button></div>
-                                    </div> --}}
                                 </div>
                             </div>
                             <div class="col-xl-5 col-md-6 col-12 border-t border-right">
@@ -113,9 +109,10 @@
                                         <h5 class="mb-0 py-2">Editar dados pessoais</h5>
                                     </div>
                                     <div class="p-4">
-                                        <form action="{{ route('user.update', $cliente->id) }}" method="POST" id="formEditarDados">
+                                        {{-- action="{{ route('user.update', $cliente->id) }}" --}}
+                                        <form method="POST" id="formEditarDados">
                                             @csrf
-                                            @method('PUT')
+                                            @method('POST')
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
@@ -178,7 +175,7 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Atualizar dados</button>
+                                            <button type="submit" class="btn bg-gradient text-light">Atualizar dados</button>
                                         </form>
                                     </div>
                                 </div>
@@ -191,19 +188,19 @@
                                     <div class="p-4">
                                         <form>
                                             <div class="form-group">
-                                                <a href="{{ route('visto.estado') }}" class="btn btn-block btn-primary" id="estadoVisto" >Estado do visto</a>
+                                                <a href="{{ route('visto.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoVisto" >Estado do visto</a>
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="{{ route('conta.estado') }}" class="btn btn-block btn-primary" id="estadoVisto" >Estado da abertura de conta</a>
+                                                <a href="{{ route('conta.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoVisto" >Estado da abertura de conta</a>
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="{{ route('moeda.estado') }}" class="btn btn-block btn-primary" id="estadoVisto" >Estado da solicitação da moeda</a>
+                                                <a href="{{ route('moeda.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoVisto" >Estado da solicitação da moeda</a>
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="{{ route('redirecionamento.estado') }}" class="btn btn-block btn-primary" id="estadoVisto" >Estado do redirecionamento de Produto</a>
+                                                <a href="{{ route('redirecionamento.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoVisto" >Estado do redirecionamento de Produto</a>
                                             </div>
                                             
                                         </form>
@@ -220,10 +217,10 @@
 </div>
 
     <script>
-        // document.getElementById('formEditarDados').addEventListener('submit', function(event) {
+        document.getElementById('formEditarDados').addEventListener('submit', function(event) {
             
-            // event.preventDefault(); // Impedir o envio padrão do formulário
-            // console.log('Estou funcionando...');
+            event.preventDefault(); // Impedir o envio padrão do formulário
+            console.log('Estou funcionando...');
 
             // var spinnerRedirecionar = document.getElementById('spinnerRedirecionar');
             //     spinnerRedirecionar.style.display = "block";
@@ -231,52 +228,82 @@
             // var mensagemSucesso = document.getElementById('mensagemSucesso');
 
             // Pegar os dados vindo do formulário
-            // var nomCompleto = document.getElementById('nomeCompleto').value;
-            // var contacto = document.getElementById('contacto').value;
-            // var diaNascimento = document.getElementById('diaNascimento').value;
-            // var mesNascimento = document.getElementById('mesNascimento').value;
-            // var anoNascimento = document.getElementById('anoNascimento').value;
-            // var cidade = document.getElementById('cidade').value;             
-            // var bairro = document.getElementById('bairro').value;             
-            // var pais = document.getElementById('pais').value;             
+            var nomCompleto = document.getElementById('nomeCompleto').value;
+            var contacto = document.getElementById('contacto').value;
+            var diaNascimento = document.getElementById('diaNascimento').value;
+            var mesNascimento = document.getElementById('mesNascimento').value;
+            var anoNascimento = document.getElementById('anoNascimento').value;
+            var cidade = document.getElementById('cidade').value;             
+            var bairro = document.getElementById('bairro').value;             
+            var pais = document.getElementById('pais').value;             
             
-            // var user_id =  document.getElementById('user_id').value;
+            var user_id =  document.getElementById('user_id').value;
             
-            // const cliente = {
-            //     nome: nomeCompleto,
-            //     contacto:contacto,
-            //     diaNascimento:diaNascimento,
-            //     mesNascimento: mesNascimento,
-            //     anoNascimento:anoNascimento,
-            //     pais:pais,
-            //     cidade:cidade,
-            //     bairro:bairro,
-            //     id: user_id,
-            // };
+            const cliente = {
+                pais:pais,
+                id: user_id,
+                bairro:bairro,
+                cidade:cidade,
+                contacto:contacto,
+                nome: nomeCompleto,
+                diaNascimento:diaNascimento,
+                anoNascimento:anoNascimento,
+                mesNascimento: mesNascimento,
+            };
 
-            // async function atualizarDados(){
-            // const response = await fetch('http://localhost:8000/api/user/'+user_id,
-            // {
-            //     method:'PUT',
-            //     headers: {
-            //         'Accept': 'application/json'
-            //     }
-            // });
-            // const dados = await response.json();
-            // return dados;
-        // }
+            fetch('http://localhost:8000/api/userAtualizar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(cliente),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao salvar os dados:' + response);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // if(data.cadastrado == 'true'){
+                //     spinnerRedirecionar.style.display = "none";
+                //     mensagemSucesso.style.display = "block";
+                // }else{
+                //     console.log('Não cadastrado');
+                // }
 
-        // const dadosAtualizados = atualizarDados();
+                console.log(data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        // const dadosAtualizados = atualizarDados(user_id);
 
         // dadosAtualizados.then(
         //     dados=>{
         //         console.log(dados);
         //     }
         // );
+
+        // alert(cliente.id);
+
+        // async function atualizarDados(cliente){
+        //     const response = await fetch('http://localhost:8000/api/userAtualizar/',
+        //     {
+        //         method:'POST',
+        //         headers: {
+        //             'Accept': 'application/json'
+        //         },
+        //         body:JSON.stringify(cliente)
+        //     });
+        //     const dados = await response.json();
+        //     return dados;
+        //     }
             
             
 
-        // });
+        });
     </script>
 
 </div>

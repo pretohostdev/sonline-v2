@@ -107,40 +107,49 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update($id, Request $request)
+    public function update(Request $request)
     {
-        $cliente = User::find($id);
-
+        $dados = json_decode($request->getContent(), true);
+        
+        $cliente = User::find($dados['id']);
+        
         // Ogranizar a data de nascimento
-        $dataNascimento = $request->anoNascimento . "-". $request->mesNascimento . "-" . $request->diaNascimento;
-
+        $dataNascimento = $dados['anoNascimento'] . "-". $dados['mesNascimento'] . "-" . $dados['diaNascimento'];
+        
         // return $dataNascimento;
         
-        $cliente->name = $request->nome;
-        $cliente->genero = $request->genero;
-        $cliente->contacto = $request->contacto;
+        $cliente->name = $dados['nome'];
+        // $cliente->genero = $dados['genero'];
+        $cliente->contacto = $dados['contacto'];
         $cliente->dataNascimento = $dataNascimento;
-
-        // Se o id não estiver definido, significa que a tabela Endereço ainda não possui dados
-        if(!isset($cliente->endereco->id)){
-            $endereco = Endereco::create([
-                'pais'=> $request->pais,
-                'cidade' => $request->cidade,
-                'bairro' => $request->bairro,
-                'user_id' =>$id
-            ]);
-        }
-        else{ // Caso o endereço já esteja definido
-             
-            $cliente->endereco->pais = $request->pais;
-            $cliente->endereco->cidade = $request->cidade;
-            $cliente->endereco->bairro = $request->bairro;
-            $cliente->endereco->save();
-        }
-
-        $cliente->save();
         
-        return "Dados atualizado com successo!";
+        
+        
+        // Se o id não estiver definido, significa que a tabela Endereço ainda não possui dados
+        
+        // return response()->json(['atualizado' => $reuest->pais], 200);
+        
+        // return response()->json(['atualizado' => $cliente->endereco->id], 200);
+        // if (is_null($cliente->endereco)) {
+        //     $endereco = Endereco::create([
+        //         'pais'=> $dados['pais'],
+        //         'cidade' => $dados['cidade'],
+        //         'bairro' => $dados['bairro'],
+        //         'user_id' =>$id
+        //     ]);
+        // } 
+        // else{ // Caso o endereço já esteja definido
+            
+            $cliente->endereco->pais = $dados['pais'];
+            $cliente->endereco->cidade = $dados['cidade'];
+            $cliente->endereco->bairro = $dados['bairro'];
+            $cliente->endereco->save();
+        // }
+        
+        return response()->json(['atualizado' => 'true'], 200);
+        $cliente->save();
+
+        // return "Dados atualizado com successo!";
         // return "Clicou em atualizar dados " . $id;
     }
 

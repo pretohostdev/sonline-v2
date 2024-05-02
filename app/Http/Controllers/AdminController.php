@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; // Adicionar senhas criptografadas
 use Illuminate\Support\Facades\Validator; // Classe específica para fazer a validação dos campos
+
+use Illuminate\Support\Carbon; // Essa classe vai ajudar a trabalhar com datas
 
 class AdminController extends Controller
 {
@@ -15,7 +18,64 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $ano = Carbon::now()->year; // Pega o ano actual
+        $mes = Carbon::now()->month; // Pega o mes actual
+
+        // Obter todos os clientes que efectuaram a agendamento no ano e mes em curso
+       
+        $totalClientesAgendados = User::whereHas('agendamento', function ($query) use ($ano, $mes) {
+            $query->whereYear('data', '=', $ano)
+            ->whereMonth('data', '=', $mes);
+        })->get();
+
+        $totalAgendados = $totalClientesAgendados->count() > 0 ? $totalClientesAgendados->count() : 0;
+
+        // Obter todos os clientes que solicitaram a abertura de conta no ano e mes em curso
+
+        $totalClientesConta = User::whereHas('contaWise', function ($query) use ($ano, $mes) {
+            $query->whereYear('data', '=', $ano)
+            ->whereMonth('data', '=', $mes);
+        })->get();
+
+        $totalConta = $totalClientesConta->count()? $totalClientesConta->count(): 0;
+
+        // Obter todos os clientes que solicitaram moedas
+
+        $totalClientesMoeda = User::whereHas('moedas', function ($query) use ($ano, $mes) {
+            $query->whereYear('data', '=', $ano)
+            ->whereMonth('data', '=', $mes);
+        })->get();
+
+        $totalMoeda = $totalClientesMoeda->count() > 0 ? $totalClientesMoeda->count(): 0;
+
+
+        // Total de clientes inscritos no mes em curso
+
+        $totalClientes = User::all()->count() > 0 ?  User::all()->count() : 0;
+
+         $dados = [
+            'totalClientesAgendados' => $totalAgendados,
+            'totalConta' => $totalConta,
+            'totalMoedas' => $totalMoeda,
+            'totalClientes' => $totalClientes
+        ];
+
+        return view('admin.index', $dados);
+    }
+
+
+    public function listarCliente(){
+
+        // Lista de todos clientes do sistema
+        $clientes = User::where('tipo', "!=", 'admin')
+                ->where(function($query){
+                    $query->WhereHas('vistos')
+                    ->orWhereHas('moedas')
+                    ->orWhereHas('contaWise')
+                    ->orWhereHas('redirecionamentos');
+                })->paginate(10);
+
+        return view('admin.user.index', compact('clientes'));
     }
 
     /**

@@ -30,7 +30,7 @@ Route::post('/cadastrar', [UserController::class, 'store']);
 Route::post('/conta', [ContaWiseController::class, 'store']);
 Route::post('/redirecionamento', [RedirecionamentoController::class, 'store']);
 
-// Route::put('/user/{id}', [UserController::class, 'update']);
+Route::post('/userAtualizar', [UserController::class, 'update']);
 
 /*END-POINT DO SISTEMA SONLINE para verificar se o email do usuário já foi usado */
 Route::get('/existeEmail/{email}', [UserController::class, 'existeEmail']);
