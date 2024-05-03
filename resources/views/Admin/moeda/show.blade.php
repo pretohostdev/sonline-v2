@@ -1,5 +1,5 @@
 @extends('layout.container.app')
-@section('titulo', 'sonline-redirecionamento')
+@section('titulo', 'sonline-moeda')
 
 @push('styles')
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
@@ -42,13 +42,14 @@
                                     <a href="x"></a>
                                 </li>
                                 <li>
-                                    Redirecionamentos
+                                    Moedas
                                 </li>
                             </ol>
                         </nav>
                     </div>
 
                     @include('layout.componentes.cabecalho_admin_2')
+
 
                 </div>
     
@@ -68,29 +69,42 @@
                                 <thead class="bg-gradient text-light">
                                     <tr>
                                         <th>Nome</th>
-                                        <th>Email</th>
-                                        <th>Género</th>
-                                        <th>Contcto</th>
-                                        <th>Data Nascimento</th>
+                                        <th>Tipo de moeda</th>
+                                        <th>Data de solicitação</th>
+                                        <th>Montante</th>
+                                        <th>Estado</th>
                                         <th class="text-center">Opção</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     
-                                    @foreach ($clientes as $cliente)
+                                    @foreach ($moedas as $moeda)
                                     
                                         <tr data-id="{{ $cliente->id }}">
-                                            <td class="text-dark">{{$cliente->name}}</td>
-                                            <td class="text-dark">{{$cliente->email}}</td>
-                                            <td class="text-dark">{{$cliente->genero}}</td>
-                                            <td class="text-dark">{{$cliente->contacto}}</td>
-                                            <td class="text-dark"> {{$cliente->dataNascimento}}</td>
-                                            
-                                            <td>
-                                                <form action="{{ route('admin.visto.show', $cliente->id) }}">
-                                                    <button type="submit" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Ver</button>
-                                                </form>
+                                            <td class="text-dark">{{$cliente->nome}}</td>
+                                            <td class="text-dark">{{$moeda->nome}}</td>
+                                            <td class="text-dark">{{$moeda->data}}</td>
+                                            <td class="text-dark">{{$moeda->montante}}</td>
+                                            <td class="text-dark">
+                                                @if ($moeda->estado == "0")
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="rounded-circle bg-primary mr-2" style="width: 10px; height: 10px;"></div>
+                                                        Pendente
+                                                    </div>
+                                                @elseif ($moeda->estado == "1")
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="rounded-circle bg-success mr-2" style="width: 10px; height: 10px;"></div>
+                                                        Confirmado
+                                                    </div>
+                                                @else
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="rounded-circle bg-danger mr-2" style="width: 10px; height: 10px;"></div>
+                                                        Cancelado
+                                                    </div>
+                                                @endif
                                             </td>
+                                            
+                                            <td><button class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</button> </td>
                                         </tr>
 
                                     @endforeach
@@ -101,26 +115,13 @@
                             </table>
                             {{-- Link que representa a paginação --}}
                             <div class="pagination">
-                                {{ $clientes->links() }}
+                                {{ $moedas->links() }}
                             </div>
 
                         </div>
                     </div>
                 </div>
             </div>
-
-            <script>
-                tabelaClientes.addEventListener('click', function(event) {
-                var elementoClicado = event.target;
-                var linha = elementoClicado.closest('tr');
-                var id = linha.dataset.id;
-
-                console.log(id);
-                
-            });
-            </script>
-            
-
             
         </div>
 

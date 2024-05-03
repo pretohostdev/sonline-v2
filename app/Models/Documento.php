@@ -13,7 +13,11 @@ class Documento extends Model
     // Defina a tabela correspondente
     protected $table = 'documentos';
 
-    protected $fillable = ['nome', 'imagem'];
+    protected $fillable = [
+        'nome', 
+        'imagem',
+        'pdf'
+    ];
 
     public function cliente()
     {

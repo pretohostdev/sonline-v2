@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/cadastrar', [UserController::class, 'store']);
 
-Route::post('/conta', [ContaWiseController::class, 'store']);
+// Route::post('/conta', [ContaWiseController::class, 'store']);
 Route::post('/redirecionamento', [RedirecionamentoController::class, 'store']);
 
 Route::post('/userAtualizar', [UserController::class, 'update']);

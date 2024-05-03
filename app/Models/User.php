@@ -67,7 +67,7 @@ class User extends Authenticatable
 
     public function redirecionamentos()
     {
-        return $this->hasMany(Redirecionamento::class);
+        return $this->hasMany(Redirecionamento::class)->orderBy('created_at', 'desc');;
     }
 
     /**

@@ -121,7 +121,12 @@ class UserController extends Controller
         $cliente->name = $dados['nome'];
         $cliente->contacto = $dados['contacto'];
         $cliente->dataNascimento = $dataNascimento;
+
+        $cliente->save();
+
+        // return $cliente->id;
         
+        // return response()->json(['atualizado' => $cliente->id], 200);
         
         
         // Se o id não estiver definido, significa que a tabela Endereço ainda não possui dados
@@ -134,6 +139,7 @@ class UserController extends Controller
                 'pais'=> $dados['pais'],
                 'cidade' => $dados['cidade'],
                 'bairro' => $dados['bairro'],
+<<<<<<< HEAD
                 'user_id' =>$cliente->id
             ]);
         } 
@@ -147,6 +153,23 @@ class UserController extends Controller
             
             return response()->json(['atualizado' => $endereco_id], 200);
         $cliente->save();
+=======
+                'user_id' => $cliente->id
+            ]);
+        } 
+        else{ // Caso o endereço já esteja definido
+            $id = Endereco::where('user_id', $cliente->id)->first()->id;
+            $endereco = Endereco::find($id);
+            
+            $endereco->pais = $dados['pais'];
+            $endereco->cidade = $dados['cidade'];
+            $endereco->bairro = $dados['bairro'];
+            $endereco->save();
+        }
+        
+        
+        return response()->json(['atualizado' => 'true'], 200);
+>>>>>>> 0753294d4bbd1c8af3a0b8acf9b7f81160b31dfc
 
         // return "Dados atualizado com successo!";
         // return "Clicou em atualizar dados " . $id;
