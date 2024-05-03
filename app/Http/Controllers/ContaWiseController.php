@@ -34,8 +34,11 @@ class ContaWiseController extends Controller
     public function store(Request $request)
     {
 
-        // $dados = json_decode($request->getContent(), true);
+        // dd($request->comprovativo);
+        $documento = Documento::create([
 
+        ]);
+        $request->comprovativo->store('contas')
         // try {
         //     ContaWise::create([
         //         'data' => $dados['data'],
@@ -46,7 +49,7 @@ class ContaWiseController extends Controller
         // }
 
         // Retornar uma resposta, se necessário
-        return response()->json(['message' => 'Dados salvos com sucesso'], 200);
+        // return response()->json(['message' => 'Dados salvos com sucesso'], 200);
     }
 
     /**

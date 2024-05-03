@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('conta_wises', function (Blueprint $table) {
             $table->id();
             $table->date('data');
+            $table->date('comprovativo');
             $table->enum('estado', [0, 1, 2]);
             $table->timestamps();
 

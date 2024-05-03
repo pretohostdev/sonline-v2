@@ -84,8 +84,31 @@ Route::middleware(['admin'])->group(function(){
         dd('Vc é um admin');
     });
 
+
+    // Clientes 
     Route::get('homeAdmin/', [AdminController::class, 'index'])->name('homeAdmin');
     Route::get('listarCliente/', [AdminController::class, 'listarCliente'])->name('admin.user.index');
+
+     // Visto
+     Route::get('listarVistos/', [AdminController::class, 'listarVistos'])->name('admin.visto.index');
+     Route::get('mostrarVistos/{id}', [AdminController::class, 'mostrarVistos'])->name('admin.visto.show');
+
+    // Moeda
+    Route::get('listarMoedas/', [AdminController::class, 'listarMoedas'])->name('admin.moeda.index');
+    Route::get('mostrarMoedas/{id}', [AdminController::class, 'mostrarMoedas'])->name('admin.moeda.show');
+
+    // Conta
+    Route::get('listarContas/', [AdminController::class, 'listarContas'])->name('admin.conta.index');
+    Route::get('mostrarContas/{id}', [AdminController::class, 'mostrarContas'])->name('admin.conta.show');
+
+    // Moeda
+    Route::get('listarProdutos/', [AdminController::class, 'listarProdutos'])->name('admin.produto.index');
+    Route::get('mostrarProdutos/{id}', [AdminController::class, 'mostrarProdutos'])->name('admin.produto.show');
+
+    // Redirecionamentos
+    Route::get('listarRedirecionamento/', [AdminController::class, 'listarRedirecionamento'])->name('admin.redirecionamento.index');
+    Route::get('mostrarRedirecionamentos/{id}', [AdminController::class, 'mostrarRedirecionamentos'])->name('admin.redirecionamento.show');
+
     Route::get('EditarCliente/', [AdminController::class, 'EditarCliente'])->name('admin.user.editar');
 });
 

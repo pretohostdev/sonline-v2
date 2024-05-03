@@ -75,7 +75,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="alert border-0 alert-primary bg-gradient m-b-30 alert-dismissible fade show border-radius-none" role="alert">
-                <strong>Holy guacamole!</strong> Recomendamos a verificação constante das estatísticas abaixo.
+                <strong>{{ $nomeAdmin }}!</strong> Recomendamos a verificação constante das estatísticas abaixo.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <i class="ti ti-close"></i>
                 </button>
@@ -134,12 +134,13 @@
                                     <div id="analytics9"></div>
                                 </div>
                                 <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
-                                    <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>569</h3>
+                                    <h3 class="mb-0"><i class="icon-arrow-up-circle"></i>{{ $totalMoedas }}</h3>
                                     <p>Avg. Sales per day</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-xxl-3 col-lg-6">
                         <div class="p-20">
                             <div class="d-block d-sm-flex h-100 align-items-center">
@@ -179,7 +180,7 @@
                             <span class="d-block mb-2 font-16">Total clientes cadastrados</span>
                             <span class="d-block mb-2 mb-sm-5"><b class="text-primary">65.88%</b> dos clientes existentes</span>
                             <p class="mb-3">Nosso crescimento é notável, impulsionado pela nossa paixão e compromisso com a excelência.</p>
-                            <a class="btn btn-round btn-inverse-primary mb-3 mb-sm-0" href="{{ route('user.index') }}"><b>Ver Clientes</b></a>
+                            <a class="btn btn-round btn-inverse-primary mb-3 mb-sm-0" href="{{ route('admin.user.index') }}"><b>Ver Clientes</b></a>
                         </div>
                         <div class="col-xs-6">
                             <div class="apexchart-wrapper">

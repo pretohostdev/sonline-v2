@@ -12,7 +12,12 @@ class ContaWise extends Model
     // Defina a tabela correspondente
     protected $table = 'conta_wises';
 
-    protected $fillable = ['data', 'estado'];
+    protected $fillable = [
+        'data', 
+        'estado', 
+        'comprovativo'
+    ];
+    
     protected $dates = ['data'];
 
     public function cliente()

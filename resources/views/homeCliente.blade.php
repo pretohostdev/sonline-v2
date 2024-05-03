@@ -175,7 +175,13 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn bg-gradient text-light">Atualizar dados</button>
+                                            <div class="d-flex justify-content-space-round">
+                                                <button type="submit" class="btn bg-gradient text-light">Atualizar dados</button> 
+                                                <div class="spinner-border text-primary" role="status" id="spinnerAtualizar">
+                                                    <span class="sr-only">Loading...</span>
+                                                  </div>
+                                            </div>
+                                            
                                         </form>
                                     </div>
                                 </div>
@@ -222,13 +228,15 @@
             event.preventDefault(); // Impedir o envio padrão do formulário
             console.log('Estou funcionando...');
 
-            // var spinnerRedirecionar = document.getElementById('spinnerRedirecionar');
-            //     spinnerRedirecionar.style.display = "block";
+            var spinnerAtualizar = document.getElementById('spinnerAtualizar');
+                spinnerAtualizar.style.display = "block";
 
             // var mensagemSucesso = document.getElementById('mensagemSucesso');
 
+            // alert(nome)
+
             // Pegar os dados vindo do formulário
-            var nomCompleto = document.getElementById('nomeCompleto').value;
+            var nomeCompleto = document.getElementById('nomeCompleto').value;
             var contacto = document.getElementById('contacto').value;
             var diaNascimento = document.getElementById('diaNascimento').value;
             var mesNascimento = document.getElementById('mesNascimento').value;
@@ -251,57 +259,28 @@
                 mesNascimento: mesNascimento,
             };
 
-            fetch('http://localhost:8000/api/userAtualizar', {
-                method: 'POST',
+        const dadosAtualizados = atualizarDados(cliente);
+
+        dadosAtualizados.then(
+            dados=>{
+                console.log(dados);
+                spinnerAtualizar.style.display = "none";
+            }
+        );
+
+        async function atualizarDados(cliente){
+            const response = await fetch('http://localhost:8000/api/userAtualizar',
+            {
+                method:'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
-                body: JSON.stringify(cliente),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao salvar os dados:' + response);
-                }
-                return response.json();
-            })
-            .then(data => {
-                // if(data.cadastrado == 'true'){
-                //     spinnerRedirecionar.style.display = "none";
-                //     mensagemSucesso.style.display = "block";
-                // }else{
-                //     console.log('Não cadastrado');
-                // }
-
-                console.log(data);
-            })
-            .catch(error => {
-                console.error(error);
+                body:JSON.stringify(cliente)
             });
+            const dados = await response.json();
+            return dados;
+        }
 
-        // const dadosAtualizados = atualizarDados(user_id);
-
-        // dadosAtualizados.then(
-        //     dados=>{
-        //         console.log(dados);
-        //     }
-        // );
-
-        // alert(cliente.id);
-
-        // async function atualizarDados(cliente){
-        //     const response = await fetch('http://localhost:8000/api/userAtualizar/',
-        //     {
-        //         method:'POST',
-        //         headers: {
-        //             'Accept': 'application/json'
-        //         },
-        //         body:JSON.stringify(cliente)
-        //     });
-        //     const dados = await response.json();
-        //     return dados;
-        //     }
-            
-            
 
         });
     </script>

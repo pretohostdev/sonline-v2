@@ -58,10 +58,11 @@
         <div class="col-xl-7">
             <div class="card card-statistics">
                 <div class="card-body">
-                    <form action="" method="" id="formConta">
+                    <form action="{{ route('contaWise.store') }}" method="POST" id="formConta" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Dada de emissão</label>
-                            <input type="date" class="form-control" placeholder="Enter email" id="dataEmissaoConta" value="{{ date('Y-m-d') }}">
+                            <label for="data">Dada de emissão</label>
+                            <input type="date" class="form-control" id="data" name="data" value="{{ date('Y-m-d') }}">
                         </div>
 
                         <div class="form-group">
@@ -69,12 +70,12 @@
                             <input type="number" class="form-control" value="20.000" id="pagamento" placeholder="20.000" readonly>
                         </div>
 
-                        <label for="">Comprovativo Bancário</label>
+                        <label for="comprovativo">Comprovativo Bancário</label>
                         <div class="card-body bg-secondary rounded">
-                            <input type="file" class="form-control-file" id="comprovativoBancario">
+                            <input type="file" class="form-control-file" name="comprovativo">
                         </div>
 
-                        <button type="submit" class="btn btn-primary mt-3">Enviar Pedido</button>
+                        <button type="submit" class="btn bg-gradient text-light mt-3">Enviar Pedido</button>
                     </form>
                 </div>
 
@@ -101,44 +102,46 @@
     </div>
 
     <script>
-        document.getElementById('formConta').addEventListener('submit', function(event) {
+        // document.getElementById('formConta').addEventListener('submit', function(event) {
             
-            event.preventDefault(); // Impedir o envio padrão do formulário
-            console.log('Estou funcionando...');
+        //     event.preventDefault(); // Impedir o envio padrão do formulário
+        //     console.log('Estou funcionando...');
 
-            // Pegar os dados vindo do formulário
-            var dataEmissao = document.getElementById('dataEmissaoConta').value;
+        //     // Pegar os dados vindo do formulário
+        //     var dataEmissao = document.getElementById('dataEmissaoConta').value;
 
-            var comprovativo = document.getElementById('comprovativoBancario');
+        //     var comprovativo = document.getElementById('comprovativoBancario').value;
 
-            console.log('Comprovativo: ' + comprovativo.value);
+        //     alert(comprovativo);
 
-            // console.log('A data é: ' + data);
-            const conta = {
-                data: dataEmissao,
-            };
+        //     console.log('Comprovativo: ' + comprovativo.value);
 
-            fetch('http://localhost:8000/api/conta', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(conta),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao salvar os dados');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data.message); // Mensagem de sucesso
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        //     // console.log('A data é: ' + data);
+        //     const conta = {
+        //         data: dataEmissao,
+        //     };
 
-        });
+        //     fetch('http://localhost:8000/api/conta', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify(conta),
+        //     })
+        //     .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error('Erro ao salvar os dados');
+        //         }
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         console.log(data.message); // Mensagem de sucesso
+        //     })
+        //     .catch(error => {
+        //         console.error(error);
+        //     });
+
+        // });
 
     </script>
 </div>

@@ -122,7 +122,12 @@ class UserController extends Controller
         // $cliente->genero = $dados['genero'];
         $cliente->contacto = $dados['contacto'];
         $cliente->dataNascimento = $dataNascimento;
+
+        $cliente->save();
+
+        // return $cliente->id;
         
+        // return response()->json(['atualizado' => $cliente->id], 200);
         
         
         // Se o id não estiver definido, significa que a tabela Endereço ainda não possui dados
@@ -130,24 +135,26 @@ class UserController extends Controller
         // return response()->json(['atualizado' => $reuest->pais], 200);
         
         // return response()->json(['atualizado' => $cliente->endereco->id], 200);
-        // if (is_null($cliente->endereco)) {
-        //     $endereco = Endereco::create([
-        //         'pais'=> $dados['pais'],
-        //         'cidade' => $dados['cidade'],
-        //         'bairro' => $dados['bairro'],
-        //         'user_id' =>$id
-        //     ]);
-        // } 
-        // else{ // Caso o endereço já esteja definido
+        if (is_null($cliente->endereco)) {
+            $endereco = Endereco::create([
+                'pais'=> $dados['pais'],
+                'cidade' => $dados['cidade'],
+                'bairro' => $dados['bairro'],
+                'user_id' => $cliente->id
+            ]);
+        } 
+        else{ // Caso o endereço já esteja definido
+            $id = Endereco::where('user_id', $cliente->id)->first()->id;
+            $endereco = Endereco::find($id);
             
-            $cliente->endereco->pais = $dados['pais'];
-            $cliente->endereco->cidade = $dados['cidade'];
-            $cliente->endereco->bairro = $dados['bairro'];
-            $cliente->endereco->save();
-        // }
+            $endereco->pais = $dados['pais'];
+            $endereco->cidade = $dados['cidade'];
+            $endereco->bairro = $dados['bairro'];
+            $endereco->save();
+        }
+        
         
         return response()->json(['atualizado' => 'true'], 200);
-        $cliente->save();
 
         // return "Dados atualizado com successo!";
         // return "Clicou em atualizar dados " . $id;

@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Validator; // Classe específica para fazer a val
 
 use Illuminate\Support\Carbon; // Essa classe vai ajudar a trabalhar com datas
 
+use Illuminate\Support\Facades\Auth;
+
 class AdminController extends Controller
 {
     /**
@@ -21,6 +23,9 @@ class AdminController extends Controller
         $ano = Carbon::now()->year; // Pega o ano actual
         $mes = Carbon::now()->month; // Pega o mes actual
 
+        // Obtém o usuário atualmente autenticado, que é o Admin
+
+        $admin = Auth::user();
         // Obter todos os clientes que efectuaram a agendamento no ano e mes em curso
        
         $totalClientesAgendados = User::whereHas('agendamento', function ($query) use ($ano, $mes) {
@@ -50,10 +55,10 @@ class AdminController extends Controller
 
 
         // Total de clientes inscritos no mes em curso
-
         $totalClientes = User::all()->count() > 0 ?  User::all()->count() : 0;
 
          $dados = [
+            'nomeAdmin' => $admin->name,
             'totalClientesAgendados' => $totalAgendados,
             'totalConta' => $totalConta,
             'totalMoedas' => $totalMoeda,
@@ -77,6 +82,116 @@ class AdminController extends Controller
 
         return view('admin.user.index', compact('clientes'));
     }
+
+    public function listarRedirecionamento(){
+
+        // Lista de todos clientes que fizeram redirecionamento
+        $clientes = User::where('tipo', "!=", 'admin')
+                ->where(function($query){
+                    $query->WhereHas('redirecionamentos');
+                })->paginate(10);
+
+        return view('admin.redirecionamento.index', compact('clientes'));
+    }
+
+    public function mostrarRedirecionamentos($id){
+
+        $cliente = User::with('redirecionamentos')->find($id);
+        $clienteRedirecionamento = User::with('redirecionamentos.produto')->find($cliente->id);
+        $redirecionamentos = $clienteRedirecionamento->redirecionamentos()->paginate(10);
+
+        $cliente = (Object)[
+            'id' => $cliente->id,
+            'nome' => $cliente->name
+        ];
+
+        return view('admin.redirecionamento.show', ['redirecionamentos'=> $redirecionamentos, 'cliente'=> $cliente]);
+    }
+
+    function listarMoedas(){
+
+        // Clientes que solicitram moeda
+        $clientes = User::where('tipo', "!=", 'admin')
+        ->where(function($query){
+            $query->WhereHas('moedas');
+        })->paginate(10);
+
+       return view('admin.moeda.index', compact('clientes'));
+      
+    }
+
+    function mostrarMoedas($id){
+
+        $cliente = User::with('moedas')->find($id);
+        $moedas = $cliente->moedas()->paginate(10);
+
+        $cliente = (Object)[
+            'id' => $cliente->id,
+            'nome' => $cliente->name
+        ];
+
+        return view('admin.moeda.show', ['moedas'=> $moedas, 'cliente'=> $cliente]);
+    }
+
+    function listarContas(){
+        // Clientes que solicitram moeda
+        $clientes = User::where('tipo', "!=", 'admin')
+        ->where(function($query){
+            $query->WhereHas('contaWise');
+        })->paginate(10);
+
+       return view('admin.conta.index', compact('clientes'));
+    }
+
+    function mostrarContas($id){
+
+        $cliente = User::with('contaWise')->find($id);
+        $contas = $cliente->contaWise()->paginate(10);
+
+        $cliente = (Object)[
+            'id' => $cliente->id,
+            'email' => $cliente->email,
+            'nome' => $cliente->name
+        ];
+
+        return view('admin.conta.show', ['contas'=> $contas, 'cliente'=> $cliente]);
+    }
+
+    function listarProdutos(){
+        return "Clicou em Listar Moedas";
+    }
+
+    function mostrarProdutos(){
+        return "Clicou em mostrar Moedas";
+    }
+
+    function listarVistos(){
+         // Lista de todos clientes que solicitaram visto
+         $clientes = User::where('tipo', "!=", 'admin')
+         ->where(function($query){
+             $query->WhereHas('vistos');
+         })->paginate(10);
+
+        return view('admin.visto.index', compact('clientes'));
+       
+    }
+
+    function mostrarVistos($id){
+
+        $cliente = User::with('vistos')->find($id);
+        $vistos = $cliente->vistos()->paginate(10);
+
+        $cliente = (Object)[
+            'id' => $cliente->id,
+            'nome' => $cliente->name
+        ];
+
+        return view('admin.visto.show', ['vistos'=> $vistos, 'cliente'=> $cliente]);
+    }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.

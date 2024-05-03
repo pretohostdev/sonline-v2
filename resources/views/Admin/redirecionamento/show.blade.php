@@ -1,5 +1,5 @@
 @extends('layout.container.app')
-@section('titulo', 'sonline-clientes')
+@section('titulo', 'sonline-redirecionamento')
 
 @push('styles')
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
@@ -42,31 +42,13 @@
                                     <a href="x"></a>
                                 </li>
                                 <li>
-                                    Clientes
+                                    Redirecionamentos
                                 </li>
                             </ol>
                         </nav>
                     </div>
 
                     @include('layout.componentes.cabecalho_admin_2')
-                    
-                    {{-- <div class="ml-auto d-flex align-items-center secondary-menu text-center">
-                        <a href="{{ route('admin.user.index') }}" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Clientes">
-                            <i class="fe fe-users btn btn-icon text-primary"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Solicitação de Moedas">
-                            <i class="fe fe-credit-card btn btn-icon text-success"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Abertura de conta">
-                            <i class="fa fa-cc-visa btn btn-icon text-warning"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Calendar">
-                            <i class="fa fa-calendar-o btn btn-icon text-cyan"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Produtos">
-                            <i class="fa fa-product-hunt btn btn-icon text-danger"></i>
-                        </a> --}}
-                    </div>
 
 
                 </div>
@@ -87,24 +69,46 @@
                                 <thead class="bg-gradient text-light">
                                     <tr>
                                         <th>Nome</th>
-                                        <th>Email</th>
-                                        <th>Género</th>
-                                        <th>Contacto</th>
-                                        <th>Data Dascimento</th>
-                                        <th class="text-center">Eliminar</th>
+                                        <th>Produto</th>
+                                        <th>Data</th>
+                                        <th>País Origem</th>
+                                        <th>País Destino</th>
+                                        <th>Valor</th>
+                                        <th>Estado</th>
+                                        <th class="text-center">Opção</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     
-                                    @foreach ($clientes as $cliente)
+                                    @foreach ($redirecionamentos as $redirecionamento)
                                     
                                         <tr data-id="{{ $cliente->id }}">
-                                            <td class="text-dark">{{$cliente->name}}</td>
-                                            <td class="text-dark">{{$cliente->email}}</td>
-                                            <td class="text-dark">{{$cliente->genero}}</td>
-                                            <td class="text-dark">{{$cliente->contacto}}</td>
-                                            <td class="text-dark">{{$cliente->dataNascimento}}</td>
-                                            <td><button class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Eliminar</button> </td>
+                                            <td class="text-dark">{{$cliente->nome}}</td>
+                                            <td class="text-dark">{{$redirecionamento->produto->nome}}</td>
+                                            <td class="text-dark">{{$redirecionamento->data}}</td>
+                                            <td class="text-dark">{{$redirecionamento->paisOrigem}}</td>
+                                            <td class="text-dark">{{$redirecionamento->paisDestino}}</td>
+                                            <td class="text-dark">{{$redirecionamento->valor}}</td>
+                                            <td class="text-dark">
+                                                @if ($redirecionamento->estado == "0")
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="rounded-circle bg-primary mr-2" style="width: 10px; height: 10px;"></div>
+                                                        Pendente
+                                                    </div>
+                                                @elseif ($redirecionamento->estado == "1")
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="rounded-circle bg-success mr-2" style="width: 10px; height: 10px;"></div>
+                                                        Confirmado
+                                                    </div>
+                                                @else
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="rounded-circle bg-danger mr-2" style="width: 10px; height: 10px;"></div>
+                                                        Cancelado
+                                                    </div>
+                                                @endif
+                                            </td>
+                                            
+                                            <td><button class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</button> </td>
                                         </tr>
 
                                     @endforeach
@@ -115,7 +119,7 @@
                             </table>
                             {{-- Link que representa a paginação --}}
                             <div class="pagination">
-                                {{ $clientes->links() }}
+                                {{ $redirecionamentos->links() }}
                             </div>
 
                         </div>

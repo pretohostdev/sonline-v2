@@ -70,7 +70,7 @@
                                         <th>Nome</th>
                                         <th>Email</th>
                                         <th>Género</th>
-                                        <th>Contcto</th>
+                                        <th>Contacto</th>
                                         <th>Data Nascimento</th>
                                         <th class="text-center">Opção</th>
                                     </tr>
@@ -85,9 +85,16 @@
                                             <td class="text-dark">{{$cliente->genero}}</td>
                                             <td class="text-dark">{{$cliente->contacto}}</td>
                                             <td class="text-dark"> {{$cliente->dataNascimento}}</td>
+                                                {{-- @if ($cliente->estado == "0")
+                                                    <div class='fc-event fc-event-primary' data-color="fc-event-primary"><span></span> 
+                                                        Pendente
+                                                    </div>
+                                                @endif --}}
+                                                {{-- <td class="text-dark">{{$cliente->dataNascimento}}</td> --}}
+                                                
                                             
                                             <td>
-                                                <form action="{{ route('admin.visto.show', $cliente->id) }}">
+                                                <form action="{{ route('admin.redirecionamento.show', $cliente->id) }}">
                                                     <button type="submit" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Ver</button>
                                                 </form>
                                             </td>
@@ -116,13 +123,82 @@
                 var id = linha.dataset.id;
 
                 console.log(id);
-                
+        
+                // if (elementoClicado.classList.contains('btn-eliminar')) {
+                //     console.log('Editar produto com ID:', id);
+                // }
             });
             </script>
             
 
             
         </div>
+
+
+
+        {{-- <div class="row">
+            <div class="col-12">
+                <div class="card card-statistics clients-contant">
+                    <div class="card-header">
+                        <div class="d-xxs-flex justify-content-between align-items-center">
+                            <div class="card-heading">
+                                <h4 class="card-title">Total clientes inscritos</h4> 
+                            </div>
+                            <div class="mt-xxs-0 mt-3 btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-sm btn-round  btn-primary">
+                                    <input type="radio" name="options" id="option1" checked="">
+                                    Diário
+                                </label>
+                                <label class="btn btn-sm btn-outline-primary">
+                                    <input type="radio" name="options" id="option2">
+                                    Semanal
+                                </label>
+                                <label class="btn btn-sm btn-round btn-outline-primary">
+                                    <input type="radio" name="options" id="option3"> Mensalmente
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body py-0 table-responsive">
+                        <table class="table clients-contant-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Contacto</th>
+                                    <th scope="col">Gênero</th>
+                                    <th scope="col">Editar & Deletar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <p class="font-weight-bold">Adrian Demiandro</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                20/07/2018
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>$230.00</td>
+                                    <td><span>Masculino</span></td>
+                                    <td>
+                                        <a href="javascript:void(0)" class="btn btn-icon btn-outline-primary btn-round mr-2 mb-2 mb-sm-0 btn-sm"><i class="ti ti-pencil"></i></a>
+                                        <a href="javascript:void(0)" class="btn btn-icon btn-outline-danger btn-round btn-sm"><i class="ti, ti-close"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+
+
 
     </div>
 
