@@ -119,7 +119,6 @@ class UserController extends Controller
         // return $dataNascimento;
         
         $cliente->name = $dados['nome'];
-        // $cliente->genero = $dados['genero'];
         $cliente->contacto = $dados['contacto'];
         $cliente->dataNascimento = $dataNascimento;
         
@@ -130,23 +129,23 @@ class UserController extends Controller
         // return response()->json(['atualizado' => $reuest->pais], 200);
         
         // return response()->json(['atualizado' => $cliente->endereco->id], 200);
-        // if (is_null($cliente->endereco)) {
-        //     $endereco = Endereco::create([
-        //         'pais'=> $dados['pais'],
-        //         'cidade' => $dados['cidade'],
-        //         'bairro' => $dados['bairro'],
-        //         'user_id' =>$id
-        //     ]);
-        // } 
-        // else{ // Caso o endereço já esteja definido
+        if (is_null($cliente->endereco)) {
+            $endereco = Endereco::create([
+                'pais'=> $dados['pais'],
+                'cidade' => $dados['cidade'],
+                'bairro' => $dados['bairro'],
+                'user_id' =>$cliente->id
+            ]);
+        } 
+        else{ // Caso o endereço já esteja definido
+            $endereco_id = Endereco::where('user_id', $cliente->id)->get();
+                // $cliente->endereco->pais = $dados['pais'];
+                // $cliente->endereco->cidade = $dados['cidade'];
+                // $cliente->endereco->bairro = $dados['bairro'];
+                // $cliente->endereco->save();
+            }
             
-            $cliente->endereco->pais = $dados['pais'];
-            $cliente->endereco->cidade = $dados['cidade'];
-            $cliente->endereco->bairro = $dados['bairro'];
-            $cliente->endereco->save();
-        // }
-        
-        return response()->json(['atualizado' => 'true'], 200);
+            return response()->json(['atualizado' => $endereco_id], 200);
         $cliente->save();
 
         // return "Dados atualizado com successo!";

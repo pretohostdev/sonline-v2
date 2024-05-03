@@ -251,55 +251,51 @@
                 mesNascimento: mesNascimento,
             };
 
-            fetch('http://localhost:8000/api/userAtualizar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(cliente),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao salvar os dados:' + response);
-                }
-                return response.json();
-            })
-            .then(data => {
-                // if(data.cadastrado == 'true'){
-                //     spinnerRedirecionar.style.display = "none";
-                //     mensagemSucesso.style.display = "block";
-                // }else{
-                //     console.log('Não cadastrado');
-                // }
+            
 
-                console.log(data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        const dadosAtualizados = atualizarDados(cliente);
 
-        // const dadosAtualizados = atualizarDados(user_id);
-
-        // dadosAtualizados.then(
-        //     dados=>{
-        //         console.log(dados);
-        //     }
-        // );
+        dadosAtualizados.then(
+            dados=>{
+                console.log(dados);
+            }
+        );
 
         // alert(cliente.id);
 
-        // async function atualizarDados(cliente){
-        //     const response = await fetch('http://localhost:8000/api/userAtualizar/',
-        //     {
-        //         method:'POST',
-        //         headers: {
-        //             'Accept': 'application/json'
-        //         },
-        //         body:JSON.stringify(cliente)
-        //     });
-        //     const dados = await response.json();
-        //     return dados;
-        //     }
+        async function atualizarDados(cliente){
+            const response = await fetch('http://localhost:8000/api/userAtualizar',
+            {
+                method:'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body:JSON.stringify(cliente)
+            });
+            const dados = await response.json();
+            return dados;
+            }
+
+
+            // fetch('http://localhost:8000/api/userAtualizar', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(cliente),
+            // })
+            // .then(response => {
+            //     if (!response.ok) {
+            //         throw new Error('Erro ao salvar os dados:' + response);
+            //     }
+            //     return response.json();
+            // })
+            // .then(data => {
+            //     console.log(data);
+            // })
+            // .catch(error => {
+            //     console.error(error);
+            // });
             
             
 
