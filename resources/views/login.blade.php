@@ -42,6 +42,17 @@
                                         </div>
                                         <h1 class="mb-2 text-center">Sonline Service</h1>
                                         <p class="text-center">Seja bem vindo novamente, por favor, faça o login.</p>
+
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li class="text-light">{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+
                                         <form action="{{route('login.store')}}"  method="POST" class="mt-3 mt-sm-5">
                                             @csrf
                                             <div class="row">

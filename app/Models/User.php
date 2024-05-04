@@ -31,12 +31,12 @@ class User extends Authenticatable
 
     public function endereco()
     {
-        return $this->hasOne(Endereco::class);
+        return $this->hasOne(Endereco::class)->orderBy('created_at', 'desc');;
     }
 
     public function documentos()
     {
-        return $this->hasMany(Documento::class);
+        return $this->hasMany(Documento::class)->orderBy('created_at', 'desc');;
     }
 
     public function agendamento()
@@ -46,7 +46,7 @@ class User extends Authenticatable
 
     public function moedas()
     {
-        return $this->hasMany(Moeda::class);
+        return $this->hasMany(Moeda::class)->orderBy('created_at', 'desc');;
     }
 
     public function vistos()
@@ -57,17 +57,17 @@ class User extends Authenticatable
 
     public function contaWise()
     {
-        return $this->hasMany(ContaWise::class);
+        return $this->hasMany(ContaWise::class)->orderBy('created_at', 'desc');;
     }
 
     public function pagamentos()
     {
-        return $this->hasMany(Pagamento::class);
+        return $this->hasMany(Pagamento::class)->orderBy('created_at', 'desc');;
     }
 
     public function redirecionamentos()
     {
-        return $this->hasMany(Redirecionamento::class)->orderBy('created_at', 'desc');;
+        return $this->hasMany(Redirecionamento::class)->orderBy('created_at', 'desc');
     }
 
     /**

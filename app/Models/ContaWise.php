@@ -15,7 +15,9 @@ class ContaWise extends Model
     protected $fillable = [
         'data', 
         'estado', 
-        'comprovativo'
+        'user_id',
+        'comprovativo',
+        'pagamento_id',
     ];
     
     protected $dates = ['data'];

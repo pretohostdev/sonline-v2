@@ -55,7 +55,18 @@
 
                                         <p class="text-center">Seja bem vindo, crie uma conta.</p>
 
-                                        <form class="mt-2 mt-sm-4" id="formRegistar">
+                                        <!-- Se houver erros de validação, exiba-os -->
+                                        @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li class="text-light">{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        @endif
+
+                                        <form action="{{route('cadastrar')}}" method="POST" class="mt-2 mt-sm-4" id="formRegistar">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">
@@ -102,7 +113,7 @@
                                                 <div class="col-12">
                                                     <div class="form-group mt-2">
                                                         <label class="control-label">Email*</label>
-                                                        <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+                                                        <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="{{old('email')}}" required>
                                                     </div>
                                                 </div>
                                                 <span id="emailMensagem" class="error-message"></span>
@@ -110,7 +121,7 @@
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Senha'*</label>
-                                                        <input type="password" class="form-control" placeholder="senha" name="password" id="senha" required>
+                                                        <input type="password" class="form-control" placeholder="senha" name="password" id="password" value="{{old('password')}}" required>
                                                     </div>
                                                 </div>
                                                 <span id="senhaMensagem" class="error-message"></span>
@@ -136,14 +147,16 @@
                                                 </form>
 
                                                 {{-- Mensagem de envio com sucesso --}}
-                                                <div id="registoMensagem" class="mt-2">
+                                                {{-- <div id="registoMensagem" class="mt-2">
                                                     <div class="alert alert-dismissible fade show rounded text-center  bg-gradient" role="alert" style="color:white">
                                                         Usuário cadastrado com sucesso!
                                                         <button type="button" class="close mb-2" data-dismiss="alert" aria-label="Close">
                                                             <i class="ti ti-close"></i>
                                                         </button>
                                                     </div>
-                                                </div>
+                                                </div> --}}
+
+                                                
 
                                                 <div class="col-12 mt-3">
                                                     <p>Já tem uma conta ?<a href="{{route('login')}}" class="text-primary"> Entrar</a></p>
@@ -179,11 +192,8 @@
                 .then(
                     valor =>
                     {
-                        if(valor.existe == 'true'){ // Verifique se número da casa já está no sistema
+                        if(valor.existe == 'true'){
                             emailMsg.innerHTML = "Email já existente!";
-                            // email.value = "";
-                            // console.log(email);
-
                             function operacao() {
                                 console.log("Operação realizada!");
                                 email.value = "";
@@ -223,77 +233,77 @@
                 }
             }
 
-            async function cadastrar(cliente){
+            // async function cadastrar(cliente){
                 
-                try {
-                    const response = await fetch('http://localhost:8000/api/cadastrar',
-                    {
-                        method:'POST',
-                        headers: {
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify(cliente),
-                    });
-                    const dados = await response.json();
-                    return dados;
-                } catch (error) {
-                    return error;
-                }
+            //     try {
+            //         const response = await fetch('http://localhost:8000/api/cadastrar',
+            //         {
+            //             method:'POST',
+            //             headers: {
+            //                 'Accept': 'application/json'
+            //             },
+            //             body: JSON.stringify(cliente),
+            //         });
+            //         const dados = await response.json();
+            //         return dados;
+            //     } catch (error) {
+            //         return error;
+            //     }
                
-            }
+            // }
 
-        var formRegistar = document.getElementById('formRegistar');
+        // var formRegistar = document.getElementById('formRegistar');
 
-        formRegistar.addEventListener('submit', function(event){
+        // formRegistar.addEventListener('submit', function(event){
 
-            event.preventDefault(); 
+        //     event.preventDefault(); 
 
-            // Obteção dos valores das variáveis
-            var senha = document.getElementById('senha').value;
-            var email = document.getElementById('email').value;
-            var genero = document.getElementById('genero').value;
-            var contacto = document.getElementById('contacto').value;
-            var ultimoNome = document.getElementById('ultimoNome').value;
-            var primeiroNome = document.getElementById('primeiroNome').value;
-            var dataNascimento = document.getElementById('dataNascimento').value;
+        //     // Obteção dos valores das variáveis
+        //     var senha = document.getElementById('senha').value;
+        //     var email = document.getElementById('email').value;
+        //     var genero = document.getElementById('genero').value;
+        //     var contacto = document.getElementById('contacto').value;
+        //     var ultimoNome = document.getElementById('ultimoNome').value;
+        //     var primeiroNome = document.getElementById('primeiroNome').value;
+        //     var dataNascimento = document.getElementById('dataNascimento').value;
 
-            var nomeCompleto = primeiroNome + " " + ultimoNome;
+        //     var nomeCompleto = primeiroNome + " " + ultimoNome;
 
-            const cliente = {
-                    email:email,
-                    senha: senha,
-                    genero:genero,
-                    contacto:contacto,
-                    nome: nomeCompleto,
-                    dataNascimento:dataNascimento,  
-            };
+        //     const cliente = {
+        //             email:email,
+        //             senha: senha,
+        //             genero:genero,
+        //             contacto:contacto,
+        //             nome: nomeCompleto,
+        //             dataNascimento:dataNascimento,  
+        //     };
 
-            var spinnerRegistar = document.getElementById('spinnerRegistar');
-            spinnerRegistar.style.display = "block";
+        //     var spinnerRegistar = document.getElementById('spinnerRegistar');
+        //     spinnerRegistar.style.display = "block";
 
-            var registoMensagem = document.getElementById('registoMensagem');
+        //     var registoMensagem = document.getElementById('registoMensagem');
 
-            cadastrado = cadastrar(cliente);
+        //     cadastrado = cadastrar(cliente);
 
-            console.log(cadastrado);
-            cadastrado.then(
-                data => {
-                        if(data.cadastrado == 'true'){
-                            console.log('Cadastrado com sucesso');
-                        }
-                        else{
-                            console.log('Erro ao cadastrar: ' + data.cadastrado);
-                        }
-                    spinnerRegistar.style.display = "none";
-                    registoMensagem.style.display = "block";
-                }
-            );
+        //     console.log(cadastrado);
+        //     cadastrado.then(
+        //         data => {
+        //                 if(data.cadastrado == 'true'){
+        //                     console.log('Cadastrado com sucesso');
+        //                 }
+        //                 else{
+        //                     console.log('Erro ao cadastrar: ' + data.cadastrado);
+        //                 }
+        //             spinnerRegistar.style.display = "none";
+        //             registoMensagem.style.display = "block";
+        //         }
+        //     );
 
-        });
+        // });
 
 
         // Validar o campo de senha
-        var senha = document.getElementById('senha');
+        var senha = document.getElementById('password');
 
         senha.addEventListener('input', function(event){
             const senha = this.value;

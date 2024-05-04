@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateUser;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Endereco;
@@ -32,52 +33,50 @@ class UserController extends Controller
     {
         // Validação dos dados recebidos
 
-        // $validacao = Validator::make($request->all(), [
-        //     'email' => 'required|string|email|unique:admins|max:255',
-        //     'password' => 'required|string|min:5',
-        //     ],
-        //     [
-        //         'email.email' => 'O campo e-mail deve ser um endereço de e-mail válido.',
-        //         'email.unique' => 'Este endereço de e-mail já está sendo utilizado.',
-        //         'password.min' => 'O campo senha deve ter no mínimo 8 caracteres.',
-        //     ]
-        // );
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users,email|max:255',
+            'password' => 'required|min:6',
+        ],
+        [
+            'email.email' => 'O campo e-mail deve ser um endereço de e-mail válido.',
+            'password.min' => 'A senha deve ter no mínimo 6 caracteres',
+            'email.unique' => 'Este endereço de e-mail já está sendo utilizado.',
+            'password.min' => 'O campo senha deve ter no mínimo 6 caracteres.',
+        ]);
+ 
+        if ($validator->fails()) {
+            return redirect('registar')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
 
-        // if ($validacao->fails()) {
-        //     return redirect()->back()->withErrors($validacao)->withInput();
-        // }
+        $primeiroNome = $request->primeiroNome;
+        $ultimoNome = $request->ultimoNome;
 
+        $name = $primeiroNome . " " . $ultimoNome;
 
-        // $primeiroNome = $request->primeiroNome;
-        // $ultimoNome = $request->ultimoNome;
+        $email = $request->email;
+        $senha = $request->password;
 
-        // $name = $primeiroNome . " " . $ultimoNome;
+        $contacto = $request->contacto;
+        $genero = $request->genero;
 
-        // $email = $request->email;
-        // $senha = $request->password;
+        $dataNascimento = $request->dataNascimento;
 
-        // $contacto = $request->contacto;
-        // $genero = $request->genero;
-
-        // $dataNascimento = $request->dataNascimento;
-
-        // return $dataNascimento;
-        $dados = json_decode($request->getContent(), true);
-        
         try {
             $registar = User::create([
-                'name'=> $dados['nome'],
-                'email' => $dados['email'],
+                'name'=> $name,
+                'email' => $email,
                 'tipo' => 'cliente',
-                'password' => Hash::make($dados['senha']),
-                'contacto' => $dados['contacto'],
-                'genero' => $dados['genero'],
-                'dataNascimento' => $dados['dataNascimento']
+                'password' => Hash::make($senha),
+                'contacto' => $contacto,
+                'genero' => $genero,
+                'dataNascimento' => $dataNascimento
             ]);
 
-            return response()->json(['cadastrado' => 'true'], 200);
+            return view('login');
         } catch (\Throwable $erro) {
-            return response()->json(['cadastrado' => $erro], 200);
+            return $erro;
         }
        
 
@@ -112,11 +111,7 @@ class UserController extends Controller
         $dados = json_decode($request->getContent(), true);
         
         $cliente = User::find($dados['id']);
-        
-        // Ogranizar a data de nascimento
         $dataNascimento = $dados['anoNascimento'] . "-". $dados['mesNascimento'] . "-" . $dados['diaNascimento'];
-        
-        // return $dataNascimento;
         
         $cliente->name = $dados['nome'];
         $cliente->contacto = $dados['contacto'];
@@ -124,40 +119,15 @@ class UserController extends Controller
 
         $cliente->save();
 
-        // return $cliente->id;
-        
-        // return response()->json(['atualizado' => $cliente->id], 200);
-        
-        
-        // Se o id não estiver definido, significa que a tabela Endereço ainda não possui dados
-        
-        // return response()->json(['atualizado' => $reuest->pais], 200);
-        
-        // return response()->json(['atualizado' => $cliente->endereco->id], 200);
         if (is_null($cliente->endereco)) {
             $endereco = Endereco::create([
                 'pais'=> $dados['pais'],
                 'cidade' => $dados['cidade'],
                 'bairro' => $dados['bairro'],
-<<<<<<< HEAD
-                'user_id' =>$cliente->id
-            ]);
-        } 
-        else{ // Caso o endereço já esteja definido
-            $endereco_id = Endereco::where('user_id', $cliente->id)->get();
-                // $cliente->endereco->pais = $dados['pais'];
-                // $cliente->endereco->cidade = $dados['cidade'];
-                // $cliente->endereco->bairro = $dados['bairro'];
-                // $cliente->endereco->save();
-            }
-            
-            return response()->json(['atualizado' => $endereco_id], 200);
-        $cliente->save();
-=======
                 'user_id' => $cliente->id
             ]);
         } 
-        else{ // Caso o endereço já esteja definido
+        else{ 
             $id = Endereco::where('user_id', $cliente->id)->first()->id;
             $endereco = Endereco::find($id);
             
@@ -167,12 +137,8 @@ class UserController extends Controller
             $endereco->save();
         }
         
-        
         return response()->json(['atualizado' => 'true'], 200);
->>>>>>> 0753294d4bbd1c8af3a0b8acf9b7f81160b31dfc
 
-        // return "Dados atualizado com successo!";
-        // return "Clicou em atualizar dados " . $id;
     }
 
     /**

@@ -44,7 +44,7 @@
                             <a href="x"></a>
                         </li>
                         <li>
-                            Estado do redirecionamento
+                            Estado de abertura de conta
                         </li>
                     </ol>
                 </nav>
@@ -73,7 +73,7 @@
                                     Histórico </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="result-tab" data-toggle="tab" href="#result" role="tab" aria-controls="result" aria-selected="false"> Documentos
+                                <a class="nav-link" id="result-tab" data-toggle="tab" href="#result" role="tab" aria-controls="result" aria-selected="false"> Comprovativo
                                 </a>
                             </li>
                         </ul>
@@ -210,183 +210,15 @@
                                 <div class="accordion" id="accordionborderradius">
 
                                     <div class="acd-group border-bottom-0">
-                                        <div class="card-header rounded-0 bg-primary">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse4-3" class="btn-block  text-center text-white acd-heading collapsed" data-toggle="collapse">Sem documentos para ser exibido</a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse4-3" class="collapse" data-parent="#accordionborderradius">
-                                            <div class="card-body">
-                                                <p>
-                                                    Nesta seção não encorporamos nenhum documento adicional, como foto cópia do
-                                                    B.I ou o passport
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade pt-20" id="CSS3" role="tabpanel">
-                                <div class="accordion" id="accordionsimple1">
-                                    <div class="mb-2 acd-group">
-                                        <div class="card-header bg-primary rounded-0">
-                                            <h5 class="mb-0">
-                                                <a href="#CSS31" class="btn-block text-white text-left acd-heading" data-toggle="collapse">1. Quick Response Time</a>
-                                            </h5>
-                                        </div>
-                                        <div id="CSS31" class="collapse show" data-parent="#accordionsimple1">
-                                            <div class="card-body">
-                                                <p>Motivation cannot be an external force, it must
-                                                    come from within as the natural product of your
-                                                    desire to achieve something and your belief
-                                                    that you are capable to succeed at your goal.</p>
+                                        <div class="card-header rounded-0 d-flex justify-content-center">
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-2 acd-group">
-                                        <div class="card-header rounded-0 bg-primary">
-                                            <h5 class="mb-0">
-                                                <a href="#CSS32" class="btn-block text-white text-left acd-heading collapsed" data-toggle="collapse">2. Experienced
-                                                    Professionals</a>
-                                            </h5>
-                                        </div>
-                                        <div id="CSS32" class="collapse" data-parent="#accordionsimple1">
-                                            <div class="card-body">
-                                                <p>There are many people in the world with amazing
-                                                    talents who realize only a small percentage of
-                                                    their potential. We all know people who live
-                                                    this truth.</p>
+                                            <iframe src="{{ url("storage/{$conta->comprovativo}") }}" width="60%" height="600px"></iframe>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="acd-group border-bottom-0">
-                                        <div class="card-header rounded-0 bg-primary">
-                                            <h5 class="mb-0">
-                                                <a href="#CSS33" class="btn-block text-white text-left acd-heading collapsed" data-toggle="collapse">3. Maximum Query Solved</a>
-                                            </h5>
-                                        </div>
-                                        <div id="CSS33" class="collapse" data-parent="#accordionsimple1">
-                                            <div class="card-body">
-                                                <p>Text of the printin a galley of type and bled it
-                                                    to a type specimen book. It has survived not
-                                                    only five centuries make Lorem Ipsum is simply
-                                                    dummy.Success isn’t really that difficult.</p>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade pt-20" id="HTML5" role="tabpanel">
-                                <div class="accordion" id="accordionsimple2">
-                                    <div class="mb-2 acd-group">
-                                        <div class="card-header bg-primary rounded-0">
-                                            <h5 class="mb-0">
-                                                <a href="#HTML51" class="btn-block text-left text-white acd-heading" data-toggle="collapse">1. Making the decision</a>
-                                            </h5>
-                                        </div>
-                                        <div id="HTML51" class="collapse show" data-parent="#accordionsimple2">
-                                            <div class="card-body">
-                                                <p>
-                                                    We also know those epic stories, those
-                                                    modern-day legends surrounding the early
-                                                    failures of such supremely successful folks as
-                                                    Michael Jordan and Bill Gates. We can look a
-                                                    bit further back in time to Albert Einstein or
-                                                    even further back to Abraham Lincoln.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-2 acd-group">
-                                        <div class="card-header rounded-0 bg-primary">
-                                            <h5 class="mb-0">
-                                                <a href="#HTML52" class="btn-block text-left text-white acd-heading collapsed" data-toggle="collapse">2. Developing the Vision</a>
-                                            </h5>
-                                        </div>
-                                        <div id="HTML52" class="collapse" data-parent="#accordionsimple2">
-                                            <div class="card-body">
-                                                <p>
-                                                    Positive pleasure-oriented goals are much more
-                                                    powerful motivators than negative fear-based
-                                                    ones. Although each is successful separately,
-                                                    the right combination of both is the most
-                                                    powerful motivational force known to humankind.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="acd-group border-bottom-0">
-                                        <div class="card-header rounded-0 bg-primary">
-                                            <h5 class="mb-0">
-                                                <a href="#HTML53" class="btn-block  text-left text-white acd-heading collapsed" data-toggle="collapse">3. Taking Action</a>
-                                            </h5>
-                                        </div>
-                                        <div id="HTML53" class="collapse" data-parent="#accordionsimple2">
-                                            <div class="card-body">
-                                                <p>The first thing to remember about success is
-                                                    that it is a process – nothing more, nothing
-                                                    less. There is really no magic to it and it’s
-                                                    not reserved only for a select few people. As
-                                                    such, success really has nothing to do with
-                                                    luck, coincidence or fate. </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade pt-20" id="jquery" role="tabpanel">
-                                <div class="accordion" id="accordionfillborde3">
-                                    <div class="mb-2 acd-group">
-                                        <div class="card-header bg-primary rounded-0">
-                                            <h5 class="mb-0">
-                                                <a href="#jquery1" class="btn-block text-white text-left acd-heading" data-toggle="collapse">1. Many Style Available</a>
-                                            </h5>
-                                        </div>
-                                        <div id="jquery1" class="collapse show" data-parent="#accordionfillborde3">
-                                            <div class="card-body">
-                                                <p>The sad thing is the majority of people have no
-                                                    clue about what they truly want. They have no
-                                                    clarity. When asked the question, responses
-                                                    will be superficial at best, and at worst, will
-                                                    be what someone else wants for them.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-2 acd-group">
-                                        <div class="card-header bg-primary rounded-0">
-                                            <h5 class="mb-0">
-                                                <a href="#jquery2" class="btn-block text-white text-left acd-heading collapsed" data-toggle="collapse">2. Parallax Sections</a>
-                                            </h5>
-                                        </div>
-                                        <div id="jquery2" class="collapse" data-parent="#accordionfillborde3">
-                                            <div class="card-body">
-                                                <p>The best way is to develop and follow a plan.
-                                                    Start with your goals in mind and then work
-                                                    backwards to develop the plan. What steps are
-                                                    required to get you to the goals? Make the plan
-                                                    as detailed as possible. Try to visualize and
-                                                    then plan for, every possible setback.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="acd-group border-bottom-0">
-                                        <div class="card-header bg-primary rounded-0">
-                                            <h5 class="mb-0">
-                                                <a href="#jquery3" class="btn-block text-white text-left acd-heading collapsed" data-toggle="collapse">3. Unlimited layouts</a>
-                                            </h5>
-                                        </div>
-                                        <div id="jquery3" class="collapse" data-parent="#accordionfillborde3">
-                                            <div class="card-body">
-                                                <p>Commit the plan to paper and then keep it with
-                                                    you at all times. Review it regularly and
-                                                    ensure that every step takes you closer to your
-                                                    Vision and Goals. If the plan doesn’t support
-                                                    the vision then change it!</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

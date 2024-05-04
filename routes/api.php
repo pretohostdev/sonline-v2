@@ -25,7 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // APIs para acessar minhas rotas de forma assincronas 
 
-Route::post('/cadastrar', [UserController::class, 'store']);
+
 
 // Route::post('/conta', [ContaWiseController::class, 'store']);
 Route::post('/redirecionamento', [RedirecionamentoController::class, 'store']);

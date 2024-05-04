@@ -38,7 +38,6 @@ class LoginController extends Controller
 
             $request->session()->regenerate();
 
-            // Verificar o tipo de usuário
             $usuario = Auth::user();
 
             if ($usuario->tipo == 'cliente') {
@@ -50,7 +49,7 @@ class LoginController extends Controller
 
         }
 
-        dd('Falha ao Logar');
+        return redirect()->back()->withErrors(['mensagem' => 'Verifique o email e a senha']);
         return "Erro ao tentar cadastrar";
     }
 

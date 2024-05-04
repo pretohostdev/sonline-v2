@@ -259,55 +259,6 @@
                 mesNascimento: mesNascimento,
             };
 
-<<<<<<< HEAD
-            
-
-        const dadosAtualizados = atualizarDados(cliente);
-
-        dadosAtualizados.then(
-            dados=>{
-                console.log(dados);
-            }
-        );
-
-        // alert(cliente.id);
-
-        async function atualizarDados(cliente){
-            const response = await fetch('http://localhost:8000/api/userAtualizar',
-            {
-                method:'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
-                body:JSON.stringify(cliente)
-            });
-            const dados = await response.json();
-            return dados;
-            }
-
-
-            // fetch('http://localhost:8000/api/userAtualizar', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(cliente),
-            // })
-            // .then(response => {
-            //     if (!response.ok) {
-            //         throw new Error('Erro ao salvar os dados:' + response);
-            //     }
-            //     return response.json();
-            // })
-            // .then(data => {
-            //     console.log(data);
-            // })
-            // .catch(error => {
-            //     console.error(error);
-            // });
-            
-            
-=======
         const dadosAtualizados = atualizarDados(cliente);
 
         dadosAtualizados.then(
@@ -330,7 +281,6 @@
             return dados;
         }
 
->>>>>>> 0753294d4bbd1c8af3a0b8acf9b7f81160b31dfc
 
         });
     </script>

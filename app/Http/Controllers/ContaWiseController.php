@@ -34,11 +34,26 @@ class ContaWiseController extends Controller
     public function store(Request $request)
     {
 
-        // dd($request->comprovativo);
-        $documento = Documento::create([
+        $comprovativo = $request->file('comprovativo');
 
+        $extensao = $comprovativo->getClientOriginalExtension();
+
+        // dd($extensao);
+
+        $path = $request->file('comprovativo')->storeAs(
+            'comprovaticosBancarios', 1 . ".{$extensao}"
+        );
+
+        $conta = ContaWise::create([
+            'data' => $request->data,
+            'comprovativo' => $path,
+            'estado' => '0',
+            'user_id' => 1,
+            'pagamento_id' => 1
         ]);
-        $request->comprovativo->store('contas')
+
+        return "Suceso";
+        // $request->comprovativo->store('contas');
         // try {
         //     ContaWise::create([
         //         'data' => $dados['data'],
@@ -87,7 +102,7 @@ class ContaWiseController extends Controller
     public function estado()
     {
 
-        // return "Clicou no estado da solicitação da conta";
+        // return "Clicou no estado de solicitação da conta";
         $id = Auth::id();
 
         $conta = ContaWise::where('user_id', $id)->latest()->first();
@@ -100,9 +115,11 @@ class ContaWiseController extends Controller
             $clientesComSolicitacaoConta = $cliente->contaWise;
 
             $conta = (Object)[
+                'id' => $cliente->id,
                 'nome' => $cliente->name,
                 'data' => $conta->data,
                 'estado' => $conta->estado,
+                'comprovativo' => $conta->comprovativo,
                 'listaSolicitacaoConta' =>  $clientesComSolicitacaoConta
             ];
         }

@@ -30,19 +30,6 @@ use App\Http\Controllers\HomeClienteController;
 */
 
 
-// Route::resources([
-//     'login' => LoginController::class,
-//     'agendamento' => AgendamentoController::class,
-//     'contaWise' => ContaWiseController::class,
-//     'documento' => DocumentoController::class,
-//     'endereco' => EnderecoController::class,
-//     'moeda' => MoedaController::class,
-//     'pagamento' => PagamentoController::class,
-//     'produto' => ProdutoController::class,
-//     'redirecionamento' => RedirecionamentoController::class,
-//     'visto' => VistoController::class
-// ]);
-
 Route::resources([
     'login' => LoginController::class,
 ]);
@@ -77,6 +64,8 @@ Route::get('teste/', function () {
 
 
 
+
+Route::post('/cadastrar', [UserController::class, 'store'])->name('cadastrar');
 
 
 Route::middleware(['admin'])->group(function(){
