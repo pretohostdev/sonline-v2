@@ -20,6 +20,8 @@ class MoedaFactory extends Factory
         return [
             'nome' => $this->faker->name,
             'montante' => $this->faker->name,
+            'comprovativo' => $this->faker->name,
+            'estado' => '0',
             'data' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
 
 

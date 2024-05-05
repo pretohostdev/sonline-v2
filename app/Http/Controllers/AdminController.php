@@ -3,15 +3,19 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Admin;
 use App\Models\User;
+use App\Models\Sistema;
+use App\Models\Produto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; // Adicionar senhas criptografadas
 use Illuminate\Support\Facades\Validator; // Classe específica para fazer a validação dos campos
 
 use Illuminate\Support\Carbon; // Essa classe vai ajudar a trabalhar com datas
 
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Validation\Rules\File;
 
 class AdminController extends Controller
 {
@@ -28,7 +32,7 @@ class AdminController extends Controller
         $admin = Auth::user();
         // Obter todos os clientes que efectuaram a agendamento no ano e mes em curso
        
-        $totalClientesAgendados = User::whereHas('agendamento', function ($query) use ($ano, $mes) {
+        $totalClientesAgendados = User::whereHas('agendamentos', function ($query) use ($ano, $mes) {
             $query->whereYear('data', '=', $ano)
             ->whereMonth('data', '=', $mes);
         })->get();
@@ -53,16 +57,35 @@ class AdminController extends Controller
 
         $totalMoeda = $totalClientesMoeda->count() > 0 ? $totalClientesMoeda->count(): 0;
 
+        // Obter todos os clientes que redirecionaram produto
+
+        $totalClientesRedirecionamento = User::whereHas('redirecionamentos', function ($query) use ($ano, $mes) {
+            $query->whereYear('data', '=', $ano)
+            ->whereMonth('data', '=', $mes);
+        })->get();
+
+        $totalRedirecionamento = $totalClientesRedirecionamento->count() > 0 ? $totalClientesRedirecionamento->count(): 0;
+
+        // Obter todos os clientes que solicitarm agendar visto
+
+        $totalClientesVisto = User::whereHas('vistos', function ($query) use ($ano, $mes) {
+            $query->whereYear('dataSolicitacao', '=', $ano)
+            ->whereMonth('dataSolicitacao', '=', $mes);
+        })->get();
+
+        $totalVisto = $totalClientesVisto->count() > 0 ? $totalClientesVisto->count(): 0;
 
         // Total de clientes inscritos no mes em curso
         $totalClientes = User::all()->count() > 0 ?  User::all()->count() : 0;
 
          $dados = [
             'nomeAdmin' => $admin->name,
-            'totalClientesAgendados' => $totalAgendados,
             'totalConta' => $totalConta,
+            'totalVisto' => $totalVisto, 
             'totalMoedas' => $totalMoeda,
-            'totalClientes' => $totalClientes
+            'totalClientes' => $totalClientes,
+            'totalAgendamento' => $totalAgendados,
+            'totalRedirecionamento' => $totalRedirecionamento,
         ];
 
         return view('admin.index', $dados);
@@ -158,7 +181,50 @@ class AdminController extends Controller
     }
 
     function listarProdutos(){
-        return "Clicou em Listar Moedas";
+
+        // Listar produtos do sistema
+        $produtos = Produto::paginate(10);
+        return view('admin.produto.index', compact('produtos'));
+    }
+
+    public function cadastrarProduto(){
+        $sistema = Sistema::find(1);
+        return view('admin.produto.create', compact('sistema'));
+    }
+
+    public function storeProduto(Request $request){
+
+        $validacao = Validator::make($request->all(), [
+            'imagem' => 'required|file|mimes:jpeg,png|max:2048',
+            ],
+            [
+                'imagem.required' => 'O campo imagem é obrigatório',
+                'imagem.file' => 'O campo tem de ser do tipo arquivo',
+                'imagem.mimes' => 'O campo imagem deve ser um apenas do tipo jpg, jpeg e png.',
+                'imagem.max' => 'O tamanho máximo do arquivo é de 2M.',
+            ]
+        );
+
+       
+
+        if ($validacao->fails()) {
+            return redirect()->back()->withErrors($validacao)->withInput();
+        }
+
+        $imagem = $request->file('imagem');
+
+        $path = $request->file('imagem')->store(
+            'produtos'
+        );
+
+        $produto = Produto::create([
+            'nome' => $request->nome,
+            'descricao' => $request->descricao,
+            'preco' => $request->preco,
+            'imagem' => $path,
+        ]);
+
+        return redirect()->route('admin.produto.index');
     }
 
     function mostrarProdutos(){
@@ -278,4 +344,6 @@ class AdminController extends Controller
     {
         //
     }
+
+    
 }

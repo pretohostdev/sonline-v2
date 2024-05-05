@@ -20,16 +20,15 @@ class VistoFactory extends Factory
     {
         return [
             'tipo' => $this->faker->name,
+            'estado' => '0',
+            'descricao' => $this->faker->name,
+            'documento' => $this->faker->name,
             'dataPrevista' => $this->faker->name,
             'paisDesejado' => $this->faker->name,
 
             'pagamento_id'=> function(){
                 return Pagamento::factory()->create()->id;
             },
-
-            'agendamento_id'=> function(){
-                return Agendamento::factory()->create()->id;
-            }
         ];
     }
 }

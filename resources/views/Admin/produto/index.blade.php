@@ -1,5 +1,5 @@
 @extends('layout.container.app')
-@section('titulo', 'moeda')
+@section('titulo', 'Produtos')
 
 @push('styles')
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
@@ -42,13 +42,15 @@
                                     <a href="x"></a>
                                 </li>
                                 <li>
-                                    Moeda
+                                    Clientes
                                 </li>
                             </ol>
                         </nav>
                     </div>
 
                     @include('layout.componentes.cabecalho_admin_2')
+                    
+                    </div>
 
                 </div>
     
@@ -70,27 +72,22 @@
                                         <th>Nome</th>
                                         <th>Email</th>
                                         <th>Género</th>
-                                        <th>Contcto</th>
-                                        <th>Data Nascimento</th>
-                                        <th class="text-center">Opção</th>
+                                        <th>Contacto</th>
+                                        <th>Data Dascimento</th>
+                                        <th class="text-center">Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     
-                                    @foreach ($clientes as $cliente)
+                                    @foreach ($produtos as $produto)
                                     
-                                        <tr data-id="{{ $cliente->id }}">
-                                            <td class="text-dark">{{$cliente->name}}</td>
-                                            <td class="text-dark">{{$cliente->email}}</td>
-                                            <td class="text-dark">{{$cliente->genero}}</td>
-                                            <td class="text-dark">{{$cliente->contacto}}</td>
-                                            <td class="text-dark"> {{$cliente->dataNascimento}}</td>
-                                            
-                                            <td>
-                                                <form action="{{ route('admin.moeda.show', $cliente->id) }}">
-                                                    <button type="submit" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Ver</button>
-                                                </form>
-                                            </td>
+                                        <tr data-id="{{ $produto->id }}">
+                                            <td class="text-dark">{{$produto->name}}</td>
+                                            <td class="text-dark">{{$produto->email}}</td>
+                                            <td class="text-dark">{{$produto->genero}}</td>
+                                            <td class="text-dark">{{$produto->contacto}}</td>
+                                            <td class="text-dark">{{$produto->dataNascimento}}</td>
+                                            <td><button class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Eliminar</button> </td>
                                         </tr>
 
                                     @endforeach
@@ -101,7 +98,7 @@
                             </table>
                             {{-- Link que representa a paginação --}}
                             <div class="pagination">
-                                {{ $clientes->links() }}
+                                {{ $produtos->links() }}
                             </div>
 
                         </div>
@@ -110,13 +107,16 @@
             </div>
 
             <script>
-                tabelaClientes.addEventListener('click', function(event) {
+                tabelaprodutos.addEventListener('click', function(event) {
                 var elementoClicado = event.target;
                 var linha = elementoClicado.closest('tr');
                 var id = linha.dataset.id;
 
                 console.log(id);
-                
+        
+                // if (elementoClicado.classList.contains('btn-eliminar')) {
+                //     console.log('Editar produto com ID:', id);
+                // }
             });
             </script>
             

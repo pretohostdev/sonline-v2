@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('descricao');
             $table->decimal('preco', 10, 2)->nullable();
             $table->string('marca')->nullable();
+            $table->string('link')->nullable();
             $table->string('imagem')->nullable();
             $table->timestamps();
         });

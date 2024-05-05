@@ -14,10 +14,15 @@ class Visto extends Model
 
      protected $fillable = [
         'tipo',
-        'dataPrevista',
         'estado',
-        'dataSolicitacao',
+        'descricao',
+        'documento',
+        'dataPrevista',
         'paisDesejado',
+        'dataSolicitacao',
+
+
+        'user_id'
     ];
  
 

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Agendamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
+
 
 class AgendamentoController extends Controller
 {
@@ -20,7 +23,7 @@ class AgendamentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('agendamento.create');
     }
 
     /**
@@ -28,7 +31,15 @@ class AgendamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $agendamento = Agendamento::create([
+            'tipo' => $request->tipo,
+            'data' => $request->data,
+            'estado' => '0',
+            'observacao' => $request->observacao,
+            'user_id' => Auth::id()
+        ]);
+
+        return redirect()->route('agendamento.estado');
     }
 
     /**
@@ -62,4 +73,41 @@ class AgendamentoController extends Controller
     {
         //
     }
+
+    public function estado()
+    {
+        $id = Auth::id();
+
+        $agendamento = Agendamento::where('user_id', $id)->latest()->first();
+        
+        $cliente = User::find($id);
+
+        // Verificar se o cliente já efectuou algum agendamento de serviço
+        if($cliente->agendamentos->count() > 0){
+
+            $clientesAgendamentos = $cliente->agendamentos;
+            $agendamento = (Object)[
+                'nome' => $cliente->name,
+                'data' => $agendamento->data,
+                'tipo' => $agendamento->tipo,
+                'estado' => $agendamento->estado,
+                'observacao' => $agendamento->observacao,
+                'listaAgendamentos' =>  $clientesAgendamentos
+            ];
+        }
+        else{
+
+            $agendamento = (Object)[
+                'data' => '',
+                'tipo' => '',
+                'estado' => '',
+                'observacao' => '',
+                'listaSolicitacaoAgendamentos' => []
+            ];   
+           
+        }
+
+        return view('agendamento.show', compact('agendamento'));
+    }
+
 }

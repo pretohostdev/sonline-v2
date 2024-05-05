@@ -15,6 +15,8 @@ use App\Models\Produto;
 use App\Models\Pagamento;
 use App\Models\Redirecionamento;
 use App\Models\Visto;
+use App\Models\User;
+use App\Models\Sistema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,15 +26,19 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
+
+        User::factory(10)->create();
         Agendamento::factory(2)->create();
         ContaWise::factory(2)->create();
-        Documento::factory(2)->create();
+        // Documento::factory(2)->create();
         Endereco::factory(2)->create();
         Moeda::factory(2)->create();
         Pagamento::factory(2)->create();
         Produto::factory(2)->create();
         Redirecionamento::factory(2)->create();
-        Visto::factory(2)->create();
+        Sistema::factory(1)->create();
+        // Visto::factory(2)->create();
+        
 
 
         // \App\Models\User::factory()->create([

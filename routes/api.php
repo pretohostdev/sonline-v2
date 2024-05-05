@@ -3,8 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ContaWiseController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SistemaController;
+use App\Http\Controllers\ContaWiseController;
 use App\Http\Controllers\RedirecionamentoController;
 
 /*
@@ -29,6 +30,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::post('/conta', [ContaWiseController::class, 'store']);
 Route::post('/redirecionamento', [RedirecionamentoController::class, 'store']);
+
+Route::post('/sistema', [SistemaController::class, 'update']);
 
 Route::post('/userAtualizar', [UserController::class, 'update']);
 

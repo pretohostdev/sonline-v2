@@ -44,13 +44,12 @@ class LoginController extends Controller
                 return redirect()->intended('homeCliente');
             }
             else{
-                return redirect()->intended('homeAdmin');
+                return redirect()->intended('admin');
             }
 
         }
 
         return redirect()->back()->withErrors(['mensagem' => 'Verifique o email e a senha']);
-        return "Erro ao tentar cadastrar";
     }
 
     /**

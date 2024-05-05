@@ -103,18 +103,17 @@
                             <label for="descricao">Descrição do produto</label>
                             <textarea class="form-control" id="descricao" required></textarea>
                         </div>
-                       
 
-                        <button type="submit" class="btn bg-gradient text-light mt-3">Enviar pedido</button>
+                        <div class="d-flex justify-content-space-round">
+                            <button type="submit" class="btn bg-gradient text-light mr-2">Enviar pedido</button>
+                                <div class="spinner-border text-primary" role="status" id="spinnerRedirecionar">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                        </div>
                     </form>
                 </div>
 
-                {{-- Spinner do cadastramento da solicitação de abertura de conta wise --}}
-                <div class="d-flex justify-content-center">
-                    <div class="spinner-border text-dark" role="status" id="spinnerRedirecionar">
-                        <span class="sr-only">Loading...</span>
-                      </div>
-                </div>
+                
 
                 {{-- Mensagem de envio com sucesso --}}
                 <div id="mensagemSucesso">
@@ -233,6 +232,8 @@
                     mensagemSucesso.style.display = "block";
                 }else{
                     console.log('Não cadastrado');
+                    spinnerRedirecionar.style.display = "none";
+                    mensagemSucesso.style.display = "block";
                 }
             })
             .catch(error => {

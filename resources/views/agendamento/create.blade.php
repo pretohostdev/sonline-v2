@@ -1,6 +1,6 @@
 @extends('layout.container.app')
 
-@section('titulo', 'Abertura de conta wise')
+@section('titulo', 'Agendamento de serviços')
 
 @push('styles')
 
@@ -44,7 +44,7 @@
                             <a href="x"></a>
                         </li>
                         <li>
-                            Abertura de conta wise
+                            Agendamento de serviços
                         </li>
                     </ol>
                 </nav>
@@ -54,9 +54,10 @@
 
         </div>
 
-    <div class="row">
-        <div class="col-xl-7">
-            <div class="card card-statistics">
+    <div class="row mt-2">
+
+        <div class="col-xl-6">
+            <div class="card card-statistics rounded">
                 <div class="card-body">
 
                     @if ($errors->any())
@@ -69,46 +70,47 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('contaWise.store') }}" method="POST" id="formConta" enctype="multipart/form-data">
+                    <form action="{{route('agendamento.store')}}" method="POST" id="formAgendamento">
                         @csrf
                         <div class="form-group">
-                            <label for="data">Dada de emissão</label>
-                            <input type="date" class="form-control" id="data" name="data" value="{{ date('Y-m-d') }}">
+                            <label for="tipo">Seleciona o tipo de agendamento</label>
+                            <select type="da" class="form-control" id="tipo" name="tipo">
+                                <option value="consultoria">Consultoria</option>
+                                <option value="autenticarDocumento">Autenticação de documento na VFS</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Valor</label>
-                            <input type="number" class="form-control" value="{{$sistema->precoContaWise}}" readonly>
+                            <label for="data">Data do agendamento</label>
+                            <input type="date" class="form-control" value="{{date('Y-m-d')}}" id="data" name="data">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Referencia Bancária</label>
-                            <input type="text" class="form-control" value="{{$sistema->iban}}" id="iban" readonly>
+                            <label for="observacao">Observação</label>
+                            <textarea type="text" class="form-control" name="observacao"></textarea>
                         </div>
 
-                        <label for="comprovativo">Comprovativo Bancário em pdf</label>
-                        <div class="card-body bg-gradient rounded">
-                            <input type="file" class="form-control-file" name="comprovativo">
-                        </div>
+                        
 
-
-                        <button type="submit" class="btn bg-gradient text-light mt-3">Enviar Pedido</button>
+                        <button type="submit" class="btn bg-gradient text-light">Enviar Pedido</button>
                     </form>
                 </div>
 
             </div>
         </div>
 
-        <div class="col-xl-5">
 
-                {{-- Imagem --}}
+        {{-- <div class="col-xl-5">
 
-        </div>
+        </div> --}}
 
+
+        
 
     </div>
-
     </div>
+
+   
 </div>
 
 

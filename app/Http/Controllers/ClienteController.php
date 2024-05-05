@@ -35,15 +35,15 @@ class ClienteController extends Controller
         // Validação dos dados recebidos
 
         $validacao = Validator::make($request->all(), [
-            'email' => 'required|string|email|unique:admins|max:255',
-            'password' => 'required|string|min:5',
-        ],
-        [
-            'email.email' => 'O campo e-mail deve ser um endereço de e-mail válido.',
-            'email.unique' => 'Este endereço de e-mail já está sendo utilizado.',
-            'password.min' => 'O campo senha deve ter no mínimo 8 caracteres.',
-        ]
-    );
+                'email' => 'required|string|email|unique:admins|max:255',
+                'password' => 'required|string|min:5',
+            ],
+            [
+                'email.email' => 'O campo e-mail deve ser um endereço de e-mail válido.',
+                'email.unique' => 'Este endereço de e-mail já está sendo utilizado.',
+                'password.min' => 'O campo senha deve ter no mínimo 8 caracteres.',
+            ]
+        );
 
         if ($validacao->fails()) {
             return redirect()->back()->withErrors($validacao)->withInput();

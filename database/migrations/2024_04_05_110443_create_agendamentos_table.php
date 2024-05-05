@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('agendamentos', function (Blueprint $table) {
             $table->id();
             $table->date('data');
+            $table->string('tipo');
             $table->enum('estado', [0, 1, 2]);
             $table->text('observacao')->nullable();
             $table->timestamps();

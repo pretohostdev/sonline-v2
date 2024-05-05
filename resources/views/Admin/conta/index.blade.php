@@ -1,5 +1,5 @@
 @extends('layout.container.app')
-@section('titulo', 'sonline-conta')
+@section('titulo', 'conta')
 
 @push('styles')
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">

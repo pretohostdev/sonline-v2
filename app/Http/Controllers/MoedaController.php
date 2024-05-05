@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Moeda;
+use App\Models\Sistema;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
@@ -24,7 +25,8 @@ class MoedaController extends Controller
      */
     public function create()
     {
-        return view('moeda.create');
+        $sistema = Sistema::find(1);
+        return view('moeda.create', compact('sistema'));
     }
 
     /**
@@ -32,7 +34,36 @@ class MoedaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validacao = Validator::make($request->all(), [
+            'comprovativo' => 'required|file|mimes:pdf|max:2048',
+        ],
+        [
+            'comprovativo.required' => 'O campo comprovativo não pode se ficar vazio',
+            'comprovativo.mimes' => 'O campo comprovativo deve ser um apenas um arquivo pdf.',
+            'comprovativo.max' => 'O tamanho máximo do arquivo pdf é de 2M.',
+        ]
+        );
+
+        if ($validacao->fails()) {
+            return redirect()->back()->withErrors($validacao)->withInput();
+        }
+
+        $comprovativo = $request->file('comprovativo');
+
+        $path = $request->file('comprovativo')->store(
+            'moedas'
+        );
+
+        $moeda = Moeda::create([
+            'nome' => $request->nome,
+            'data' => $request->data,
+            'montante' => $request->montante,
+            'estado' => '0',
+            'comprovativo' => $path,
+            'user_id' => Auth::id()
+        ]);
+
+        return redirect()->route('moeda.estado');
     }
 
     /**

@@ -59,11 +59,22 @@
         <div class="col-xl-6">
             <div class="card card-statistics rounded">
                 <div class="card-body">
-                    <form id="formRedirecionamento">
+
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li class="text-light">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form action="visto.store" method="POST" id="formRedirecionamento">
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Selecione o tipo de visto</label>
-                            <select class="form-control" id="pais">
+                            <label for="tipoVisto">Selecione o tipo de visto</label>
+                            <select class="form-control" id="tipoVisto" name="tipoVisto">
                                 <option value="Turismo">Turismo</option>
                                 <option value="Estuante">Estudante</option>
                                 <option value="Trablho">Trabalho</option>
@@ -71,49 +82,32 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="paises">Selecione o país a ser visitado</label>
-                            <select class="form-control" id="paises">
+                            <label for="pais">Selecione o país a ser visitado</label>
+                            <select class="form-control" id="paises" name="pais">
                                 <option value="angola" selected>Angola</option>
                             </select>
                         </div>
 
 
                         <div class="form-group">
-                            <label for="peso">Data prevista da viagem</label>
-                            <input type="date" class="form-control" value="" id="peso">
+                            <label for="data">Data prevista da viagem</label>
+                            <input type="date" class="form-control" id="data" name="data">
                         </div>
 
-                        <label for="documento">Cópia do B.I ou Passport</label>
-                        <div class="card-body bg-secondary rounded">
-                            <input type="file" class="form-control-file" id="documento">
+                        <label for="documento">Cópia do B.I ou Passport em pdf</label>
+                        <div class="card-body bg-gradient rounded">
+                            <input type="file" class="form-control-file" id="documento" name="documento">
                         </div>
 
                     
                         <div class="form-group mt-2">
                             <label for="descricao">Outras informações relevantes ou solicitações especiais</label>
-                            <textarea class="form-control" id="descricao" required></textarea>
+                            <textarea class="form-control" id="descricao" name="descricao" required></textarea>
                         </div>
                        
 
-                        <button type="submit" class="btn btn-primary mt-3">Enviar pedido</button>
+                        <button type="submit" class="btn bg-gradient text-light">Enviar pedido</button>
                     </form>
-                </div>
-
-                {{-- Spinner do cadastramento da solicitação de abertura de conta wise --}}
-                <div class="d-flex justify-content-center">
-                    <div class="spinner-border text-dark" role="status" id="spinnerRedirecionar">
-                        <span class="sr-only">Loading...</span>
-                      </div>
-                </div>
-
-                {{-- Mensagem de envio com sucesso --}}
-                <div id="mensagemSucesso">
-                    <div class="alert alert-info d-flex alert-dismissible fade show" role="alert">
-                        Pedido de redirecionamento enviado com sucesso!
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="ti ti-close"></i>
-                        </button>
-                    </div>
                 </div>
 
             </div>

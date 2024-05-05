@@ -16,7 +16,10 @@ class Moeda extends Model
         'nome', 
         'data',
         'estado',
-        'montante'
+        'comprovativo',
+        'montante',
+
+        'user_id'
     ];
 
     public function cliente()

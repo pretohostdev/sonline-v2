@@ -22,14 +22,12 @@ class ContaWiseFactory extends Factory
         return [
             'data' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'estado'=>$this->faker->randomElement(['1', '2', '3']),
+            'comprovativo' => 'teste',
 
             'user_id'=> function(){
                 return User::factory()->create()->id;
             },
-
-            'pagamento_id'=> function(){
-                return Pagamento::factory()->create()->id;
-            }
+            
         ];
     }
 }

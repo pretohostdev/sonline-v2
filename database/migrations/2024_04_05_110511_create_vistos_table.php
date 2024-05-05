@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('tipo');
             $table->string('estado');
-            $table->string('dataSolicitacao');
+            $table->string('descricao')->nullable();
+            $table->string('documento');
             $table->string('dataPrevista');
             $table->string('paisDesejado');
+            $table->string('dataSolicitacao');
             $table->timestamps();
 
-            $table->foreignId('pagamento_id')->nullable()->constrained('pagamentos');
             $table->foreignId('user_id')->nullable()->constrained('users');
         });
     }

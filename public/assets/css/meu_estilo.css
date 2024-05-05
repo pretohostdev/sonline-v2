@@ -180,13 +180,8 @@
 
 .lista-horizontal ul li {
     display: inline-block;
-    /* Exibe os itens horizontalmente */
     margin-right: 10px;
-    /* Adiciona um espaço entre os itens */
     padding: 5px 10px;
-    /* Adiciona espaço interno aos itens */
-    /* border: 1px solid #ccc; */
-    /* Adiciona uma borda aos itens (opcional) */
 }
 
 
@@ -220,9 +215,13 @@
     display: none;
 }
 
+#spinnerSistema {
+    display: none;
+}
 #mensagemSucesso {
     display: none;
 }
+
 .btn_sair {
     border: none;
     background: none;

@@ -54,16 +54,27 @@
 
         </div>
 
-    <div class="row">
+    <div class="row mt-2">
 
         <div class="col-xl-6">
             <div class="card card-statistics rounded">
                 <div class="card-body">
-                    <form action="" method="" id="formConta">
-                        {{-- @csrf --}}
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li class="text-light">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form action="{{route('moeda.store')}}" method="POST" id="formMoeda">
+                        @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Seleciona a moeda</label>
-                            <select type="da" class="form-control" id="nomeMoeda">
+                            <select type="da" class="form-control" id="nomeMoeda" name="nomeMoeda">
                                 <option value="Dolar">Dolar</option>
                                 <option value="Euro">Euro</option>
                                 <option value="Kwanza">Kwanza</option>
@@ -72,21 +83,21 @@
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Montante</label>
-                            <input type="number" class="form-control" value="" id="montade">
+                            <input type="number" class="form-control" value="" id="montante" oninput="conversaoMoeda(id)">
                         </div>
 
-                        <label for="">Comprovativo Bancário</label>
-                        <div class="card-body bg-secondary rounded">
-                            <input type="file" class="form-control-file" id="comprovativoBancario">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Referencia Bancária</label>
+                            <input type="text" class="form-control" value="{{$sistema->iban}}" id="iban" readonly>
                         </div>
 
-                        <button type="submit" class="btn btn-primary mt-3">Enviar Pedido</button>
+                        <label for="comprovativoMoeda">Comprovativo Bancário</label>
+                        <div class="card-body bg-gradient rounded">
+                            <input type="file" class="form-control-file" id="comprovativo">
+                        </div>
+
+                        <button type="submit" class="btn bg-gradient text-light mt-3">Enviar Pedido</button>
                     </form>
-                </div>
-
-                {{-- Spinner do cadastramento da solicitação de abertura de conta wise --}}
-                <div class="d-flex justify-content-center bg-info">
-                    Testando apenas
                 </div>
 
             </div>
@@ -95,20 +106,14 @@
         <div class="col-lg-4">
             
             <div class="card card-statistics rounded">
-                <div class="card-header">
+                <div class="card-header bg-gradient">
                     <div class="card-heading">
-                        <h4 class="card-title">Conversão</h4>
+                        <h4 class="card-title text-light">CONVERSÃO</h4>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-gradient">
                     <div class="form-group mb-0">
 
-                        <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputKwanza">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                        </div>
-                        
                         <div class="input-group mb-3" id="divKwanza">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light">AOA</span>
@@ -116,23 +121,11 @@
                             <input type="number" class="form-control" id="inputKwanza" oninput="conversaoMoeda(id)">
                         </div>
 
-                          <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputDolar">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                          </div>
-
                           <div class="input-group mb-3" id="divDolar">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-primary text-light">USD</span>
+                                <span class="input-group-text bg-gradient text-light">USD</span>
                             </div>
                             <input type="number" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
-                          </div>
-
-                          <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputEuro">
-                                <span class="sr-only">Loading...</span>
-                            </div>
                           </div>
 
                           <div class="input-group mb-3" id="divEuro">

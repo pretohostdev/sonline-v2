@@ -31,38 +31,38 @@ class User extends Authenticatable
 
     public function endereco()
     {
-        return $this->hasOne(Endereco::class)->orderBy('created_at', 'desc');;
+        return $this->hasOne(Endereco::class)->orderBy('created_at', 'desc');
     }
 
     public function documentos()
     {
-        return $this->hasMany(Documento::class)->orderBy('created_at', 'desc');;
+        return $this->hasMany(Documento::class)->orderBy('created_at', 'desc');
     }
 
-    public function agendamento()
+    public function agendamentos()
     {
-        return $this->hasOne(Agendamento::class);
+        return $this->hasMany(Agendamento::class)->orderBy('created_at', 'desc');
     }
 
     public function moedas()
     {
-        return $this->hasMany(Moeda::class)->orderBy('created_at', 'desc');;
+        return $this->hasMany(Moeda::class)->orderBy('created_at', 'desc');
     }
 
     public function vistos()
     {
-        return $this->hasMany(Visto::class);
+        return $this->hasMany(Visto::class)->orderBy('created_at', 'desc');
     }
 
 
     public function contaWise()
     {
-        return $this->hasMany(ContaWise::class)->orderBy('created_at', 'desc');;
+        return $this->hasMany(ContaWise::class)->orderBy('created_at', 'desc');
     }
 
     public function pagamentos()
     {
-        return $this->hasMany(Pagamento::class)->orderBy('created_at', 'desc');;
+        return $this->hasMany(Pagamento::class)->orderBy('created_at', 'desc');
     }
 
     public function redirecionamentos()

@@ -32,7 +32,45 @@ class VistoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validacao = Validator::make($request->all(), [
+            'documento' => 'required|file|mimes:pdf|max:2048',
+            'data' => 'required'
+            ],
+            [
+                'documento.required' => 'O campo documento não pode se ficar vazio',
+                'documento.mimes' => 'O campo documento deve ser um apenas um arquivo pdf.',
+                'documento.max' => 'O tamanho máximo do arquivo pdf é de 2M.',
+                'data.required' => 'A data de previsão deve ser especificada',
+            ]
+        );
+
+        if ($validacao->fails()) {
+            return redirect()->back()->withErrors($validacao)->withInput();
+        }
+
+        $documento = $request->file('documento');
+
+        $path = $request->file('documento')->store(
+            'vistos'
+        );
+
+        if($request->descricao){
+            $descricao = $request->descricao;
+        }
+        else{
+            $decricao = "";
+        }
+
+        $visto = ContaWise::create([
+            'tipo' => $request->tipo,
+            'estado' => '0',
+            'descricao' => $descricao,
+            'dataPrevista' => $request->data,
+            'documento' => $path,
+            'user_id' => Auth::id(),
+        ]);
+
+        return redirect()->route('visto.estado');
     }
 
     /**

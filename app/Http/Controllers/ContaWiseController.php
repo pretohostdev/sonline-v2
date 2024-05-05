@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Sistema;
 use App\Models\ContaWise;
 use Illuminate\Http\Request;
 
-use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
+
 
 
 class ContaWiseController extends Controller
@@ -25,7 +28,8 @@ class ContaWiseController extends Controller
     public function create()
     {
         //
-        return view('contaWise.create');
+        $sistema = Sistema::find(1);
+        return view('contaWise.create', compact('sistema'));
     }
 
     /**
@@ -34,37 +38,35 @@ class ContaWiseController extends Controller
     public function store(Request $request)
     {
 
+        $validacao = Validator::make($request->all(), [
+                'comprovativo' => 'required|file|mimes:pdf|max:2048',
+            ],
+            [
+                'comprovativo.required' => 'O campo comprovativo não pode se ficar vazio',
+                'comprovativo.mimes' => 'O campo comprovativo deve ser um apenas um arquivo pdf.',
+                'comprovativo.max' => 'O tamanho máximo do arquivo pdf é de 2M.',
+            ]
+        );
+
+        if ($validacao->fails()) {
+            return redirect()->back()->withErrors($validacao)->withInput();
+        }
+
         $comprovativo = $request->file('comprovativo');
 
-        $extensao = $comprovativo->getClientOriginalExtension();
-
-        // dd($extensao);
-
-        $path = $request->file('comprovativo')->storeAs(
-            'comprovaticosBancarios', 1 . ".{$extensao}"
+        $path = $request->file('comprovativo')->store(
+            'contas'
         );
 
         $conta = ContaWise::create([
             'data' => $request->data,
             'comprovativo' => $path,
             'estado' => '0',
-            'user_id' => 1,
-            'pagamento_id' => 1
+            'user_id' => Auth::id(),
         ]);
 
-        return "Suceso";
-        // $request->comprovativo->store('contas');
-        // try {
-        //     ContaWise::create([
-        //         'data' => $dados['data'],
-        //         'estado' => '0'
-        //     ]);
-        // } catch (\Exception $e) {
-        //     return response()->json($e);
-        // }
-
-        // Retornar uma resposta, se necessário
-        // return response()->json(['message' => 'Dados salvos com sucesso'], 200);
+        return redirect()->route('conta.estado');
+        
     }
 
     /**
@@ -134,7 +136,7 @@ class ContaWiseController extends Controller
            
         }
 
-        return view('contaWise.show', compact('conta'));
+        return view('contaWise.show');
     }
 
 }

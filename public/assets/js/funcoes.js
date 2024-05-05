@@ -17,15 +17,6 @@ var spinnerInputKwanza = document.getElementById("spinnerInputKwanza");
 var spinnerInputDolar = document.getElementById("spinnerInputDolar");
 var spinnerInputEuro = document.getElementById("spinnerInputEuro");
 
-
-
-
-
-// carregarTabelaMoeda();
-
-
-
-
 function conversaoMoeda(id){
 
     if(id == "inputKwanza"){
@@ -38,13 +29,8 @@ function conversaoMoeda(id){
 
             let qtd = inputKwanza.value;
 
-            spinnerInputDolar.style.display = "block";
-            spinnerInputEuro.style.display = "block";
-
             converte("AOA", "USD", qtd)
             .then(data => {
-                spinnerInputDolar.style.display = "none";
-                spinnerInputEuro.style.display = "none";
                 inputDolar.value = data.conversion_result;
             })
             .catch(error => {
@@ -70,14 +56,8 @@ function conversaoMoeda(id){
 
             let qtd = inputDolar.value;
 
-            spinnerInputKwanza.style.display = "block";
-            spinnerInputEuro.style.display = "block";
-
-
             converte("USD", "AOA", qtd)
             .then(data => {
-                spinnerInputKwanza.style.display = "none";
-                spinnerInputEuro.style.display = "none";
                 inputKwanza.value = data.conversion_result;
             })
             .catch(error => {
@@ -104,14 +84,8 @@ function conversaoMoeda(id){
 
             let qtd = inputEuro.value;
 
-            spinnerInputKwanza.style.display = "block";
-            spinnerInputDolar.style.display = "block";
-
             converte("EUR", "AOA", qtd)
             .then(data => {
-
-                spinnerInputKwanza.style.display = "none";
-                spinnerInputDolar.style.display = "none";
                 inputKwanza.value = data.conversion_result;
             })
             .catch(error => {
@@ -127,14 +101,71 @@ function conversaoMoeda(id){
             });
         }
     }
+    else if(id == "montante"){
+
+        let nomeMoeda = document.getElementById('nomeMoeda').value;
+        let montante = document.getElementById('montante').value;
+
+        if(nomeMoeda == "Dolar"){
+            converte("USD", "AOA", montante)
+            .then(data => {
+                inputKwanza.value = data.conversion_result;
+            })
+            .catch(error => {
+                console.error('Erro ao buscar dados:', error);
+            });
+
+            converte("USD", "EUR", montante)
+            .then(data => {
+                inputEuro.value = data.conversion_result;
+            })
+            .catch(error => {
+                console.error('Erro ao buscar dados:', error);
+            });
+
+            inputDolar.value = montante;
+        }
+        else if(nomeMoeda == "Euro"){
+            converte("EUR", "AOA", montante)
+            .then(data => {
+                inputKwanza.value = data.conversion_result;
+            })
+            .catch(error => {
+                console.error('Erro ao buscar dados:', error);
+            });
+
+            converte("EUR", "USD", montante)
+            .then(data => {
+                inputDolar.value = data.conversion_result;
+            })
+            .catch(error => {
+                console.error('Erro ao buscar dados:', error);
+            });
+
+            inputEuro.value = montante;
+        }
+        else if(nomeMoeda == "Kwanza"){
+            converte("AOA", "USD", montante)
+            .then(data => {
+                inputDolar.value = data.conversion_result;
+            })
+            .catch(error => {
+                console.error('Erro ao buscar dados:', error);
+            });
+
+            converte("AOA", "EUR", montante)
+            .then(data => {
+                inputEuro.value = data.conversion_result;
+            })
+            .catch(error => {
+                console.error('Erro ao buscar dados:', error);
+            });
+
+            inputKwanza.value = montante;
+        }
+    }
 
 }
-
-// function teste(id){
-//     var inputKwanza = document.getElementById(id);
-//     console.log(inputKwanza);
-//     // console.log("Meu ID é: " + id);
-// }
 
 async function converte(moedaBase, moedaPretendida, qtd) {
 

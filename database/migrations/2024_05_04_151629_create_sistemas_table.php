@@ -11,16 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('moedas', function (Blueprint $table) {
+        Schema::create('sistemas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('data');
-            $table->string('comprovativo');
-            $table->string('montante');
-            $table->enum('estado', ['0', '1', '2']); 
+            $table->double('precoContaWise'); 
+            $table->string('iban');
             $table->timestamps();
-
-            $table->foreignId('user_id')->constrained('users');
         });
     }
 
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('moedas');
+        Schema::dropIfExists('sistemas');
     }
 };

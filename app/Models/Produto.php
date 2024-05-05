@@ -18,6 +18,7 @@ class Produto extends Model
         'preco',
         'marca',
         'imagem',
+        'link',
         'redirecionamento_id'
     ];
 

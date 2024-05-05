@@ -198,15 +198,19 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="{{ route('conta.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoVisto" >Estado da abertura de conta</a>
+                                                <a href="{{ route('conta.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoConta" >Estado da abertura de conta</a>
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="{{ route('moeda.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoVisto" >Estado da solicitação da moeda</a>
+                                                <a href="{{ route('moeda.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoMoeda" >Estado da solicitação da moeda</a>
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="{{ route('redirecionamento.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoVisto" >Estado do redirecionamento de Produto</a>
+                                                <a href="{{ route('agendamento.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoAgendamento" >Estado de solicitação de agendamento</a>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <a href="{{ route('redirecionamento.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoRedirecionamento" >Estado do redirecionamento de Produto</a>
                                             </div>
                                             
                                         </form>
@@ -230,10 +234,6 @@
 
             var spinnerAtualizar = document.getElementById('spinnerAtualizar');
                 spinnerAtualizar.style.display = "block";
-
-            // var mensagemSucesso = document.getElementById('mensagemSucesso');
-
-            // alert(nome)
 
             // Pegar os dados vindo do formulário
             var nomeCompleto = document.getElementById('nomeCompleto').value;

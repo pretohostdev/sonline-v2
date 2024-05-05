@@ -17,7 +17,6 @@ class ContaWise extends Model
         'estado', 
         'user_id',
         'comprovativo',
-        'pagamento_id',
     ];
     
     protected $dates = ['data'];

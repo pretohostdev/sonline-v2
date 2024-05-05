@@ -12,16 +12,19 @@ class Agendamento extends Model
      // Defina a tabela correspondente
      protected $table = 'agendamentos';
 
-     protected $fillable = ['data', 'estado', 'observacao'];
+     protected $fillable = [
+        'tipo',
+        'data', 
+        'estado', 
+        'observacao',
+
+        'user_id',
+    ];
      protected $dates = ['data'];
 
      public function cliente()
      {
          return $this->belongsTo(User::class);
      }
-
-     public function visto()
-    {
-        return $this->hasOne(Visto::class);
-    }
+    
 }

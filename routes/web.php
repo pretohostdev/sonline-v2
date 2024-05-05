@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-// use App\Http\Controllers\SonlineController;
 use App\Http\Controllers\AgendamentoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContaWiseController;
@@ -69,14 +68,17 @@ Route::post('/cadastrar', [UserController::class, 'store'])->name('cadastrar');
 
 
 Route::middleware(['admin'])->group(function(){
-    Route::get('admin', function(){
-        dd('Vc é um admin');
-    });
 
-
+   
     // Clientes 
-    Route::get('homeAdmin/', [AdminController::class, 'index'])->name('homeAdmin');
+    Route::get('admin/', [AdminController::class, 'index'])->name('homeAdmin');
     Route::get('listarCliente/', [AdminController::class, 'listarCliente'])->name('admin.user.index');
+
+
+     // Produtos
+     Route::get('produtoCreate/', [AdminController::class, 'cadastrarProduto'])->name('admin.produto.create');
+     Route::get('listarProduto/', [AdminController::class, 'listarProdutos'])->name('admin.produto.index');
+     Route::post('storeProduto/', [AdminController::class, 'storeProduto'])->name('admin.produto.store');
 
      // Visto
      Route::get('listarVistos/', [AdminController::class, 'listarVistos'])->name('admin.visto.index');
@@ -89,10 +91,6 @@ Route::middleware(['admin'])->group(function(){
     // Conta
     Route::get('listarContas/', [AdminController::class, 'listarContas'])->name('admin.conta.index');
     Route::get('mostrarContas/{id}', [AdminController::class, 'mostrarContas'])->name('admin.conta.show');
-
-    // Moeda
-    Route::get('listarProdutos/', [AdminController::class, 'listarProdutos'])->name('admin.produto.index');
-    Route::get('mostrarProdutos/{id}', [AdminController::class, 'mostrarProdutos'])->name('admin.produto.show');
 
     // Redirecionamentos
     Route::get('listarRedirecionamento/', [AdminController::class, 'listarRedirecionamento'])->name('admin.redirecionamento.index');
@@ -110,7 +108,8 @@ Route::middleware(['cliente'])->group(function(){
         'moeda' => MoedaController::class,
         'pagamento' => PagamentoController::class,
         'produto' => ProdutoController::class,
-        'visto' => VistoController::class
+        'visto' => VistoController::class,
+        'agendamento' => AgendamentoController::class,
     ]);
 
     Route::resource('user', UserController::class)->except(['store']);
@@ -122,6 +121,7 @@ Route::middleware(['cliente'])->group(function(){
     Route::get('/estadoMoeda', [MoedaController::class, 'estado'])->name('moeda.estado');
     Route::get('/estadoVisto', [VistoController::class, 'estado'])->name('visto.estado');
     Route::get('/estadoConta', [ContaWiseController::class, 'estado'])->name('conta.estado');
+    Route::get('/estadoAgendamento', [AgendamentoController::class, 'estado'])->name('agendamento.estado');
     Route::get('/estadoRedirecionamento', [RedirecionamentoController::class, 'estado'])->name('redirecionamento.estado');
 
 });
