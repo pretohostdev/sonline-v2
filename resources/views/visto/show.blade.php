@@ -158,7 +158,6 @@
                                                             <li class="list-group-item">Tipo de visto: <span class="text-dark">{{ $visto->tipo }}</span> </li>
                                                             <li class="list-group-item">País desejado: <span class="text-dark">{{ $visto->paisDesejado }}</span> </li>
                                                             <li class="list-group-item">Data prevista para a viagem: <span class="text-dark">{{ $visto->dataPrevista }}</span> </li>
-                                                            {{-- <li class="list-group-item">Data do redirecionamento: <span class="text-dark">{{ $visto->data }}</span> </li> --}}
                                                         </ul>
                                                     @endif
                                                 </div>
@@ -221,9 +220,6 @@
                                         </div>
                                         <div id="collapse4-3" class="collapse" data-parent="#accordionborderradius">
                                             <div class="card-body">
-                                                {{-- <div class="acd-group border-bottom-0"> --}}
-                                                   
-                                                {{-- </div> --}}
                                             </div>
                                         </div>
                                     </div>

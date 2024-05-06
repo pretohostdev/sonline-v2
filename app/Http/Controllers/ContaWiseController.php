@@ -136,7 +136,7 @@ class ContaWiseController extends Controller
            
         }
 
-        return view('contaWise.show');
+        return view('contaWise.show', compact('conta'));
     }
 
 }

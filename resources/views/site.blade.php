@@ -128,94 +128,6 @@
         </div>
     </div>
 
-    <div class="row mt-4">
-        <div class="col-lg-6 round">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="table-responsive ml-2" style="overflow: auto; height:400px">
-                        <table class="table table-hover mb-0">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th scope="col">MOEDA</th>
-                                    <th scope="col">VALOR</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="table-secondary" id="tabelaMoeda">
-                                {{-- Corpo da tabela foi carregado com --}}
-                            </tbody>
-                        </table>
-
-                        <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerTabela">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-lg-4">
-            
-            <div class="card card-statistics">
-                <div class="card-header">
-                    <div class="card-heading">
-                        <h4 class="card-title">Conversão</h4>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="form-group mb-0">
-
-                        <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputKwanza">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                        </div>
-                        
-                        <div class="input-group mb-3" id="divKwanza">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-danger text-light">AOA</span>
-                            </div>
-                            <input type="number" class="form-control" id="inputKwanza" oninput="conversaoMoeda(id)">
-                        </div>
-
-                          <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputDolar">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                          </div>
-
-                          <div class="input-group mb-3" id="divDolar">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-success text-light">USD</span>
-                            </div>
-                            <input type="number" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
-                          </div>
-
-                          <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status" id="spinnerInputEuro">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                          </div>
-
-                          <div class="input-group mb-3" id="divEuro">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-dark text-light">EUR</span>
-                            </div>
-                            <input type="number" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
-                          </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        
-
     </div>
 
     <div class="row mt-2">
@@ -294,6 +206,8 @@
 
 
     {{-- Lista de Produtos da Amazon --}}
+
+
     <div class="row mt-4 mb-4">
         <div class="container">
             <div class="col-lg-12 d-flex justify-content-center align-items-center p-2" style="background-color:#062f4f">

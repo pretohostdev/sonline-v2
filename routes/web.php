@@ -50,15 +50,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('conta/', [HomeClienteController::class, 'index']);
-
-
-// Route::get('sonline/', function () {
-//     return view('site');
-// })->name('site');
-
 Route::get('/sonline', [UserController::class, 'site'])->name('site');
-
 
 Route::get('teste/', function () {
     return view('teste');
@@ -72,6 +64,9 @@ Route::post('/cadastrar', [UserController::class, 'store'])->name('cadastrar');
 
 Route::middleware(['admin'])->group(function(){
 
+    // Rota de envio de email
+    Route::get('enviarEmail/{id}', [AdminController::class, 'enviarEmail'])->name('enviarEmail');
+    
    
     // Clientes 
     Route::get('admin/', [AdminController::class, 'index'])->name('homeAdmin');
@@ -85,6 +80,9 @@ Route::middleware(['admin'])->group(function(){
      Route::get('editarProduto/{id}', [ProdutoController::class, 'edit'])->name('admin.produto.edit');
      Route::get('atualizarProduto/{id}', [ProdutoController::class, 'update'])->name('admin.produto.update');
 
+    // Mostrar e listar produtos a partir do lado Admin
+    
+    
      // Visto
      Route::get('listarVistos/', [AdminController::class, 'listarVistos'])->name('admin.visto.index');
      Route::get('mostrarVistos/{id}', [AdminController::class, 'mostrarVistos'])->name('admin.visto.show');
@@ -106,6 +104,10 @@ Route::middleware(['admin'])->group(function(){
     Route::get('mostrarRedirecionamentos/{id}', [AdminController::class, 'mostrarRedirecionamentos'])->name('admin.redirecionamento.show');
 
     Route::get('EditarCliente/', [AdminController::class, 'EditarCliente'])->name('admin.user.editar');
+
+    Route::get('downloadMoeda{moeda}', [AdminController::class, 'downloadMoeda'])->name('downloadMoeda');
+    Route::get('downloadaConta{conta}', [AdminController::class, 'downloadConta'])->name('downloadConta');
+    Route::get('downloadVisto{visto}', [AdminController::class, 'downloadVisto'])->name('downloadVisto');
 });
 
 Route::middleware(['cliente'])->group(function(){
@@ -127,7 +129,7 @@ Route::middleware(['cliente'])->group(function(){
 
 
     // ROTA DOS ESTADOS 
-    Route::get('/estadoMoeda', [MoedaController::class, 'estado'])->name('moeda.estado');
+    Route::get('/estadoMoeda', [MoedaController::class, 'estadoMoeda'])->name('moeda.estado');
     Route::get('/estadoVisto', [VistoController::class, 'estado'])->name('visto.estado');
     Route::get('/estadoConta', [ContaWiseController::class, 'estado'])->name('conta.estado');
     Route::get('/estadoAgendamento', [AgendamentoController::class, 'estado'])->name('agendamento.estado');

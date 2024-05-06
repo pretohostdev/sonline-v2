@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Sistema;
+use App\Models\Moeda;
+use App\Models\Visto;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; // Adicionar senhas criptografadas
@@ -16,6 +18,13 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Validation\Rules\File;
+
+use Illuminate\Support\Facades\Response;
+
+
+use Illuminate\Support\Facades\Mail; // Classe para lidar com o envio de email
+
+use App\Mail\Mensagem;
 
 class AdminController extends Controller
 {
@@ -382,6 +391,36 @@ class AdminController extends Controller
     public function destroy(Admin $admin)
     {
         //
+    }
+
+    public function enviarEmail($id){
+
+        $cliente = User::find($id);
+
+        return view('admin.email', compact('cliente'));
+    }
+
+    public function verComprovativo($moeda){
+
+        $moeda = Moeda::find($moeda);
+        return view('Admin.verComprovativo', compact('moeda'));
+    }
+
+    public function downloadMoeda($moeda){
+
+        $moeda = Moeda::find($moeda);
+
+        return view('Admin.moeda.download', compact('moeda'));
+    }
+    public function downloadConta($conta){
+
+        $conta = Conta::find($conta);
+        return view('Admin.conta.downloada', compact('conta'));
+    }
+    public function downloadVisto($visto){
+
+        $visto = Visto::find($visto);
+        return view('Admin.visto.download', compact('visto'));
     }
 
     

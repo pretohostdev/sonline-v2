@@ -39,12 +39,12 @@ class MoedaController extends Controller
     public function store(Request $request)
     {
         $validacao = Validator::make($request->all(), [
-            'comprovativo' => 'required|file|mimes:pdf|max:2048',
+            'documento' => 'required|file|mimes:pdf|max:2048',
         ],
         [
-            'comprovativo.required' => 'O campo comprovativo não pode ficar vazio',
-            'comprovativo.mimes' => 'O campo comprovativo deve ser um apenas um arquivo pdf.',
-            'comprovativo.max' => 'O tamanho máximo do arquivo pdf é de 2M.',
+            'documento.required' => 'O campo documento não pode ficar vazio',
+            'documento.mimes' => 'O campo documento deve ser um apenas um arquivo pdf.',
+            'documento.max' => 'O tamanho máximo do arquivo pdf é de 2M.',
         ]
         );
 
@@ -52,9 +52,9 @@ class MoedaController extends Controller
             return redirect()->back()->withErrors($validacao)->withInput();
         }
 
-        $comprovativo = $request->file('comprovativo');
+        $documento = $request->file('documento');
 
-        $path = $request->file('comprovativo')->store(
+        $path = $request->file('documento')->store(
             'moedas'
         );
 
@@ -63,9 +63,10 @@ class MoedaController extends Controller
         $moeda = Moeda::create([
             'nome' => $request->nome,
             'data' => $dataAtual->toDateString(),
+            'documento' => $request->documento,
             'montante' => $request->montante,
             'estado' => '0',
-            'comprovativo' => $path,
+            'documento' => $path,
             'user_id' => Auth::id()
         ]);
 
@@ -101,10 +102,11 @@ class MoedaController extends Controller
      */
     public function destroy(Moeda $moeda)
     {
-        //
+
     }
 
-    public function estado()
+
+    public function estadoMoeda()
     {
         $id = Auth::id();
 
@@ -119,7 +121,7 @@ class MoedaController extends Controller
             $moeda = (Object)[
                 'id' => $moeda->id,
                 'nome' => $moeda->nome,
-                'documento' => $moeda->comprovativo,
+                'documento' => $moeda->documento,
                 'montante' => $moeda->montante,
                 'estado' => $moeda->estado,
                 'data' => $moeda->data,
@@ -129,6 +131,8 @@ class MoedaController extends Controller
         else{
 
             $moeda = (Object)[
+                'id' => '',
+                'documento' => '',
                 'nome' => '',
                 'montate' => '',
                 'data' => '',

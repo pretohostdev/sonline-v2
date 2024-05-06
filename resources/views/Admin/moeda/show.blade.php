@@ -72,6 +72,7 @@
                                         <th>Tipo de moeda</th>
                                         <th>Data de solicitação</th>
                                         <th>Montante</th>
+                                        <th>Comprovativo</th>
                                         <th>Estado</th>
                                         <th class="text-center">Opção</th>
                                     </tr>
@@ -85,6 +86,7 @@
                                             <td class="text-dark">{{$moeda->nome}}</td>
                                             <td class="text-dark">{{$moeda->data}}</td>
                                             <td class="text-dark">{{$moeda->montante}}</td>
+                                            <td class="text-primary"> <a href="{{ route('downloadMoeda', $moeda) }}">Ver</a></td>
                                             <td class="text-dark">
                                                 @if ($moeda->estado == "0")
                                                     <div class="d-flex align-items-center">
@@ -104,7 +106,7 @@
                                                 @endif
                                             </td>
                                             
-                                            <td><button class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</button> </td>
+                                            <td><a href="{{ route('downloadMoeda', $moeda) }}" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</> </td>
                                         </tr>
 
                                     @endforeach

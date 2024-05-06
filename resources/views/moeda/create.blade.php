@@ -83,7 +83,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Montante</label>
-                            <input type="number" class="form-control" name="montante" oninput="conversaoMoeda(id)">
+                            <input type="number" class="form-control" name="montante" id="montante" oninput="conversaoMoeda(id)">
                         </div>
 
                         <div class="form-group">
@@ -93,7 +93,7 @@
 
                         <label for="comprovativoMoeda">Comprovativo Bancário</label>
                         <div class="card-body bg-gradient rounded">
-                            <input type="file" class="form-control-file" id="comprovativo" name="comprovativo">
+                            <input type="file" class="form-control-file" id="comprovativo" name="documento">
                         </div>
 
                         <button type="submit" class="btn bg-gradient text-light mt-3">Enviar Pedido</button>
@@ -118,21 +118,21 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light">AOA</span>
                             </div>
-                            <input type="number" class="form-control" id="inputKwanza" oninput="conversaoMoeda(id)">
+                            <input type="text" class="form-control" id="inputKwanza" oninput="conversaoMoeda(id)">
                         </div>
 
                           <div class="input-group mb-3" id="divDolar">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-gradient text-light">USD</span>
                             </div>
-                            <input type="number" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
+                            <input type="text" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
                           </div>
 
                           <div class="input-group mb-3" id="divEuro">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-success text-light">EUR</span>
                             </div>
-                            <input type="number" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
+                            <input type="text" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
                           </div>
 
                     </div>

@@ -105,7 +105,7 @@
                                                 @endif
                                             </td>
                                             
-                                            <td><button class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</button> </td>
+                                            <td><a href="{{ route('downloadConta', $conta) }}" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</> </td>
                                         </tr>
 
                                     @endforeach

@@ -189,7 +189,7 @@
                                                         @foreach ($moeda->listaSolicitacoaMoedas as $m)
                                                         <tr>
                                                             <td>{{ $m->nome }}</td>
-                                                            <td>{{ $m->montante  }}</td>
+                                                            {{-- <td>{{ $m->montante  }}</td> --}}
                                                             <td>{{ $m->data }}</td>
                                                         </tr>
                                                         @endforeach
@@ -213,7 +213,7 @@
                                     <div class="acd-group border-bottom-0">
                                         <div class="card-header rounded-0 bg-primary">
                                             <div class="card-header rounded-0 d-flex justify-content-center">
-                                                <iframe src="{{ url("storage/{$moeda->documento}") }}" width="60%" height="600px"></iframe>
+                                                <iframe src="{{ url("storage/{$moeda->documento}") }}" width="70%" height="600px"></iframe>
                                             </div>
                                         </div>
                                         <div id="collapse4-3" class="collapse" data-parent="#accordionborderradius">
