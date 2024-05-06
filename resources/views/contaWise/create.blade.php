@@ -54,7 +54,7 @@
 
         </div>
 
-    <div class="row">
+    <div class="row mt-2">
         <div class="col-xl-7">
             <div class="card card-statistics">
                 <div class="card-body">

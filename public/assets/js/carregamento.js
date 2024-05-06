@@ -1,33 +1,6 @@
 
 
 
-carregarTabelaMoeda();
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('loginButton').addEventListener('click', function () {
-        // Feche o modal manualmente após o clique no botão
-
-        // window.location.href = "{{ route('login') }}";
-
-        var loginUrl = this.getAttribute('data-login-url');
-
-    // Redireciona para a rota de login
-    window.location.href = loginUrl;
-    });
-});
-
-
-
-
-
-
-
 
 
 function carregarTabelaMoeda(){

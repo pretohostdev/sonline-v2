@@ -17,33 +17,15 @@
 <body>
 
      <div class="app_publico">
-          <!-- Início do wrap do sistema -->
-          {{-- <div class="app-wrap"> --}}
-
-             <!-- Início do pré-carregamento da página -->
-            @include('layout.componentes.carregamentoPagina')
+            {{-- @include('layout.componentes.carregamentoPagina') --}}
 
             <!-- Header do sistema --> 
             @yield('header')
-            
-            {{-- <div class="app-container"> --}}
-                {{-- @yield('dashboard') --}}
-                
-                <!-- Esse é o corpo do sistema -->
-                {{-- <div class="app-main" id="main"> --}}
                     @include('layout.componentes.carrocel')
-                    
-                    {{-- <div class="container-fluid"> --}}
-                        @yield("corpo_publico")
-                    {{-- </div> --}}
-                {{-- </div> --}}
 
-            {{-- </div> --}}
+                    @yield("corpo_publico")
 
             @yield('footer')
-
-          {{-- </div> --}}
-
      </div>
 
      @stack('scripts')

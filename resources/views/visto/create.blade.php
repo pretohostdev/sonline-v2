@@ -70,8 +70,8 @@
                         </div>
                     @endif
 
-                    <form action="visto.store" method="POST" id="formRedirecionamento">
-
+                    <form action="{{route('visto.store')}}" method="POST" id="formVisto" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
                             <label for="tipoVisto">Selecione o tipo de visto</label>
                             <select class="form-control" id="tipoVisto" name="tipoVisto">
@@ -88,6 +88,10 @@
                             </select>
                         </div>
 
+                        <div class="form-group">
+                            <label for="data">Data solicitacao</label>
+                            <input type="date" class="form-control" id="dataSolicitacao" name="dataSolicitacao">
+                        </div>
 
                         <div class="form-group">
                             <label for="data">Data prevista da viagem</label>

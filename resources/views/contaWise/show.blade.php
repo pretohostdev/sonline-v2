@@ -155,9 +155,6 @@
                                                         <ul class="list-group">
                                                             <li class="list-group-item">Nome do usuário: <span class="text-dark">{{ $conta->nome }}</span> </li>
                                                             <li class="list-group-item">Data da solicitação: <span class="text-dark">{{ $conta->data }}</span> </li>
-                                                            {{-- <li class="list-group-item">País de origem do produto: <span class="text-dark">{{ $conta->estado }}</span> </li> --}}
-                                                            {{-- <li class="list-group-item">Data de destino do produto: <span class="text-dark">{{ $conta->paisDestino }}</span> </li> --}}
-                                                            {{-- <li class="list-group-item">Data do redirecionamento: <span class="text-dark">{{ $conta->data }}</span> </li> --}}
                                                         </ul>
                                                     @endif
                                                 </div>

@@ -7,6 +7,10 @@ use App\Models\Moeda;
 use App\Models\Sistema;
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
+
+use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
 
 
@@ -38,7 +42,7 @@ class MoedaController extends Controller
             'comprovativo' => 'required|file|mimes:pdf|max:2048',
         ],
         [
-            'comprovativo.required' => 'O campo comprovativo não pode se ficar vazio',
+            'comprovativo.required' => 'O campo comprovativo não pode ficar vazio',
             'comprovativo.mimes' => 'O campo comprovativo deve ser um apenas um arquivo pdf.',
             'comprovativo.max' => 'O tamanho máximo do arquivo pdf é de 2M.',
         ]
@@ -54,9 +58,11 @@ class MoedaController extends Controller
             'moedas'
         );
 
+        $dataAtual = Carbon::now();
+
         $moeda = Moeda::create([
             'nome' => $request->nome,
-            'data' => $request->data,
+            'data' => $dataAtual->toDateString(),
             'montante' => $request->montante,
             'estado' => '0',
             'comprovativo' => $path,
@@ -102,7 +108,7 @@ class MoedaController extends Controller
     {
         $id = Auth::id();
 
-        $conta = Moeda::where('user_id', $id)->latest()->first();
+        $moeda = Moeda::where('user_id', $id)->latest()->first();
         
         $cliente = User::find($id);
 
@@ -111,7 +117,9 @@ class MoedaController extends Controller
 
             $clientesComSolicitacoaMoeda = $cliente->moedas;
             $moeda = (Object)[
+                'id' => $moeda->id,
                 'nome' => $moeda->nome,
+                'documento' => $moeda->comprovativo,
                 'montante' => $moeda->montante,
                 'estado' => $moeda->estado,
                 'data' => $moeda->data,

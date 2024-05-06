@@ -55,6 +55,7 @@ class SistemaController extends Controller
         $dados = json_decode($request->getContent(), true);
         
         $sistema = Sistema::find(1);
+
         $sistema->iban = $dados['iban'];
         $sistema->precoContaWise = $dados['preco'];
         $sistema->save();

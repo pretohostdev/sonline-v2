@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUpdateUser;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Produto;
 use App\Models\Endereco;
 
 use Illuminate\Support\Facades\Hash; // Adicionar senhas criptografadas
@@ -15,6 +16,11 @@ class UserController extends Controller
     public function index()
     {
         return view('user.index');
+    }
+
+    public function site(){
+        $produtos = Produto::all();
+        return view('site', compact('produtos'));
     }
 
     /**

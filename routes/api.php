@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SistemaController;
 use App\Http\Controllers\ContaWiseController;
@@ -37,5 +38,8 @@ Route::post('/userAtualizar', [UserController::class, 'update']);
 
 /*END-POINT DO SISTEMA SONLINE para verificar se o email do usuário já foi usado */
 Route::get('/existeEmail/{email}', [UserController::class, 'existeEmail']);
+
+
+Route::delete('/produto/{id}', [ProdutoController::class, 'destroy']);
 
 

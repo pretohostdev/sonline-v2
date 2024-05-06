@@ -42,7 +42,7 @@
                                     <a href="x"></a>
                                 </li>
                                 <li>
-                                    Clientes
+                                    Produtos Amazon
                                 </li>
                             </ol>
                         </nav>
@@ -66,15 +66,14 @@
                 <div class="card card-statistics">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="tabelaClientes" class="table display responsive nowrap table-light table-bordered">
+                            <table id="tabelaProdutos" class="table display responsive nowrap table-light table-bordered">
                                 <thead class="bg-gradient text-light">
                                     <tr>
                                         <th>Nome</th>
-                                        <th>Email</th>
-                                        <th>Género</th>
-                                        <th>Contacto</th>
-                                        <th>Data Dascimento</th>
-                                        <th class="text-center">Eliminar</th>
+                                        <th>Preço</th>
+                                        <th>Link afiliado</th>
+                                        <th>Descrição</th>
+                                        <th>Opções</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -82,12 +81,25 @@
                                     @foreach ($produtos as $produto)
                                     
                                         <tr data-id="{{ $produto->id }}">
-                                            <td class="text-dark">{{$produto->name}}</td>
-                                            <td class="text-dark">{{$produto->email}}</td>
-                                            <td class="text-dark">{{$produto->genero}}</td>
-                                            <td class="text-dark">{{$produto->contacto}}</td>
-                                            <td class="text-dark">{{$produto->dataNascimento}}</td>
-                                            <td><button class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Eliminar</button> </td>
+                                            <td class="text-dark">{{$produto->nome}}</td>
+                                            <td class="text-dark">{{$produto->preco}}</td>
+                                            <td class="text-dark">
+
+                                                <a href="{{$produto->link}}" target="_blank" class="text-primary">{{$produto->link}}</a>
+                                            </td>
+                                            <td class="text-dark">{{$produto->descricao}}</td>
+                                            <td>
+                                                {{-- <button class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Eliminar</button> --}}
+                                                <div class="dropdown">
+                                                    <a class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                                      
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                      <a class="dropdown-item" href="{{route('admin.produto.edit', $produto->id)}}">Editar</a>
+                                                      <a class="dropdown-item" href="#">Eliminar</a>
+                                                    </div>
+                                                  </div>
+                                            </td>
                                         </tr>
 
                                     @endforeach
@@ -107,16 +119,37 @@
             </div>
 
             <script>
-                tabelaprodutos.addEventListener('click', function(event) {
+                tabelaProdutos.addEventListener('click', function(event) {
                 var elementoClicado = event.target;
                 var linha = elementoClicado.closest('tr');
                 var id = linha.dataset.id;
 
-                console.log(id);
-        
-                // if (elementoClicado.classList.contains('btn-eliminar')) {
-                //     console.log('Editar produto com ID:', id);
-                // }
+                // id.remove();
+                // console.log(elementoClicado);
+                // elementoClicado.deleteRow(id);
+
+                async function eliminarProduto(id){
+                    const response = await fetch('http://localhost:8000/api/produto/'+id,
+                    {
+                        method:'DELETE',
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    const produto = await response.json();
+                    return produto;
+                }
+
+                const produto = eliminarProduto(id);
+
+                produto.then(
+                    produto=>{
+                        console.log(produto);
+                        linha.remove();
+                    }
+                );
+    
+                
             });
             </script>
             

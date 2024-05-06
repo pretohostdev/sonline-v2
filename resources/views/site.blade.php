@@ -5,6 +5,7 @@
 @push('styles')
 {{-- Inclusão do Bootstrap 5 no projecto --}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
 <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -12,15 +13,14 @@
 <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
-
-{{-- Animação --}}
-<script src="https://unpkg.com/scrollreveal"></script>    
-     
-{{-- Font e Icones alternativa --}}
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
      
 @endpush
+
+
+{{-- <script src="https://unpkg.com/scrollreveal"><script/>  --}}
+
 
 @section('header')
     @include('layout.componentes.header_public')
@@ -34,9 +34,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="w-100 d-flex justify-content-center align-items-center" style="height: 600px; background-color:#062f4f">
-                <div class="" style="text-align:center;">
-                    <h1 class="text-light tituloAnimado">Sonline Service</h1>
-                    <p style="width: 500px; font-size:16pt;">
+                <div style="text-align:center;">
+                    <h1 id="servicos" class="text-light tituloAnimado">Sonline Service</h1>
+                    <p style="width: 500px; font-size:16pt;" class="text-light">
                         Descubra destinos incríveis, planeje suas aventuras e crie memórias inesquecíveis com os 
                         pacotes personalizados da nossa agência.
                     </p>
@@ -296,9 +296,9 @@
     {{-- Lista de Produtos da Amazon --}}
     <div class="row mt-4 mb-4">
         <div class="container">
-            <div class="col-lg-12 d-flex justify-content-center align-items-center p-2" style="background:#342628 ">
+            <div class="col-lg-12 d-flex justify-content-center align-items-center p-2" style="background-color:#062f4f">
                 <div class="text-center">
-                    <h3  class="text-light" style="margin:0;padding:0">Lista de Produtos</h3>
+                    <h3  class="text-light" style="margin:0;padding:0">Lista de produtos Amazon</h3>
                 </div>
             </div>
         </div>
@@ -308,27 +308,27 @@
         <div class="container">
             <div class="lista-horizontal">
                 <ul>
-                    @for ($i = 1; $i <= 10; $i++)
+                    @foreach ($produtos as $produto )
+                   
                     <li>
                         <div class="card" style="width: 18rem;">
-                            <img src="assets/img/produtos/telefone.png" class="card-img-top" alt="telefone">
+                            @if ($produto->imagem)
+                                <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" alt="telefone">
+                            @endif
                             <div class="card-body">
-                              <h5 class="card-title">Iphone</h5>
+                              <h5 class="card-title">{{$produto->nome}}</h5>
                               <p class="card-text" style="width: inherit">700$</p>
-                              <p>Código:#49980 - <span class="text-danger">Importante</span></p>
-                              <a href="#" class="btn btn-block btn-info ">Comprar</a>
+                              <p>Descrição - Importante</p>
+                              <a href="{{$produto->link}}" class="btn btn-block btn-info ">Comprar</a>
                             </div>
                           </div>
                       </li>
-                    @endfor
+                    @endforeach
                   
                 </ul>
               </div>
         </div>
     </div>
-    
-
-
 
 <div class="row mt-5">
     <div class="container">
@@ -403,17 +403,16 @@
 
     {{-- Sobre --}}
   <div class="row mt-4 d-flex justify-content-center">
-    <div class="col-lg-4 d-flex justify-content-end align-items-center" style="height: 400px">
-        <div style="">
-            <h2>Quem somos</h2>
-        </div>
+
+    <div class="col-lg-4 d-flex justify-content-end align-items-center" style="height: 800px">
+        <h2 id="consultoria" class="text-info">Consultoria</h2>
     </div>
 
-    <div class="col-lg-6 d-flex jusfitfy-content-center align-items-center bg-warning" style="height: 400px">
-        <div style="">
-            
-        </div>
+
+    <div class="col-lg-8 d-flex justify-content-cente align-items-cente" style="height: 800px">
+        <img src="{{asset('assets/img/consultoria.jpg')}}" alt="consultoria" height="" width="100%">
     </div>
+    
   </div>
 
   {{-- Contactos --}}
@@ -421,25 +420,22 @@
     
     <div class="col-lg-6 col-lg-4 d-flex justify-content-end align-items-cente bg-dark" style="height: 400px">
         <div>
-            <img src="assets/img/contacto.png" alt="contactos" height="100%">
+            <img src="{{asset('assets/img/contacto.png')}}" alt="contactos" height="100%">
         </div>
     </div>
 
     <div class="col-lg-4 d-flex align-items-center bg-secondary" style="height: 400px">
         <div style="">
-            <h2>Contactos</h2>
-            <h4 class="text-dark">Unitel:934962288</h4>
-            <h4 class="text-dark">Africell:945029144</h4>
-            <h4 class="text-dark">Email:claudiorufino@gmail.com</h4>
+            <h2 class="text-light" id="contacto">Contactos</h2>
+            <h4 class="text-light">Unitel:934962288</h4>
+            <h4 class="text-light">Africell:945029144</h4>
+            <h4 class="text-light">Email:claudiorufino@gmail.com</h4>
         </div>
     </div>
   </div>
 
     
   </div>
-
-  
-    
 
 @endsection
 
@@ -450,8 +446,8 @@
 @push('scripts')
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
-    <script src="{{asset('assets/js/funcoes.js')}}"></script>
-    <script src="{{asset('assets/js/animacao.js')}}"></script>
-    <script src="{{asset('assets/js/carregamento.js')}}"></script>
+    <script src="{{asset('assets/js/animacao.js')}}"></script>  
+   
+    
 @endpush
 

@@ -1,9 +1,8 @@
 <!-- Inicio do Header do sistema -->
 <header class="app-header top-bar">
     <!-- begin navbar -->
-    <nav class="navbar navbar-expand-md navbar-info">
+    <nav class="navbar navbar-expand-md">
         <div class="navbar-header d-flex align-items-center bg-white"> 
-            <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
             
             <a class="navbar-brand mt-3" href="javascript:void(0)">
                 <img src="{{asset('assets/img/logo-registar.png')}}" class="img-fluid logo-desktop" alt="logo"/>
@@ -11,7 +10,6 @@
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="ti ti-align-left"></i>
             <i class="fe fe-menu"></i>
         </button>
 
@@ -20,7 +18,7 @@
             <div class="navigation d-flex">
                 <ul class="navbar-nav nav-left">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links Rápidos
+                        <a class="nav-link" style="color:#007bff" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links Rápidos
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
@@ -33,10 +31,10 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-sm-2 p-20">
+                                <div class="col-sm-2 p-20 bg-gradient">
                                     <h4>Entrar</h4>
                                     <ul>
-                                        <li class="nav-link text-primary">
+                                        <li class="nav-link text-primar">
                                             <a href="{{route('login')}}">Clique aqui</a>
                                         </li>
                                     </ul>
@@ -88,7 +86,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="javascript:void(0)" class="nav-link " id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social
+                        <a href="javascript:void(0)" class="nav-link" style="color: #007bff" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
@@ -114,36 +112,35 @@
                 <ul class="navbar-nav nav-right ml-auto" id="ul_nav">
                     
                     <li class="nav-item mr-3">
-                        <a class="nav-link" href="x">
+                        <a class="nav-link" href="#inicio">
                             Início
                         </a>
                     </li>
 
                     <li class="nav-item mr-4">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="#servicos">
                             Serviços
                         </a>
                     </li>
 
-                    <li class="nav-item text-primary mr-3">
-                        <a class="nav-link" href="" id="" role="button">
-                            Sobre
+                    <li class="nav-item text-primary mr-4">
+                        <a class="nav-link" href="#consultoria" role="button">
+                            Treinar
                         </a>
                     </li>
 
-                    <li class="nav-item mr-3">
-                        <a class="nav-link " href="" id="">
+                    <li class="nav-item mr-4">
+                        <a class="nav-link " href="#contacto" id="">
                             Contacto
                         </a>
                     </li>
                 </ul>
-
-                <form class="form-inline my-2 mr-3">
-                    <i class="ti ti-2x ti-user mr-1 text-dark"></i>
+                
+                <form class="form-inline my-2 mr-3 btnClienteSair">
+                    <i class="ti ti-2x ti-user mr-1" style="color:#007bff"></i>
                     <a href="{{route('login')}}" class="my-2" style="color:#007bff">
                         Entrar
                     </a>
-                </form>
 
             </div>
         </div>

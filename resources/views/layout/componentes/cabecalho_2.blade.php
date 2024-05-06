@@ -8,7 +8,7 @@
     <a href="{{ route('contaWise.create') }}" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Abertura de conta">
         <i class="fa fa-cc-visa btn btn-icon text-warning"></i>
     </a>
-    <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Calendário">
+    <a href="{{route('agendamento.create')}}" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Agendamento">
         <i class="fa fa-calendar-o btn btn-icon text-cyan"></i>
     </a>
     <a href="{{ route('redirecionamento.create') }}" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Redirecionar Produto">

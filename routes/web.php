@@ -53,9 +53,12 @@ Route::get('/', function () {
 // Route::get('conta/', [HomeClienteController::class, 'index']);
 
 
-Route::get('site/', function () {
-    return view('site');
-})->name('site');
+// Route::get('sonline/', function () {
+//     return view('site');
+// })->name('site');
+
+Route::get('/sonline', [UserController::class, 'site'])->name('site');
+
 
 Route::get('teste/', function () {
     return view('teste');
@@ -79,10 +82,16 @@ Route::middleware(['admin'])->group(function(){
      Route::get('produtoCreate/', [AdminController::class, 'cadastrarProduto'])->name('admin.produto.create');
      Route::get('listarProduto/', [AdminController::class, 'listarProdutos'])->name('admin.produto.index');
      Route::post('storeProduto/', [AdminController::class, 'storeProduto'])->name('admin.produto.store');
+     Route::get('editarProduto/{id}', [ProdutoController::class, 'edit'])->name('admin.produto.edit');
+     Route::get('atualizarProduto/{id}', [ProdutoController::class, 'update'])->name('admin.produto.update');
 
      // Visto
      Route::get('listarVistos/', [AdminController::class, 'listarVistos'])->name('admin.visto.index');
      Route::get('mostrarVistos/{id}', [AdminController::class, 'mostrarVistos'])->name('admin.visto.show');
+
+     // Agendamento
+     Route::get('listarAgendamentos/', [AdminController::class, 'listarAgendamentos'])->name('admin.agendamento.index');
+     Route::get('mostrarAgendamentos/{id}', [AdminController::class, 'mostrarAgendamentos'])->name('admin.agendamento.show');
 
     // Moeda
     Route::get('listarMoedas/', [AdminController::class, 'listarMoedas'])->name('admin.moeda.index');

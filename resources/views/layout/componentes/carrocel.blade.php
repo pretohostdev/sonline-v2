@@ -1,4 +1,4 @@
-<div style="width:100%;; margin-top: 60px;">
+<div style="width:100%; margin-top: 60px;">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -45,9 +45,9 @@
                   </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('assets/img/banner-3.gif')}}" alt="Third slide">
+                <img class="d-block w-100" src="{{asset('assets/img/banner-3.png')}}" alt="Third slide">
                 <div class="carousel-caption d-none d-md-block mb-5">
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-12">
                           <div class="d-flex justify-content-start">
                             <div>
@@ -59,7 +59,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> --}}
                   </div>
             </div>
         </div>

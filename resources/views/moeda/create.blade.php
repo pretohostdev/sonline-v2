@@ -70,11 +70,11 @@
                         </div>
                     @endif
 
-                    <form action="{{route('moeda.store')}}" method="POST" id="formMoeda">
+                    <form action="{{route('moeda.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Seleciona a moeda</label>
-                            <select type="da" class="form-control" id="nomeMoeda" name="nomeMoeda">
+                            <select type="da" class="form-control" id="nomeMoeda" name="nome">
                                 <option value="Dolar">Dolar</option>
                                 <option value="Euro">Euro</option>
                                 <option value="Kwanza">Kwanza</option>
@@ -83,7 +83,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Montante</label>
-                            <input type="number" class="form-control" value="" id="montante" oninput="conversaoMoeda(id)">
+                            <input type="number" class="form-control" name="montante" oninput="conversaoMoeda(id)">
                         </div>
 
                         <div class="form-group">
@@ -93,7 +93,7 @@
 
                         <label for="comprovativoMoeda">Comprovativo Bancário</label>
                         <div class="card-body bg-gradient rounded">
-                            <input type="file" class="form-control-file" id="comprovativo">
+                            <input type="file" class="form-control-file" id="comprovativo" name="comprovativo">
                         </div>
 
                         <button type="submit" class="btn bg-gradient text-light mt-3">Enviar Pedido</button>
@@ -146,55 +146,9 @@
 
         </div> --}}
 
-
-        
-
     </div>
-
-
     </div>
-
-    <script>
-        document.getElementById('formConta').addEventListener('submit', function(event) {
-            
-            event.preventDefault(); // Impedir o envio padrão do formulário
-            console.log('Estou funcionando...');
-
-            // Pegar os dados vindo do formulário
-            var dataEmissao = document.getElementById('dataEmissaoConta').value;
-
-            var comprovativo = document.getElementById('comprovativoBancario');
-
-            console.log('Comprovativo: ' + comprovativo.value);
-
-            // console.log('A data é: ' + data);
-            const conta = {
-                data: dataEmissao,
-            };
-
-            fetch('http://localhost:8000/api/conta', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(conta),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao salvar os dados');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data.message); // Mensagem de sucesso
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-        });
-
-    </script>
+   
 </div>
 
 

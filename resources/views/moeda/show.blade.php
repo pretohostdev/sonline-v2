@@ -44,7 +44,7 @@
                             <a href="x"></a>
                         </li>
                         <li>
-                            Estado do redirecionamento
+                            Estado moeda
                         </li>
                     </ol>
                 </nav>
@@ -153,12 +153,11 @@
                                             <div class="card-body d-flex justify-content-center">
 
                                                 <div class="col-lg-6">
-                                                    @if (isset($moeda->valor))
+                                                    @if (isset($moeda->id))
                                                         <ul class="list-group">
-                                                            <li class="list-group-item">Valor pago: <span class="text-dark">{{ $moeda->valor }} €</span> </li>
-                                                            <li class="list-group-item">País de origem do produto: <span class="text-dark">{{ $moeda->paisOrigem }}</span> </li>
-                                                            <li class="list-group-item">Data de destino do produto: <span class="text-dark">{{ $moeda->paisDestino }}</span> </li>
-                                                            <li class="list-group-item">Data do redirecionamento: <span class="text-dark">{{ $moeda->data }}</span> </li>
+                                                            <li class="list-group-item">Nome da moeda: <span class="text-dark">{{ $moeda->nome }}</span> </li>
+                                                            <li class="list-group-item">Data solicitação: <span class="text-dark">{{ $moeda->data }}</span> </li>
+                                                            <li class="list-group-item">Montante: <span class="text-dark">{{ $moeda->montante }}</span> </li>
                                                         </ul>
                                                     @endif
                                                 </div>
@@ -213,16 +212,13 @@
 
                                     <div class="acd-group border-bottom-0">
                                         <div class="card-header rounded-0 bg-primary">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse4-3" class="btn-block  text-center text-white acd-heading collapsed" data-toggle="collapse">Sem documentos para ser exibido</a>
-                                            </h5>
+                                            <div class="card-header rounded-0 d-flex justify-content-center">
+                                                <iframe src="{{ url("storage/{$moeda->documento}") }}" width="60%" height="600px"></iframe>
+                                            </div>
                                         </div>
                                         <div id="collapse4-3" class="collapse" data-parent="#accordionborderradius">
                                             <div class="card-body">
-                                                <p>
-                                                    Nesta seção não encorporamos nenhum documento adicional, como foto cópia do
-                                                    B.I ou o passport
-                                                </p>
+                                                
                                             </div>
                                         </div>
                                     </div>

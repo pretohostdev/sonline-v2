@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Visto;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
 
@@ -61,11 +62,13 @@ class VistoController extends Controller
             $decricao = "";
         }
 
-        $visto = ContaWise::create([
-            'tipo' => $request->tipo,
+        $visto = Visto::create([
+            'tipo' => $request->tipoVisto,
             'estado' => '0',
             'descricao' => $descricao,
+            'paisDesejado' => $request->pais,
             'dataPrevista' => $request->data,
+            'dataSolicitacao' => $request->data,
             'documento' => $path,
             'user_id' => Auth::id(),
         ]);
@@ -109,7 +112,7 @@ class VistoController extends Controller
     {
         $id = Auth::id();
 
-        $conta = Visto::where('user_id', $id)->latest()->first();
+        $visto = Visto::where('user_id', $id)->latest()->first();
         $cliente = User::find($id);
 
         // Verificar se o cliente já efectuou alguma solicitação de visto
@@ -118,7 +121,10 @@ class VistoController extends Controller
             $clientesComSolicitaVisto = $cliente->vistos;
 
             $visto = (Object)[
+                'id' => $visto->id,
+                'estado' => $visto->estado,
                 'tipo' => $visto->tipo,
+                'documento' => $visto->documento,
                 'dataSolicitacao' => $visto->dataSolicitacao,
                 'dataPrevista' => $visto->dataPrevista,
                 'paisDesejado' => $visto->paisDesejado,

@@ -180,6 +180,35 @@ class AdminController extends Controller
         return view('admin.conta.show', ['contas'=> $contas, 'cliente'=> $cliente]);
     }
 
+
+    //
+    function listarAgendamentos(){
+        // Clientes que solicitram agendamento
+        $clientes = User::where('tipo', "!=", 'admin')
+        ->where(function($query){
+            $query->WhereHas('agendamentos');
+        })->paginate(10);
+
+       return view('admin.agendamento.index', compact('clientes'));
+    }
+
+    function mostrarAgendamentos($id){
+
+        $cliente = User::with('agendamentos')->find($id);
+        $agendamentos = $cliente->agendamentos()->paginate(10);
+
+        $cliente = (Object)[
+            'id' => $cliente->id,
+            'email' => $cliente->email,
+            'nome' => $cliente->name
+        ];
+
+        return view('admin.agendamento.show', ['agendamentos'=> $agendamentos, 'cliente'=> $cliente]);
+    }
+ 
+
+
+
     function listarProdutos(){
 
         // Listar produtos do sistema
@@ -189,6 +218,15 @@ class AdminController extends Controller
 
     public function cadastrarProduto(){
         $sistema = Sistema::find(1);
+
+        if(!$sistema){
+            $cadastro = Sistema::create([
+                'precoContaWise' => '20000',
+                'iban' => '0006'
+            ]);
+
+            $sistema = Sistema::find(1);
+        }
         return view('admin.produto.create', compact('sistema'));
     }
 
@@ -219,6 +257,7 @@ class AdminController extends Controller
 
         $produto = Produto::create([
             'nome' => $request->nome,
+            'link' => $request->link,
             'descricao' => $request->descricao,
             'preco' => $request->preco,
             'imagem' => $path,
