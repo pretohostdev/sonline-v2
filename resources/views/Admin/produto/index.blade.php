@@ -73,9 +73,7 @@
                                 <i class="ti ti-close"></i>
                             </button>
                         </div>
-                            {{-- <div class="alert alert-success">
-                                {{ session('mensagem') }}
-                            </div> --}}
+                            
                         @endif
 
                         <div class="table-responsive">
@@ -102,7 +100,6 @@
                                             </td>
                                             <td class="text-dark">{{$produto->descricao}}</td>
                                             <td>
-                                                {{-- <button class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Eliminar</button> --}}
                                                 <div class="dropdown">
                                                     <a class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                                                       
@@ -131,40 +128,6 @@
                 </div>
             </div>
 
-            {{-- <script>
-                tabelaProdutos.addEventListener('click', function(event) {
-                var elementoClicado = event.target;
-                var linha = elementoClicado.closest('tr');
-                var id = linha.dataset.id;
-
-               
-                async function eliminarProduto(id){
-                    const response = await fetch('http://localhost:8000/api/produto/'+id,
-                    {
-                        method:'DELETE',
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    const produto = await response.json();
-                    return produto;
-                }
-
-                const produto = eliminarProduto(id);
-
-                produto.then(
-                    produto=>{
-                        console.log(produto);
-                        linha.remove();
-                    }
-                );
-    
-                
-            });
-            </script> --}}
-            
-
-            
         </div>
 
     </div>

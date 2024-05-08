@@ -200,13 +200,13 @@ class AdminController extends Controller
     public function storeProduto(Request $request){
 
         $validacao = Validator::make($request->all(), [
-            'imagem' => 'required|file|mimes:jpeg,png|max:2048',
+            'imagem' => 'required|file|mimes:jpeg,png|max:1024',
             ],
             [
                 'imagem.required' => 'O campo imagem é obrigatório',
                 'imagem.file' => 'O campo tem de ser do tipo arquivo',
                 'imagem.mimes' => 'O campo imagem deve ser um apenas do tipo jpg, jpeg e png.',
-                'imagem.max' => 'O tamanho máximo do arquivo é de 2M.',
+                'imagem.max' => 'O tamanho máximo do arquivo é de 1M.',
             ]
         );
 

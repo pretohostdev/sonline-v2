@@ -80,7 +80,7 @@ class UserController extends Controller
         ]);
 
         if($registar){
-            return view('login');
+            return redirect()->route('login');
         }
         else{
             return redirect()->back()->withErrors();

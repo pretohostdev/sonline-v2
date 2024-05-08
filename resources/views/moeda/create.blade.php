@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 
     {{-- Font e Icones alternativa --}}
     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
@@ -73,7 +72,7 @@
                     <form action="{{route('moeda.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="nome">Seleciona a moeda</label>
+                            <label for="nome" class="text-dark">Seleciona a moeda</label>
                             <select type="da" class="form-control" id="nomeMoeda" name="nome">
                                 <option value="Dolar">Dolar</option>
                                 <option value="Euro">Euro</option>
@@ -82,18 +81,24 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="montante">Montante</label>
-                            <input type="number" class="form-control" name="montante" id="montante" oninput="conversaoMoeda(id)">
+                            <label for="montante" class="text-dark">Montante</label>
+                            <input type="number" class="form-control" value="{{old('montante')}}" name="montante" id="montante" oninput="conversaoMoeda(id)">
                         </div>
 
                         <div class="form-group">
-                            <label for="iban">Referencia Bancária</label>
+                            <label for="iban" class="text-dark">Referencia Bancária</label>
                             <input type="text" class="form-control" value="{{$sistema->iban}}" id="iban" readonly>
                         </div>
 
                         <div class="form-group">
-                            <label for="documento">Comprovativo Bancário</label>
-                            <input type="file" class="form-control" id="comprovativo" name="documento">
+                            <label for="iban" class="text-dark">Duração do envio do valor</label>
+                            <input type="text" class="form-control" value="1-120 min" id="iban" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="documento" class="text-dark">Comprovativo Bancário</label>
+                            <img src="{{asset('assets/img/pdf.png')}}" alt="">
+                            <input type="file" class="form-control mt-2" id="comprovativo" name="documento">
                         </div>
 
                         <button type="submit" class="btn bg-gradient text-light mt-3">Enviar Pedido</button>
@@ -103,7 +108,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-6">
             
             <div class="card card-statistics rounded">
                 <div class="card-header bg-gradient">
@@ -111,7 +116,7 @@
                         <h4 class="card-title text-light">CONVERSÃO</h4>
                     </div>
                 </div>
-                <div class="card-body bg-gradient">
+                <div class="card-body">
                     <div class="form-group mb-0">
 
                         <div class="input-group mb-3" id="divKwanza">
@@ -135,16 +140,33 @@
                             <input type="text" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
                           </div>
 
+                          <div class="input-group mb-3" id="divTaxaDolar">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Taxa do dolar</span>
+                            </div>
+                            <input type="text" class="form-control" value="1 USD -> Câmbio + 200 kz" id="taxaDolar" readonly>
+                          </div>
+
+                          <div class="input-group mb-3" id="divTaxaEuro">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Taxa do Euro</span>
+                            </div>
+                            <input type="text" class="form-control" value="1 EURO -> Câmbio + 200 kz" id="taxaEuro" readonly>
+                          </div>
+
+                          <div class="input-group mb-3" id="divValorPagar">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Valor a pagar</span>
+                            </div>
+                            <input type="text" class="form-control" value="Quantidade em kwanza x 200 kz " id="valorPagar" readonly>
+                          </div>
+
                     </div>
                 </div>
 
             </div>
 
         </div>
-
-        {{-- <div class="col-xl-5">
-
-        </div> --}}
 
     </div>
     </div>

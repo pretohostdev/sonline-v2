@@ -6,6 +6,8 @@ use App\Models\Produto;
 use App\Models\Sistema;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
 class ProdutoController extends Controller
 {
     /**
@@ -81,6 +83,7 @@ class ProdutoController extends Controller
 
     public function eliminarProduto($id){
         $produto = Produto::find($id);
+        Storage::delete($produto->imagem);
         $produto->delete();
         return redirect()->back()->with('mensagem', 'Produto eliminado com sucesso.');
 

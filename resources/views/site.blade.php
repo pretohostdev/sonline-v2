@@ -371,7 +371,7 @@
                               <h5 class="card-title">{{$produto->nome}}</h5>
                               <p class="card-text" style="width: inherit">700$</p>
                               <p>Descrição - {{$produto->descricao}}</p>
-                              <a href="{{$produto->link}}" class="btn btn-block text-light" style="background-color:#3c9cfd">Comprar</a>
+                              <a href="{{$produto->link}}" target="_blank" class="btn btn-block text-light" style="background-color:#3c9cfd">Comprar</a>
                             </div>
                           </div>
                       </li>

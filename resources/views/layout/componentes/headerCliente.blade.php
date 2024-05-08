@@ -28,16 +28,11 @@
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item nav-link text-primary" href="javascript:void(0)">
-                                Email 
-                                <i class="fe fe-mail"></i>
-                            </a>
-                            <a class="dropdown-item nav-link text-primary" href="javascript:void(0)">
+                            
+                            <a class="dropdown-item nav-link text-primary" target="_blank" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6">
                                 Facebook
-                                <i class="fe fe-facebook"></i>
                             </a>
-                            <a class="dropdown-item nav-link text-primary" href="javascript:void(0)">Twitter
-                                <i class="fe fe-twitter"></i>
+                            <a class="dropdown-item nav-link text-primary" target="_blank" href="https://www.instagram.com/sonline_services">Instagram
                             </a>
                         </div>
                     </li>

@@ -4,7 +4,6 @@
 
 @push('styles')
 
-    {{-- Inclusão do Bootstrap 4 no projecto --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
@@ -61,21 +60,21 @@
                 <div class="card-body">
                     <form id="formRedirecionamento">
 
-                        <div class="form-group">
-                            <label for="nomeProduto">Nome do produto</label>
+                        <div class="form-group"> 
+                            <label for="nomeProduto" class="text-dark">Nome do produto</label>
                             <input type="text" class="form-control" value="" id="nomeProduto" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="paisOrigem">País de origem</label>
-                            <select type="da" class="form-control" id="paisOrigem">
+                            <label for="paisOrigem" class="text-dark">País de origem</label>
+                            <select class="form-control" id="paisOrigem">
                                 <option value="Portugal">Portugal</option>
                                 <option value="Angola">Angola</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="paisDestino">País de destino</label>
+                            <label for="paisDestino" class="text-dark">País de destino</label>
                             <select type="da" class="form-control" id="paisDestino">
                                 <option value="Angola">Angola</option>
                                 <option value="Portugal">Portugal</option>
@@ -83,7 +82,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="metodoEnvio">Método de envio</label>
+                            <label for="metodoEnvio" class="text-dark">Método de envio</label>
                             <select class="form-control" id="metodoEnvio">
                                 <option value="DHL">DHL</option>
                                 <option value="CTT">CTT</option>
@@ -91,7 +90,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="peso">Peso <span style="color:#ddd; font-size:8pt">(em grama)</span></label>
+                            <label for="peso" class="text-dark">Peso <span style="color:#ccc; font-size:8pt">(em grama)</span></label>
                             <input type="number" class="form-control" value="" id="peso" required>
                         </div>
 
@@ -100,7 +99,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="descricao">Descrição do produto</label>
+                            <label for="descricao" class="text-dark">Descrição do produto</label>
                             <textarea class="form-control" id="descricao" required></textarea>
                         </div>
 
@@ -142,7 +141,6 @@
                         <div class="input-group mb-3" id="divKwanzaRedirecionamento">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-gradient text-light" id="tipoEnvio">
-                                    {{-- Preenchimento automático --}}
                                 </span>
                             </div>
                             <input type="text" class="form-control" id="pesoBase" readonly>

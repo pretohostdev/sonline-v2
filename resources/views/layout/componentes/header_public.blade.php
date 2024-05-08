@@ -80,7 +80,7 @@
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item nav-link text-info" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6">
+                            <a class="dropdown-item nav-link text-info" target="_blank" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6">
                                 Facebook
                             </a>
                             <a class="dropdown-item nav-link text-info" target="_blank" href="https://www.instagram.com/sonline_services">Instagram

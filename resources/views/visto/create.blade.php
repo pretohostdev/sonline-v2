@@ -73,7 +73,7 @@
                     <form action="{{route('visto.store')}}" method="POST" id="formVisto" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="tipoVisto">Selecione o tipo de visto</label>
+                            <label for="tipoVisto" class="text-dark">Selecione o tipo de visto</label>
                             <select class="form-control" id="tipoVisto" name="tipoVisto">
                                 <option value="Turismo">Turismo</option>
                                 <option value="Estuante">Estudante</option>
@@ -82,31 +82,37 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="pais">Selecione o país a ser visitado</label>
+                            <label for="pais" class="text-dark">Selecione o país a ser visitado</label>
                             <select class="form-control" id="paises" name="pais">
                                 <option value="angola" selected>Angola</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="data">Data de Agendamento</label>
-                            <input type="date" class="form-control" id="dataSolicitacao" name="dataSolicitacao">
+                            <label for="data" class="text-dark">Data de Agendamento</label>
+                            <input type="text" class="form-control" value="{{date('Y-m-d')}}" id="dataSolicitacao" name="dataSolicitacao">
                         </div>
 
                         <div class="form-group">
-                            <label for="data">Data prevista da viagem</label>
-                            <input type="date" class="form-control" id="data" name="data">
+                            <label for="data" class="text-dark">Data prevista da viagem</label>
+                            <input type="date" class="form-control" value="{{old('data')}}" id="data" name="data">
                         </div>
 
                         <div class="form-group">
-                            <label for="documento">Cópia do B.I ou Passport em pdf</label>
-                            <input type="file" class="form-control" id="documento" name="documento">
+                            <label for="precoVisto" class="text-dark">Valor a pagar</label>
+                            <input type="text" class="form-control" value="{{$sistema->precoAgendamentoVisto}} kz" id="data" name="precoVisto" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="documento" class="text-dark">Cópia do B.I ou Passport</label>
+                            <img src="{{asset('assets/img/pdf.png')}}" alt="arquivo pdf">
+                            <input type="file" class="form-control mt-2" id="documento" name="documento">
                         </div>
 
                     
                         <div class="form-group mt-2">
-                            <label for="descricao">Outras informações relevantes ou solicitações especiais</label>
-                            <textarea class="form-control" id="descricao" name="descricao" required></textarea>
+                            <label for="descricao" class="text-dark">Outras informações relevantes ou solicitações especiais</label>
+                            <textarea class="form-control" id="descricao" name="descricao"></textarea>
                         </div>
                        
 

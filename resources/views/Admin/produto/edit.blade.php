@@ -106,6 +106,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="imagem">Imagem do produto</label>
+                                                <img src="{{asset('assets/img/jpg.png')}}" alt="">
+                                                <img src="{{asset('assets/img/png.png')}}" alt="">
                                                 <input type="file" class="form-control" id="imagem" name="imagem">
                                             </div>
                                             
@@ -128,8 +130,23 @@
                                                 <input type="text" class="form-control" id="iban" value="{{$sistema->iban}}" name="iban">
                                             </div>
                                             <div class="form-group">
-                                                <label for="precoWise">Preço conta wise:</label>
-                                                <input type="number" class="form-control" id="precoWise" value="{{$sistema->precoContaWise}}" name="precoWise">
+                                                <label for="precoWise">Preço conta:</label>
+                                                <input type="number" class="form-control" id="precoWise" value="{{$sistema->precoConta}}" name="precoWise">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="precoWise" class="text-dark">Preço agendar autenticação de documento</label>
+                                                <input type="number" class="form-control" id="precoDocumento" value="{{$sistema->precoAgendamentoDocumento}}" name="precoDocumento">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="precoWise" class="text-dark">Preço agendamento de visto</label>
+                                                <input type="number" class="form-control" value="{{$sistema->precoAgendamentoVisto}}" name="precoVisto">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="precoWise" class="text-dark">Preço Consultoria</label>
+                                                <input type="number" class="form-control" value="{{$sistema->precoConsultoria}}" name="precoConsultoria">
                                             </div>
 
                                             <div class="d-flex justify-content-space-round">

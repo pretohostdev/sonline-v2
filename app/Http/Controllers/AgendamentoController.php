@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Sistema;
 use App\Models\Agendamento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
@@ -23,7 +24,8 @@ class AgendamentoController extends Controller
      */
     public function create()
     {
-        return view('agendamento.create');
+        $sistema = Sistema::find(1);
+        return view('agendamento.create', compact('sistema'));
     }
 
     /**

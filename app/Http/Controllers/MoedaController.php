@@ -39,12 +39,12 @@ class MoedaController extends Controller
     public function store(Request $request)
     {
         $validacao = Validator::make($request->all(), [
-            'documento' => 'required|file|mimes:pdf|max:2048',
+            'documento' => 'required|file|mimes:pdf|max:1024',
         ],
         [
             'documento.required' => 'O campo documento não pode ficar vazio',
             'documento.mimes' => 'O campo documento deve ser um apenas um arquivo pdf.',
-            'documento.max' => 'O tamanho máximo do arquivo pdf é de 2M.',
+            'documento.max' => 'O tamanho máximo do arquivo pdf é de 1M.',
         ]
         );
 

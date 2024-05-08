@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Visto;
 use App\Models\User;
+use App\Models\Sistema;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -25,7 +26,8 @@ class VistoController extends Controller
      */
     public function create()
     {
-        return view('visto.create');
+        $sistema = Sistema::find(1);
+        return view('visto.create', compact('sistema'));
     }
 
     /**
@@ -34,13 +36,13 @@ class VistoController extends Controller
     public function store(Request $request)
     {
         $validacao = Validator::make($request->all(), [
-            'documento' => 'required|file|mimes:pdf|max:2048',
+            'documento' => 'required|file|mimes:pdf|max:1024',
             'data' => 'required'
             ],
             [
                 'documento.required' => 'O campo documento não pode se ficar vazio',
                 'documento.mimes' => 'O campo documento deve ser um apenas um arquivo pdf.',
-                'documento.max' => 'O tamanho máximo do arquivo pdf é de 2M.',
+                'documento.max' => 'O tamanho máximo do arquivo pdf é de 1M.',
                 'data.required' => 'A data de previsão deve ser especificada',
             ]
         );
@@ -59,7 +61,7 @@ class VistoController extends Controller
             $descricao = $request->descricao;
         }
         else{
-            $decricao = "";
+            $descricao = "";
         }
 
         $visto = Visto::create([

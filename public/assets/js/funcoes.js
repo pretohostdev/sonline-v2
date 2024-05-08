@@ -75,8 +75,7 @@ function conversaoMoeda(id){
     }
     else if(id == "inputEuro"){
 
-        console.log("Entraste em mim");
-        if(inputEuro.value == ""){
+if(inputEuro.value == ""){
             inputDolar.value = "";
             inputKwanza.value = "";
         }
@@ -128,7 +127,7 @@ function conversaoMoeda(id){
         else if(nomeMoeda == "Euro"){
             converte("EUR", "AOA", montante)
             .then(data => {
-                inputKwanza.value = data.conversion_result;
+                inputKwanza.value = data;
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);

@@ -73,7 +73,7 @@
                     <form action="{{route('agendamento.store')}}" method="POST" id="formAgendamento">
                         @csrf
                         <div class="form-group">
-                            <label for="tipo">Seleciona o tipo de agendamento</label>
+                            <label for="tipo" class="text-dark">Seleciona o tipo de agendamento</label>
                             <select type="da" class="form-control" id="tipo" name="tipo">
                                 <option value="consultoria">Consultoria</option>
                                 <option value="autenticarDocumento">Autenticação de documento na VFS</option>
@@ -81,12 +81,22 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="data">Data do agendamento</label>
+                            <label for="tipo" class="text-dark">Autenticação de documento</label>
+                             <input type="text" class="form-control" value="{{$sistema->precoAgendamentoDocumento}} kz" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipo" class="text-dark">Consultoria Completa</label>
+                             <input type="text" class="form-control" value="{{$sistema->precoAgendamentoVisto}} kz" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="data" class="text-dark">Data do agendamento</label>
                             <input type="date" class="form-control" value="{{date('Y-m-d')}}" id="data" name="data">
                         </div>
 
                         <div class="form-group">
-                            <label for="observacao">Observação</label>
+                            <label for="observacao" class="text-dark">Observação</label>
                             <textarea type="text" class="form-control" name="observacao"></textarea>
                         </div>
 
