@@ -42,7 +42,7 @@
                                     <a href="x"></a>
                                 </li>
                                 <li>
-                                    Redirecionamentos
+                                    Vistos
                                 </li>
                             </ol>
                         </nav>

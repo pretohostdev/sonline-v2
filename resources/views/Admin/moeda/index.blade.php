@@ -42,7 +42,7 @@
                                     <a href="x"></a>
                                 </li>
                                 <li>
-                                    Moeda
+                                    Moedas
                                 </li>
                             </ol>
                         </nav>
@@ -70,7 +70,7 @@
                                         <th>Nome</th>
                                         <th>Email</th>
                                         <th>Género</th>
-                                        <th>Contcto</th>
+                                        <th>Contacto</th>
                                         <th>Data Nascimento</th>
                                         <th class="text-center">Opção</th>
                                     </tr>

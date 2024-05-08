@@ -84,7 +84,7 @@
                                         
                                         @if (isset($visto->estado))
                                             
-                                                @if($visto->estado == '0')
+                                            @if($visto->estado == '0')
                                                 <div class="card-header bg-primary rounded-0">
                                                     <h5 class="mb-0">
                                                         <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Pendente</a>
@@ -118,22 +118,22 @@
 
                                                     </div>
                                                 </div>
-                                            @else
-                                            <div class="card-header bg-danger rounded-0">
-                                                <h5 class="mb-0">
-                                                    <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Cancelado</a>
-                                                </h5>
-                                            </div>
-
-                                            <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
-                                                <div class="card-body">
-                                                    <p>
-                                                        O estado <span class="text-dark">cancelado</span> significa que o seu pedido já foi analizado pela nossa equipa
-                                                        e não conseguiu confirmar a verecidade dos seus dados. Desejamos que reveja seus dados e envia-nos no.
-                                                    </p>
-
+                                            @elseif ($visto->estado == '2')
+                                                <div class="card-header bg-danger rounded-0">
+                                                    <h5 class="mb-0">
+                                                        <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Cancelado</a>
+                                                    </h5>
                                                 </div>
-                                            </div>
+
+                                                <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
+                                                    <div class="card-body">
+                                                        <p>
+                                                            O estado <span class="text-dark">cancelado</span> significa que o seu pedido já foi analizado pela nossa equipa
+                                                            e não conseguiu confirmar a verecidade dos seus dados. Desejamos que reveja seus dados e envia-nos no.
+                                                        </p>
+
+                                                    </div>
+                                                </div>
 
                                             @endif
 
@@ -153,7 +153,7 @@
                                             <div class="card-body d-flex justify-content-center">
 
                                                 <div class="col-lg-6">
-                                                    @if (isset($visto->id))
+                                                    @if (isset($visto->id) && ($visto->id !== ''))
                                                         <ul class="list-group">
                                                             <li class="list-group-item">Tipo de visto: <span class="text-dark">{{ $visto->tipo }}</span> </li>
                                                             <li class="list-group-item">País desejado: <span class="text-dark">{{ $visto->paisDesejado }}</span> </li>
@@ -214,9 +214,11 @@
 
                                     <div class="acd-group border-bottom-0">
                                         <div class="card-header rounded-0">
-                                            <div class="card-header rounded-0 d-flex justify-content-center">
-                                                <iframe src="{{ url("storage/{$visto->documento}") }}" width="60%" height="600px"></iframe>
-                                            </div>
+                                            @if ($visto->documento)
+                                                <div class="card-header rounded-0 d-flex justify-content-center">
+                                                    <iframe src="{{ url("storage/{$visto->documento}") }}" width="80%" height="700px"></iframe>
+                                                </div>
+                                            @endif
                                         </div>
                                         <div id="collapse4-3" class="collapse" data-parent="#accordionborderradius">
                                             <div class="card-body">

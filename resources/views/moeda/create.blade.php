@@ -5,7 +5,7 @@
 @push('styles')
 
     {{-- Inclusão do Bootstrap 5 no projecto --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -73,7 +73,7 @@
                     <form action="{{route('moeda.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Seleciona a moeda</label>
+                            <label for="nome">Seleciona a moeda</label>
                             <select type="da" class="form-control" id="nomeMoeda" name="nome">
                                 <option value="Dolar">Dolar</option>
                                 <option value="Euro">Euro</option>
@@ -82,18 +82,18 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Montante</label>
+                            <label for="montante">Montante</label>
                             <input type="number" class="form-control" name="montante" id="montante" oninput="conversaoMoeda(id)">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Referencia Bancária</label>
+                            <label for="iban">Referencia Bancária</label>
                             <input type="text" class="form-control" value="{{$sistema->iban}}" id="iban" readonly>
                         </div>
 
-                        <label for="comprovativoMoeda">Comprovativo Bancário</label>
-                        <div class="card-body bg-gradient rounded">
-                            <input type="file" class="form-control-file" id="comprovativo" name="documento">
+                        <div class="form-group">
+                            <label for="documento">Comprovativo Bancário</label>
+                            <input type="file" class="form-control" id="comprovativo" name="documento">
                         </div>
 
                         <button type="submit" class="btn bg-gradient text-light mt-3">Enviar Pedido</button>

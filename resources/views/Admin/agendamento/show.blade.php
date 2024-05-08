@@ -102,7 +102,7 @@
                                                 @endif
                                             </td>
                                             
-                                            <td><button class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</button> </td>
+                                            <td><a href="{{route('enviarEmail', ['id'=> $agendamento->id, 'modelo'=>'agendamento'])}}" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</a> </td>
                                         </tr>
 
                                     @endforeach

@@ -1,5 +1,5 @@
 @extends('layout.container.app')
-@section('titulo', 'sonline-moeda')
+@section('titulo', 'conta wise')
 
 @push('styles')
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
@@ -42,7 +42,7 @@
                                     <a href="x"></a>
                                 </li>
                                 <li>
-                                    Moedas
+                                    Conta wise
                                 </li>
                             </ol>
                         </nav>
@@ -84,7 +84,9 @@
                                             <td class="text-dark">{{$cliente->nome}}</td>
                                             <td class="text-dark">{{$cliente->email}}</td>
                                             <td class="text-dark">{{$conta->data}}</td>
-                                            <td class="text-dark">Ver</td>
+                                            <td class="text-dark">
+                                                <a href="{{route('verDocumentoConta', $conta->id)}}" class="text-info">Ver</a>
+                                            </td>
                                             
                                             <td class="text-dark">
                                                 @if ($conta->estado == "0")
@@ -105,7 +107,7 @@
                                                 @endif
                                             </td>
                                             
-                                            <td><a href="{{ route('downloadConta', $conta) }}" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</> </td>
+                                            <td><a href="{{ route('enviarEmail', ['id'=>$conta->id, 'modelo'=>'conta']) }}" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</> </td>
                                         </tr>
 
                                     @endforeach

@@ -6,9 +6,12 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Sistema;
 use App\Models\Moeda;
+use App\Models\ContaWise;
 use App\Models\Visto;
 use App\Models\Produto;
+use App\Models\Agendamento;
 use Illuminate\Http\Request;
+use App\Models\Redirecionamento;
 use Illuminate\Support\Facades\Hash; // Adicionar senhas criptografadas
 use Illuminate\Support\Facades\Validator; // Classe específica para fazer a validação dos campos
 
@@ -140,54 +143,9 @@ class AdminController extends Controller
         return view('admin.redirecionamento.show', ['redirecionamentos'=> $redirecionamentos, 'cliente'=> $cliente]);
     }
 
-    function listarMoedas(){
+    
 
-        // Clientes que solicitram moeda
-        $clientes = User::where('tipo', "!=", 'admin')
-        ->where(function($query){
-            $query->WhereHas('moedas');
-        })->paginate(10);
-
-       return view('admin.moeda.index', compact('clientes'));
-      
-    }
-
-    function mostrarMoedas($id){
-
-        $cliente = User::with('moedas')->find($id);
-        $moedas = $cliente->moedas()->paginate(10);
-
-        $cliente = (Object)[
-            'id' => $cliente->id,
-            'nome' => $cliente->name
-        ];
-
-        return view('admin.moeda.show', ['moedas'=> $moedas, 'cliente'=> $cliente]);
-    }
-
-    function listarContas(){
-        // Clientes que solicitram moeda
-        $clientes = User::where('tipo', "!=", 'admin')
-        ->where(function($query){
-            $query->WhereHas('contaWise');
-        })->paginate(10);
-
-       return view('admin.conta.index', compact('clientes'));
-    }
-
-    function mostrarContas($id){
-
-        $cliente = User::with('contaWise')->find($id);
-        $contas = $cliente->contaWise()->paginate(10);
-
-        $cliente = (Object)[
-            'id' => $cliente->id,
-            'email' => $cliente->email,
-            'nome' => $cliente->name
-        ];
-
-        return view('admin.conta.show', ['contas'=> $contas, 'cliente'=> $cliente]);
-    }
+    
 
 
     //
@@ -280,7 +238,6 @@ class AdminController extends Controller
     }
 
     function listarVistos(){
-         // Lista de todos clientes que solicitaram visto
          $clientes = User::where('tipo', "!=", 'admin')
          ->where(function($query){
              $query->WhereHas('vistos');
@@ -301,6 +258,67 @@ class AdminController extends Controller
         ];
 
         return view('admin.visto.show', ['vistos'=> $vistos, 'cliente'=> $cliente]);
+    }
+
+    function verDocumentoVisto($id){
+        $visto = Visto::find($id);
+        return view('admin.visto.verDocumentoVisto', compact('visto'));
+    }
+
+    function listarMoedas(){
+        $clientes = User::where('tipo', "!=", 'admin')
+        ->where(function($query){
+            $query->WhereHas('moedas');
+        })->paginate(10);
+
+       return view('admin.moeda.index', compact('clientes'));
+      
+    }
+
+    function mostrarMoedas($id){
+
+        $cliente = User::with('moedas')->find($id);
+        $moedas = $cliente->moedas()->paginate(10);
+
+        $cliente = (Object)[
+            'id' => $cliente->id,
+            'nome' => $cliente->name
+        ];
+
+        return view('admin.moeda.show', ['moedas'=> $moedas, 'cliente'=> $cliente]);
+    }
+
+    function verDocumentoMoeda($id){
+        $moeda = Moeda::find($id);
+        return view('admin.moeda.verDocumentoMoeda', compact('moeda'));
+    }
+
+    function listarContas(){
+        $clientes = User::where('tipo', "!=", 'admin')
+        ->where(function($query){
+            $query->WhereHas('contaWise');
+        })->paginate(10);
+
+       return view('admin.conta.index', compact('clientes'));
+    }
+
+    function mostrarContas($id){
+
+        $cliente = User::with('contaWise')->find($id);
+        $contas = $cliente->contaWise()->paginate(10);
+
+        $cliente = (Object)[
+            'id' => $cliente->id,
+            'email' => $cliente->email,
+            'nome' => $cliente->name
+        ];
+
+        return view('admin.conta.show', ['contas'=> $contas, 'cliente'=> $cliente]);
+    }
+
+    function verDocumentoConta($id){
+        $conta = ContaWise::find($id);
+        return view('admin.conta.verDocumentoConta', compact('conta'));
     }
 
 
@@ -393,9 +411,45 @@ class AdminController extends Controller
         //
     }
 
-    public function enviarEmail($id){
+    public function enviarEmail($id, $modelo){
 
-        $cliente = User::find($id);
+        if($modelo == 'visto'){
+            $visto = Visto::find($id);
+            $visto->estado = '1';
+            $visto->save();
+
+            $idCliente = $visto->user_id;
+        }
+        else if($modelo == 'moeda'){
+            $moeda = Moeda::find($id);
+            $moeda->estado = '1';
+            $moeda->save();
+
+            $idCliente = $moeda->user_id;
+        }
+        else if($modelo == 'conta'){
+            $conta = ContaWise::find($id);
+            $conta->estado = '1';
+            $conta->save();
+
+            $idCliente = $conta->user_id;
+        }
+        else if($modelo == 'redirecionamento'){
+            $redirecionamento = Redirecionamento::find($id);
+            $redirecionamento->estado = '1';
+            $redirecionamento->save();
+
+            $idCliente = $redirecionamento->user_id;
+        }
+        else if($modelo == 'agendamento'){
+            $agendamento = Agendamento::find($id);
+            $agendamento->estado = '1';
+            $agendamento->save();
+
+            $idCliente = $agendmento->user_id;
+        }
+
+        $cliente = User::find($idCliente);
 
         return view('admin.email', compact('cliente'));
     }

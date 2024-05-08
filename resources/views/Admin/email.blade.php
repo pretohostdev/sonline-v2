@@ -72,13 +72,13 @@
                                 <div class="row">
                                 <div class="col-8">
 
-                                    <h2>Enviar o email de confirmação</h2>
+                                    <h3>Enviar email de confirmação</h3>
                                     <form target="_blank" action="https://formsubmit.co/{{ $cliente->email }}" method="POST">
                                         @csrf
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col mt-2">
-                                                <input type="text" name="name" class="form-control" placeholder="Nome completo" required>
+                                                <input type="text" name="name" class="form-control" value="{{$cliente->name}}" required>
                                             </div>
                                             
                                         </div>
@@ -86,7 +86,7 @@
                                     <div class="form-group mt-2">
                                         <textarea placeholder="Mensagem" class="form-control" name="message" rows="10" required></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-lg btn-dark btn-block mt-2">Enviar Email</button>
+                                    <button type="submit" class="btn btn-lg bg-gradient text-light btn-block mt-2">Enviar Email</button>
                                     </form>
 
 

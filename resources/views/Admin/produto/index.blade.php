@@ -65,6 +65,19 @@
             <div class="col-lg-12 ">
                 <div class="card card-statistics">
                     <div class="card-body">
+
+                        @if(session('mensagem'))
+                        <div class="alert bg-success text-light d-flex alert-dismissible fade show" role="alert">
+                            {{ session('mensagem') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="ti ti-close"></i>
+                            </button>
+                        </div>
+                            {{-- <div class="alert alert-success">
+                                {{ session('mensagem') }}
+                            </div> --}}
+                        @endif
+
                         <div class="table-responsive">
                             <table id="tabelaProdutos" class="table display responsive nowrap table-light table-bordered">
                                 <thead class="bg-gradient text-light">
@@ -96,7 +109,7 @@
                                                     </a>
                                                     <div class="dropdown-menu">
                                                       <a class="dropdown-item" href="{{route('admin.produto.edit', $produto->id)}}">Editar</a>
-                                                      <a class="dropdown-item" href="#">Eliminar</a>
+                                                      <a class="dropdown-item" href="{{route('eliminarProduto', $produto->id)}}">Eliminar</a>
                                                     </div>
                                                   </div>
                                             </td>
@@ -118,16 +131,13 @@
                 </div>
             </div>
 
-            <script>
+            {{-- <script>
                 tabelaProdutos.addEventListener('click', function(event) {
                 var elementoClicado = event.target;
                 var linha = elementoClicado.closest('tr');
                 var id = linha.dataset.id;
 
-                // id.remove();
-                // console.log(elementoClicado);
-                // elementoClicado.deleteRow(id);
-
+               
                 async function eliminarProduto(id){
                     const response = await fetch('http://localhost:8000/api/produto/'+id,
                     {
@@ -151,7 +161,7 @@
     
                 
             });
-            </script>
+            </script> --}}
             
 
             

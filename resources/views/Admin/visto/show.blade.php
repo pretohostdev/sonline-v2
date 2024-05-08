@@ -72,6 +72,7 @@
                                         <th>Tipo de visto</th>
                                         <th>Data de solicitação</th>
                                         <th>Data prevista</th>
+                                        <th>Comprovativo</th>
                                         <th>País desejado</th>
                                         <th>Estado</th>
                                         <th class="text-center">Opção</th>
@@ -86,6 +87,9 @@
                                             <td class="text-dark">{{$visto->tipo}}</td>
                                             <td class="text-dark">{{$visto->dataSolicitacao}}</td>
                                             <td class="text-dark">{{$visto->dataPrevista}}</td>
+                                            <td>
+                                                <a href="{{route('verDocumentoVisto', $visto->id)}}" class="text-info">ver</a>
+                                            </td>
                                             <td class="text-dark">{{$visto->paisDesejado}}</td>
                                             <td class="text-dark">
                                                 @if ($visto->estado == "0")
@@ -106,7 +110,7 @@
                                                 @endif
                                             </td>
                                             
-                                            <td><a href="{{ route('downloadMoeda', $moeda) }}" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</> </td>
+                                            <td><a href="{{route('enviarEmail', ['id' => $visto->id, 'modelo' => 'visto'])}}" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</> </td>
                                         </tr>
 
                                     @endforeach

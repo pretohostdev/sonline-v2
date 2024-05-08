@@ -97,13 +97,14 @@
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label for="descricao">Descrição</label>
-                                                    <input type="text" class="form-control" id="descricao" name="descricao">
+                                                    <input type="text" class="form-control" id="descricao" name="descricao" value="{{old('descricao')}}" required>
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label for="link">Link Afiliado</label>
                                                     <input type="text" class="form-control" id="link" name="link" value="{{old('link')}}" required>
                                                 </div>
                                             </div>
+                                            
                                             <div class="form-group">
                                                 <label for="imagem">Imagem do produto</label>
                                                 <input type="file" class="form-control" id="imagem" name="imagem">

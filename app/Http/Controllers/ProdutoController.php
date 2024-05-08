@@ -76,8 +76,13 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
+        
+    }
+
+    public function eliminarProduto($id){
         $produto = Produto::find($id);
         $produto->delete();
-        return response()->json(['eliminado' => 'true']);
+        return redirect()->back()->with('mensagem', 'Produto eliminado com sucesso.');
+
     }
 }

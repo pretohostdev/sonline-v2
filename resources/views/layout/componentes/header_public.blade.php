@@ -23,61 +23,51 @@
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <div class="row no-gutters">
-                                <div class="col-sm-2 p-20">
-                                    <h4>Criar Conta</h4>
-                                    <ul>
-                                        <li class="nav-link text-primary">
-                                            <a href="{{route('registar')}}">Clique aqui</a>
-                                        </li>
-                                    </ul>
+                                <div class="col-sm-2 p-20 bg-success">
+                                    <h4> <a href="{{route('registar')}}" class="text-light">Criar Conta</a></h4>
                                 </div>
-                                <div class="col-sm-2 p-20 bg-gradient">
-                                    <h4>Entrar</h4>
-                                    <ul>
-                                        <li class="nav-link text-primar">
-                                            <a href="{{route('login')}}">Clique aqui</a>
-                                        </li>
-                                    </ul>
+                                <div class="col-sm-2 p-20 bg-info">
+                                    <h4><a href="{{route('login')}}" class="text-light">Entrar</a></h4>
                                 </div>
 
-                                <div class="col-sm-3 p-20">
-                                    <h4>Contactos</h4>
+                                <div class="col-sm-3 p-20 bg-danger">
+                                    <h4 class="text-light">Contactos</h4>
                                     <ul>
-                                        <li class="nav-link text-primary">
+                                        <li class="nav-link text-light">
                                             <a href="{{route('login')}}">Email:claudiorufino@gmail.com</a>
                                         </li>
 
-                                        <li class="nav-link">
+                                        <li class="nav-link text-light">
                                             <a href="{{route('login')}}">Telefone 1:934962288</a>
                                         </li>
 
-                                        <li class="nav-link">
+                                        <li class="nav-link text-light">
                                             <a href="{{route('login')}}">Telefone 2:945029144</a>
                                         </li>
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-2 p-20">
-                                    <h4>Endereço</h4>
+                                <div class="col-sm-2 p-20 bg-secondary">
+                                    <h4 class="text-light">Endereço</h4>
                                     <ul>
-                                        <li class="nav-link">
-                                            <a href="javascript:void(0)">Cacuaco</a>
+                                        <li class="nav-link text-light">
+                                            <span>Cacuaco</span>
                                         </li>
 
-                                        <li class="nav-link">
-                                            <a href="javascript:void(0)">Centralidade do sequele</a>
+                                        <li class="nav-link text-light">
+                                            <span>Centralidade do sequele</span>
                                         </li>
 
-                                        <li class="nav-link">
-                                            <a href="javascript:void(0)">bloco 4 prédio 7</a>
+                                        <li class="nav-link text-light">
+                                            <span>bloco 4 prédio 7</span>
                                         </li>
 
-                                        <li class="nav-link">
-                                            <a href="javascript:void(0)">apartamento 302A</a>
+                                        <li class="nav-link text-light">
+                                            <span>apartamento 302A</span>
                                         </li>
 
-                                        <li class="nav-link">
-                                            <a href="javascript:void(0)">junto à empresa Eco-fluxo</a>
+                                        <li class="nav-link text-light">
+                                            <span>junto à empresa Eco-fluxo</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -86,20 +76,14 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="javascript:void(0)" class="nav-link" style="color: #007bff" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social
+                        <a href="javascript:void(0)" class="nav-link" style="color: #007bff" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="_blank">Social
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">
-                                Email 
-                                <i class="fe fe-mail"></i>
-                            </a>
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">
+                            <a class="dropdown-item nav-link text-info" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6">
                                 Facebook
-                                <i class="fe fe-facebook"></i>
                             </a>
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">Twitter
-                                <i class="fe fe-twitter"></i>
+                            <a class="dropdown-item nav-link text-info" target="_blank" href="https://www.instagram.com/sonline_services">Instagram
                             </a>
                         </div>
                     </li>
@@ -124,8 +108,8 @@
                     </li>
 
                     <li class="nav-item text-primary mr-4">
-                        <a class="nav-link" href="#consultoria" role="button">
-                            Treinar
+                        <a class="nav-link" href="#produtos" role="button">
+                            Produto
                         </a>
                     </li>
 

@@ -59,13 +59,13 @@
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Email*</label>
-                                                        <input type="text" class="form-control" placeholder="Email" name="email" value="claudio@gmail.com"/>
+                                                        <input type="text" class="form-control" placeholder="Email" name="email" value="{{old("email")}}" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Senha*</label>
-                                                        <input type="password" class="form-control" placeholder="Senha" name="password" value="123456" />
+                                                        <input type="password" class="form-control" placeholder="Senha" name="password" value="{{old("password")}}" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-12">

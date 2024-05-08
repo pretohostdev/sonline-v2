@@ -44,7 +44,7 @@
                             <a href="x"></a>
                         </li>
                         <li>
-                            Solicitação de visto
+                            Agendamento de visto
                         </li>
                     </ol>
                 </nav>
@@ -54,9 +54,9 @@
 
         </div>
 
-    <div class="row">
+    <div class="row mt-2">
 
-        <div class="col-xl-6">
+        <div class="col-xl-8">
             <div class="card card-statistics rounded">
                 <div class="card-body">
 
@@ -89,7 +89,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="data">Data solicitacao</label>
+                            <label for="data">Data de Agendamento</label>
                             <input type="date" class="form-control" id="dataSolicitacao" name="dataSolicitacao">
                         </div>
 
@@ -98,9 +98,9 @@
                             <input type="date" class="form-control" id="data" name="data">
                         </div>
 
-                        <label for="documento">Cópia do B.I ou Passport em pdf</label>
-                        <div class="card-body bg-gradient rounded">
-                            <input type="file" class="form-control-file" id="documento" name="documento">
+                        <div class="form-group">
+                            <label for="documento">Cópia do B.I ou Passport em pdf</label>
+                            <input type="file" class="form-control" id="documento" name="documento">
                         </div>
 
                     

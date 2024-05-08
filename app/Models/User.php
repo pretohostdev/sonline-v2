@@ -60,11 +60,6 @@ class User extends Authenticatable
         return $this->hasMany(ContaWise::class)->orderBy('created_at', 'desc');
     }
 
-    public function pagamentos()
-    {
-        return $this->hasMany(Pagamento::class)->orderBy('created_at', 'desc');
-    }
-
     public function redirecionamentos()
     {
         return $this->hasMany(Redirecionamento::class)->orderBy('created_at', 'desc');

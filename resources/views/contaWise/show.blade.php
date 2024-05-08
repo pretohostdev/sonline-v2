@@ -84,7 +84,7 @@
                                         
                                         @if (isset($conta->id))
                                             
-                                                @if($conta->estado == '0')
+                                            @if($conta->estado == '0')
                                                 <div class="card-header bg-primary rounded-0">
                                                     <h5 class="mb-0">
                                                         <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Pendente</a>
@@ -113,27 +113,27 @@
                                                     <div class="card-body">
                                                         <p>
                                                             O estado <span class="text-dark">confirmado</span> significa que o seu pedido já foi analizado pela nossa equipa
-                                                        e confirmou a verecidade dos seus dados. Em breve lhe mandaremos uma mensagem de email, confirmando a sua operação.
+                                                            e confirmou a verecidade dos seus dados. Em breve lhe mandaremos uma mensagem de email, confirmando a sua operação.
                                                         </p>
 
                                                     </div>
                                                 </div>
-                                            @else
-                                            <div class="card-header bg-danger rounded-0">
-                                                <h5 class="mb-0">
-                                                    <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Cancelado</a>
-                                                </h5>
-                                            </div>
-
-                                            <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
-                                                <div class="card-body">
-                                                    <p>
-                                                        O estado <span class="text-dark">cancelado</span> significa que o seu pedido já foi analizado pela nossa equipa
-                                                        e não conseguiu confirmar a verecidade dos seus dados. Desejamos que reveja seus dados e envia-nos no.
-                                                    </p>
-
+                                            @elseif ($conta->estado == '2')
+                                                <div class="card-header bg-danger rounded-0">
+                                                    <h5 class="mb-0">
+                                                        <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Cancelado</a>
+                                                    </h5>
                                                 </div>
-                                            </div>
+
+                                                <div id="collapse" class="collapse show" data-parent="#accordionsimplefill">
+                                                    <div class="card-body">
+                                                        <p>
+                                                            O estado <span class="text-dark">cancelado</span> significa que o seu pedido já foi analizado pela nossa equipa
+                                                            e não conseguiu confirmar a verecidade dos seus dados. Desejamos que reveja seus dados e envia-nos no.
+                                                        </p>
+
+                                                    </div>
+                                                </div>
 
                                             @endif
 
@@ -151,7 +151,7 @@
                                             <div class="card-body d-flex justify-content-center">
 
                                                 <div class="col-lg-6">
-                                                    @if (isset($conta->id))
+                                                    @if (isset($conta->id) && ($conta->id !== ''))
                                                         <ul class="list-group">
                                                             <li class="list-group-item">Nome do usuário: <span class="text-dark">{{ $conta->nome }}</span> </li>
                                                             <li class="list-group-item">Data da solicitação: <span class="text-dark">{{ $conta->data }}</span> </li>
@@ -179,7 +179,6 @@
                                                         <tr style="color:white">
                                                             <th scope="col">Nome</th>
                                                             <th scope="col">Data da solicitação</th>
-                                                            {{-- <th scope="col">Data de Solicitação</th> --}}
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -207,11 +206,12 @@
                                 <div class="accordion" id="accordionborderradius">
 
                                     <div class="acd-group border-bottom-0">
-                                        <div class="card-header rounded-0 d-flex justify-content-center">
-
-                                            <iframe src="{{ url("storage/{$conta->comprovativo}") }}" width="60%" height="600px"></iframe>
-
-                                        </div>
+                                        @if ($conta->comprovativo)
+                                            <div class="card-header rounded-0 d-flex justify-content-center">
+                                                <iframe src="{{ url("storage/{$conta->comprovativo}") }}" width="80%" height="700px"></iframe>
+                                            </div>
+                                        @endif
+                                        
                                     </div>
                                 </div>
                             </div>

@@ -135,7 +135,7 @@
             </div>
         </div>
         <div class="col-12 col-md-3">
-            <span>Total Inscritos: <b>{{$totalClientes}}</b></span>
+            <span>Total Inscritos: <b>{{($totalClientes - 1)}}</b></span>
             <div class="progress my-3" style="height: 4px;">
                 <div class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
             </div>

@@ -62,10 +62,12 @@ Route::get('teste/', function () {
 Route::post('/cadastrar', [UserController::class, 'store'])->name('cadastrar');
 
 
+/* ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN */
+
 Route::middleware(['admin'])->group(function(){
 
     // Rota de envio de email
-    Route::get('enviarEmail/{id}', [AdminController::class, 'enviarEmail'])->name('enviarEmail');
+    Route::get('enviarEmail/{id}/{modelo}', [AdminController::class, 'enviarEmail'])->name('enviarEmail');
     
    
     // Clientes 
@@ -79,6 +81,7 @@ Route::middleware(['admin'])->group(function(){
      Route::post('storeProduto/', [AdminController::class, 'storeProduto'])->name('admin.produto.store');
      Route::get('editarProduto/{id}', [ProdutoController::class, 'edit'])->name('admin.produto.edit');
      Route::get('atualizarProduto/{id}', [ProdutoController::class, 'update'])->name('admin.produto.update');
+     Route::get('eliminarProduto/{id}', [ProdutoController::class, 'eliminarProduto'])->name('eliminarProduto');
 
     // Mostrar e listar produtos a partir do lado Admin
     
@@ -86,19 +89,36 @@ Route::middleware(['admin'])->group(function(){
      // Visto
      Route::get('listarVistos/', [AdminController::class, 'listarVistos'])->name('admin.visto.index');
      Route::get('mostrarVistos/{id}', [AdminController::class, 'mostrarVistos'])->name('admin.visto.show');
+     Route::get('verDocumentoVisto/{id}', [AdminController::class, 'verDocumentoVisto'])->name('verDocumentoVisto');
+
+    
+    // Moeda
+    Route::get('listarMoedas/', [AdminController::class, 'listarMoedas'])->name('admin.moeda.index');
+    Route::get('mostrarMoedas/{id}', [AdminController::class, 'mostrarMoedas'])->name('admin.moeda.show');
+    Route::get('verDocumentoMoeda/{id}', [AdminController::class, 'verDocumentoMoeda'])->name('verDocumentoMoeda');
+
+    // Conta
+    Route::get('listarContas/', [AdminController::class, 'listarContas'])->name('admin.conta.index');
+    Route::get('mostrarContas/{id}', [AdminController::class, 'mostrarContas'])->name('admin.conta.show');
+    Route::get('verDocumentoConta/{id}', [AdminController::class, 'verDocumentoConta'])->name('verDocumentoConta');
+
+
+
+
+
+
+
 
      // Agendamento
      Route::get('listarAgendamentos/', [AdminController::class, 'listarAgendamentos'])->name('admin.agendamento.index');
      Route::get('mostrarAgendamentos/{id}', [AdminController::class, 'mostrarAgendamentos'])->name('admin.agendamento.show');
 
-    // Moeda
-    Route::get('listarMoedas/', [AdminController::class, 'listarMoedas'])->name('admin.moeda.index');
-    Route::get('mostrarMoedas/{id}', [AdminController::class, 'mostrarMoedas'])->name('admin.moeda.show');
 
-    // Conta
-    Route::get('listarContas/', [AdminController::class, 'listarContas'])->name('admin.conta.index');
-    Route::get('mostrarContas/{id}', [AdminController::class, 'mostrarContas'])->name('admin.conta.show');
 
+
+
+
+    
     // Redirecionamentos
     Route::get('listarRedirecionamento/', [AdminController::class, 'listarRedirecionamento'])->name('admin.redirecionamento.index');
     Route::get('mostrarRedirecionamentos/{id}', [AdminController::class, 'mostrarRedirecionamentos'])->name('admin.redirecionamento.show');
@@ -107,8 +127,15 @@ Route::middleware(['admin'])->group(function(){
 
     Route::get('downloadMoeda{moeda}', [AdminController::class, 'downloadMoeda'])->name('downloadMoeda');
     Route::get('downloadaConta{conta}', [AdminController::class, 'downloadConta'])->name('downloadConta');
-    Route::get('downloadVisto{visto}', [AdminController::class, 'downloadVisto'])->name('downloadVisto');
 });
+
+
+
+
+
+
+
+/*        CLIENTES CLIENTES CLIENTES CLIENTES  CLIENTES CLIENTES CLIENTES CLIENTES CLIENTES  CLIENTES      CLIENTES CLIENTES  */
 
 Route::middleware(['cliente'])->group(function(){
 

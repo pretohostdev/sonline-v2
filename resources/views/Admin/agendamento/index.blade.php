@@ -1,5 +1,5 @@
 @extends('layout.container.app')
-@section('titulo', 'agendamento')
+@section('titulo', 'agendamentos')
 
 @push('styles')
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
@@ -42,7 +42,7 @@
                                     <a href="x"></a>
                                 </li>
                                 <li>
-                                    Agendamento
+                                    Agendamentos
                                 </li>
                             </ol>
                         </nav>

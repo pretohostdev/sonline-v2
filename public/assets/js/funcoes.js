@@ -1,7 +1,6 @@
 
 // Inicialização de todas as variáveis a serem usadas no sistema
 
-
 // As div que estão em volta dos inputs moedas
 var divKwanza = document.createElement("divKwanza");  
 var divDolar = document.createElement("divDolar");  

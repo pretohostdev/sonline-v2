@@ -104,7 +104,7 @@
                                                 <div class="col-12">
                                                 <label class="control-label">Data de nascimento*</label>
                                                 <div class="input-group">
-                                                    <input class="form-control" type="date" placeholder="2018-12-12" value="2018-12-12" name="dataNascimento" id="dataNascimento">
+                                                    <input class="form-control" type="date" placeholder="2018-12-12" value="{{old('dataNascimento')}}" name="dataNascimento" id="dataNascimento">
                                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                 </div>
                                                 </div>

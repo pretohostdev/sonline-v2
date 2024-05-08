@@ -128,9 +128,11 @@ class ContaWiseController extends Controller
         else{
 
             $conta = (Object)[
+                'id' => '',
                 'nome' => '',
                 'data' => '',
                 'estado' => '',
+                'comprovativo' => '',
                 'listaSolicitacaoConta' => []
             ];   
            

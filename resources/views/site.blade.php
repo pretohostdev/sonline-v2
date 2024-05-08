@@ -6,13 +6,20 @@
 {{-- Inclusão do Bootstrap 5 no projecto --}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/slick-opl/css/bootstrap.min.css')}}" /> --}}
+
+{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/slick-opl/css/main.css')}}" /> --}}
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
-<link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
+<link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
+{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" /> --}}
 <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
+ <!--====== Animate CSS ======-->
+ <link rel="stylesheet" href="assets/css/animate.css">
+
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/LineIcons.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
      
@@ -20,7 +27,6 @@
 
 
 {{-- <script src="https://unpkg.com/scrollreveal"><script/>  --}}
-
 
 @section('header')
     @include('layout.componentes.header_public')
@@ -30,246 +36,281 @@
 @section("corpo_publico")
 
 <div class="conteudo_publico">
-    
-    <div class="row">
-        <div class="col-md-12">
-            <div class="w-100 d-flex justify-content-center align-items-center" style="height: 600px; background-color:#062f4f">
-                <div style="text-align:center;">
-                    <h1 id="servicos" class="text-light tituloAnimado">Sonline Service</h1>
-                    <p style="width: 500px; font-size:16pt;" class="text-light">
-                        Descubra destinos incríveis, planeje suas aventuras e crie memórias inesquecíveis com os 
-                        pacotes personalizados da nossa agência.
-                    </p>
 
-                    <button class="btn btn-round btn-light mt-4" data-toggle="modal" data-target="#verticalCenter"> <span style="font-size: 13pt">Agendar viagem agora</span></button>
-                
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row" style="height: 600px;">
-        <div class="col-lg-6 d-flex justify-content-center">
-            <img src="{{asset("assets/img/agendar.png")}}" alt="Agendar visto">
-        </div>
-
-        <div class="col-lg-6 bg-dark d-flex justify-content-center align-items-center">
-            <div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="text-light tituloAnimado" style="">Agende seu visto</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p style="width: 500px; font-size:15pt;">
-                            Com um processo simples e eficiente, oferecemos assistência especializada para que você agende seu visto 
-                            sem complicações
-                        </p>
-                        <button class="btn btn-round btn-light mt-4" data-toggle="modal" data-target="#verticalCenter"> <span style="font-size: 13pt">Agendar visto agora</span></button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-
-    <div class="row" style="height: 600px;">
-        
-        <div class="col-lg-6 bg-dark d-flex justify-content-center align-items-center">
-            <div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="text-light tituloAnimado" style="">Solicite moeda</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p style="width: 500px; font-size:15pt;">
-                            Com taxas competitivas e um processo simples, garantimos que você tenha a moeda certa 
-                            em mãos antes de partir para seu destino.
-                        </p>
-
-                        <button class="btn btn-round btn-light mt-4" data-toggle="modal" data-target="#verticalCenter"> <span style="font-size: 13pt">Solicite moeda agora</span></button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-        <div class="col-lg-6 d-flex justify-content-center" style="width: inherit; height:inherit">
-            <img src="{{asset("assets/img/cambio.png")}}" alt="Agendar visto" class="w-100 h-100">
-        </div>
-
-    </div>
-
-   
-
-    <!-- Modal solicitar Moeda -->
-    <div class="modal fade" id="verticalCenter" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="verticalCenterTitle">SOLICITAÇÃO</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-dark">
-                        Para solicitar o serviço em questão, precisa entrar com a sua conta, caso já tenha, ou
-                        criar uma conta para estar a par de tudo. Use os botão abaixo para entrar ou criar uma conta.
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <a href="{{route('login')}}" type="button" data-login-url="{{ route('login') }}" class="btn btn-primary btn-block" data-dismiss="modal" id="loginButton">Entrar</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    </div>
-
-    <div class="row mt-2">
-        <div class="col-md-12">
-            <div class="w-100 d-flex justify-content-center align-items-center" style="height: 600px; background-color:#062f4f">
-                <div style="text-align:center;">
-                    <h1 class="text-light tituloAnimado">Abertura de conta</h1>
-                    <p style="width: 500px; font-size:16pt;">
-                        Desfrute de acesso fácil aos serviços oferecidos pelo acesso a uma conta wise, seja para suas finanças 
-                        pessoais ou empresariais.
-                    </p>
-
-                    <button class="btn btn-round btn-light mt-4" data-toggle="modal" data-target="#verticalCenter"> <span style="font-size: 13pt">Solicitar abertura de conta</span></button>
-                
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-4 d-flex justify-content-center">
-
-        <div class="col-lg-4">
-            <div class="row">
-                <div class="col-lg-12 mr-auto">
-                    <div class="d-flex justify-content-center align-items-center bg-dark">
-                        <img class="card-img-top" src="assets/img/filial.jpg" alt="Card image cap">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card-body">
-                        <h4 class="card-title">Filial Amazon</h4>
-                        <p class="card-text">
-                            Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
-                            segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
-                            praticidade de fazer suas compras online conosco.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="col-lg-4">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="d-flex justify-content-center align-items-center bg-dark" s>
-                            <img class="card-img-top" src="assets/img/redirecionamento.png" alt="Card image cap">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card-body">
-                            <h4 class="card-title">Redirecionamento de Produtos</h4>
-                            <p class="card-text">
-                                Nosso serviço de redirecionamento de produtos permite que você receba suas compras de lojas 
-                                internacionais de forma rápida e fácil. Com um endereço de entrega de Portugal e Angola, 
-                                você pode comprar em lojas online de todo o mundo e enviar seus produtos para nós.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <button href="" class="btn btn-block btn-dark" data-toggle="modal" data-target="#verticalCenter">Solicitar Redirecionamento</button>
-                    </div>
-                </div>
-        </div>
-    </div>
-
-
-    {{-- Lista de Produtos da Amazon --}}
-
-
-    <div class="row mt-4 mb-4">
+    <section id="features" class="sectin mt-2">
         <div class="container">
-            <div class="col-lg-12 d-flex justify-content-center align-items-center p-2" style="background-color:#062f4f">
-                <div class="text-center">
-                    <h3  class="text-light" style="margin:0;padding:0">Lista de produtos Amazon</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-   
-    <div class="row">
-        <div class="container">
-            <div class="lista-horizontal">
-                <ul>
-                    @foreach ($produtos as $produto )
-                   
-                    <li>
-                        <div class="card" style="width: 18rem;">
-                            @if ($produto->imagem)
-                                <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" alt="telefone">
-                            @endif
-                            <div class="card-body">
-                              <h5 class="card-title">{{$produto->nome}}</h5>
-                              <p class="card-text" style="width: inherit">700$</p>
-                              <p>Descrição - Importante</p>
-                              <a href="{{$produto->link}}" class="btn btn-block btn-info ">Comprar</a>
-                            </div>
-                          </div>
-                      </li>
-                    @endforeach
-                  
-                </ul>
+          <!-- Start Row -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="features-text section-header text-center">  
+                <div>   
+                  <h2 class="section-title" style="margin-top:50px">Nossos Serviços</h2>
+                  <div class="desc-text">
+                    <p>A sonline Service é uma empresa cuja missão é simplificar e agilizar os processos que envolvem</p>
+                    <p>serviços virtuais. Abaixo listamos alguns dos serviços oferecidos pela Sonline Service.</p>
+                  </div>
+                </div> 
               </div>
+            </div>
+          </div>
+          <!-- Start Row -->
+          <div class="row featured-bg">
+            <div class="col-lg-6 col-md-6 col-xs-12 p-0">
+               <!-- Start Fetatures -->
+              <div class="feature-item featured-border1">
+                 <div class="feature-icon float-left">
+                   <i class="lni lni-coin"></i>
+                 </div>
+                 <div class="feature-info float-left">
+                   <h4>Divisas</h4>
+                   <p>Facilitamos a compra e venda de moedas estrangeiras,<br> garantindo que você tenha acesso às melhores <br> taxas de câmbio e uma transação perfeita</p>
+                 </div>
+              </div>
+            </div>
+            
+           <!-- Start Col -->
+            <div class="col-lg-6 col-md-6 col-xs-12 p-0">
+              <div class="feature-item featured-border2">
+                 <div class="feature-icon float-left">
+                   <i class="lni lni-visa"></i>
+                 </div>
+                 <div class="feature-info float-left">
+                   <h4>Abertura de conta</h4>
+                   <p>Simplificamos o processo de abertura de contas <br> internacionais como a Wise, permitindo que você<br> gerencie suas finanças globais com facilidade.</p>
+                 </div>
+              </div>
+            </div>
+             <!-- End Col -->
+            
+           <!-- Start Col -->
+            <div class="col-lg-6 col-md-6 col-xs-12 p-0">
+              <div class="feature-item featured-border1">
+                 <div class="feature-icon float-left">
+                    <i class="lni lni-producthunt"></i>
+                 </div>
+                 <div class="feature-info float-left">
+                   <h4>Redirecionamentos</h4>
+                   <p>Tornamos suas compras online internacionais<br>ainda mais acessíveis, oferecendo serviços de <br>redirecionamento de produtos..</p>
+                 </div>
+              </div>
+            </div>
+             <!-- End Col -->
+
+             <div class="col-lg-6 col-md-6 col-xs-12 p-0">
+               <div class="feature-item featured-border2">
+                  <div class="feature-icon float-left">
+                    <i class="lni-briefcase"></i>
+                  </div>
+                  <div class="feature-info float-left">
+                    <h4>Agendamento de visto</h4>
+                    <p>Eliminamos a complexidade do processo de  obtenção de <br> vistos, guiando-o através de cada etapa com expertise <br> e para o deixá-lo mais confiante.</p>
+                  </div>
+               </div>
+             </div>
+            
+           <!-- Start Col -->
+            <div class="col-lg-6 col-md-6 col-xs-12 p-0">
+               <!-- Start Fetatures -->
+              <div class="feature-item featured-border3">
+                 <div class="feature-icon float-left">
+                   <i class="lni-reload"></i>
+                 </div>
+                 <div class="feature-info float-left">
+                   <h4>Outros Agendamentos</h4>
+                   <p>Além do agendamento mencionado, a Sonline service <br> lida com vários outros serviços de caracter online<br> por isso recomendamos entrar em contacto.
+                 </div>
+              </div>
+              <!-- End Fetatures -->
+            </div>
+             <!-- End Col -->
+            
+           <!-- Start Col -->
+            <div class="col-lg-6 col-md-6 col-xs-12 p-0">
+              <div class="feature-item">
+                 <div class="feature-icon float-left">
+                    <i class="lni lni-amazon-original"></i>
+                 </div>
+                 <div class="feature-info float-left">
+                   <h4>Produtos Amazon</h4>
+                   <p>Como afiliados da Amazon, temos a oportunidade de<br> compartilhar produtos de qualidade com nossos <br>seguidores, ganhando comissões por isso.</p>
+                 </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+    <hr>
+    <section class="about-area pt-70 mt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="section-title">
+                            <div class="line"></div>
+                            <h3 class="title"><span>Somos a filial da</span> amazon</h3>
+                        </div> <!-- section title -->
+                        <p class="text-dark"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
+                            segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
+                            praticidade de fazer suas compras online conosco. Como filia da amazon, trazemos para si os melhores produtofa-spinpara desfrutares</p>
+                        <a href="{{route('login')}}" class="main-btn">Solicitar Serviço</a>
+                    </div>                
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <img src="{{asset('assets/img/filial.jpg')}}" alt="about">
+                    </div> 
+                </div>
+            </div> 
+        </div> 
+        <div class="about-shape-1">
+            <img src="{{asset('assets/img/about-shape-1.svg')}}" alt="shape">
+        </div>
+    </section>
     </div>
+
+    {{-- Seção de testemunho --}}
+    <section id="testimonial" class="testimonial-area about-area pt-15">
+        <div class="about-shape-2">
+            <img src="{{asset('assets/img/about-shape-2.svg')}}" alt="shape">
+        </div>
+        <div class="container">
+            <div class="row justify-content-right">
+                <div class="col-lg-5">
+                    <div class="section-title pb-40">
+                        <h3 class="title">Testemunho <span>dos nossos clientes</span></h3>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
+                <div class="col-lg-4">
+                    <div class="single-testimonial">
+                        <div class="testimonial-review d-flex align-items-center justify-content-between">
+                            <div class="quota">
+                                <i class="lni-quotation"></i>
+                            </div>
+                            <div class="star">
+                                <ul>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <p  class="text">Estou realmente impressionado com a variedade de produtos oferecidos neste site! Encontrei tudo o que precisava em um só lugar. Definitivamente vou voltar mais vezes.</p>
+                        </div>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <div class="author-image">
+                                <img class="shape" src="{{asset('assets/img/textimonial-shape.svg')}}" alt="shape">
+                                <img class="author" src="{{asset('assets/img/author-1.png')}}" alt="author">
+                            </div>
+                            <div class="author-content media-body">
+                                <h6 class="holder-name">Sabino Solias</h6>
+                                <p class="text">Programador, Laravel</p>
+                            </div>
+                        </div>
+                    </div> <!-- single testimonial -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-testimonial">
+                        <div class="testimonial-review d-flex align-items-center justify-content-between">
+                            <div class="quota">
+                                <i class="lni-quotation"></i>
+                            </div>
+                            <div class="star">
+                                <ul>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="text">Este site superou todas as minhas expectativas! Além de uma ampla seleção de produtos, o atendimento ao cliente foi excepcional. Minha dúvida foi respondida rapidamente.</p>
+                        </div>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <div class="author-image">
+                                <img class="shape" src="{{asset('assets/img/textimonial-shape.svg')}}" alt="shape">
+                                <img class="author" src="{{asset('assets/img/author-2.png')}}" alt="author">
+                            </div>
+                            <div class="author-content media-body">
+                                <h6 class="holder-name">Manuel Chatanda</h6>
+                                <p class="text">CEO, StackFree</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-testimonial">
+                        <div class="testimonial-review d-flex align-items-center justify-content-between">
+                            <div class="quota">
+                                <i class="lni-quotation"></i>
+                            </div>
+                            <div class="star">
+                                <ul>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="text">A navegação fácil e intuitiva tornou simples encontrar o que eu estava procurando, e o processo de pagamento foi rápido e seguro. Recomendo totalmente.</p>
+                        </div>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <div class="author-image">
+                                <img class="shape" src="{{asset('assets/img/textimonial-shape.svg')}}" alt="shape">
+                                <img class="author" src="{{asset('assets/img/author-3.png')}}" alt="author">
+                            </div>
+                            <div class="author-content media-body">
+                                <h6 class="holder-name">Audilia Rufino</h6>
+                                <p class="text">Adevogada</p>
+                            </div>
+                        </div>
+                    </div> <!-- single testimonial -->
+                </div>
+                
+            </div> <!-- row -->
+        </div> <!-- container -->
+       
+    </section>
+
+    
 
 <div class="row mt-5">
     <div class="container">
         <div class="col-lg-12">
-            <div class="">
-                <h2>Links de afiliado</h2>
-                <hr>
+            <div class="text-center">
+                <div class="section-title text-center pb-40">
+                    <h4>Links de Afiliado <i class="lni lni-customer"></i></h3>
+                        <hr>
+                </div>
             </div>
         </div>
     </div>
 
 </div>
       
-  <div class="row mt-4">
+  <div class="row">
 
-    <div class="container">
-        <div class="col-lg-10">
+    <div class="container d-flex justify-content-center">
+        <div class="col-lg-12">
             <div class="tab nav-border-bottom">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active show" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
+                        <a style="font-size:14pt" class="nav-link active show text-info" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
+                        <a style="font-size:14pt" class="nav-link text-info" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
+                        <a style="font-size:14pt" class="nav-link text-info" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -315,52 +356,116 @@
 
     </div>
 
-    {{-- Sobre --}}
-  <div class="row mt-4 d-flex justify-content-center">
 
-    <div class="col-lg-4 d-flex justify-content-end align-items-center" style="height: 800px">
-        <h2 id="consultoria" class="text-info">Consultoria</h2>
+    {{-- Lista de Produtos da Amazon --}}
+    <div class="row mt-4 mb-2">
+        {{-- <div class="container"> --}}
+            <div class="col-lg-12 d-flex justify-content-center align-items-center p-2" style="background-color:#062f4f">
+                <div class="">
+                    <h3  class="text-light" id="produtos">Lista de produtos Amazon</h3>
+                </div>
+            </div>
+        {{-- </div> --}}
+    </div>
+   
+    <div class="row">
+        {{-- <div class="container"> --}}
+            <div class="lista-horizontal">
+                <ul>
+                    @foreach ($produtos as $produto )
+                   
+                    <li>
+                        <div class="card" style="width: 18rem;">
+                            @if ($produto->imagem)
+                                <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" alt="telefone">
+                            @endif
+                            <div class="card-body">
+                              <h5 class="card-title">{{$produto->nome}}</h5>
+                              <p class="card-text" style="width: inherit">700$</p>
+                              <p>Descrição - {{$produto->descricao}}</p>
+                              <a href="{{$produto->link}}" class="btn btn-block btn-info ">Comprar</a>
+                            </div>
+                          </div>
+                      </li>
+                    @endforeach
+                  
+                </ul>
+              </div>
+        {{-- </div> --}}
     </div>
 
 
-    <div class="col-lg-8 d-flex justify-content-cente align-items-cente" style="height: 800px">
-        <img src="{{asset('assets/img/consultoria.jpg')}}" alt="consultoria" height="" width="100%">
-    </div>
-    
-  </div>
-
-  {{-- Contactos --}}
-  <div class="row mt-4 d-flex justify-content-center">
-    
-    <div class="col-lg-6 col-lg-4 d-flex justify-content-end align-items-cente bg-dark" style="height: 400px">
-        <div>
-            <img src="{{asset('assets/img/contacto.png')}}" alt="contactos" height="100%">
+  <footer class="bg-dark">
+  <section class="footer-Content">
+    <div class="container d-flex justify-content-around">
+      <div class="row">
+        
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+          <div class="widget">
+            <h3 class="block-title">Crie uma conta</h3>
+            <ul class="menu">
+              <li><a href="{{route('login')}}">Entrar</a></li>
+              <li><a href="{{route('login')}}">Sobre</a></li>
+              <li><a href="{{route('login')}}">Preços</a></li>
+            </ul>
+          </div>
         </div>
-    </div>
-
-    <div class="col-lg-4 d-flex align-items-center bg-secondary" style="height: 400px">
-        <div style="">
-            <h2 class="text-light" id="contacto">Contactos</h2>
-            <h4 class="text-light">Unitel:934962288</h4>
-            <h4 class="text-light">Africell:945029144</h4>
-            <h4 class="text-light">Email:claudiorufino@gmail.com</h4>
+        
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+          <div class="widget">
+            <h3 class="block-title">Contacto</h3>
+            <ul class="menu">
+              <li><a href="#">Email:claudiorufino@gmail.com</a></li>
+              <li><a href="#">Telefone 1: </a></li>
+              <li><a href="#">Telefone 2:</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+          <div class="widget">
+            <h3 class="block-title">Endereço</h3>
+            <ul class="menu">
+              <li><a href="#">Terms & Condition</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+    <!-- Copyright Start  -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="site-info float-left">
+              <p>&copy; 2024 - Sonline Service</p>
+            </div>              
+            <div class="float-right">  
+              <ul class="footer-social">
+                <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
+                <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
+                <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
+              </ul> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
 
-    
-  </div>
-
-@endsection
-
-@section('footer')
-    @include('layout.componentes.footer_public')
 @endsection
 
 @push('scripts')
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
     <script src="{{asset('assets/js/animacao.js')}}"></script>  
+
+    <!--====== wow js ======-->
+    <script src="assets/js/wow.min.js"></script>
    
     
 @endpush

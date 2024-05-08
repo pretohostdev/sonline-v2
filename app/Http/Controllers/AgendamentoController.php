@@ -87,6 +87,7 @@ class AgendamentoController extends Controller
 
             $clientesAgendamentos = $cliente->agendamentos;
             $agendamento = (Object)[
+                'id' => $cliente->id,
                 'nome' => $cliente->name,
                 'data' => $agendamento->data,
                 'tipo' => $agendamento->tipo,
@@ -98,11 +99,13 @@ class AgendamentoController extends Controller
         else{
 
             $agendamento = (Object)[
+                'id' => '',
+                'nome' => '',
                 'data' => '',
                 'tipo' => '',
                 'estado' => '',
                 'observacao' => '',
-                'listaSolicitacaoAgendamentos' => []
+                'listaAgendamentos' => []
             ];   
            
         }

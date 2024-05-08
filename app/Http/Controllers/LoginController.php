@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Sistema;
+
 
 class LoginController extends Controller
 {
@@ -41,9 +43,16 @@ class LoginController extends Controller
             $usuario = Auth::user();
 
             if ($usuario->tipo == 'cliente') {
+                if(!Sistema::find(1)){
+                    Sistema::create(['precoContaWise'=> 20000, 'iban' => '0001']);
+                }
                 return redirect()->intended('homeCliente');
             }
             else{
+
+                if(!Sistema::find(1)){
+                    Sistema::create(['precoContaWise'=> 20000, 'iban' => '0001']);
+                }
                 return redirect()->intended('admin');
             }
 

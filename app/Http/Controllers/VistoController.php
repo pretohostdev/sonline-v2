@@ -134,7 +134,10 @@ class VistoController extends Controller
         else{
             
             $visto = (Object)[
+                'id' => '',
+                'estado' => '',
                 'tipo' => '',
+                'documento' => '',
                 'dataSolicitacao' => '',
                 'dataPrevista' => '',
                 'paisDesejado' => '',
