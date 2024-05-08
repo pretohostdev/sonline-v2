@@ -59,7 +59,6 @@ class ProdutoController extends Controller
      */
     public function update($id, Request $request)
     {
-
         $produto = Produto::find($id);
 
         $produto->nome = $request->nome;
@@ -82,6 +81,7 @@ class ProdutoController extends Controller
     }
 
     public function eliminarProduto($id){
+
         $produto = Produto::find($id);
         Storage::delete($produto->imagem);
         $produto->delete();

@@ -132,7 +132,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="precoWise" class="text-dark">Preço conta</label>
-                                                <input type="number" class="form-control" id="precoWise" value="{{$sistema->precoConta}}" name="precoWise">
+                                                <input type="number" class="form-control" id="precoConta" value="{{$sistema->precoConta}}" name="preConta">
                                             </div>
 
                                             <div class="form-group">
@@ -142,12 +142,12 @@
 
                                             <div class="form-group">
                                                 <label for="precoWise" class="text-dark">Preço agendamento de visto</label>
-                                                <input type="number" class="form-control" value="{{$sistema->precoAgendamentoVisto}}" name="precoVisto">
+                                                <input type="number" class="form-control" value="{{$sistema->precoAgendamentoVisto}}" id="precoVisto" name="precoVisto">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="precoWise" class="text-dark">Preço Consultoria</label>
-                                                <input type="number" class="form-control" value="{{$sistema->precoConsultoria}}" name="precoConsultoria">
+                                                <input type="number" class="form-control" value="{{$sistema->precoConsultoria}}" name="precoConsultoria" id="precoConsultoria">
                                             </div>
 
                                             <div class="d-flex justify-content-space-round">
@@ -172,20 +172,25 @@
             document.getElementById('formSistema').addEventListener('submit', function(event) {
                 
                 event.preventDefault(); // Impedir o envio padrão do formulário
-                console.log('Estou funcionando...');
-    
+                
                 var spinnerSistema = document.getElementById('spinnerSistema');
-                    spinnerSistema.style.display = "block";
-    
-                // Pegar os dados vindo do formulário
-                var preco = document.getElementById('precoWise').value;
+                spinnerSistema.style.display = "block";
+                
                 var iban = document.getElementById('iban').value;
+                var precoConta = document.getElementById('precoConta').value;
+                var precoVisto = document.getElementById('precoVisto').value;
+                var precoDocumento = document.getElementById('precoDocumento').value;
+                var precoConsultoria = document.getElementById('precoConsultoria').value;
     
                 const sistema = {
                     iban: iban,
-                    preco: preco,
+                    precoConta: precoConta,
+                    precoDocumento : precoDocumento,
+                    precoVisto : precoVisto,
+                    precoConsultoria : precoConsultoria
                 };
     
+                // console.log('Estou funcionando...');
                 fetch('http://localhost:8000/api/sistema', {
                     method: 'POST',
                     headers: {
@@ -202,6 +207,7 @@
                 })
                 .then(data => {
                     spinnerSistema.style.display = "none";
+                    console.log(data);
                 })
                 .catch(error => {
                     console.error(error);

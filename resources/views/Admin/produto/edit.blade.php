@@ -89,26 +89,26 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="nome">Nome do Produto</label>
-                                                    <input type="text" class="form-control" id="nome" name="nome" value="{{$produto->nome}}" required>
+                                                    <input type="text" class="form-control" name="nome" value="{{$produto->nome}}" required>
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label for="preco">Preço</label>
-                                                    <input type="number" class="form-control" id="preco" name="preco" value="{{$produto->preco}}" required>
+                                                    <input type="number" class="form-control" name="preco" value="{{$produto->preco}}" required>
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label for="descricao">Descrição</label>
-                                                    <input type="text" class="form-control" value="{{$produto->descricao}}" id="descricao" name="descricao">
+                                                    <input type="text" class="form-control" value="{{$produto->descricao}}" name="descricao">
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label for="link">Link Afiliado</label>
-                                                    <input type="text" class="form-control" id="link" name="link" value="{{$produto->link}}" required>
+                                                    <input type="text" class="form-control" name="link" value="{{$produto->link}}" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="imagem">Imagem do produto</label>
                                                 <img src="{{asset('assets/img/jpg.png')}}" alt="">
                                                 <img src="{{asset('assets/img/png.png')}}" alt="">
-                                                <input type="file" class="form-control" id="imagem" name="imagem">
+                                                <input type="file" class="form-control" name="imagem">
                                             </div>
                                             
                                             <button type="submit" class="btn bg-gradient text-light">Atualizar produto</button>
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-xl-6 col-md-6 border-t col-12">
+                            {{-- <div class="col-xl-6 col-md-6 border-t col-12">
                                 <div class="page-account-form">
                                     <div class="form-titel border-bottom p-3">
                                         <h5 class="mb-0 py-2">Dados do sistema</h5>
@@ -165,9 +165,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
-        <script>
+        {{-- <script>
             document.getElementById('formSistema').addEventListener('submit', function(event) {
                 
                 event.preventDefault(); // Impedir o envio padrão do formulário
@@ -179,10 +179,16 @@
                 // Pegar os dados vindo do formulário
                 var preco = document.getElementById('precoWise').value;
                 var iban = document.getElementById('iban').value;
+                var precoDocumento = document.getElementById('precoDocumento');
+                var precoVisto = document.getElementById('precoVisto');
+                var precoConsultoria = document.getElementById('precoConsultoria');
     
                 const sistema = {
                     iban: iban,
                     preco: preco,
+                    precoDocumento = precoDocumento,
+                    precoVisto = precoVisto,
+                    precoConsultoria = precoConsultoria
                 };
     
                 fetch('http://localhost:8000/api/sistema', {
@@ -208,7 +214,7 @@
     
             });
     
-        </script>
+        </script> --}}
     
 
    

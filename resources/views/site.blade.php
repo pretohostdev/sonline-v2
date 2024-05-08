@@ -367,10 +367,10 @@
                             @if ($produto->imagem)
                                 <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" alt="telefone">
                             @endif
-                            <div class="card-body">
-                              <h5 class="card-title">{{$produto->nome}}</h5>
-                              <p class="card-text" style="width: inherit">700$</p>
-                              <p>Descrição - {{$produto->descricao}}</p>
+                            <div class="card-body bg-secondary">
+                              <h5 class="card-title text-light">{{$produto->nome}}</h5>
+                              <p class="card-text text-light" style="width: inherit">{{$produto->preco}}</p>
+                              <p class="text-light">Descrição - {{$produto->descricao}}</p>
                               <a href="{{$produto->link}}" target="_blank" class="btn btn-block text-light" style="background-color:#3c9cfd">Comprar</a>
                             </div>
                           </div>

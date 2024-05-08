@@ -50,14 +50,17 @@ class SistemaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Sistema $sistema)
+    public function update(Request $request)
     {
         $dados = json_decode($request->getContent(), true);
         
         $sistema = Sistema::find(1);
 
         $sistema->iban = $dados['iban'];
-        $sistema->precoContaWise = $dados['preco'];
+        $sistema->precoConta = $dados['precoConta'];
+        $sistema->precoAgendamentoDocumento =  $dados['precoDocumento'];
+        $sistema->precoAgendamentoVisto = $dados['precoVisto'];
+        $sistema->precoConsultoria = $dados['precoConsultoria'];
         $sistema->save();
         
         return response()->json(['atualizado' => 'true'], 200);
