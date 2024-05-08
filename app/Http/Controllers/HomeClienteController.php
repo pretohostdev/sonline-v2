@@ -18,26 +18,13 @@ class HomeClienteController extends Controller
     public function index()
     {
         $id = Auth::id();
-
-
         $cliente = User::find($id);
-
-
-        // Dados totais do cliente em relação outra tabelas
-
-        // $totalMoedas = $cliente->moedas->count();
-        // $totalContas = $cliente->contaWise->count();
-        // $totalRedirecionamento = $cliente->redirecionamentos->count();
-
-        // return $totalconta;
 
         // Considerando que a tabela Endereço ainda não foi cadastrada
 
         $pais = !isset($cliente->endereco->pais) ? "" : $cliente->endereco->pais;
         $cidade = !isset($cliente->endereco->cidade) ? "" : $cliente->endereco->cidade;
         $bairro = !isset($cliente->endereco->bairro) ? "" : $cliente->endereco->bairro;
-            // $pais = "";
-        
 
         // $dia_nascimento = $cliente->dataNascimento;
         $data = Carbon::createFromFormat('Y-m-d', $cliente->dataNascimento); // Cria um objeto Carbon com uma data específica

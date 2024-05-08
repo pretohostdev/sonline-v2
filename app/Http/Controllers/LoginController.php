@@ -44,14 +44,26 @@ class LoginController extends Controller
 
             if ($usuario->tipo == 'cliente') {
                 if(!Sistema::find(1)){
-                    Sistema::create(['precoContaWise'=> 20000, 'iban' => '0001']);
+                    Sistema::create([
+                        'iban' => '0001',
+                        'precoConta'=> 20000, 
+                        'precoConsultoria' => 700000,
+                        'precoAgendamentoDocumento' => 5000,
+                        'precoAgendamentoVisto' => 75000,
+                    ]);
                 }
                 return redirect()->intended('homeCliente');
             }
             else{
 
                 if(!Sistema::find(1)){
-                    Sistema::create(['precoContaWise'=> 20000, 'iban' => '0001']);
+                    Sistema::create([
+                        'iban' => '0001',
+                        'precoConta'=> 20000, 
+                        'precoConsultoria' => 700000,
+                        'precoAgendamentoDocumento' => 5000,
+                        'precoAgendamentoVisto' => 75000,
+                    ]);
                 }
                 return redirect()->intended('admin');
             }

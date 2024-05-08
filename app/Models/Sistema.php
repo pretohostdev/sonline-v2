@@ -12,7 +12,10 @@ class Sistema extends Model
     protected $table = 'sistemas';
 
     protected $fillable = [
-        'precoContaWise',
-        'iban'
+        'precoConta',
+        'iban',
+        'precoAgendamentoDocumento',
+        'precoAgendamentoVisto',
+        'precoConsultoria'
     ];
 }

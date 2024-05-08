@@ -179,7 +179,7 @@ class AdminController extends Controller
     function listarProdutos(){
 
         // Listar produtos do sistema
-        $produtos = Produto::paginate(10);
+        $produtos = Produto::whereNotNull('imagem')->paginate(10);
         return view('admin.produto.index', compact('produtos'));
     }
 
@@ -188,7 +188,7 @@ class AdminController extends Controller
 
         if(!$sistema){
             $cadastro = Sistema::create([
-                'precoContaWise' => '20000',
+                'precoConta' => '20000',
                 'iban' => '0006'
             ]);
 

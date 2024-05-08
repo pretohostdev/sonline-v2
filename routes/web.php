@@ -52,13 +52,6 @@ Route::get('/', function () {
 
 Route::get('/sonline', [UserController::class, 'site'])->name('site');
 
-Route::get('teste/', function () {
-    return view('teste');
-})->name('teste');
-
-
-
-
 Route::post('/cadastrar', [UserController::class, 'store'])->name('cadastrar');
 
 

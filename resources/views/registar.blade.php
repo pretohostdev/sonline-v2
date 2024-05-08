@@ -4,7 +4,6 @@
     
     <head>
     <title>Registar</title>
-    {{-- Bootstrap 5 para lhe dar com  --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
     <meta charset="utf-8" />
@@ -12,9 +11,7 @@
     <meta name="description" content="Sistema da sonline Service." />
     <meta name="author" content="petroHost" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- app favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.png">
-    <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <!-- plugin stylesheets -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" >
@@ -72,13 +69,13 @@
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Primeiro Nome*</label>
-                                                        <input type="text" class="form-control" placeholder="" name="primeiroNome" id="primeiroNome" required>
+                                                        <input type="text" class="form-control" value="{{old('primeiroNome')}}" name="primeiroNome" id="primeiroNome" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Último Nome*</label>
-                                                        <input type="text" class="form-control" placeholder="" name="ultimoNome" id="ultimoNome" required>
+                                                        <input type="text" class="form-control" value="{{old('ultimoNome')}}" name="ultimoNome" id="ultimoNome" required>
                                                     </div>
                                                 </div>
 
@@ -97,7 +94,7 @@
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Contacto*</label>
-                                                        <input type="text" class="form-control"  name="contacto" id="contacto" required>
+                                                        <input type="text" class="form-control" value="{{old('contacto')}}" name="contacto" id="contacto" required>
                                                     </div>
                                                 </div>
 
@@ -145,18 +142,6 @@
                                                 </div>
 
                                                 </form>
-
-                                                {{-- Mensagem de envio com sucesso --}}
-                                                {{-- <div id="registoMensagem" class="mt-2">
-                                                    <div class="alert alert-dismissible fade show rounded text-center  bg-gradient" role="alert" style="color:white">
-                                                        Usuário cadastrado com sucesso!
-                                                        <button type="button" class="close mb-2" data-dismiss="alert" aria-label="Close">
-                                                            <i class="ti ti-close"></i>
-                                                        </button>
-                                                    </div>
-                                                </div> --}}
-
-                                                
 
                                                 <div class="col-12 mt-3">
                                                     <p>Já tem uma conta ?<a href="{{route('login')}}" class="text-primary"> Entrar</a></p>
@@ -232,75 +217,6 @@
                     console.log(e);
                 }
             }
-
-            // async function cadastrar(cliente){
-                
-            //     try {
-            //         const response = await fetch('http://localhost:8000/api/cadastrar',
-            //         {
-            //             method:'POST',
-            //             headers: {
-            //                 'Accept': 'application/json'
-            //             },
-            //             body: JSON.stringify(cliente),
-            //         });
-            //         const dados = await response.json();
-            //         return dados;
-            //     } catch (error) {
-            //         return error;
-            //     }
-               
-            // }
-
-        // var formRegistar = document.getElementById('formRegistar');
-
-        // formRegistar.addEventListener('submit', function(event){
-
-        //     event.preventDefault(); 
-
-        //     // Obteção dos valores das variáveis
-        //     var senha = document.getElementById('senha').value;
-        //     var email = document.getElementById('email').value;
-        //     var genero = document.getElementById('genero').value;
-        //     var contacto = document.getElementById('contacto').value;
-        //     var ultimoNome = document.getElementById('ultimoNome').value;
-        //     var primeiroNome = document.getElementById('primeiroNome').value;
-        //     var dataNascimento = document.getElementById('dataNascimento').value;
-
-        //     var nomeCompleto = primeiroNome + " " + ultimoNome;
-
-        //     const cliente = {
-        //             email:email,
-        //             senha: senha,
-        //             genero:genero,
-        //             contacto:contacto,
-        //             nome: nomeCompleto,
-        //             dataNascimento:dataNascimento,  
-        //     };
-
-        //     var spinnerRegistar = document.getElementById('spinnerRegistar');
-        //     spinnerRegistar.style.display = "block";
-
-        //     var registoMensagem = document.getElementById('registoMensagem');
-
-        //     cadastrado = cadastrar(cliente);
-
-        //     console.log(cadastrado);
-        //     cadastrado.then(
-        //         data => {
-        //                 if(data.cadastrado == 'true'){
-        //                     console.log('Cadastrado com sucesso');
-        //                 }
-        //                 else{
-        //                     console.log('Erro ao cadastrar: ' + data.cadastrado);
-        //                 }
-        //             spinnerRegistar.style.display = "none";
-        //             registoMensagem.style.display = "block";
-        //         }
-        //     );
-
-        // });
-
 
         // Validar o campo de senha
         var senha = document.getElementById('password');

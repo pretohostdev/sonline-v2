@@ -46,8 +46,7 @@
                 <div>   
                   <h2 class="section-title" style="margin-top:50px">Nossos Serviços</h2>
                   <div class="desc-text">
-                    <p>A sonline Service é uma empresa cuja missão é simplificar e agilizar os processos que envolvem</p>
-                    <p>serviços virtuais. Abaixo listamos alguns dos serviços oferecidos pela Sonline Service.</p>
+                    <p>A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
                   </div>
                 </div> 
               </div>
@@ -56,7 +55,6 @@
           <!-- Start Row -->
           <div class="row featured-bg">
             <div class="col-lg-6 col-md-6 col-xs-12 p-0">
-               <!-- Start Fetatures -->
               <div class="feature-item featured-border1">
                  <div class="feature-icon float-left">
                    <i class="lni lni-coin"></i>
@@ -68,7 +66,6 @@
               </div>
             </div>
             
-           <!-- Start Col -->
             <div class="col-lg-6 col-md-6 col-xs-12 p-0">
               <div class="feature-item featured-border2">
                  <div class="feature-icon float-left">
@@ -80,9 +77,7 @@
                  </div>
               </div>
             </div>
-             <!-- End Col -->
             
-           <!-- Start Col -->
             <div class="col-lg-6 col-md-6 col-xs-12 p-0">
               <div class="feature-item featured-border1">
                  <div class="feature-icon float-left">
@@ -94,7 +89,6 @@
                  </div>
               </div>
             </div>
-             <!-- End Col -->
 
              <div class="col-lg-6 col-md-6 col-xs-12 p-0">
                <div class="feature-item featured-border2">
@@ -108,9 +102,7 @@
                </div>
              </div>
             
-           <!-- Start Col -->
             <div class="col-lg-6 col-md-6 col-xs-12 p-0">
-               <!-- Start Fetatures -->
               <div class="feature-item featured-border3">
                  <div class="feature-icon float-left">
                    <i class="lni-reload"></i>
@@ -120,11 +112,9 @@
                    <p>Além do agendamento mencionado, a Sonline service <br> lida com vários outros serviços de caracter online<br> por isso recomendamos entrar em contacto.
                  </div>
               </div>
-              <!-- End Fetatures -->
             </div>
              <!-- End Col -->
             
-           <!-- Start Col -->
             <div class="col-lg-6 col-md-6 col-xs-12 p-0">
               <div class="feature-item">
                  <div class="feature-icon float-left">
@@ -152,7 +142,8 @@
                         <p class="text-dark"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
                             segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
                             praticidade de fazer suas compras online conosco. Como filia da amazon, trazemos para si os melhores produtofa-spinpara desfrutares</p>
-                        <a href="{{route('login')}}" class="main-btn">Solicitar Serviço</a>
+                        {{-- <a href="{{route('login')}}" class="main-btn">Solicitar Serviço</a> --}}
+                        <a href="{{route('login')}}" class="btn btn-round mt-4 text-light" style="background-color:#3c9cfd">Solicitar um serviço</a>
                     </div>                
                 </div>
                 <div class="col-lg-6">
@@ -177,7 +168,7 @@
             <div class="row justify-content-right">
                 <div class="col-lg-5">
                     <div class="section-title pb-40">
-                        <h3 class="title">Testemunho <span>dos nossos clientes</span></h3>
+                        <h3 class="title" id="testemunho">Testemunho <span>dos nossos clientes</span></h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -304,13 +295,13 @@
             <div class="tab nav-border-bottom">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a style="font-size:14pt" class="nav-link active show text-info" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
+                        <a style="font-size:14pt" class="nav-link active show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:14pt" class="nav-link text-info" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
+                        <a style="font-size:14pt" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:14pt" class="nav-link text-info" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
+                        <a style="font-size:14pt" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -359,17 +350,14 @@
 
     {{-- Lista de Produtos da Amazon --}}
     <div class="row mt-4 mb-2">
-        {{-- <div class="container"> --}}
-            <div class="col-lg-12 d-flex justify-content-center align-items-center p-2" style="background-color:#062f4f">
-                <div class="">
-                    <h3  class="text-light" id="produtos">Lista de produtos Amazon</h3>
+            <div class="col-lg-12 d-flex justify-content-center align-items-center" style="background-color:#062f4f">
+                <div>
+                    <h4  class="text-light p-1" id="produtos">Lista de produtos Amazon</h3>
                 </div>
             </div>
-        {{-- </div> --}}
     </div>
    
     <div class="row">
-        {{-- <div class="container"> --}}
             <div class="lista-horizontal">
                 <ul>
                     @foreach ($produtos as $produto )
@@ -383,7 +371,7 @@
                               <h5 class="card-title">{{$produto->nome}}</h5>
                               <p class="card-text" style="width: inherit">700$</p>
                               <p>Descrição - {{$produto->descricao}}</p>
-                              <a href="{{$produto->link}}" class="btn btn-block btn-info ">Comprar</a>
+                              <a href="{{$produto->link}}" class="btn btn-block text-light" style="background-color:#3c9cfd">Comprar</a>
                             </div>
                           </div>
                       </li>
@@ -391,19 +379,32 @@
                   
                 </ul>
               </div>
-        {{-- </div> --}}
     </div>
 
 
-  <footer class="bg-dark">
+    {{-- Consultoria --}}
+    <div class="row">
+      <article class="d-flex align-items-center justify-content-center">
+        <div class="col-lg-6 bg-ligh" style="height:200px">
+          <h2 class="font-weight-bold" style="color:white">Consultoria & <br>Acompanhamento de visto</h2> 
+
+          <a href="{{route('login')}}" class="btn btn-dark btn-round mt-4">Solicitar Serviço</a>
+        </div>  
+      </article> 
+      <article></article> 
+    </div>
+    
+
+
+  <footer id="contacto" style="background-color:#062f4f">
   <section class="footer-Content">
-    <div class="container d-flex justify-content-around">
-      <div class="row">
+    <div class="container">
+      <div class="row d-flex justify-content-around">
         
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12 mt-4">
           <div class="widget">
             <h3 class="block-title">Crie uma conta</h3>
-            <ul class="menu">
+            <ul class="menu" style="list-style:none">
               <li><a href="{{route('login')}}">Entrar</a></li>
               <li><a href="{{route('login')}}">Sobre</a></li>
               <li><a href="{{route('login')}}">Preços</a></li>
@@ -411,30 +412,35 @@
           </div>
         </div>
         
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-1 mt-4">
           <div class="widget">
             <h3 class="block-title">Contacto</h3>
-            <ul class="menu">
-              <li><a href="#">Email:claudiorufino@gmail.com</a></li>
-              <li><a href="#">Telefone 1: </a></li>
-              <li><a href="#">Telefone 2:</a></li>
+            <ul class="menu" style="list-style:none">
+              <li><a href="#">+244947937025</a></li>
+              <li><a href="#">+244936132172</a></li>
+              <li><a href="#">sonlinesolucoes@gmail.com</a></li>
             </ul>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+        
+
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12 mt-4">
           <div class="widget">
             <h3 class="block-title">Endereço</h3>
-            <ul class="menu">
-              <li><a href="#">Terms & Condition</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Help</a></li>
+            <ul class="menu" style="list-style:none">
+              <li><a href="#">Cacuaco</a></li>
+              <li><a href="#">Centralidade do sequele</a></li>
+              <li><a href="#">bloco 4</a></li>
+              <li><a href="#">prédio 7</a></li>
+              <li><a href="#">apartamento 302A</a></li>
+              <li><a href="#">junto à empresa Eco-fluxo</a></li>
             </ul>
           </div>
         </div>
+
       </div>
     </div>
-    <!-- Copyright Start  -->
+
     <div class="copyright">
       <div class="container">
         <div class="row">
@@ -444,10 +450,10 @@
             </div>              
             <div class="float-right">  
               <ul class="footer-social">
-                <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
-                <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
+                <li><a class="facebook" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6" target="_blank"><i class="lni-facebook-filled"></i></a></li>
+                <li><a class="twitter" href="https://www.instagram.com/sonline_services"  target="_blank"><i class="lni lni-instagram-original"></i></a></li>
                 <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
-                <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
+                <li><a class="google-plus" href="javascript:void()"><i class="lni-google-plus"></i></a></li>
               </ul> 
             </div>
           </div>

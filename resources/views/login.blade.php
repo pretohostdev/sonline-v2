@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/vendors.css" />
     <!-- app style -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 
     <title>Login</title>
 </head>

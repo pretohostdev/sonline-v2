@@ -19,7 +19,7 @@ class UserController extends Controller
     }
 
     public function site(){
-        $produtos = Produto::all();
+        $produtos = Produto::whereNotNull('imagem')->get();
         return view('site', compact('produtos'));
     }
 
@@ -69,28 +69,22 @@ class UserController extends Controller
 
         $dataNascimento = $request->dataNascimento;
 
-        try {
-            $registar = User::create([
-                'name'=> $name,
-                'email' => $email,
-                'tipo' => 'cliente',
-                'password' => Hash::make($senha),
-                'contacto' => $contacto,
-                'genero' => $genero,
-                'dataNascimento' => $dataNascimento
-            ]);
+        $registar = User::create([
+            'name'=> $name,
+            'email' => $email,
+            'tipo' => 'cliente',
+            'password' => Hash::make($senha),
+            'contacto' => $contacto,
+            'genero' => $genero,
+            'dataNascimento' => $dataNascimento
+        ]);
 
+        if($registar){
             return view('login');
-        } catch (\Throwable $erro) {
-            return $erro;
         }
-       
-
-        // return "Erro ao cadastrar cliente";
-
-        
-
-        
+        else{
+            return redirect()->back()->withErrors();
+        }
     }
 
     /**

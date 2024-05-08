@@ -9,10 +9,9 @@
                         <div class="col-12">
                           <div class="d-flex justify-content-start">
                             <div>
-                                <h3>Seja bem vindo a Sonline Service</h4>
-                                <p class="text-secondary" style="font-size:14pt">Somos a melhor opção do mercado quando o assunto são <br>os serviços virtuais.</p>
-                                <div class="">
-                                    {{-- <a href="{{route('login')}}" class="main-btn mt-2">Solicitar um serviço</a> --}}
+                                <h3 style="color:#3c9cfd" id="inicio">Seja bem vindo a Sonline Service</h4>
+                                <div>
+                                    <a href="{{route('login')}}" class="btn btn-round text-light" style="background-color:#3c9cfd">Solicitar um serviço</a>
                                 </div>
                             </div>
                           </div>

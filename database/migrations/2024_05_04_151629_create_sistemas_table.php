@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('sistemas', function (Blueprint $table) {
             $table->id();
-            $table->double('precoContaWise'); 
+            $table->double('precoConta'); 
             $table->string('iban');
+            $table->double('precoAgendamentoDocumento');
+            $table->double('precoAgendamentoVisto');
+            $table->double('precoConsultoria');
             $table->timestamps();
         });
     }

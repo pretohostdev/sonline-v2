@@ -23,31 +23,31 @@
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <div class="row no-gutters">
-                                <div class="col-sm-2 p-20 bg-success">
+                                <div class="col-sm-2 p-20 bg-secondary">
                                     <h4> <a href="{{route('registar')}}" class="text-light">Criar Conta</a></h4>
                                 </div>
-                                <div class="col-sm-2 p-20 bg-info">
+                                <div class="col-sm-2 p-20 bg-secondary">
                                     <h4><a href="{{route('login')}}" class="text-light">Entrar</a></h4>
                                 </div>
 
-                                <div class="col-sm-3 p-20 bg-danger">
+                                <div class="col-sm-3 p-20 bg-dark">
                                     <h4 class="text-light">Contactos</h4>
                                     <ul>
                                         <li class="nav-link text-light">
-                                            <a href="{{route('login')}}">Email:claudiorufino@gmail.com</a>
+                                            <a href="{{route('login')}}">claudiorufino@gmail.com</a>
                                         </li>
 
                                         <li class="nav-link text-light">
-                                            <a href="{{route('login')}}">Telefone 1:934962288</a>
+                                            <a href="{{route('login')}}">934962288</a>
                                         </li>
 
                                         <li class="nav-link text-light">
-                                            <a href="{{route('login')}}">Telefone 2:945029144</a>
+                                            <a href="{{route('login')}}">945029144</a>
                                         </li>
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-2 p-20 bg-secondary">
+                                <div class="col-sm-2 p-20 bg-dark">
                                     <h4 class="text-light">Endereço</h4>
                                     <ul>
                                         <li class="nav-link text-light">
@@ -110,6 +110,12 @@
                     <li class="nav-item text-primary mr-4">
                         <a class="nav-link" href="#produtos" role="button">
                             Produto
+                        </a>
+                    </li>
+
+                    <li class="nav-item text-primary" style="margin-right:55px">
+                        <a class="nav-link" href="#testemunho" role="button">
+                            Testemunho
                         </a>
                     </li>
 
