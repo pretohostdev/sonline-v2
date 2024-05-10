@@ -9,7 +9,6 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
-{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" /> --}}
 <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
@@ -38,9 +37,9 @@
             <div class="col-lg-12">
               <div class="features-text section-header text-center">  
                 <div>   
-                  <h2 class="section-title tituloAnimado" style="margin-top:50px">Nossos Serviços</h2>
+                  <h2 class="section-title tituloAnimado" style="margin-top:50px; font-family:Roboto">Nossos Serviços</h2>
                   <div class="desc-text">
-                    <p>A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
+                    <p class="text-secondary">A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
                   </div>
                 </div> 
               </div>
@@ -136,7 +135,7 @@
                         <p class="text-dark"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
                             segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
                             praticidade de fazer suas compras online conosco. Como filia da amazon, trazemos para si os melhores produtofa-spinpara desfrutares</p>
-                        <a href="{{route('login')}}" class="btn btn-round mt-4 text-light" style="background-color:#3c9cfd">Solicitar um serviço</a>
+                        <a href="{{route('login')}}" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Solicitar um serviço</a>
                     </div>                
                 </div>
                 <div class="col-lg-6">
@@ -257,11 +256,11 @@
                                 <p class="text">Adevogada</p>
                             </div>
                         </div>
-                    </div> <!-- single testimonial -->
+                    </div> 
                 </div>
                 
-            </div> <!-- row -->
-        </div> <!-- container -->
+            </div> 
+        </div> 
        
     </section>
 
@@ -374,14 +373,13 @@
               </div>
     </div>
 
-
     {{-- Consultoria --}}
     <div class="row">
       <article class="d-flex align-items-center justify-content-center">
         <div class="col-lg-6 bg-ligh" style="height:200px">
           <h2 class="font-weight-bold tituloAnimado" style="color:white">Consultoria & <br>Acompanhamento de visto</h2> 
 
-          <a href="{{route('login')}}" class="btn btn-dark btn-round mt-4">Solicitar Serviço</a>
+          <a href="{{route('login')}}" class="main-btn mt-4">Solicitar Serviço</a>
         </div>  
       </article> 
       <article></article> 

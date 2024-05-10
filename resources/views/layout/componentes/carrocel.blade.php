@@ -4,15 +4,12 @@
             <div class="carousel-item active">
                 <img class="d-block w-100" src="{{asset('assets/img/banner-1.png')}}" alt="First slide">
 
-                <div class="carousel-caption d-none d-md-block mb-5">
+                <div class="carousel-caption d-none d-md-block">
                     <div class="row">
                         <div class="col-12">
-                          <div class="d-flex justify-content-start">
+                          <div class="d-flex justify-content-start" style="margin-bottom:12rem; margin-left:8rem;">
                             <div>
-                                <h3 style="color:#3c9cfd" id="inicio">Seja bem vindo a Sonline Service</h4>
-                                <div>
-                                    <a href="{{route('login')}}" class="btn btn-round text-light" style="background-color:#3c9cfd">Solicitar um serviço</a>
-                                </div>
+                                <a href="{{route('login')}}" class="main-btn text-light" style="background-color:#3c9cfd">Solicitar um serviço</a>
                             </div>
                           </div>
                         </div>
