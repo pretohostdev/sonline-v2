@@ -77,18 +77,18 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Valor</label>
-                            <input type="number" class="form-control" value="{{$sistema->precoContaWise}}" readonly>
+                            <label for="valorconta">Valor</label>
+                            <input type="number" class="form-control" id="valorconta" value="{{$sistema->precoConta}}" readonly>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Referencia Bancária</label>
-                            <input type="text" class="form-control" value="{{$sistema->iban}}" id="iban" readonly>
+                            <label for="referenciabancaria">Referencia Bancária</label>
+                            <input type="text" class="form-control" id="referenciabancaria" value="{{$sistema->iban}}" id="iban" readonly>
                         </div>
 
                         <div class="form-group">
                             <label for="comprovativo">Comprovativo Bancário em pdf</label>
-                            <input type="file" class="form-control" name="comprovativo">
+                            <input type="file" class="form-control" name="comprovativo" id="comprovativo">
                         </div>
 
 

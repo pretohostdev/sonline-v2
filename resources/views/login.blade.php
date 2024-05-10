@@ -7,7 +7,7 @@
     <meta name="author" content="PETROHOST" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- app favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <!-- plugin stylesheets -->

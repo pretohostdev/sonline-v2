@@ -74,20 +74,20 @@
                         @csrf
                         <div class="form-group">
                             <label for="tipo" class="text-dark">Seleciona o tipo de agendamento</label>
-                            <select type="da" class="form-control" id="tipo" name="tipo">
+                            <select class="form-control" id="tipo" name="tipo">
                                 <option value="consultoria">Consultoria</option>
                                 <option value="autenticarDocumento">Autenticação de documento na VFS</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="tipo" class="text-dark">Autenticação de documento</label>
-                             <input type="text" class="form-control" value="{{$sistema->precoAgendamentoDocumento}} kz" readonly>
+                            <label for="tipodocumento" class="text-dark">Autenticação de documento</label>
+                             <input type="text" class="form-control" id="tipodocumento" value="{{$sistema->precoAgendamentoDocumento}} kz" readonly>
                         </div>
 
                         <div class="form-group">
-                            <label for="tipo" class="text-dark">Consultoria Completa</label>
-                             <input type="text" class="form-control" value="{{$sistema->precoAgendamentoVisto}} kz" readonly>
+                            <label for="tipoconsultoria" class="text-dark">Consultoria Completa</label>
+                             <input type="text" id="tipoconsultoria" class="form-control" value="{{$sistema->precoAgendamentoVisto}} kz" readonly>
                         </div>
 
                         <div class="form-group">
@@ -96,8 +96,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="observacao" class="text-dark">Observação</label>
-                            <textarea type="text" class="form-control" name="observacao"></textarea>
+                            <label for="observar" class="text-dark">Observação</label>
+                            <textarea type="text" id="observar" class="form-control" name="observacao"></textarea>
                         </div>
 
                         

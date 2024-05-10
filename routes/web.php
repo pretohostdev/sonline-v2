@@ -27,8 +27,6 @@ use App\Http\Controllers\HomeClienteController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-
 Route::resources([
     'login' => LoginController::class,
 ]);
@@ -67,7 +65,6 @@ Route::middleware(['admin'])->group(function(){
     Route::get('admin/', [AdminController::class, 'index'])->name('homeAdmin');
     Route::get('listarCliente/', [AdminController::class, 'listarCliente'])->name('admin.user.index');
 
-
      // Produtos
      Route::get('produtoCreate/', [AdminController::class, 'cadastrarProduto'])->name('admin.produto.create');
      Route::get('listarProduto/', [AdminController::class, 'listarProdutos'])->name('admin.produto.index');
@@ -76,9 +73,6 @@ Route::middleware(['admin'])->group(function(){
      Route::get('atualizarProduto/{id}', [ProdutoController::class, 'update'])->name('admin.produto.update');
      Route::get('eliminarProduto/{id}', [ProdutoController::class, 'eliminarProduto'])->name('eliminarProduto');
 
-    // Mostrar e listar produtos a partir do lado Admin
-    
-    
      // Visto
      Route::get('listarVistos/', [AdminController::class, 'listarVistos'])->name('admin.visto.index');
      Route::get('mostrarVistos/{id}', [AdminController::class, 'mostrarVistos'])->name('admin.visto.show');
@@ -95,22 +89,9 @@ Route::middleware(['admin'])->group(function(){
     Route::get('mostrarContas/{id}', [AdminController::class, 'mostrarContas'])->name('admin.conta.show');
     Route::get('verDocumentoConta/{id}', [AdminController::class, 'verDocumentoConta'])->name('verDocumentoConta');
 
-
-
-
-
-
-
-
      // Agendamento
      Route::get('listarAgendamentos/', [AdminController::class, 'listarAgendamentos'])->name('admin.agendamento.index');
      Route::get('mostrarAgendamentos/{id}', [AdminController::class, 'mostrarAgendamentos'])->name('admin.agendamento.show');
-
-
-
-
-
-
     
     // Redirecionamentos
     Route::get('listarRedirecionamento/', [AdminController::class, 'listarRedirecionamento'])->name('admin.redirecionamento.index');
@@ -121,11 +102,6 @@ Route::middleware(['admin'])->group(function(){
     Route::get('downloadMoeda{moeda}', [AdminController::class, 'downloadMoeda'])->name('downloadMoeda');
     Route::get('downloadaConta{conta}', [AdminController::class, 'downloadConta'])->name('downloadConta');
 });
-
-
-
-
-
 
 
 /*        CLIENTES CLIENTES CLIENTES CLIENTES  CLIENTES CLIENTES CLIENTES CLIENTES CLIENTES  CLIENTES      CLIENTES CLIENTES  */
@@ -146,7 +122,6 @@ Route::middleware(['cliente'])->group(function(){
     Route::resource('user', UserController::class)->except(['store']);
     Route::get('homeCliente', [HomeClienteController::class, 'index'])->name('homeCliente');
     Route::resource('redirecionamento', RedirecionamentoController::class);
-
 
     // ROTA DOS ESTADOS 
     Route::get('/estadoMoeda', [MoedaController::class, 'estadoMoeda'])->name('moeda.estado');
