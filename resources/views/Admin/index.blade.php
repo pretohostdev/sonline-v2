@@ -17,7 +17,7 @@
 
 
 @section('header')
-    @include('layout.componentes.headerCliente')
+    @include('layout.componentes.header')
 @endsection
 
 @section('dashboard')
