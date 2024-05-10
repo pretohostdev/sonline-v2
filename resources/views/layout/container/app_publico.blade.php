@@ -7,6 +7,7 @@
     <meta name="description" content="Página Principal do site" />
     <meta name="author" content="Cláudio Rufino - PETROHOST" />
     
+    <script src="https://unpkg.com/scrollreveal"></script>
 
     {{-- Inclusão de links Css --}}
     @stack('styles')
@@ -17,8 +18,6 @@
 <body>
 
      <div class="app_publico">
-            {{-- @include('layout.componentes.carregamentoPagina') --}}
-
             <!-- Header do sistema --> 
             @yield('header')
                     @include('layout.componentes.carrocel')

@@ -6,9 +6,6 @@
 {{-- Inclusão do Bootstrap 5 no projecto --}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/slick-opl/css/bootstrap.min.css')}}" /> --}}
-
-{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/slick-opl/css/main.css')}}" /> --}}
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
@@ -24,9 +21,6 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
      
 @endpush
-
-
-{{-- <script src="https://unpkg.com/scrollreveal"><script/>  --}}
 
 @section('header')
     @include('layout.componentes.header_public')
@@ -44,7 +38,7 @@
             <div class="col-lg-12">
               <div class="features-text section-header text-center">  
                 <div>   
-                  <h2 class="section-title" style="margin-top:50px">Nossos Serviços</h2>
+                  <h2 class="section-title tituloAnimado" style="margin-top:50px">Nossos Serviços</h2>
                   <div class="desc-text">
                     <p>A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
                   </div>
@@ -137,12 +131,11 @@
                     <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="section-title">
                             <div class="line"></div>
-                            <h3 class="title"><span>Somos a filial da</span> amazon</h3>
+                            <h3 class="title tituloAnimado"><span>Somos a filial da</span> amazon</h3>
                         </div> <!-- section title -->
                         <p class="text-dark"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
                             segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
                             praticidade de fazer suas compras online conosco. Como filia da amazon, trazemos para si os melhores produtofa-spinpara desfrutares</p>
-                        {{-- <a href="{{route('login')}}" class="main-btn">Solicitar Serviço</a> --}}
                         <a href="{{route('login')}}" class="btn btn-round mt-4 text-light" style="background-color:#3c9cfd">Solicitar um serviço</a>
                     </div>                
                 </div>
@@ -168,7 +161,7 @@
             <div class="row justify-content-right">
                 <div class="col-lg-5">
                     <div class="section-title pb-40">
-                        <h3 class="title" id="testemunho">Testemunho <span>dos nossos clientes</span></h3>
+                        <h3 class="title tituloAnimado" id="testemunho">Testemunho <span>dos nossos clientes</span></h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -279,7 +272,7 @@
         <div class="col-lg-12">
             <div class="text-center">
                 <div class="section-title text-center pb-40">
-                    <h4>Links de Afiliado <i class="lni lni-customer"></i></h3>
+                    <h4 class="slideShow">Links de Afiliado <i class="lni lni-customer"></i></h3>
                         <hr>
                 </div>
             </div>
@@ -386,7 +379,7 @@
     <div class="row">
       <article class="d-flex align-items-center justify-content-center">
         <div class="col-lg-6 bg-ligh" style="height:200px">
-          <h2 class="font-weight-bold" style="color:white">Consultoria & <br>Acompanhamento de visto</h2> 
+          <h2 class="font-weight-bold tituloAnimado" style="color:white">Consultoria & <br>Acompanhamento de visto</h2> 
 
           <a href="{{route('login')}}" class="btn btn-dark btn-round mt-4">Solicitar Serviço</a>
         </div>  
@@ -394,8 +387,6 @@
       <article></article> 
     </div>
     
-
-
   <footer id="contacto" style="background-color:#062f4f">
   <section class="footer-Content">
     <div class="container">
