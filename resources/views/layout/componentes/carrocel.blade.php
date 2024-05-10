@@ -1,4 +1,4 @@
-<div style="width:100%; margin-top: 60px;">
+<div style="width:100%; margin-top: 60px;" id="inicio">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">

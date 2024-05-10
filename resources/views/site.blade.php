@@ -30,14 +30,13 @@
 
 <div class="conteudo_publico">
 
-    <section id="features" class="sectin mt-2">
+    <section id="features" class="section">
         <div class="container">
-          <!-- Start Row -->
           <div class="row">
             <div class="col-lg-12">
               <div class="features-text section-header text-center">  
                 <div>   
-                  <h2 class="section-title tituloAnimado" style="margin-top:50px; font-family:Roboto">Nossos Serviços</h2>
+                  <h2 class="section-title tituloAnimado" style="font-family:Roboto" id="servicos">Nossos Serviços</h2>
                   <div class="desc-text">
                     <p class="text-secondary">A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
                   </div>
@@ -45,7 +44,6 @@
               </div>
             </div>
           </div>
-          <!-- Start Row -->
           <div class="row featured-bg">
             <div class="col-lg-6 col-md-6 col-xs-12 p-0">
               <div class="feature-item featured-border1">
@@ -124,14 +122,14 @@
       </section>
     <hr>
     <section class="about-area pt-70 mt-2">
-        <div class="container">
+        <div class="container" style="background-color: #F0F8FF; margin-top:4px; border-top-left-radius:20px;">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 d-flex align-items-center">
                     <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="section-title">
                             <div class="line"></div>
                             <h3 class="title tituloAnimado"><span>Somos a filial da</span> amazon</h3>
-                        </div> <!-- section title -->
+                        </div>
                         <p class="text-dark"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
                             segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
                             praticidade de fazer suas compras online conosco. Como filia da amazon, trazemos para si os melhores produtofa-spinpara desfrutares</p>
@@ -182,7 +180,7 @@
                             </div>
                         </div>
                         <div class="testimonial-text">
-                            <p  class="text">Estou realmente impressionado com a variedade de produtos oferecidos neste site! Encontrei tudo o que precisava em um só lugar. Definitivamente vou voltar mais vezes.</p>
+                            <p class="text">Estou realmente impressionado com a variedade de produtos oferecidos neste site! Encontrei tudo o que precisava em um só lugar. Definitivamente vou voltar mais vezes.</p>
                         </div>
                         <div class="testimonial-author d-flex align-items-center">
                             <div class="author-image">
@@ -271,7 +269,7 @@
         <div class="col-lg-12">
             <div class="text-center">
                 <div class="section-title text-center pb-40">
-                    <h4 class="slideShow">Links de Afiliado <i class="lni lni-customer"></i></h3>
+                    <h3 class="slideShow">Link de Afiliado<i class="lni lni-customer text-info ml-1"></i></h3>
                         <hr>
                 </div>
             </div>
@@ -287,18 +285,18 @@
             <div class="tab nav-border-bottom">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a style="font-size:14pt" class="nav-link active show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
+                        <a style="font-size:13pt; font-family:Verdana, Geneva, Tahoma, sans-serif" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:14pt" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
+                        <a style="font-size:13pt; font-family:Verdana, Geneva, Tahoma, sans-serif" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:14pt" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
+                        <a style="font-size:13pt; font-family:Verdana, Geneva, Tahoma, sans-serif" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
                     </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade py-3 active show" id="home-02" role="tabpanel" aria-labelledby="home-02-tab">
-                        <p class="text-dark" style="font-size: 13pt">Um link de afiliado é um <b>URL único</b> atribuído a um afiliado que participa de um programa de marketing de 
+                        <p class="text" style="font-size: 11pt;">Um link de afiliado é um <b>URL único</b> atribuído a um afiliado que participa de um programa de marketing de 
                             afiliados. Esse tipo de link é usado para rastrear o tráfego e as vendas geradas por um afiliado 
                             específico. Quando um usuário clica em um link de afiliado e realiza uma ação desejada (como fazer 
                             uma compra ou preencher um formulário), o afiliado é creditado pela referência e pode receber uma 
@@ -306,7 +304,7 @@
                         </p>
                     </div>
                     <div class="tab-pane fade py-3" id="profile-02" role="tabpanel" aria-labelledby="profile-02-tab">
-                        <p class="text-dark" style="font-size: 13pt">
+                        <p class="text" style="font-size: 11pt;">
                             Ser afiliado, significa ser um <b>parceiro comercial</b> de uma empresa
                             ou marca que oferece um programa de afiliados. Os afiliados promovem os produtos ou serviços dessa 
                             empresa em troca de uma comissão ou outra forma de compensação por vendas, tráfego ou ações específicas 
@@ -317,13 +315,13 @@
                         <p class="text-dark" style="font-size: 13pt">Tanto a empresa anunciante quanto o afiliado têm a oportunidade de ganhar de diferentes maneiras:</p>
                         <br>
                         <ul>
-                            <li class="text-dark" style="font-size: 13pt">
+                            <li class="text" style="font-size: 11pt;">
                                 <b>Vendas direta</b>: Quando um cliente clicado por um afiliado realiza uma compra, a empresa afiliada recebe 
                                 uma parte da receita da venda como comissão. Esse é o modelo mais comum de remuneração no marketing de 
                                 afiliados. A comissão pode ser uma porcentagem fixa do valor da venda ou um valor fixo por transação.
                             </li>
 
-                            <li class="text-dark" style="font-size: 13pt">
+                            <li class="text" style="font-size: 11pt;">
                                 <b>Tráfego qualificado</b>: Mesmo se o cliente não realizar uma compra imediata, a empresa afiliada pode ganhar 
                                 com o tráfego direcionado pelo afiliado. Por exemplo, se o cliente clicar no link de afiliado e se 
                                 inscrever para uma lista de e-mails ou preencher um formulário de lead, a empresa afiliada pode ganhar 
@@ -344,7 +342,7 @@
     <div class="row mt-4 mb-2">
             <div class="col-lg-12 d-flex justify-content-center align-items-center" style="background-color:#062f4f">
                 <div>
-                    <h4  class="text-light p-1" id="produtos">Lista de produtos Amazon</h3>
+                    <h4  class="text-light m-0 p-1" id="produtos">Lista de produtos Amazon</h3>
                 </div>
             </div>
     </div>
@@ -376,13 +374,25 @@
     {{-- Consultoria --}}
     <div class="row">
       <article class="d-flex align-items-center justify-content-center">
-        <div class="col-lg-6 bg-ligh" style="height:200px">
+        <div class="col-lg-6" style="height:200px">
           <h2 class="font-weight-bold tituloAnimado" style="color:white">Consultoria & <br>Acompanhamento de visto</h2> 
-
           <a href="{{route('login')}}" class="main-btn mt-4">Solicitar Serviço</a>
         </div>  
       </article> 
-      <article></article> 
+
+      <article class="d-flex align-items-center justify-content-center">
+        <div class="row">
+          <div class="col-lg-12" style="height:200px">
+            <h2 class="font-weight-bold tituloAnimado text-center" style="color:white">Sonline Service</h2> 
+            <h2 class="font-weight-bold tituloAnimado" style="color:white">Melhores preços do Mercado</h2> 
+            <div class="d-flex align-items-center justify-content-center">
+              <a href="{{route('login')}}" class="main-btn mt-4">Solicitar Serviço</a>
+            </div>
+          </div> 
+        </div>
+      </article> 
+
+      <article></article>
     </div>
     
   <footer id="contacto" style="background-color:#062f4f">

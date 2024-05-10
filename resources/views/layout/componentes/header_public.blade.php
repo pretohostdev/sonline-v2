@@ -3,7 +3,6 @@
     <!-- begin navbar -->
     <nav class="navbar navbar-expand-md">
         <div class="navbar-header d-flex align-items-center bg-white"> 
-            
             <a class="navbar-brand mt-3" href="javascript:void(0)">
                 <img src="{{asset('assets/img/logo-registar.png')}}" class="img-fluid logo-desktop" alt="logo"/>
                 <img src="{{asset('assets/img/logo-pequeno.png')}}" class="img-fluid logo-mobile" alt="logo" />
