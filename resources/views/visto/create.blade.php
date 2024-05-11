@@ -73,8 +73,8 @@
                     <form action="{{route('visto.store')}}" method="POST" id="formVisto" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="tipoVisto" class="text-dark">Selecione o tipo de visto</label>
-                            <select class="form-control" id="tipoVisto" name="tipoVisto">
+                            <label for="tipovisto" class="text-dark">Selecione o tipo de visto</label>
+                            <select class="form-control" id="tipovisto" name="tipoVisto">
                                 <option value="Turismo">Turismo</option>
                                 <option value="Estuante">Estudante</option>
                                 <option value="Trablho">Trabalho</option>
@@ -82,7 +82,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="pais" class="text-dark">Selecione o país a ser visitado</label>
+                            <label for="paises" class="text-dark">Selecione o país a ser visitado</label>
                             <select class="form-control" id="paises" name="pais">
                                 <option value="angola" selected>Angola</option>
                             </select>
@@ -99,7 +99,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="precoVisto" class="text-dark">Valor a pagar</label>
+                            <label for="data" class="text-dark">Valor a pagar</label>
                             <input type="text" class="form-control" value="{{$sistema->precoAgendamentoVisto}} kz" id="data" name="precoVisto" readonly>
                         </div>
 
@@ -124,7 +124,6 @@
         </div>
 
         <div class="col-lg-4">
-            
             
         </div>
 

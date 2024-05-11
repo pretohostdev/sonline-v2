@@ -20,7 +20,7 @@
 
 
 @section('header')
-    @include('layout.componentes.headerCliente')
+    @include('layout.componentes.header')
 @endsection
 
 @section('dashboard')
@@ -29,8 +29,6 @@
 
 @section("corpo")
 
-{{-- <div class="conteudo"> --}}
-   
     <div class="row" style="margin-top:100px">
         <div class="col-md-12">
             <!-- begin page title -->
@@ -128,26 +126,27 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="iban" class="text-dark">Iban:</label>
-                                                <input type="text" class="form-control" id="iban" value="{{$sistema->iban}}" name="iban">
+                                                <input type="text" class="form-control" id="iban" value="{{$sistema->iban}}" name="ibanSistema">
                                             </div>
+
                                             <div class="form-group">
-                                                <label for="precoWise" class="text-dark">Preço conta</label>
+                                                <label for="precoConta" class="text-dark">Preço conta</label>
                                                 <input type="number" class="form-control" id="precoConta" value="{{$sistema->precoConta}}" name="preConta">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="precoWise" class="text-dark">Preço agendar autenticação de documento</label>
+                                                <label for="precoDocumento" class="text-dark">Preço agendar autenticação de documento</label>
                                                 <input type="number" class="form-control" id="precoDocumento" value="{{$sistema->precoAgendamentoDocumento}}" name="precoDocumento">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="precoWise" class="text-dark">Preço agendamento de visto</label>
+                                                <label for="precoVisto" class="text-dark">Preço agendamento de visto</label>
                                                 <input type="number" class="form-control" value="{{$sistema->precoAgendamentoVisto}}" id="precoVisto" name="precoVisto">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="precoWise" class="text-dark">Preço Consultoria</label>
-                                                <input type="number" class="form-control" value="{{$sistema->precoConsultoria}}" name="precoConsultoria" id="precoConsultoria">
+                                                <label for="precoConsultoria" class="text-dark">Preço Consultoria</label>
+                                                <input type="number" class="form-control" value="{{$sistema->precoConsultoria}}" name="precoConsultar" id="precoConsultoria">
                                             </div>
 
                                             <div class="d-flex justify-content-space-round">

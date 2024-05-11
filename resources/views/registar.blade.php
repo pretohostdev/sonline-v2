@@ -11,7 +11,7 @@
     <meta name="description" content="Sistema da sonline Service." />
     <meta name="author" content="petroHost" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <!-- plugin stylesheets -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" >

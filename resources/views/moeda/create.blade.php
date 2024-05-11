@@ -72,8 +72,8 @@
                     <form action="{{route('moeda.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="nome" class="text-dark">Seleciona a moeda</label>
-                            <select type="da" class="form-control" id="nomeMoeda" name="nome">
+                            <label for="nomeMoeda" class="text-dark">Seleciona a moeda</label>
+                            <select class="form-control" id="nomeMoeda" name="nome">
                                 <option value="Dolar">Dolar</option>
                                 <option value="Euro">Euro</option>
                                 <option value="Kwanza">Kwanza</option>
@@ -86,17 +86,17 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="iban" class="text-dark">Referencia Bancária</label>
-                            <input type="text" class="form-control" value="{{$sistema->iban}}" id="iban" readonly>
+                            <label for="referenciabancaria" class="text-dark">Referencia Bancária</label>
+                            <input type="text" class="form-control" value="{{$sistema->iban}}" id="referenciabancaria" readonly>
                         </div>
 
                         <div class="form-group">
-                            <label for="iban" class="text-dark">Duração do envio do valor</label>
-                            <input type="text" class="form-control" value="1-120 min" id="iban" readonly>
+                            <label for="duracao" class="text-dark">Duração do envio do valor</label>
+                            <input type="text" class="form-control" value="1-120 min" id="duracao" readonly>
                         </div>
 
                         <div class="form-group">
-                            <label for="documento" class="text-dark">Comprovativo Bancário</label>
+                            <label for="comprovativo" class="text-dark">Comprovativo Bancário</label>
                             <img src="{{asset('assets/img/pdf.png')}}" alt="">
                             <input type="file" class="form-control mt-2" id="comprovativo" name="documento">
                         </div>

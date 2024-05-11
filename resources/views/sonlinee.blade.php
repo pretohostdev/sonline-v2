@@ -26,8 +26,6 @@
 
 @section("corpo")
 
-{{-- <div class="conteudo"> --}}
-   
     <div class="row" style="margin-top:100px">
         <div class="col-md-12">
             <!-- begin page title -->

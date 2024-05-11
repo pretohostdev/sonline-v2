@@ -238,48 +238,6 @@
 
 
     </div>
-
-    <script>
-        document.getElementById('formConta').addEventListener('submit', function(event) {
-            
-            event.preventDefault(); // Impedir o envio padrão do formulário
-            console.log('Estou funcionando...');
-
-            // Pegar os dados vindo do formulário
-            var dataEmissao = document.getElementById('dataEmissaoConta').value;
-
-            var comprovativo = document.getElementById('comprovativoBancario');
-
-            console.log('Comprovativo: ' + comprovativo.value);
-
-            // console.log('A data é: ' + data);
-            const conta = {
-                data: dataEmissao,
-            };
-
-            fetch('http://localhost:8000/api/conta', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(conta),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao salvar os dados');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data.message); // Mensagem de sucesso
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-        });
-
-    </script>
 </div>
 
 
