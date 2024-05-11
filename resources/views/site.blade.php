@@ -6,13 +6,9 @@
 {{-- Inclusão do Bootstrap 5 no projecto --}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/slick-opl/css/bootstrap.min.css')}}" /> --}}
-
-{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/slick-opl/css/main.css')}}" /> --}}
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
-{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" /> --}}
 <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
@@ -24,9 +20,6 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
      
 @endpush
-
-
-{{-- <script src="https://unpkg.com/scrollreveal"><script/>  --}}
 
 @section('header')
     @include('layout.componentes.header_public')
@@ -468,7 +461,6 @@
 @push('scripts')
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
-    <script src="{{asset('assets/js/animacao.js')}}"></script>  
 
     <!--====== wow js ======-->
     <script src="assets/js/wow.min.js"></script>
