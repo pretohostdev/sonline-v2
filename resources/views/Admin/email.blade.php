@@ -72,7 +72,7 @@
                                 <div class="row">
                                 <div class="col-8">
 
-                                    <h3>Enviar email de confirmação</h3>
+                                    <h4>Enviar email de confirmação</h4>
                                     <form target="_blank" action="https://formsubmit.co/{{ $cliente->email }}" method="POST">
                                         @csrf
                                     <div class="form-group">

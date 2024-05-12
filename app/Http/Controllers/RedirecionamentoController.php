@@ -54,42 +54,33 @@ class RedirecionamentoController extends Controller
                 'descricao' => $dados['descricao'],
             ]);
 
-            // Iniciando a transação
-            DB::beginTransaction();
+        // Iniciando a transação
+        DB::beginTransaction();
 
-            // try{
-                
-                // $usuarioId = Auth::id();  // Obter o ID do usuário autenticado
-                $idProduto = $produto->latest()->value('id');  // Obter o último ID do produto
-                $data = Carbon::today()->format('Y-m-d'); 
+        $idProduto = $produto->latest()->value('id');  // Obter o último ID do produto
+        $data = Carbon::today()->format('Y-m-d'); 
 
 
-                try {
-                    
-                    $redirecionamento = Redirecionamento::create([
-                        'data' => $data,
-                        'estado' => '0',
-                        'valor' => $dados['valor'],
-                        'paisOrigem' => $dados['paisOrigem'],
-                        'paisDestino' => $dados['paisDestino'],
-                        'user_id' => $dados['user_id'],
-                        'produto_id' => $idProduto
-                    ]);
+        try {
+            
+            $redirecionamento = Redirecionamento::create([
+                'data' => $data,
+                'estado' => '0',
+                'valor' => $dados['valor'],
+                'paisOrigem' => $dados['paisOrigem'],
+                'paisDestino' => $dados['paisDestino'],
+                'user_id' => $dados['user_id'],
+                'produto_id' => $idProduto
+            ]);
 
-                    DB::commit();  // Commit da transação se todas as operações forem bem-sucedidas
-                    return response()->json(['cadastrado' => 'true'], 200);
+            DB::commit();  // Commit da transação se todas as operações forem bem-sucedidas
+            return response()->json(['cadastrado' => 'true'], 200);
 
-                } catch (\Exception $e) {
+            } catch (\Exception $e) {
 
-                    DB::rollback();
-                    return response()->json(['cadastrado' => $e]);
-                }
-                
-                
-            // }
-            // catch (\Exception $e) {
-            //     return response()->json(['cadastrado' => $e]);
-            // }
+                DB::rollback();
+                return response()->json(['cadastrado' => $e]);
+            }
            
         } catch (\Exception $error) {
             return response()->json(['cadastrado' => $error]);

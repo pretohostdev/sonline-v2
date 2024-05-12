@@ -32,15 +32,15 @@
                                     <h4 class="text-light">Contactos</h4>
                                     <ul>
                                         <li class="nav-link text-light">
-                                            <a href="{{route('login')}}">claudiorufino@gmail.com</a>
+                                            <span>claudiorufino@gmail.com</span>
                                         </li>
 
                                         <li class="nav-link text-light">
-                                            <a href="{{route('login')}}">934962288</a>
+                                            <span>+244947937025</span>
                                         </li>
 
                                         <li class="nav-link text-light">
-                                            <a href="{{route('login')}}">945029144</a>
+                                            <span>+244936132172</span>
                                         </li>
                                     </ul>
                                 </div>

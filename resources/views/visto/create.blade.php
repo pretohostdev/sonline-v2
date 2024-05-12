@@ -1,6 +1,6 @@
 @extends('layout.container.app')
 
-@section('titulo', 'Solicitação de Visto')
+@section('titulo', 'Agendamento de Visto')
 
 @push('styles')
 
@@ -56,7 +56,7 @@
 
     <div class="row mt-2">
 
-        <div class="col-xl-8">
+        <div class="col-xl-6">
             <div class="card card-statistics rounded">
                 <div class="card-body">
 
@@ -124,7 +124,7 @@
         </div>
 
         <div class="col-lg-4">
-            
+            <img src="{{asset('assets/img/agendamento.png')}}" alt="agendamento">
         </div>
 
 

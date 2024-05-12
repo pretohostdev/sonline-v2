@@ -269,7 +269,7 @@
         <div class="col-lg-12">
             <div class="text-center">
                 <div class="section-title text-center pb-40">
-                    <h3 class="slideShow">Link de Afiliado<i class="lni lni-customer text-info ml-1"></i></h3>
+                    <h3 class="slideShow">LINK DE AFILIADO<i class="lni lni-customer text-info ml-1"></i></h3>
                         <hr>
                 </div>
             </div>
@@ -285,18 +285,18 @@
             <div class="tab nav-border-bottom">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a style="font-size:13pt; font-family:Verdana, Geneva, Tahoma, sans-serif" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
+                        <a style="font-size:13pt; font-family:serif" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:13pt; font-family:Verdana, Geneva, Tahoma, sans-serif" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
+                        <a style="font-size:13pt; font-family:serif" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:13pt; font-family:Verdana, Geneva, Tahoma, sans-serif" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
+                        <a style="font-size:13pt; font-family:serif" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
                     </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade py-3 active show" id="home-02" role="tabpanel" aria-labelledby="home-02-tab">
-                        <p class="text" style="font-size: 11pt;">Um link de afiliado é um <b>URL único</b> atribuído a um afiliado que participa de um programa de marketing de 
+                        <p class="text-dark" style="font-size: 12pt;">Um link de afiliado é um <b>URL único</b> atribuído a um afiliado que participa de um programa de marketing de 
                             afiliados. Esse tipo de link é usado para rastrear o tráfego e as vendas geradas por um afiliado 
                             específico. Quando um usuário clica em um link de afiliado e realiza uma ação desejada (como fazer 
                             uma compra ou preencher um formulário), o afiliado é creditado pela referência e pode receber uma 
@@ -304,7 +304,7 @@
                         </p>
                     </div>
                     <div class="tab-pane fade py-3" id="profile-02" role="tabpanel" aria-labelledby="profile-02-tab">
-                        <p class="text" style="font-size: 11pt;">
+                        <p class="text-dark" style="font-size: 12pt;">
                             Ser afiliado, significa ser um <b>parceiro comercial</b> de uma empresa
                             ou marca que oferece um programa de afiliados. Os afiliados promovem os produtos ou serviços dessa 
                             empresa em troca de uma comissão ou outra forma de compensação por vendas, tráfego ou ações específicas 
@@ -315,13 +315,13 @@
                         <p class="text-dark" style="font-size: 13pt">Tanto a empresa anunciante quanto o afiliado têm a oportunidade de ganhar de diferentes maneiras:</p>
                         <br>
                         <ul>
-                            <li class="text" style="font-size: 11pt;">
+                            <li class="text-dark" style="font-size: 12pt;">
                                 <b>Vendas direta</b>: Quando um cliente clicado por um afiliado realiza uma compra, a empresa afiliada recebe 
                                 uma parte da receita da venda como comissão. Esse é o modelo mais comum de remuneração no marketing de 
                                 afiliados. A comissão pode ser uma porcentagem fixa do valor da venda ou um valor fixo por transação.
                             </li>
 
-                            <li class="text" style="font-size: 11pt;">
+                            <li class="text-dark" style="font-size: 12pt;">
                                 <b>Tráfego qualificado</b>: Mesmo se o cliente não realizar uma compra imediata, a empresa afiliada pode ganhar 
                                 com o tráfego direcionado pelo afiliado. Por exemplo, se o cliente clicar no link de afiliado e se 
                                 inscrever para uma lista de e-mails ou preencher um formulário de lead, a empresa afiliada pode ganhar 
@@ -342,28 +342,28 @@
     <div class="row mt-4 mb-2">
             <div class="col-lg-12 d-flex justify-content-center align-items-center" style="background-color:#062f4f">
                 <div>
-                    <h4  class="text-light m-0 p-1" id="produtos">Lista de produtos Amazon</h3>
+                    <h4  class="text-light m-0 p-2" id="produtos">Lista de produtos Amazon</h3>
                 </div>
             </div>
     </div>
    
     <div class="row">
-            <div class="lista-horizontal">
+            <div class="lista-horizontal" style="background-color:#F0F8FF">
                 <ul>
                     @foreach ($produtos as $produto )
                    
                     <li>
-                        <div class="card" style="width: 19rem; border:1px solid #062f4f">
+                        <div class="card rounded" style="width: 19rem;">
                             @if ($produto->imagem)
                               <div class="card-header" style="height: 200px">
                                 <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" height="100%" alt="telefone">
                               </div>
                             @endif
-                            <div class="card-body" style="background-color:#062f4f">
-                              <h5 class="card-title text-light">{{$produto->nome}}</h5>
-                              <p class="card-text text-light" style="width: inherit">{{$produto->preco}}</p>
-                              <p class="text-light">Descrição - {{$produto->descricao}}</p>
-                              <a href="{{$produto->link}}" target="_blank" class="btn btn-block text-light" style="background-color:#3c9cfd">Comprar</a>
+                            <div class="card-body rounded" style="background-color:#fff">
+                              <h5 class="card-title text-dark">{{$produto->nome}}</h5>
+                              <p class="card-text text-dark" style="width: inherit">{{$produto->preco}}</p>
+                              <p class="text-dark">Descrição - {{$produto->descricao}}</p>
+                              <a href="{{$produto->link}}" target="_blank" class="btn btn-block text-light mt-2" style="background-color:#044370">Comprar</a>
                             </div>
                           </div>
                       </li>

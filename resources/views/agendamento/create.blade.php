@@ -56,7 +56,7 @@
 
     <div class="row mt-2">
 
-        <div class="col-xl-6">
+        <div class="col-xl-4">
             <div class="card card-statistics rounded">
                 <div class="card-body">
 
@@ -100,8 +100,6 @@
                             <textarea type="text" id="observar" class="form-control" name="observacao"></textarea>
                         </div>
 
-                        
-
                         <button type="submit" class="btn bg-gradient text-light">Enviar Pedido</button>
                     </form>
                 </div>
@@ -110,9 +108,9 @@
         </div>
 
 
-        {{-- <div class="col-xl-5">
-
-        </div> --}}
+        <div class="col-xl-8">
+            <img src="{{asset('assets/img/consultaria-2.png')}}" alt="consultoria">
+        </div>
 
 
         
