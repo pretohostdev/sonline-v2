@@ -70,7 +70,7 @@ Route::middleware(['admin'])->group(function(){
      Route::get('listarProduto/', [AdminController::class, 'listarProdutos'])->name('admin.produto.index');
      Route::post('storeProduto/', [AdminController::class, 'storeProduto'])->name('admin.produto.store');
      Route::get('editarProduto/{id}', [ProdutoController::class, 'edit'])->name('admin.produto.edit');
-     Route::get('atualizarProduto/{id}', [ProdutoController::class, 'update'])->name('admin.produto.update');
+     Route::put('atualizarProduto/{id}', [ProdutoController::class, 'update'])->name('admin.produto.update');
      Route::get('eliminarProduto/{id}', [ProdutoController::class, 'eliminarProduto'])->name('eliminarProduto');
 
      // Visto

@@ -4,9 +4,8 @@
 
 @push('styles')
 
-    {{-- Inclusão do Bootstrap 4 no projecto --}}
+    {{-- Inclusão do Bootstrap 5 no projecto --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
@@ -149,11 +148,13 @@
                                                 <input type="number" class="form-control" value="{{$sistema->precoConsultoria}}" name="precoConsultar" id="precoConsultoria">
                                             </div>
 
-                                            <div class="d-flex justify-content-space-round">
+                                            <div class="d-flex justify-content-space-round align-items:center">
                                                 <button type="submit" class="btn bg-gradient text-light mr-2">Atualizar</button>
-                                                    <div class="spinner-border text-primary" role="status" id="spinnerSistema">
-                                                        <span class="sr-only">Loading...</span>
-                                                    </div>
+                                                <i class="fa fa-check fa-2x text-success" id="atualizadoSucesso"></i>
+                                                <i class="fa fa-close fa-2x text-danger" id="atualizadoErro"></i>
+                                                <div class="spinner-border text-primary" role="status" id="spinnerSistema">
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
                                             </div>
                                             
                                         </form>
@@ -174,6 +175,11 @@
                 
                 var spinnerSistema = document.getElementById('spinnerSistema');
                 spinnerSistema.style.display = "block";
+
+                atualizadoSucesso = document.getElementById('atualizadoSucesso');
+                atualizadoSucesso.style.display = "none";
+                atualizadoErro = document.getElementById('atualizadoErro');
+                atualizadoErro.style.display = "none";
                 
                 var iban = document.getElementById('iban').value;
                 var precoConta = document.getElementById('precoConta').value;
@@ -189,7 +195,6 @@
                     precoConsultoria : precoConsultoria
                 };
     
-                // console.log('Estou funcionando...');
                 fetch('http://localhost:8000/api/sistema', {
                     method: 'POST',
                     headers: {
@@ -205,8 +210,13 @@
                     return response.json();
                 })
                 .then(data => {
-                    spinnerSistema.style.display = "none";
-                    console.log(data);
+                    if(data.atualizado == "true"){
+                        spinnerSistema.style.display = "none";
+                        atualizadoSucesso.style.display = "block";
+                    }else{
+                        pinnerSistema.style.display = "none";
+                        atualizadoErro.style.display = "block";
+                    }
                 })
                 .catch(error => {
                     console.error(error);

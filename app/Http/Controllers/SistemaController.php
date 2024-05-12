@@ -62,8 +62,12 @@ class SistemaController extends Controller
         $sistema->precoAgendamentoVisto = $dados['precoVisto'];
         $sistema->precoConsultoria = $dados['precoConsultoria'];
         $sistema->save();
+
+        if($sistema){
+            return response()->json(['atualizado' => 'true'], 200);
+        }
         
-        return response()->json(['atualizado' => 'true'], 200);
+        return response()->json(['atualizado' => 'false'], 200);
 
     }
 

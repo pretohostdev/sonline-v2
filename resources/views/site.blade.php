@@ -30,7 +30,7 @@
 
 <div class="conteudo_publico">
 
-    <section id="features" class="section">
+    <section id="features" class="section" style="background-color: #F0F8FF;">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
@@ -120,7 +120,7 @@
           </div>
         </div>
       </section>
-    <hr>
+    {{-- <hr> --}}
     <section class="about-area pt-70 mt-2">
         <div class="container" style="background-color: #F0F8FF; margin-top:4px; border-top-left-radius:20px;">
             <div class="row">
@@ -355,9 +355,9 @@
                     <li>
                         <div class="card" style="width: 18rem;">
                             @if ($produto->imagem)
-                                <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" alt="telefone">
+                                <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" height="100%" alt="telefone">
                             @endif
-                            <div class="card-body bg-secondary">
+                            <div class="card-body" style="background-color:#062f4f">
                               <h5 class="card-title text-light">{{$produto->nome}}</h5>
                               <p class="card-text text-light" style="width: inherit">{{$produto->preco}}</p>
                               <p class="text-light">Descrição - {{$produto->descricao}}</p>
@@ -467,6 +467,7 @@
 @push('scripts')
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
+    <script src="{{asset('assets/js/animacao.js')}}"></script>
 
     <!--====== wow js ======-->
     <script src="assets/js/wow.min.js"></script>

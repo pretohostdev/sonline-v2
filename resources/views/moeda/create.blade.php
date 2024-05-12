@@ -158,7 +158,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Valor a pagar</span>
                             </div>
-                            <input type="text" class="form-control" value="Quantidade em kwanza x 200 kz " id="valorPagar" readonly>
+                            <input type="text" class="form-control" value="AOA + Montante x 200 kz " id="valorPagar" readonly>
                           </div>
 
                     </div>

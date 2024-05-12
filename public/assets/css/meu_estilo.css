@@ -3,6 +3,11 @@
 src: url('../fonts/DIN Neuzeit Grotesk Light.ttf') format('tff');
     font-family: 'Grotesk';
 }
+.logo {
+    position: fixed;
+    height: auto;
+    /* width: 50px; */
+}
 .agendamentoAnimacao {
 visibility: hidden;
 }
@@ -62,13 +67,9 @@ filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#30C5D2", end
 max-width: 100%;
 }
 
-<<<<<<< HEAD
 .conteudo {
 width: 100%;
 }
-=======
-.conteudo {width: 100%;}
->>>>>>> 630553ef8e8cbeb209d24d448d26a8eae7a4941e
 
 .conteudo_publico {
 width: 100%;
@@ -161,15 +162,10 @@ display: inline-block;
     margin-right: 10px;
     padding: 5px 10px;
 }
-<<<<<<< HEAD
+
 /* Carregamentos e Displays*/
+
 #spinnerTabela {
-=======
-
-/* Carregamentos e Displays*/
-
-#spinnerTabela{
->>>>>>> 630553ef8e8cbeb209d24d448d26a8eae7a4941e
     display: none;
 }
 
@@ -198,6 +194,21 @@ display: none;
 
 #mensagemSucesso {
 display: none;
+}
+#atualizadoSucesso {
+    display: none;
+}
+
+#atualizadoErro {
+    display: none;
+}
+
+#atualizadoDadosSucesso {
+    display: none;
+}
+
+#atualizadoDadosErro {
+    display: none;
 }
 .btn_sair {
 border: none;
@@ -232,7 +243,7 @@ color: #fff;
 }
 .section-header .section-title {
 font-size: 35px;
-    margin-bottom: 12px;
+margin-bottom: 12px;
     font-weight: 600;
     position: relative;
     line-height: 30px;
@@ -417,9 +428,6 @@ color: #fff;
 
 /*===== All Button Style =====*/
 .main-btn {
-<<<<<<< HEAD
-display: inline-block;
-=======
     height: 50px;
     line-height: 50px;
     padding: 0 35px;
@@ -427,7 +435,6 @@ display: inline-block;
     color: #fff;
     cursor: pointer;
     display: inline-block;
->>>>>>> 630553ef8e8cbeb209d24d448d26a8eae7a4941e
     font-weight: 500;
     text-align: center;
     white-space: nowrap;
@@ -441,22 +448,10 @@ display: inline-block;
     border-radius: 8px;
     
     z-index: 5;
-<<<<<<< HEAD
-    -webkit-transition: all 0.4s ease-out 0s;
-    -moz-transition: all 0.4s ease-out 0s;
-    -ms-transition: all 0.4s ease-out 0s;
-    -o-transition: all 0.4s ease-out 0s;
-    transition: all 0.4s ease-out 0s;
-    background: -webkit-linear-gradient(left, #1708f3 0%, #119bd2 50%, #4eb1f3 100%);
-    background: -o-linear-gradient(left, #5c5ef3 0%, #119bd2 50%, #7daef7 100%);
-    background: linear-gradient(to right, #502cf1 0%, #5e09fc 50%, #0565e4 100%);
-
-=======
     background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background-size: 200%;
->>>>>>> 630553ef8e8cbeb209d24d448d26a8eae7a4941e
 }
 .main-btn:hover {
 color: #fff;
@@ -478,10 +473,6 @@ width: 100%;
         display: none;
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 630553ef8e8cbeb209d24d448d26a8eae7a4941e
 .single-testimonial {
 background-color: #fff;
     -webkit-box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
@@ -626,34 +617,9 @@ max-width: 480px;
 .about-content .text {
 margin-top: 15px;
 }
-<<<<<<< HEAD
-.about-content .main-btn {
-background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-    background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-    background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-    background-size: 200%;
-    height: 50px;
-    line-height: 50px;
-    padding: 0 35px;
-    margin-top: 40px;
-}
-=======
-
->>>>>>> 630553ef8e8cbeb209d24d448d26a8eae7a4941e
 .about-content .main-btn:hover {
 background-position: right center;
 }
-<<<<<<< HEAD
-ooter .footer-Content {
-background-image: -moz-linear-gradient(0deg, #3c96ff 0%, #2dfbff 100%);
-    background-image: -webkit-linear-gradient(0deg, #3c96ff 0%, #2dfbff 100%);
-    background-image: -ms-linear-gradient(0deg, #3c96ff 0%, #2dfbff 100%);
-    padding: 60px 0 0px;
-    color: #546E7A;
-}
-=======
-
->>>>>>> 630553ef8e8cbeb209d24d448d26a8eae7a4941e
 footer .footer-Content h2 {
 color: #ffffff;
     font-size: 30px;
@@ -748,14 +714,6 @@ margin: 0;
     background-repeat: no-repeat;
     box-sizing: border-box;
     background-size: cover;
-<<<<<<< HEAD
-background-attachment: fixed;
-}
-
-article:nth-of-type(1) {
-background-image: url('../img/consultoria.png');
-    height: 600px;
-=======
     background-attachment: fixed;
 }
 
@@ -770,5 +728,4 @@ article:nth-of-type(2) {
 }
 article:nth-of-type(3) {
     height: 100px;
->>>>>>> 630553ef8e8cbeb209d24d448d26a8eae7a4941e
 }

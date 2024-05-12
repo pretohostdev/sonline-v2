@@ -51,7 +51,6 @@
                     @include('layout.componentes.cabecalho_admin_2')
                     
                     </div>
-
                 </div>
     
                 <!-- end page title -->

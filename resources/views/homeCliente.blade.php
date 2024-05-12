@@ -7,7 +7,6 @@
     {{-- Inclusão do Bootstrap 5 no projecto --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
@@ -109,7 +108,6 @@
                                         <h5 class="mb-0 py-2">Editar dados pessoais</h5>
                                     </div>
                                     <div class="p-4">
-                                        {{-- action="{{ route('user.update', $cliente->id) }}" --}}
                                         <form method="POST" id="formEditarDados">
                                             @csrf
                                             @method('POST')
@@ -177,6 +175,8 @@
                                             </div>
                                             <div class="d-flex justify-content-space-round">
                                                 <button type="submit" class="btn bg-gradient text-light">Atualizar dados</button> 
+                                                <i class="fa fa-check fa-2x text-success" id="atualizadoDadosSucesso"></i>
+                                                <i class="fa fa-close fa-2x text-danger" id="atualizadoDadosErro"></i>
                                                 <div class="spinner-border text-primary" role="status" id="spinnerAtualizar">
                                                     <span class="sr-only">Loading...</span>
                                                   </div>
@@ -235,6 +235,11 @@
             var spinnerAtualizar = document.getElementById('spinnerAtualizar');
                 spinnerAtualizar.style.display = "block";
 
+                atualizadoDadosSucesso = document.getElementById('atualizadoDadosSucesso');
+                atualizadoDadosSucesso.style.display = "none";
+                atualizadoDadosErro = document.getElementById('atualizadoDadosErro');
+                atualizadoDadosErro.style.display = "none";
+
             // Pegar os dados vindo do formulário
             var nomeCompleto = document.getElementById('nomeCompleto').value;
             var contacto = document.getElementById('contacto').value;
@@ -263,8 +268,14 @@
 
         dadosAtualizados.then(
             dados=>{
-                console.log(dados);
-                spinnerAtualizar.style.display = "none";
+                if(dados.atualizado == "true"){
+                    spinnerAtualizar.style.display = "none";
+                    atualizadoDadosSucesso.style.display = "block";
+                }
+                else{
+                    spinnerAtualizar.style.display = "none";
+                    atualizadoDadosErro.style.display = "block";
+                }
             }
         );
 

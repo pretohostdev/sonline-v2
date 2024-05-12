@@ -120,15 +120,16 @@
             });
             </script>
             
-
-            
         </div>
 
     </div>
 
-
-
 @endsection
+
+@section('footer')
+    @include('layout.componentes.footer')
+@endsection
+
 
 @push('scripts')
     <script src="{{asset('assets/js/vendors.js')}}"></script>

@@ -130,8 +130,10 @@
 
     </div>
 
+@endsection
 
-
+@section('footer')
+    @include('layout.componentes.footer')
 @endsection
 
 @push('scripts')

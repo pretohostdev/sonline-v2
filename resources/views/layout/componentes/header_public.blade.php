@@ -3,9 +3,8 @@
     <!-- begin navbar -->
     <nav class="navbar navbar-expand-md">
         <div class="navbar-header d-flex align-items-center bg-white"> 
-            <a class="navbar-brand mt-3" href="javascript:void(0)">
-                <img src="{{asset('assets/img/logo-registar.png')}}" class="img-fluid logo-desktop" alt="logo"/>
-                <img src="{{asset('assets/img/logo-pequeno.png')}}" class="img-fluid logo-mobile" alt="logo" />
+            <a class="navbar-brand mt-2" href="javascript:void(0)">
+                <img src="{{asset('assets/img/logo.jpg')}}" class="img-fluid logo-desktop logo" alt="logo"/>
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
