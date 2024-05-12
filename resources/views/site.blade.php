@@ -353,9 +353,11 @@
                     @foreach ($produtos as $produto )
                    
                     <li>
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 19rem; border:1px solid #062f4f">
                             @if ($produto->imagem)
+                              <div class="card-header" style="height: 200px">
                                 <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" height="100%" alt="telefone">
+                              </div>
                             @endif
                             <div class="card-body" style="background-color:#062f4f">
                               <h5 class="card-title text-light">{{$produto->nome}}</h5>

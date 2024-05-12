@@ -93,7 +93,7 @@
                 </ul>
                 <ul class="navbar-nav nav-right ml-auto" id="ul_nav">
                     
-                    <li class="nav-item mr-3">
+                    <li class="nav-item mr-1">
                         <a class="nav-link" href="#inicio">
                             Início
                         </a>
@@ -105,13 +105,13 @@
                         </a>
                     </li>
 
-                    <li class="nav-item text-primary mr-4">
+                    <li class="nav-item text-primary mr-3">
                         <a class="nav-link" href="#produtos" role="button">
                             Produto
                         </a>
                     </li>
 
-                    <li class="nav-item text-primary" style="margin-right:55px">
+                    <li class="nav-item text-primary" style="margin-right:50px">
                         <a class="nav-link" href="#testemunho" role="button">
                             Testemunho
                         </a>
