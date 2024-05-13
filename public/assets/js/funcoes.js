@@ -10,6 +10,8 @@ var divEuro = document.createElement("divEuro");
 var inputKwanza = document.getElementById('inputKwanza');
 var inputDolar = document.getElementById('inputDolar');
 var inputEuro = document.getElementById('inputEuro');
+var inputValorPagar = document.getElementById('valorPagar');
+
 
 // Spinners das moedas
 var spinnerInputKwanza = document.getElementById("spinnerInputKwanza");
@@ -32,6 +34,7 @@ function conversaoMoeda(id){
             converte("AOA", "USD", qtd)
             .then(data => {
                 inputDolar.value = data;
+                inputValorPagar.value = Number(data) + Number(qtd*200);
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -40,6 +43,7 @@ function conversaoMoeda(id){
             converte("AOA", "EUR", qtd)
             .then(data => {
                 inputEuro.value = data;
+                inputValorPagar.value = Number(data) + Number(qtd*200);
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -59,6 +63,8 @@ function conversaoMoeda(id){
             converte("USD", "AOA", qtd)
             .then(data => {
                 inputKwanza.value = data;
+                console.log(data)
+                inputValorPagar.value = (Number(data) + Number(qtd)*200);
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -67,6 +73,7 @@ function conversaoMoeda(id){
             converte("USD", "EUR", qtd)
             .then(data => {
                 inputEuro.value = data;
+                inputValorPagar.value = (Number(data) + Number(qtd)*200) ;
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -75,7 +82,7 @@ function conversaoMoeda(id){
     }
     else if(id == "inputEuro"){
 
-if(inputEuro.value == ""){
+        if(inputEuro.value == ""){
             inputDolar.value = "";
             inputKwanza.value = "";
         }
@@ -86,6 +93,7 @@ if(inputEuro.value == ""){
             converte("EUR", "AOA", qtd)
             .then(data => {
                 inputKwanza.value = data;
+                inputValorPagar.value = (Number(data) + Number(qtd)*200);
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -94,6 +102,7 @@ if(inputEuro.value == ""){
             converte("EUR", "USD", qtd)
             .then(data => {
                 inputDolar.value = data;
+                inputValorPagar.value = (Number(data) + Number(qtd)*200);
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -105,10 +114,16 @@ if(inputEuro.value == ""){
         let nomeMoeda = document.getElementById('nomeMoeda').value;
         let montante = document.getElementById('montante').value;
 
+        if(montante == ""){
+            montante = "0";
+        }
+
         if(nomeMoeda == "Dolar"){
             converte("USD", "AOA", montante)
             .then(data => {
                 inputKwanza.value = data;
+                console.log((Number(data) + (Number(montante)*200)));
+                inputValorPagar.value = Number(Number(data) + (Number(montante)*200)) ;
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -117,6 +132,7 @@ if(inputEuro.value == ""){
             converte("USD", "EUR", montante)
             .then(data => {
                 inputEuro.value = data;
+                inputValorPagar.value = (Number(data) + Number(montante)*200) ;
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -128,6 +144,7 @@ if(inputEuro.value == ""){
             converte("EUR", "AOA", montante)
             .then(data => {
                 inputKwanza.value = data;
+                inputValorPagar.value = (Number(data) + Number(montante)*200) ;
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -136,6 +153,7 @@ if(inputEuro.value == ""){
             converte("EUR", "USD", montante)
             .then(data => {
                 inputDolar.value = data;
+                inputValorPagar.value = (Number(data) + Number(montante)*200);
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -147,6 +165,8 @@ if(inputEuro.value == ""){
             converte("AOA", "USD", montante)
             .then(data => {
                 inputDolar.value = data;
+                console.log(data);
+                inputValorPagar.value = (Number(data) + Number(montante)*200);
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -155,6 +175,7 @@ if(inputEuro.value == ""){
             converte("AOA", "EUR", montante)
             .then(data => {
                 inputEuro.value = data;
+                inputValorPagar.value = (Number(data) + Number(montante)*200);
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -166,45 +187,28 @@ if(inputEuro.value == ""){
 
 }
 
+function formatarMoeda(moeda){
+
+    let novoValor= new Intl.NumberFormat("pt-br", {
+        currency: "AOA",
+        style: "currency",
+       
+    }).format(moeda)
+    return novoValor;
+}
+
 async function converte(moedaBase, moedaPretendida, qtd) {
 
     var base = moedaBase+""+moedaPretendida;
-    var url = "https://economia.awesomeapi.com.br/json/last/"+moedaBase+"-"+moedaPretendida
+    var url = "https://www.bna.ao/service/rest/taxas/conversor/moeda?moedaOrigem="+moedaBase+"&"+"moedaDestino="+moedaPretendida+"&montante"+"="+qtd
+
     try {
-        
-
-        if(base == "USDAOA"){
-            const response = await fetch(url);
-            const data = await response.json();
-            console.log(data.USDAOA.low*qtd);
-            return data.USDAOA.low*qtd;
-        }
-        else if(base == "USDEUR"){
-            const response = await fetch(url);
-            const data = await response.json();
-            console.log(data.USDEUR.low*qtd);
-            return data.USDEUR.low*qtd;
-        }
-
-        else if(base == "EURUSD"){
-            const response = await fetch(url);
-            const data = await response.json();
-            return data.EURUSD.low*qtd;
-        }
-        else if(base == "EURAOA"){
-            return 'indisponível';
-        }
-
-        else if(base == "AOAUSD"){
-            return 'indisponível';
-        }
-
-        else if(base == "AOAEUR"){
-            return 'indisponível';
-        }
+        const response = await fetch(url);
+        const data = await response.json();
+        return data.genericResponse[1].montanteConvertido;
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
-        throw error; // Lança o erro para ser capturado por um bloco try/catch externo
+        throw error; 
     }
 }
 

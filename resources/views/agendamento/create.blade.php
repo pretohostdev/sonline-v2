@@ -56,7 +56,7 @@
 
     <div class="row mt-2">
 
-        <div class="col-xl-4">
+        <div class="col-xl-5">
             <div class="card card-statistics rounded">
                 <div class="card-body">
 
@@ -108,7 +108,7 @@
         </div>
 
 
-        <div class="col-xl-8">
+        <div class="col-xl-7">
             <img src="{{asset('assets/img/consultaria-2.png')}}" alt="consultoria">
         </div>
 

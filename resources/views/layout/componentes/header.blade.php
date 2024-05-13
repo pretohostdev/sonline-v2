@@ -4,9 +4,9 @@
     <nav class="navbar navbar-expand-md">
         <div class="navbar-header d-flex align-items-center bg-white"> 
             
-            <a class="navbar-brand mt-2" href="{{ route('homeAdmin') }}">
-                <img src="{{asset('assets/img/logo.jpg')}}" class="img-fluid logo-desktop logo" alt="logo"/>
-                <img src="{{asset('assets/img/logo.jpg')}}" class="img-fluid logo-mobile logo" alt="logo"/>
+            <a class="navbar-brand mt-2" href="{{ route('homeAdmin')}}">
+                <img src="{{asset('assets/img/logo.jpg')}}" class="img-fluid logo-desktop logo" alt="logo" style="width: 100px"/>
+                <img src="{{asset('assets/img/logo.jpg')}}" class="img-fluid logo-mobile logo" alt="logo" style="width: 100px" />
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
