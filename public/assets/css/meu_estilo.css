@@ -6,7 +6,7 @@ src: url('../fonts/DIN Neuzeit Grotesk Light.ttf') format('tff');
 .logo {
     position: fixed;
     height: auto;
-    /* width: 50px; */
+    /* width: 30px; */
 }
 .agendamentoAnimacao {
 visibility: hidden;

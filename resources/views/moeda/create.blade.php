@@ -163,8 +163,15 @@
 
                     </div>
                 </div>
-
+                
             </div>
+            <div>
+                <p>
+                    Obs: Se desejar entrar em contacto antes de efectuar o pagamento, poderá fazé-lo enviando uma mensagem
+                    em: <span class="text-dark">sonlinesolucoes@gmail.com</span>
+                </p> 
+            </div>
+            
 
         </div>
 

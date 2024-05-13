@@ -406,9 +406,9 @@
           <div class="widget">
             <h3 class="block-title">Crie uma conta</h3>
             <ul class="menu" style="list-style:none">
-              <li><a href="{{route('login')}}">Entrar</a></li>
-              <li><a href="{{route('login')}}">Sobre</a></li>
-              <li><a href="{{route('login')}}">Preços</a></li>
+              <li><a href="{{route('login')}}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Entrar</a></li>
+              <li><a href="{{route('login')}}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Sobre</a></li>
+              <li><a href="{{route('login')}}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Preços</a></li>
             </ul>
           </div>
         </div>
@@ -417,9 +417,9 @@
           <div class="widget">
             <h3 class="block-title">Contacto</h3>
             <ul class="menu" style="list-style:none">
-              <li><a href="#">+244947937025</a></li>
-              <li><a href="#">+244936132172</a></li>
-              <li><a href="#">sonlinesolucoes@gmail.com</a></li>
+              <li><a href="javascript:void()"><i class="fa fa-phone" aria-hidden="true"></i> 947937025</a></li>
+              <li><a href="javascript:void()"><i class="fa fa-phone" aria-hidden="true"></i> 936132172</a></li>
+              <li><a href="javascript:void()"><i class="fa fa-envelope-o" aria-hidden="true"></i> sonlinesolucoes@gmail.com</a></li>
             </ul>
           </div>
         </div>
@@ -429,12 +429,7 @@
           <div class="widget">
             <h3 class="block-title">Endereço</h3>
             <ul class="menu" style="list-style:none">
-              <li><a href="#">Cacuaco</a></li>
-              <li><a href="#">Centralidade do sequele</a></li>
-              <li><a href="#">bloco 4</a></li>
-              <li><a href="#">prédio 7</a></li>
-              <li><a href="#">apartamento 302A</a></li>
-              <li><a href="#">junto à empresa Eco-fluxo</a></li>
+              <li><a href="javascript:void()"><i class="fa fa-arrow-right" aria-hidden="true"></i> Cacuaco, Centralidade do sequele, bloco 4, prédio 7, junto à empresa Eco-fluxo</a></li>
             </ul>
           </div>
         </div>
@@ -447,7 +442,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="site-info float-left">
-              <p>&copy; 2024 - Sonline Service</p>
+              <p>Todos os direitos reservados, produzido pela PetroHost &copy; 2024 - Sonline Service </p>
             </div>              
             <div class="float-right">  
               <ul class="footer-social">
