@@ -85,6 +85,13 @@
                             <input type="number" class="form-control" name="montante" id="montante" oninput="conversaoMoeda(id)">
                         </div>
 
+                        <div class="input-group mb-3" id="divValorPagar">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Valor a pagar</span>
+                            </div>
+                            <input type="text" class="form-control" id="valorPagar" name="valorPagar" readonly>
+                        </div>
+
                         <div class="form-group">
                             <label for="referenciabancaria" class="text-dark">IBAN</label>
                             <input type="text" class="form-control" value="{{$sistema->iban}}" id="referenciabancaria" readonly>
@@ -97,7 +104,7 @@
 
                         <div class="form-group">
                             <label for="comprovativo" class="text-dark">Comprovativo Bancário</label>
-                            <img src="{{asset('assets/img/pdf.png')}}" alt="">
+                            <img src="{{asset('assets/img/pdf.png')}}" style="height:30px;">
                             <input type="file" class="form-control mt-2" id="comprovativo" name="documento">
                         </div>
 
@@ -164,23 +171,16 @@
                             <input type="text" class="form-control" value="{{"1 USD -> Câmbio +". $sistema->taxa." kz"}}" readonly>
                           </div>
 
-                          <div class="input-group mb-3" id="divValorPagar">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Valor a pagar</span>
-                            </div>
-                            <input type="text" class="form-control" id="valorPagar" name="valorPagar" readonly>
-                          </div>
-
-                          <input type="hidden" value="{{$sistema->taxa}}">
+                          <input type="hidden" value="{{$sistema->taxa}}" id="taxa">
 
                     </div>
                 </div>
                 
             </div>
             <div>
-                <p>
-                    Obs: Se desejar entrar em contacto antes de efectuar o pagamento, poderá fazé-lo enviando uma mensagem
-                    em: <span class="text-dark">sonlinesolucoes@gmail.com</span>
+                <p class="text-dark">
+                    OBS: Se desejar entrar em contacto antes de efectuar o pagamento, poderá fazé-lo enviando uma mensagem
+                    em: <span class="text-primary">sonlinesolucoes@gmail.com</span>
                 </p> 
             </div>
             

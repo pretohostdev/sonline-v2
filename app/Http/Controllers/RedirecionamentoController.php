@@ -45,47 +45,36 @@ class RedirecionamentoController extends Controller
         // Adicionar dados a tabela Produto
         $id = Auth::id();
 
-        $dados = json_decode($request->getContent(), true);
-
+        $produto = Produto::create([
+            'nome' => $request->nome,
+            'descricao' => $request->descricaoProduto,
+        ]);
+            
+        
         try {
+            // Iniciando a transação
+            DB::beginTransaction();
 
-            $produto = Produto::create([
-                'nome' => $dados['nomeProduto'],
-                'descricao' => $dados['descricao'],
-            ]);
+            $idProduto = $produto->latest()->value('id');  // Obter o último ID do produto
+            $data = Carbon::today()->format('Y-m-d'); 
 
-        // Iniciando a transação
-        DB::beginTransaction();
-
-        $idProduto = $produto->latest()->value('id');  // Obter o último ID do produto
-        $data = Carbon::today()->format('Y-m-d'); 
-
-
-        try {
+            $valorPagar = str_replace("€", "", $request->valor);
             
             $redirecionamento = Redirecionamento::create([
                 'data' => $data,
                 'estado' => '0',
-                'valor' => $dados['valor'],
-                'paisOrigem' => $dados['paisOrigem'],
-                'paisDestino' => $dados['paisDestino'],
-                'user_id' => $dados['user_id'],
+                'valor' => $valorPagar,
+                'paisOrigem' => $request->paisorigem,
+                'paisDestino' => $request->paisdestino,
+                'user_id' => $request->userId,
                 'produto_id' => $idProduto
             ]);
 
             DB::commit();  // Commit da transação se todas as operações forem bem-sucedidas
-            return response()->json(['cadastrado' => 'true'], 200);
-
-            } catch (\Exception $e) {
-
-                DB::rollback();
-                return response()->json(['cadastrado' => $e]);
-            }
-           
-        } catch (\Exception $error) {
-            return response()->json(['cadastrado' => $error]);
+            return redirect()->route('redirecionamento.estado');
+        } catch (\Throwable $th) {
+            DB::rollback();
         }
-
     }
 
     /**
@@ -124,7 +113,6 @@ class RedirecionamentoController extends Controller
     {
         $id = Auth::id();
 
-        
         $redirecionamento = Redirecionamento::where('user_id', $id)->latest()->first();
         
         $cliente = User::find($id);

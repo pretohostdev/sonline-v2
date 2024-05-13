@@ -11,10 +11,10 @@
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <!-- plugin stylesheets -->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors.css"/>
     <!-- app style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/registar.css')}}">
     <title>Login</title>
 </head>
 
@@ -37,7 +37,7 @@
                                 <div class="d-flex align-items-center h-100-vh">
                                     <div class="login p-50">
                                         <div class="d-flex justify-content-center">
-                                            <img src="{{asset('assets/img/logo-registar.png')}}" alt="">
+                                            <img src="{{asset('assets/img/logo.jpg')}}" class="logo" alt="">
                                         </div>
                                         <h1 class="mb-2 text-center">Sonline Service</h1>
                                         <p class="text-center">Seja bem vindo novamente, por favor, faça o login.</p>
@@ -57,13 +57,13 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Email*</label>
+                                                        {{-- <label class="control-label">Email</label> --}}
                                                         <input type="text" class="form-control" placeholder="Email" name="email" value="{{old("email")}}" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Senha*</label>
+                                                        {{-- <label class="control-label">Senha</label> --}}
                                                         <input type="password" class="form-control" placeholder="Senha" name="password" value="{{old("password")}}" required />
                                                     </div>
                                                 </div>
@@ -105,8 +105,6 @@
         <!-- end app-wrap -->
     </div>
     <!-- end app -->
-
-
 
     <!-- plugins -->
     <script src="assets/js/vendors.js"></script>

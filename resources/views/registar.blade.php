@@ -36,7 +36,6 @@
             @include('layout.componentes.carregamentoPagina')
             <!-- end pre-loader -->
 
-            <!--start login contant-->
             <div class="app-contant">
                 <div class="bg-white">
                     <div class="container-fluid p-0">
@@ -46,11 +45,11 @@
                                     
                                     <div class="register p-5">
 
-                                        <div class="d-flex justify-content-center">
-                                            <img src="{{asset('assets/img/logo-registar.png')}}" alt="logo da empresa">
+                                        <div class="d-flex justify-content-center bg-inf">
+                                            <img src="{{asset('assets/img/logo.jpg')}}" class="logo" alt="logo da empresa">
                                         </div>   
 
-                                        <p class="text-center">Seja bem vindo, crie uma conta.</p>
+                                        <p class="text-center">Seja bem vindo, crie uma conta</p>
 
                                         <!-- Se houver erros de validação, exiba-os -->
                                         @if ($errors->any())
@@ -68,48 +67,45 @@
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label class="control-label">Primeiro Nome*</label>
+                                                        <label class="control-label">Primeiro Nome</label>
                                                         <input type="text" class="form-control" value="{{old('primeiroNome')}}" name="primeiroNome" id="primeiroNome" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label class="control-label">Último Nome*</label>
+                                                        <label class="control-label">Último Nome</label>
                                                         <input type="text" class="form-control" value="{{old('ultimoNome')}}" name="ultimoNome" id="ultimoNome" required>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label class="control-label">Género*</label>
+                                                        <label class="control-label">Género</label>
                                                         <select name="genero" class="form-control" id="genero">
                                                             @foreach(['Masculino', 'Feminino'] as $genero)
                                                                 <option value="{{ $genero }}">{{ $genero }}</option>
                                                             @endforeach
                                                         </select>
-
                                                     </div>
                                                 </div>
 
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label class="control-label">Contacto*</label>
+                                                        <label class="control-label">Contacto</label>
                                                         <input type="text" class="form-control" value="{{old('contacto')}}" name="contacto" id="contacto" required>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-12">
-                                                <label class="control-label">Data de nascimento*</label>
+                                                <label class="control-label">Data de nascimento</label>
                                                 <div class="input-group">
                                                     <input class="form-control" type="date" placeholder="2018-12-12" value="{{old('dataNascimento')}}" name="dataNascimento" id="dataNascimento">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                 </div>
                                                 </div>
-
 
                                                 <div class="col-12">
-                                                    <div class="form-group mt-2">
-                                                        <label class="control-label">Email*</label>
+                                                    <div class="form-group mt-3">
+                                                        <label class="control-label">Email</label>
                                                         <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="{{old('email')}}" required>
                                                     </div>
                                                 </div>
@@ -117,7 +113,7 @@
                                                 
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Senha'*</label>
+                                                        <label class="control-label">Senha</label>
                                                         <input type="password" class="form-control" placeholder="senha" name="password" id="password" value="{{old('password')}}" required>
                                                     </div>
                                                 </div>
@@ -236,9 +232,6 @@
     </script>
         
     </div>
-    <!-- end app -->
-
-
 
     <!-- plugins -->
     <script src="assets/js/vendors.js"></script>

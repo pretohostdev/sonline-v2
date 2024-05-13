@@ -59,6 +59,7 @@ class ContaWiseController extends Controller
         );
 
         $conta = ContaWise::create([
+            'tipo' => $request->tipo,
             'data' => $request->data,
             'comprovativo' => $path,
             'estado' => '0',
@@ -118,6 +119,7 @@ class ContaWiseController extends Controller
 
             $conta = (Object)[
                 'id' => $cliente->id,
+                'tipo' => $conta->tipo,
                 'nome' => $cliente->name,
                 'data' => $conta->data,
                 'estado' => $conta->estado,
@@ -129,6 +131,7 @@ class ContaWiseController extends Controller
 
             $conta = (Object)[
                 'id' => '',
+                'tipo',
                 'nome' => '',
                 'data' => '',
                 'estado' => '',

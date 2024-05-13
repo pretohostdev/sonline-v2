@@ -53,21 +53,22 @@
 
         </div>
 
-    <div class="row">
+    <div class="row mt-2">
 
         <div class="col-xl-6">
             <div class="card card-statistics rounded">
                 <div class="card-body">
-                    <form id="formRedirecionamento">
+                    <form action="{{route('redirecionamento.store')}}" method="POST">
+                        @csrf
 
                         <div class="form-group"> 
                             <label for="nomeProduto" class="text-dark">Nome do produto</label>
-                            <input type="text" class="form-control" value="" id="nomeProduto" required>
+                            <input type="text" class="form-control" value="" id="nomeProduto" name="nome" required>
                         </div>
 
                         <div class="form-group">
                             <label for="paisOrigem" class="text-dark">País de origem</label>
-                            <select class="form-control" id="paisOrigem">
+                            <select class="form-control" id="paisOrigem" name="paisorigem">
                                 <option value="Portugal">Portugal</option>
                                 <option value="Angola">Angola</option>
                             </select>
@@ -75,7 +76,7 @@
 
                         <div class="form-group">
                             <label for="paisDestino" class="text-dark">País de destino</label>
-                            <select type="da" class="form-control" id="paisDestino">
+                            <select type="da" class="form-control" id="paisDestino" name="paisdestino">
                                 <option value="Angola">Angola</option>
                                 <option value="Portugal">Portugal</option>
                             </select>
@@ -90,38 +91,28 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="peso" class="text-dark">Peso <span style="color:#ccc; font-size:8pt">(em grama)</span></label>
+                            <label for="peso" class="text-dark">Peso <span style="font-size:8pt">(em grama)</span></label>
                             <input type="number" class="form-control" value="" id="peso" required>
                         </div>
 
+                        <div class="input-group mb-3" id="divDolarRedirecionamento">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-gradient text-light">Valor a pagar</span>
+                            </div>
+                            <input type="text" class="form-control" id="valorConvertido" name="valor" oninput="conversaoMoeda(id)" readonly>
+                        </div>
+
                         <div class="form-group">
-                            <input type="hidden" class="form-control" value="{{$user_id}}" id="user_id">
+                            <input type="hidden" class="form-control" value="{{$user_id}}" id="user_id" name="userId">
                         </div>
 
                         <div class="form-group">
                             <label for="descricao" class="text-dark">Descrição do produto</label>
-                            <textarea class="form-control" id="descricao" required></textarea>
+                            <textarea class="form-control" id="descricao" name="descricaoProduto" required></textarea>
                         </div>
 
-                        <div class="d-flex justify-content-space-round">
-                            <button type="submit" class="btn bg-gradient text-light mr-2">Enviar pedido</button>
-                                <div class="spinner-border text-primary" role="status" id="spinnerRedirecionar">
-                                    <span class="sr-only">Loading...</span>
-                                </div>
-                        </div>
+                        <button type="submit" class="btn bg-gradient text-light mr-2">Enviar pedido</button>
                     </form>
-                </div>
-
-                
-
-                {{-- Mensagem de envio com sucesso --}}
-                <div id="mensagemSucesso">
-                    <div class="alert bg-gradient text-light d-flex alert-dismissible fade show" role="alert">
-                        Pedido de redirecionamento enviado com sucesso!
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="ti ti-close"></i>
-                        </button>
-                    </div>
                 </div>
 
             </div>
@@ -145,13 +136,6 @@
                             </div>
                             <input type="text" class="form-control" id="pesoBase" readonly>
                         </div>
-
-                          <div class="input-group mb-3" id="divDolarRedirecionamento">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-gradient text-light">Valor</span>
-                            </div>
-                            <input type="text" class="form-control" id="valorConvertido" oninput="conversaoMoeda(id)" readonly>
-                          </div>
 
 
                           <div class="input-group mb-3" id="divTaxaServico">
@@ -182,63 +166,6 @@
     </div>
 
     <script>
-        document.getElementById('formRedirecionamento').addEventListener('submit', function(event) {
-            
-            event.preventDefault(); // Impedir o envio padrão do formulário
-            console.log('Estou funcionando...');
-
-            var spinnerRedirecionar = document.getElementById('spinnerRedirecionar');
-                spinnerRedirecionar.style.display = "block";
-
-            var mensagemSucesso = document.getElementById('mensagemSucesso');
-
-            // Pegar os dados vindo do formulário
-            var nomeProduto = document.getElementById('nomeProduto').value;
-            var paisOrigem = document.getElementById('paisOrigem').value;
-            var paisDestino = document.getElementById('paisDestino').value;
-            var descricao = document.getElementById('descricao').value;
-            var user_id =  document.getElementById('user_id').value;
-
-            var valorRedirecionemto = valorConvertido.value.replace('€', '');
-
-
-            const redirecionamento = {
-                nomeProduto: nomeProduto,
-                paisOrigem:paisOrigem,
-                paisDestino:paisDestino,
-                valor: valorRedirecionemto,
-                descricao:descricao,
-                user_id: user_id,
-            };
-
-            fetch('http://localhost:8000/api/redirecionamento', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(redirecionamento),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao salvar os dados');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if(data.cadastrado == 'true'){
-                    spinnerRedirecionar.style.display = "none";
-                    mensagemSucesso.style.display = "block";
-                }else{
-                    console.log('Não cadastrado');
-                    spinnerRedirecionar.style.display = "none";
-                    mensagemSucesso.style.display = "block";
-                }
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-        });
 
         // Conversão relativo ao envio de mercadoria com base aos tipos de envio - HDL versus CCT
         var metodoEnvio = document.getElementById('metodoEnvio');
@@ -287,9 +214,6 @@
             }
         })
 
-        
-
-
     </script>
 </div>
 
@@ -304,5 +228,4 @@
 @push('scripts')
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
-    {{-- <script src="{{asset('assets/js/funcoes.js')}}"></script> --}}
 @endpush

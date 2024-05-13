@@ -11,7 +11,7 @@ var inputKwanza = document.getElementById('inputKwanza');
 var inputDolar = document.getElementById('inputDolar');
 var inputEuro = document.getElementById('inputEuro');
 var inputValorPagar = document.getElementById('valorPagar');
-var taxa = document.getElementById('taxa');
+var taxa = document.getElementById('taxa').value;
 
 
 // Spinners das moedas
@@ -64,7 +64,7 @@ function conversaoMoeda(id){
             .then(data => {
                 inputKwanza.value = data;
                 spinnerInputKwanza.style.display = "none";
-                inputValorPagar.value = (Number(data) + Number(qtd)*200);
+                inputValorPagar.value = (Number(data) + Number(qtd)*taxa);
             })
             .catch(error => {
                 console.error('Erro ao buscar dados:', error);
@@ -94,7 +94,7 @@ function conversaoMoeda(id){
             converte("EUR", "AOA", qtd)
             .then(data => {
                 inputKwanza.value = data;
-                inputValorPagar.value = (Number(data) + Number(qtd)*200);
+                inputValorPagar.value = (Number(data) + Number(qtd)*taxa);
                 spinnerInputKwanza.style.display = "none";
             })
             .catch(error => {
@@ -128,8 +128,8 @@ function conversaoMoeda(id){
                 converte("USD", "AOA", montante)
                 .then(data => {
                     inputKwanza.value = data;
-                    console.log((Number(data) + (Number(montante)*200)));
-                    inputValorPagar.value = Number(data + montante*200) + " kz" ;
+                    console.log((Number(data) + (Number(montante)*taxa)));
+                    inputValorPagar.value = Number(data + montante*taxa) + "kz" ;
                     spinnerInputKwanza.style.display = "none";
                 })
                 .catch(error => {
@@ -161,7 +161,7 @@ function conversaoMoeda(id){
                 converte("EUR", "AOA", montante)
                 .then(data => {
                     inputKwanza.value = data;
-                    inputValorPagar.value = (Number(data) + Number(montante)*200) + " kz" ;
+                    inputValorPagar.value = (Number(data) + Number(montante)*taxa) + "kz" ;
                     spinnerInputKwanza.style.display = "none";
                 })
                 .catch(error => {

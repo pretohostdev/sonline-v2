@@ -269,7 +269,7 @@
         <div class="col-lg-12">
             <div class="text-center">
                 <div class="section-title text-center pb-40">
-                    <h3 class="slideShow">LINK DE AFILIADO<i class="lni lni-customer text-info ml-1"></i></h3>
+                    <h3 class="slideShow"><i class="fa fa-heart-o text-danger" aria-hidden="true"></i> LINK DE AFILIADO <i class="fa fa-heart-o text-danger" aria-hidden="true"></i></h3>
                         <hr>
                 </div>
             </div>
@@ -285,13 +285,13 @@
             <div class="tab nav-border-bottom">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a style="font-size:13pt; font-family:serif" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
+                        <a style="font-size:13pt;" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:13pt; font-family:serif" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
+                        <a style="font-size:13pt;" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:13pt; font-family:serif" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
+                        <a style="font-size:13pt;" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
                     </li>
                 </ul>
                 <div class="tab-content">

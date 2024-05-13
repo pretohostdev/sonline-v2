@@ -44,7 +44,7 @@
                             <a href="x"></a>
                         </li>
                         <li>
-                            Abertura de conta wise
+                            Abertura de conta
                         </li>
                     </ol>
                 </nav>
@@ -71,6 +71,16 @@
 
                     <form action="{{ route('contaWise.store') }}" method="POST" id="formConta" enctype="multipart/form-data">
                         @csrf
+
+                        <div class="form-group">
+                            <label for="tipo" class="text-dark">Seleciona o tipo de conta</label>
+                            <select class="form-control" id="tipo" name="tipo">
+                                <option value="wise">Wise</option>
+                                <option value="Resolut">Resolut</option>
+                                <option value="N26">N26</option>
+                            </select>
+                        </div>
+
                         <div class="form-group">
                             <label for="data">Dada de emissão</label>
                             <input type="date" class="form-control" id="data" name="data" value="{{ date('Y-m-d') }}">
@@ -88,7 +98,8 @@
 
                         <div class="form-group">
                             <label for="comprovativo">Comprovativo Bancário em pdf</label>
-                            <input type="file" class="form-control" name="comprovativo" id="comprovativo">
+                            <img src="{{asset('assets/img/pdf.png')}}" style="height:30px;">
+                            <input type="file" class="form-control mt-2" name="comprovativo" id="comprovativo">
                         </div>
 
 
@@ -101,7 +112,7 @@
 
         <div class="col-xl-7">
 
-                <img src="{{asset('assets/img/cartao.png')}}" alt="">
+                <img src="{{asset('assets/img/cartao.png')}}" alt="" style="border-top-left-radius:50px; border-bottom-left-radius:50px">
 
         </div>
 

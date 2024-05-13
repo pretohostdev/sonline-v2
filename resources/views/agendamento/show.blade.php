@@ -155,11 +155,10 @@
                                                 <div class="col-lg-6">
                                                     @if (isset($agendamento->id) && $agendamento->id !== '')
                                                         <ul class="list-group">
-                                                            <li class="list-group-item">Cliente: <span class="text-dark">{{ $agendamento->nome }}</span> </li>
-                                                            <li class="list-group-item">Tipo: <span class="text-dark">{{ $agendamento->tipo }}</span> </li>
-
-                                                            <li class="list-group-item">Data solicitação: <span class="text-dark">{{ $agendamento->data }}</span> </li>
-                                                            <li class="list-group-item">Observação: <span class="text-dark">{{ $agendamento->observacao }}</span> </li>
+                                                            <li class="list-group-item text-dark">Cliente: <strong>{{ $agendamento->nome }}</strong>  </li>
+                                                            <li class="list-group-item text-dark">Tipo: <strong>{{ $agendamento->tipo }}</strong> </li>
+                                                            <li class="list-group-item text-dark">Data solicitação: <strong>{{ $agendamento->data }}</strong> </li>
+                                                            <li class="list-group-item text-dark">Observação: <strong>{{ $agendamento->observacao }}</strong> </li>
                                                         </ul>
                                                     @endif
                                                 </div>

@@ -41,17 +41,16 @@
             <!-- Início do pré-carregamento da página -->
             @include('layout.componentes.carregamentoPagina')
             <!-- end pre-loader -->
-            <!--start look screen contant-->
             <div class="error-contant">
                 <div class="error-innr">
                     <div class="container d-flex justify-content-center align-items-center h-100-vh">
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-md-8 text-center">
-                                <div class="error-text">
-                                    <h3 class="m-t-30 text-light">ACESSO NEGADO!</h3>
-                                    <p class="text-info" style="font-size: 12pt; font-family:sans-serif">Você não tem permissão para acessar essa página.</p>
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                {{-- <div class="error-text"> --}}
+                                    <h3 class="mt-30 text-light">ACESSO NEGADO!</h3>
+                                    {{-- <p class="text-info" style="font-size: 12pt; font-family:sans-serif">Você não tem permissão para acessar essa página.</p> --}}
                                     <a href="{{route('login')}}" class="btn btn-round btn-outline-light mt-3">Fazer login</a>
-                                </div>
+                                {{-- </div> --}}
                             </div>
                         </div>
                     </div>

@@ -104,7 +104,7 @@ Route::middleware(['admin'])->group(function(){
 });
 
 
-/*        CLIENTES CLIENTES CLIENTES CLIENTES  CLIENTES CLIENTES CLIENTES CLIENTES CLIENTES  CLIENTES      CLIENTES CLIENTES  */
+/*      CLIENTES CLIENTES CLIENTES CLIENTES  CLIENTES CLIENTES CLIENTES CLIENTES CLIENTES  CLIENTES      CLIENTES CLIENTES  */
 
 Route::middleware(['cliente'])->group(function(){
 
@@ -117,11 +117,12 @@ Route::middleware(['cliente'])->group(function(){
         'produto' => ProdutoController::class,
         'visto' => VistoController::class,
         'agendamento' => AgendamentoController::class,
+        'redirecionamento'=> RedirecionamentoController::class,
     ]);
 
     Route::resource('user', UserController::class)->except(['store']);
     Route::get('homeCliente', [HomeClienteController::class, 'index'])->name('homeCliente');
-    Route::resource('redirecionamento', RedirecionamentoController::class);
+    // Route::resource('redirecionamento', RedirecionamentoController::class);
 
     // ROTA DOS ESTADOS 
     Route::get('/estadoMoeda', [MoedaController::class, 'estadoMoeda'])->name('moeda.estado');

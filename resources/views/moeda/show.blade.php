@@ -155,9 +155,10 @@
                                                 <div class="col-lg-6">
                                                     @if (isset($moeda->id) && ($moeda->id !== ''))
                                                         <ul class="list-group">
-                                                            <li class="list-group-item">Nome da moeda: <span class="text-dark">{{ $moeda->nome }}</span> </li>
-                                                            <li class="list-group-item">Data solicitação: <span class="text-dark">{{ $moeda->data }}</span> </li>
-                                                            <li class="list-group-item">Montante: <span class="text-dark">{{ $moeda->montante }}</span> </li>
+                                                            <li class="list-group-item text-dark">Nome da moeda: <strong> {{ $moeda->nome }}</strong></li>
+                                                            <li class="list-group-item text-dark">Data solicitação: <strong>{{ $moeda->data }}</strong> </li>
+                                                            <li class="list-group-item text-dark">Montante: <strong>{{ $moeda->montante }}</strong></li>
+                                                            <li class="list-group-item text-dark">Valor a pagar: <strong>{{ $moeda->valorPagar }} kz</strong></li>
                                                         </ul>
                                                     @endif
                                                 </div>

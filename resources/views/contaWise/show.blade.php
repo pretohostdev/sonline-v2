@@ -153,8 +153,9 @@
                                                 <div class="col-lg-6">
                                                     @if (isset($conta->id) && ($conta->id !== ''))
                                                         <ul class="list-group">
-                                                            <li class="list-group-item">Nome do usuário: <span class="text-dark">{{ $conta->nome }}</span> </li>
-                                                            <li class="list-group-item">Data da solicitação: <span class="text-dark">{{ $conta->data }}</span> </li>
+                                                            <li class="list-group-item text-dark">Nome do usuário: <strong>{{ $conta->nome }}</strong></li>
+                                                            <li class="list-group-item text-dark">Tipo da conta solicitada: <strong>{{ $conta->tipo }}</strong></li>
+                                                            <li class="list-group-item text-dark">Data da solicitação: <strong>{{ $conta->data }}</strong> </li>
                                                         </ul>
                                                     @endif
                                                 </div>

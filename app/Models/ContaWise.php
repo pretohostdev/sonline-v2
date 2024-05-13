@@ -13,6 +13,7 @@ class ContaWise extends Model
     protected $table = 'conta_wises';
 
     protected $fillable = [
+        'tipo',
         'data', 
         'estado', 
         'user_id',

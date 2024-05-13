@@ -58,11 +58,14 @@ class MoedaController extends Controller
             'moedas'
         );
 
-        $dataAtual = Carbon::now();
+         // Remova "kz" usando str_replace()
+        $valor = str_replace("kz", "", $request->valorPagar); 
 
+        $dataAtual = Carbon::now();
         $moeda = Moeda::create([
             'nome' => $request->nome,
             'data' => $dataAtual->toDateString(),
+            'valorPagar' => $valor,
             'documento' => $request->documento,
             'montante' => $request->montante,
             'estado' => '0',
@@ -120,11 +123,12 @@ class MoedaController extends Controller
             $clientesComSolicitacoaMoeda = $cliente->moedas;
             $moeda = (Object)[
                 'id' => $moeda->id,
-                'nome' => $moeda->nome,
-                'documento' => $moeda->documento,
-                'montante' => $moeda->montante,
-                'estado' => $moeda->estado,
                 'data' => $moeda->data,
+                'nome' => $moeda->nome,
+                'estado' => $moeda->estado,
+                'montante' => $moeda->montante,
+                'documento' => $moeda->documento,
+                'valorPagar' => $moeda->valorPagar,
                 'listaSolicitacoaMoedas' =>  $clientesComSolicitacoaMoeda
             ];
         }
@@ -132,10 +136,11 @@ class MoedaController extends Controller
 
             $moeda = (Object)[
                 'id' => '',
-                'documento' => '',
+                'data' => '',
                 'nome' => '',
                 'montate' => '',
-                'data' => '',
+                'documento' => '',
+                'valorPagar' => '',
                 'listaSolicitacoaMoedas' => []
             ];   
            

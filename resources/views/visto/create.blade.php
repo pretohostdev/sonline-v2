@@ -105,7 +105,7 @@
 
                         <div class="form-group">
                             <label for="documento" class="text-dark">Cópia do B.I ou Passport</label>
-                            <img src="{{asset('assets/img/pdf.png')}}" alt="arquivo pdf">
+                            <img src="{{asset('assets/img/pdf.png')}}" style="height:30px;" alt="arquivo pdf">
                             <input type="file" class="form-control mt-2" id="documento" name="documento">
                         </div>
 

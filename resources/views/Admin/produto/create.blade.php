@@ -104,8 +104,8 @@
                                             
                                             <div class="form-group">
                                                 <label for="imagem" class="text-dark">Imagem do produto</label>
-                                                <img src="{{asset('assets/img/jpg.png')}}" alt="">
-                                                <img src="{{asset('assets/img/png.png')}}" alt="">
+                                                <img src="{{asset('assets/img/jpg.png')}}" alt="" style="height:40px;">
+                                                <img src="{{asset('assets/img/png.png')}}" alt="" style="height:40px;">
                                                 <input type="file" class="form-control mt-2" id="imagem" name="imagem">
                                             </div>
                                             

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('conta_wises', function (Blueprint $table) {
             $table->id();
+            $table->string('tipo');
             $table->date('data');
             $table->string('comprovativo');
             $table->enum('estado', [0, 1, 2]);

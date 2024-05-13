@@ -22,50 +22,50 @@
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <div class="row no-gutters">
                                 <div class="col-sm-2 p-20 bg-secondary">
-                                    <h4> <a href="{{route('registar')}}" class="text-light">Criar Conta</a></h4>
+                                    <h4> <a href="{{route('registar')}}" class="text-light"><i class="fa fa-user-plus" aria-hidden="true"></i> Criar Conta</a></h4>
                                 </div>
                                 <div class="col-sm-2 p-20 bg-secondary">
-                                    <h4><a href="{{route('login')}}" class="text-light">Entrar</a></h4>
+                                    <h4><a href="{{route('login')}}" class="text-light"><i class="fa fa-sign-in" aria-hidden="true"></i> Entrar</a></h4>
                                 </div>
 
                                 <div class="col-sm-3 p-20 bg-dark">
                                     <h4 class="text-light">Contactos</h4>
                                     <ul>
                                         <li class="nav-link text-light">
-                                            <span>claudiorufino@gmail.com</span>
+                                            <span><i class="fa fa-envelope-o" aria-hidden="true"></i> sonlinesolucoes@gmail.com</span>
                                         </li>
 
                                         <li class="nav-link text-light">
-                                            <span>+244947937025</span>
+                                            <span><i class="fa fa-phone" aria-hidden="true"></i> 947937025</span>
                                         </li>
 
                                         <li class="nav-link text-light">
-                                            <span>+244936132172</span>
+                                            <span><i class="fa fa-phone" aria-hidden="true"></i> 936132172</span>
                                         </li>
                                     </ul>
                                 </div>
 
                                 <div class="col-sm-2 p-20 bg-dark">
-                                    <h4 class="text-light">Endereço</h4>
+                                    <h4 class="text-light"><i class="fa fa-map-marker" aria-hidden="true"></i> Endereço</h4>
                                     <ul>
                                         <li class="nav-link text-light">
-                                            <span>Cacuaco</span>
+                                            <span><i class="fa fa-arrow-right" aria-hidden="true"></i> Cacuaco</span>
                                         </li>
 
                                         <li class="nav-link text-light">
-                                            <span>Centralidade do sequele</span>
+                                            <span><i class="fa fa-arrow-right" aria-hidden="true"></i> Centralidade do sequele</span>
                                         </li>
 
                                         <li class="nav-link text-light">
-                                            <span>bloco 4 prédio 7</span>
+                                            <span><i class="fa fa-arrow-right" aria-hidden="true"></i> bloco 4 prédio 7</span>
                                         </li>
 
                                         <li class="nav-link text-light">
-                                            <span>apartamento 302A</span>
+                                            <span><i class="fa fa-arrow-right" aria-hidden="true"></i> apartamento 302A</span>
                                         </li>
 
                                         <li class="nav-link text-light">
-                                            <span>junto à empresa Eco-fluxo</span>
+                                            <span><i class="fa fa-arrow-right" aria-hidden="true"></i> junto à empresa Eco-fluxo</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -79,9 +79,10 @@
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item nav-link text-info" target="_blank" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6">
-                                Facebook
+                                <i class="fa fa-facebook" aria-hidden="true"></i> Facebook
                             </a>
-                            <a class="dropdown-item nav-link text-info" target="_blank" href="https://www.instagram.com/sonline_services">Instagram
+                            <a class="dropdown-item nav-link text-info" target="_blank" href="https://www.instagram.com/sonline_services">
+                                <i class="fa fa-instagram" aria-hidden="true"></i> Instagram
                             </a>
                         </div>
                     </li>
