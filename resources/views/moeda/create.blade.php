@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="referenciabancaria" class="text-dark">Referencia Bancária</label>
+                            <label for="referenciabancaria" class="text-dark">IBAN</label>
                             <input type="text" class="form-control" value="{{$sistema->iban}}" id="referenciabancaria" readonly>
                         </div>
 
@@ -158,7 +158,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Valor a pagar</span>
                             </div>
-                            <input type="text" class="form-control" value="AOA + Montante x 200 kz " id="valorPagar" readonly>
+                            <input type="text" class="form-control" id="valorPagar" readonly>
                           </div>
 
                     </div>
