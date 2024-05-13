@@ -429,7 +429,7 @@
           <div class="widget">
             <h3 class="block-title">Endereço</h3>
             <ul class="menu" style="list-style:none">
-              <li><a href="javascript:void()"><i class="fa fa-arrow-right" aria-hidden="true"></i> Cacuaco, Centralidade do sequele, bloco 4, prédio 7, junto à empresa Eco-fluxo</a></li>
+              <li><a href="javascript:void()">Cacuaco - Centralidade do sequele, Bloco 4, Prédio 7, Junto à empresa Eco-fluxo</a></li>
             </ul>
           </div>
         </div>
@@ -442,13 +442,12 @@
         <div class="row">
           <div class="col-md-12">
             <div class="site-info float-left">
-              <p>Todos os direitos reservados, produzido pela PetroHost &copy; 2024 - Sonline Service </p>
+              <p>Todos os direitos reservados, produzido pela <a href="https://www.petrohost.ao/" target="_blank"><strong>PetroHost</strong></a> &copy; 2024 - Sonline Service </p>
             </div>              
             <div class="float-right">  
               <ul class="footer-social">
                 <li><a class="facebook" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6" target="_blank"><i class="lni-facebook-filled"></i></a></li>
                 <li><a class="twitter" href="https://www.instagram.com/sonline_services"  target="_blank"><i class="lni lni-instagram-original"></i></a></li>
-                <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
                 <li><a class="google-plus" href="javascript:void()"><i class="lni-google-plus"></i></a></li>
               </ul> 
             </div>
