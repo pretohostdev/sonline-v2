@@ -179,6 +179,7 @@
                                                     <thead class="bg-secondary">
                                                         <tr style="color:white">
                                                             <th scope="col">Nome</th>
+                                                            <th scope="col">Tipo da conta</th>
                                                             <th scope="col">Data da solicitação</th>
                                                         </tr>
                                                     </thead>
@@ -186,6 +187,7 @@
                                                         @foreach ($conta->listaSolicitacaoConta as $c)
                                                         <tr>
                                                             <td>{{ $conta->nome }}</td>
+                                                            <td>{{ $conta->tipo }}</td>
                                                             <td>{{ $c->data  }}</td>
                                                         </tr>
                                                         @endforeach

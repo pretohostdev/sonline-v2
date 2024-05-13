@@ -69,7 +69,7 @@
                                 <thead class="bg-gradient text-light">
                                     <tr>
                                         <th>Nome</th>
-                                        <th>Email</th>
+                                        <th>Tipo de conta</th>
                                         <th>Data de solicitação</th>
                                         <th>Ver comprovativo</th>
                                         <th>Estado</th>
@@ -82,7 +82,7 @@
                                     
                                         <tr data-id="{{ $cliente->id }}">
                                             <td class="text-dark">{{$cliente->nome}}</td>
-                                            <td class="text-dark">{{$cliente->email}}</td>
+                                            <td class="text-dark">{{$conta->tipo}}</td>
                                             <td class="text-dark">{{$conta->data}}</td>
                                             <td class="text-dark">
                                                 <a href="{{route('verDocumentoConta', $conta->id)}}" class="text-info">Ver</a>

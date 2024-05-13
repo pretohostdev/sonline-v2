@@ -132,7 +132,7 @@
                         </div>
                         <p class="text-dark"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
                             segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
-                            praticidade de fazer suas compras online conosco. Como filia da amazon, trazemos para si os melhores produtofa-spinpara desfrutares</p>
+                            praticidade de fazer suas compras online conosco. Como filial da amazon, trazemos para si os melhores produtos do mercado.</p>
                         <a href="{{route('login')}}" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Solicitar um serviço</a>
                     </div>                
                 </div>
@@ -464,10 +464,5 @@
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
     <script src="{{asset('assets/js/animacao.js')}}"></script>
-
-    <!--====== wow js ======-->
-    <script src="assets/js/wow.min.js"></script>
-   
-    
 @endpush
 

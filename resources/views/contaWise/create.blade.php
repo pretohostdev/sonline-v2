@@ -55,7 +55,7 @@
         </div>
 
     <div class="row mt-2">
-        <div class="col-lg-5">
+        <div class="col-lg-6">
             <div class="card card-statistics">
                 <div class="card-body">
 
@@ -110,9 +110,9 @@
             </div>
         </div>
 
-        <div class="col-xl-7">
+        <div class="col-xl-6">
 
-                <img src="{{asset('assets/img/cartao.png')}}" alt="" style="border-top-left-radius:50px; border-bottom-left-radius:50px">
+                <img src="{{asset('assets/img/visa.png')}}" alt="" style="border-top-left-radius:50px; border-bottom-left-radius:50px">
 
         </div>
 

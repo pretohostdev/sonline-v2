@@ -161,14 +161,14 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Taxa do dolar</span>
                             </div>
-                            <input type="text" class="form-control" value=" {{"1 USD -> Câmbio +". $sistema->taxa." kz"}}"  id="taxaDolar" readonly>
+                            <input type="text" class="form-control" value=" {{"1 USD - Câmbio +". $sistema->taxa." kz"}}"  id="taxaDolar" readonly>
                           </div>
 
                           <div class="input-group mb-3" id="divTaxaEuro">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Taxa do Euro</span>
                             </div>
-                            <input type="text" class="form-control" value="{{"1 USD -> Câmbio +". $sistema->taxa." kz"}}" readonly>
+                            <input type="text" class="form-control" value="{{"1 USD - Câmbio +". $sistema->taxa." kz"}}" readonly>
                           </div>
 
                           <input type="hidden" value="{{$sistema->taxa}}" id="taxa">

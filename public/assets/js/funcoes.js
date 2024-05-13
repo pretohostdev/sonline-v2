@@ -230,7 +230,12 @@ async function converte(moedaBase, moedaPretendida, qtd) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        return data.genericResponse[1].montanteConvertido;
+        if(JSON.stringify(data) === '{}'){
+            return "indisponivel de momento, tente mais tarde";
+        }
+        else{
+            return data.genericResponse[1].montanteConvertido;
+        }
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
         throw error; 
