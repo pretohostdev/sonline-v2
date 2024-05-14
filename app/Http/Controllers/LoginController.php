@@ -46,6 +46,7 @@ class LoginController extends Controller
                 if(!Sistema::find(1)){
                     Sistema::create([
                         'iban' => '0001',
+                        'taxa' => 200,
                         'precoConta'=> 20000, 
                         'precoConsultoria' => 700000,
                         'precoAgendamentoDocumento' => 5000,
@@ -59,6 +60,7 @@ class LoginController extends Controller
                 if(!Sistema::find(1)){
                     Sistema::create([
                         'iban' => '0001',
+                        'taxa' => 200,
                         'precoConta'=> 20000, 
                         'precoConsultoria' => 700000,
                         'precoAgendamentoDocumento' => 5000,

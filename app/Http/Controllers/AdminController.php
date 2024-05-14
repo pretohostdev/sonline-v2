@@ -142,12 +142,6 @@ class AdminController extends Controller
 
         return view('admin.redirecionamento.show', ['redirecionamentos'=> $redirecionamentos, 'cliente'=> $cliente]);
     }
-
-    
-
-    
-
-
     //
     function listarAgendamentos(){
         // Clientes que solicitram agendamento
@@ -172,9 +166,6 @@ class AdminController extends Controller
 
         return view('admin.agendamento.show', ['agendamentos'=> $agendamentos, 'cliente'=> $cliente]);
     }
- 
-
-
 
     function listarProdutos(){
 
@@ -320,10 +311,6 @@ class AdminController extends Controller
         $conta = ContaWise::find($id);
         return view('admin.conta.verDocumentoConta', compact('conta'));
     }
-
-
-
-
 
     /**
      * Show the form for creating a new resource.

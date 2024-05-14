@@ -124,8 +124,13 @@
                                         <form action="admin.produto" method="POST" id="formSistema">
                                             @csrf
                                             <div class="form-group">
-                                                <label for="iban" class="text-dark">Iban:</label>
+                                                <label for="iban" class="text-dark">Iban</label>
                                                 <input type="text" class="form-control" id="iban" value="{{$sistema->iban}}" name="ibanSistema">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="taxa" class="text-dark">Taxa Câmbio</label>
+                                                <input type="text" class="form-control" id="taxa" value="{{$sistema->taxa}}" name="taxaCambio">
                                             </div>
 
                                             <div class="form-group">
@@ -182,6 +187,7 @@
                 atualizadoErro.style.display = "none";
                 
                 var iban = document.getElementById('iban').value;
+                var taxa = document.getElementById('taxa').value;
                 var precoConta = document.getElementById('precoConta').value;
                 var precoVisto = document.getElementById('precoVisto').value;
                 var precoDocumento = document.getElementById('precoDocumento').value;
@@ -189,6 +195,7 @@
     
                 const sistema = {
                     iban: iban,
+                    taxa: taxa,
                     precoConta: precoConta,
                     precoDocumento : precoDocumento,
                     precoVisto : precoVisto,

@@ -49,7 +49,7 @@
                             <div class="col-md-8 text-center">
                                 <div class="error-text">
                                     <h3 class="m-t-30 text-light">ACESSO NEGADO!</h3>
-                                    <p class="text-info" style="font-size: 12pt; font-family:sans-serif">Você não tem permissão para acessar essa página, ela é usada apenas para pessoas autorizadas.</p>
+                                    <p class="text-info" style="font-size: 12pt; font-family:sans-serif">Você não tem permissão para acessar essa página.</p>
                                     <a href="{{route('login')}}" class="btn btn-round btn-outline-light mt-3">Fazer login</a>
                                 </div>
                             </div>

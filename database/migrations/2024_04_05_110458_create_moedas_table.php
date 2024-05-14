@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('data');
+            $table->double('valorPagar');
             $table->string('documento');
             $table->string('montante');
             $table->enum('estado', ['0', '1', '2']); 

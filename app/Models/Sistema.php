@@ -14,6 +14,7 @@ class Sistema extends Model
     protected $fillable = [
         'precoConta',
         'iban',
+        'taxa',
         'precoAgendamentoDocumento',
         'precoAgendamentoVisto',
         'precoConsultoria'

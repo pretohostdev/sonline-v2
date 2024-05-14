@@ -16,6 +16,7 @@ class Moeda extends Model
         'nome', 
         'data',
         'estado',
+        'valorPagar',
         'documento',
         'montante',
 

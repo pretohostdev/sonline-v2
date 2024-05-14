@@ -57,6 +57,7 @@ class SistemaController extends Controller
         $sistema = Sistema::find(1);
 
         $sistema->iban = $dados['iban'];
+        $sistema->taxa = $dados['taxa'];
         $sistema->precoConta = $dados['precoConta'];
         $sistema->precoAgendamentoDocumento =  $dados['precoDocumento'];
         $sistema->precoAgendamentoVisto = $dados['precoVisto'];

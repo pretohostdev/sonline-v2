@@ -55,7 +55,7 @@
         </div>
 
     <div class="row mt-2">
-        <div class="col-xl-7">
+        <div class="col-lg-5">
             <div class="card card-statistics">
                 <div class="card-body">
 
@@ -99,9 +99,9 @@
             </div>
         </div>
 
-        <div class="col-xl-5">
+        <div class="col-xl-7">
 
-                {{-- Imagem --}}
+                <img src="{{asset('assets/img/cartao.png')}}" alt="">
 
         </div>
 

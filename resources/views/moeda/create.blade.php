@@ -82,7 +82,7 @@
 
                         <div class="form-group">
                             <label for="montante" class="text-dark">Montante</label>
-                            <input type="number" class="form-control" value="{{old('montante')}}" name="montante" id="montante" oninput="conversaoMoeda(id)">
+                            <input type="number" class="form-control" name="montante" id="montante" oninput="conversaoMoeda(id)">
                         </div>
 
                         <div class="form-group">
@@ -123,43 +123,55 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-light">AOA</span>
                             </div>
-                            <input type="text" class="form-control" id="inputKwanza" oninput="conversaoMoeda(id)">
+                                <input type="text" class="form-control" id="inputKwanza" oninput="conversaoMoeda(id)">
+                                <div class="spinner-border text-danger spinner-border-sm" role="status" id="spinnerInputKwanza">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
                         </div>
+                        
 
-                          <div class="input-group mb-3" id="divDolar">
+                        <div class="input-group mb-3" id="divDolar">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-gradient text-light">USD</span>
                             </div>
                             <input type="text" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
-                          </div>
+                            <div class="spinner-border text-primary spinner-border-sm" role="status" id="spinnerInputDolar">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
 
                           <div class="input-group mb-3" id="divEuro">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-success text-light">EUR</span>
                             </div>
                             <input type="text" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
-                          </div>
+                            <div class="spinner-border text-success spinner-border-sm" role="status" id="spinnerInputEuro">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
 
                           <div class="input-group mb-3" id="divTaxaDolar">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Taxa do dolar</span>
                             </div>
-                            <input type="text" class="form-control" value="1 USD -> Câmbio + 200 kz" id="taxaDolar" readonly>
+                            <input type="text" class="form-control" value=" {{"1 USD -> Câmbio +". $sistema->taxa." kz"}}"  id="taxaDolar" readonly>
                           </div>
 
                           <div class="input-group mb-3" id="divTaxaEuro">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Taxa do Euro</span>
                             </div>
-                            <input type="text" class="form-control" value="1 EURO -> Câmbio + 200 kz" id="taxaEuro" readonly>
+                            <input type="text" class="form-control" value="{{"1 USD -> Câmbio +". $sistema->taxa." kz"}}" readonly>
                           </div>
 
                           <div class="input-group mb-3" id="divValorPagar">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Valor a pagar</span>
                             </div>
-                            <input type="text" class="form-control" id="valorPagar" readonly>
+                            <input type="text" class="form-control" id="valorPagar" name="valorPagar" readonly>
                           </div>
+
+                          <input type="hidden" value="{{$sistema->taxa}}">
 
                     </div>
                 </div>
