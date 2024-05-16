@@ -16,7 +16,7 @@
             <div class="navigation d-flex">
                 <ul class="navbar-nav nav-left">
                     <li class="nav-item">
-                        <a class="nav-link" style="color:#007bff" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links Rápidos
+                        <a class="nav-link" style="color:#27282a; font-weight: bolder;" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LINKS RÁPIDOS
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
@@ -74,7 +74,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="javascript:void(0)" class="nav-link" style="color: #007bff" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="_blank">Social
+                        <a href="javascript:void(0)" class="nav-link" style="color: #27282a;  font-weight: bolder;" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="_blank">SOCIAL
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
@@ -86,49 +86,46 @@
                             </a>
                         </div>
                     </li>
-                    <li class="nav-item full-screen d-none d-lg-block" id="btnFullscreen">
-                        <a href="javascript:void(0)" class="nav-link expand">
-                            <i class="icon-size-fullscreen"></i>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav nav-right ml-auto" id="ul_nav">
                     
-                    <li class="nav-item mr-1">
+                </ul>
+
+                <ul class="navbar-nav ml-auto bg-dange" id="ul_nav">
+                    
+                    <li class="nav-item">
                         <a class="nav-link" href="#inicio">
-                            Início
+                            <i class="fa fa-home" aria-hidden="true"></i> INÍCIO
                         </a>
                     </li>
 
-                    <li class="nav-item mr-4">
+                    <li class="nav-item">
                         <a class="nav-link" href="#servicos">
-                            Serviços
+                            <i class="fa fa-tasks" aria-hidden="true"></i> SERVIÇOS
                         </a>
                     </li>
 
-                    <li class="nav-item text-primary mr-3">
+                    <li class="nav-item">
                         <a class="nav-link" href="#produtos" role="button">
-                            Produto
+                            <i class="fa fa-amazon" aria-hidden="true"></i> PRODUTOS
                         </a>
                     </li>
 
-                    <li class="nav-item text-primary" style="margin-right:50px">
+                    <li class="nav-item">
                         <a class="nav-link" href="#testemunho" role="button">
-                            Testemunho
+                            <i class="fa fa-users" aria-hidden="true"></i> TESTEMUNHO
                         </a>
                     </li>
 
-                    <li class="nav-item mr-4">
+                    <li class="nav-item">
                         <a class="nav-link " href="#contacto" id="">
-                            Contacto
+                            <i class="fa fa-phone" aria-hidden="true"></i>  CONTACTOS
                         </a>
                     </li>
                 </ul>
-                
-                <form class="form-inline my-2 mr-3 btnClienteSair">
-                    <i class="ti ti-2x ti-user mr-1" style="color:#007bff"></i>
-                    <a href="{{route('login')}}" class="my-2" style="color:#007bff">
-                        Entrar
+                {{-- #007bff --}}
+                <form class="form-inline my-2 mr-3 btnClienteSair"> 
+                    <i class="ti ti-2x ti-user mr-1" style="color:#27282a;  font-weight: bolder;"></i>
+                    <a href="{{route('login')}}" class="my-2" style="color:#27282a;  font-weight: bolder;">
+                        ENTRAR
                     </a>
 
             </div>
