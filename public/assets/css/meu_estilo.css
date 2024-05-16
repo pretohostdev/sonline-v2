@@ -15,9 +15,8 @@ visibility: hidden;
 #ul_nav li a {
 padding-bottom: 6px;
     position: relative;
-    /* color: #27282a; */
-        color: #2779a7;
-        font-weight: bolder;
+    color: #2779a7;
+    /* font-weight: bolder; */
 }
 
 #ul_nav li a::after {
@@ -33,6 +32,17 @@ content: " ";
 #ul_nav li a:hover::after {
 width: 60px;
 }
+
+ /* Alterar estilo para mobile */
+ @media screen and (max-width: 575px) {
+   
+    /* .meucarrocel{
+        margin-top: 100px;
+        border: 1px solid black;
+    } */
+    
+  }
+
 
 /* Alterando a cor do ícone "prev" do Carousel */
 .carousel-control-prev-icon {
@@ -157,7 +167,7 @@ white-space: nowrap;
 .lista-horizontal ul {
 list-style-type: none;
 padding: 0;
-    margin: 0;
+margin: 0;
 }
 .lista-horizontal ul li {
 display: inline-block;

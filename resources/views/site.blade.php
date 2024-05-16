@@ -12,6 +12,8 @@
 <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
+
+
  <!--====== Animate CSS ======-->
  <link rel="stylesheet" href="assets/css/animate.css">
 
@@ -353,17 +355,22 @@
                     @foreach ($produtos as $produto )
                    
                     <li>
-                        <div class="card rounded" style="width: 19rem;">
+                      {{-- style="width: 16rem;" --}}
+                        <div class="card rounded" style="width:17rem">
                             @if ($produto->imagem)
-                              <div class="card-header" style="height: 200px">
-                                <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" height="100%" alt="telefone">
+                              <div class="card-header d-flex" style="height: 170px; width:170px;">
+                                <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" width="100%" height="100%" alt="telefone">
                               </div>
                             @endif
-                            <div class="card-body rounded" style="background-color:#fff">
-                              <h5 class="card-title text-dark">{{$produto->nome}}</h5>
-                              <p class="card-text text-dark" style="width: inherit">{{$produto->preco}}</p>
-                              <p class="text-dark">Descrição - {{$produto->descricao}}</p>
-                              <a href="{{$produto->link}}" target="_blank" class="btn btn-block text-light mt-2" style="background-color:#044370">Comprar</a>
+                            <div class="card-body bg-dark" style="border-bottom-right-radius:20px; border-bottom-left-radius:20px;">
+                              <h5 class="card-title text-light">{{$produto->nome}}</h5>
+                              <p class="card-text text-light" style="width: inherit">{{$produto->preco}}</p>
+                              <div class="row">
+                                <div class="col-12" style="overflow: auto">
+                                  <p class="text-light" style="font-size: 9pt;">Descrição - {{$produto->descricao}}</p>
+                                </div>
+                              </div>
+                              <a href="{{$produto->link}}" target="_blank" class="btn btn-block btn-light mt-2">Comprar</a>
                             </div>
                           </div>
                       </li>
@@ -464,5 +471,5 @@
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
     <script src="{{asset('assets/js/animacao.js')}}"></script>
-@endpush
+@endpush 
 

@@ -104,7 +104,7 @@ Editar produto
                 <label for="imagem">Imagem do produto</label>
                 <img src="{{asset('assets/img/jpg.png')}}" alt="">
                 <img src="{{asset('assets/img/png.png')}}" alt="">
-                <input type="text" value="A imagem não poderá ser editada, se desejar apaga..." class="form-control" name="imagem" readonly>
+                <input type="text" value="A imagem não poderá ser editada, se desejar apaga..." class="form-control mt-2" name="imagem" readonly>
             </div>
             
             <button type="submit" class="btn bg-gradient text-light">Atualizar produto</button>

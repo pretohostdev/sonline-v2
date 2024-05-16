@@ -11,12 +11,11 @@
             <i class="fe fe-menu"></i>
         </button>
 
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navigation d-flex">
+            <div class="navigation d-flex bg-white">
                 <ul class="navbar-nav nav-left">
                     <li class="nav-item">
-                        <a class="nav-link" style="color:#2779a7; font-weight: bolder;" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LINKS RÁPIDOS
+                        <a class="nav-link" style="color:#2779a7;" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LINKS RÁPIDOS
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
@@ -28,7 +27,7 @@
                                     <h4><a href="{{route('login')}}" class="text-light"><i class="fa fa-sign-in" aria-hidden="true"></i> Entrar</a></h4>
                                 </div>
 
-                                <div class="col-sm-3 p-20 bg-dark">
+                                <div class="col-sm-4 p-20 bg-dark">
                                     <h4 class="text-light">Contactos</h4>
                                     <ul>
                                         <li class="nav-link text-light">
@@ -45,7 +44,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-2 p-20 bg-dark">
+                                <div class="col-sm-4 p-20 bg-dark">
                                     <h4 class="text-light"><i class="fa fa-map-marker" aria-hidden="true"></i> Endereço</h4>
                                     <ul>
                                         <li class="nav-link text-light">
@@ -74,7 +73,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="javascript:void(0)" class="nav-link" style="color: #2779a7;  font-weight: bolder;" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="_blank">SOCIAL
+                        <a href="javascript:void(0)" class="nav-link" style="color: #2779a7;" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="_blank">SOCIAL
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
@@ -89,47 +88,62 @@
                     
                 </ul>
 
-                <ul class="navbar-nav ml-auto bg-dange" id="ul_nav">
+                <ul class="navbar-nav ml-aut" id="ul_nav">
                     
                     <li class="nav-item">
                         <a class="nav-link" href="#inicio">
-                            <i class="fa fa-home" aria-hidden="true"></i> INÍCIO
+                            <i class="fa fa-home" aria-hidden="true"></i> 
+                            Início
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="#servicos">
-                            <i class="fa fa-tasks" aria-hidden="true"></i> SERVIÇOS
+                            <i class="fa fa-cubes" aria-hidden="true"></i>
+                            Serviços
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="#produtos" role="button">
-                            <i class="fa fa-amazon" aria-hidden="true"></i> PRODUTOS
+                            <i class="fa fa-amazon" aria-hidden="true"></i> 
+                            Produtos
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="#testemunho" role="button">
-                            <i class="fa fa-users" aria-hidden="true"></i> TESTEMUNHO
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            Testemunho
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="#contacto">
-                            <i class="fa fa-phone" aria-hidden="true"></i>  CONTACTOS
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            Contactos
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('login')}}" style="font-weight: bolder;">
+                            <i class="ti ti-2x ti-user" aria-hidden="true"></i>
+                            Entrar
+                        </a>
+                    </li>
+
                 </ul>
-                {{-- #007bff --}}
-                <form class="form-inline my-2 mr-3 btnClienteSair"> 
+
+                {{-- <form class="form-inline my-2 mr-3 btnClienteSair"> 
                     <i class="ti ti-2x ti-user mr-1" style="color:#2779a7;  font-weight: bolder;"></i>
                     <a href="{{route('login')}}" class="my-2" style="color:#2779a7;  font-weight: bolder;">
-                        ENTRAR
+                        Entrar
                     </a>
-
+                </form> --}}
             </div>
         </div>
     </nav> 
 
 </header>
+
+

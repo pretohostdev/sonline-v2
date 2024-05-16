@@ -153,7 +153,7 @@
                                                     @if (isset($redirecionamento->id))
                                                         
                                                     <ul class="list-group">
-                                                        <li class="list-group-item text-dark">Valor a pagar: {{ $redirecionamento->valor }} € </li>
+                                                        <li class="list-group-item text-dark">Valor a pagar: <strong>{{ $redirecionamento->valor }}€</strong></li>
                                                         <li class="list-group-item text-dark">País de origem do produto: <strong>{{ $redirecionamento->paisOrigem }}</strong></strong> </li>
                                                         <li class="list-group-item text-dark">Data de destino do produto: <strong>{{ $redirecionamento->paisDestino }}</strong></li>
                                                         <li class="list-group-item text-dark">Data do redirecionamento:<strong>{{ $redirecionamento->data }}</strong></li>
