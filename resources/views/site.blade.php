@@ -36,9 +36,9 @@
             <div class="col-lg-12">
               <div class="features-text section-header text-center">  
                 <div>   
-                  <h2 class="section-title tituloAnimado" style="font-family:Roboto" id="servicos">Nossos Serviços</h2>
+                  <h2 class="section-title tituloAnimado" style="font-family:Roboto; color:#2779a7" id="servicos">NOSSOS SERVIÇOS</h2>
                   <div class="desc-text">
-                    <p class="text-secondary">A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
+                    <p style="color:#2779a7">A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
                   </div>
                 </div> 
               </div>
@@ -51,7 +51,7 @@
                    <i class="lni lni-coin"></i>
                  </div>
                  <div class="feature-info float-left">
-                   <h4>Divisas</h4>
+                   <h4 style="color:#2779a7">Divisas</h4>
                    <p>Facilitamos a compra e venda de moedas estrangeiras,<br> garantindo que você tenha acesso às melhores <br> taxas de câmbio e uma transação perfeita</p>
                  </div>
               </div>
@@ -63,7 +63,7 @@
                    <i class="lni lni-visa"></i>
                  </div>
                  <div class="feature-info float-left">
-                   <h4>Abertura de conta</h4>
+                   <h4 style="color:#2779a7">Abertura de conta</h4>
                    <p>Simplificamos o processo de abertura de contas <br> internacionais como a Wise, permitindo que você<br> gerencie suas finanças globais com facilidade.</p>
                  </div>
               </div>
@@ -75,7 +75,7 @@
                     <i class="lni lni-producthunt"></i>
                  </div>
                  <div class="feature-info float-left">
-                   <h4>Redirecionamentos</h4>
+                   <h4 style="color:#2779a7">Redirecionamentos</h4>
                    <p>Tornamos suas compras online internacionais<br>ainda mais acessíveis, oferecendo serviços de <br>redirecionamento de produtos..</p>
                  </div>
               </div>
@@ -87,7 +87,7 @@
                     <i class="lni-briefcase"></i>
                   </div>
                   <div class="feature-info float-left">
-                    <h4>Agendamento de visto</h4>
+                    <h4 style="color:#2779a7">Agendamento de visto</h4>
                     <p>Eliminamos a complexidade do processo de  obtenção de <br> vistos, guiando-o através de cada etapa com expertise <br> e para o deixá-lo mais confiante.</p>
                   </div>
                </div>
@@ -99,7 +99,7 @@
                    <i class="lni-reload"></i>
                  </div>
                  <div class="feature-info float-left">
-                   <h4>Outros Agendamentos</h4>
+                   <h4 style="color:#2779a7">Outros Agendamentos</h4>
                    <p>Além do agendamento mencionado, a Sonline service <br> lida com vários outros serviços de caracter online<br> por isso recomendamos entrar em contacto.
                  </div>
               </div>
@@ -112,7 +112,7 @@
                     <i class="lni lni-amazon-original"></i>
                  </div>
                  <div class="feature-info float-left">
-                   <h4>Produtos Amazon</h4>
+                   <h4 style="color:#2779a7">Produtos Amazon</h4>
                    <p>Como afiliados da Amazon, temos a oportunidade de<br> compartilhar produtos de qualidade com nossos <br>seguidores, ganhando comissões por isso.</p>
                  </div>
               </div>
@@ -121,19 +121,19 @@
         </div>
       </section>
     {{-- <hr> --}}
-    <section class="about-area pt-70 mt-2">
-        <div class="container" style="background-color: #F0F8FF; margin-top:4px; border-top-left-radius:20px;">
+    <section class="about-area pt-10">
+        <div class="container" style="backgroun-color: #F0F8FF; margin-top:4px; border-top-left-radius:20px;border-top-right-radius:20px;">
             <div class="row">
                 <div class="col-lg-6 d-flex align-items-center">
                     <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="section-title">
                             <div class="line"></div>
-                            <h3 class="title tituloAnimado"><span>Somos a filial da</span> amazon</h3>
+                            <h3 class="title tituloAnimado" style="color:#2779a7"><span>Somos a filial da</span> Amazon</h3>
                         </div>
                         <p class="text-dark"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
                             segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
                             praticidade de fazer suas compras online conosco. Como filial da amazon, trazemos para si os melhores produtos do mercado.</p>
-                        <a href="{{route('login')}}" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Solicitar um serviço</a>
+                        <a href="#produtos" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Ver Produtos</a>
                     </div>                
                 </div>
                 <div class="col-lg-6">
@@ -143,22 +143,22 @@
                 </div>
             </div> 
         </div> 
-        <div class="about-shape-1">
+        {{-- <div class="about-shape-1">
             <img src="{{asset('assets/img/about-shape-1.svg')}}" alt="shape">
-        </div>
+        </div> --}}
     </section>
     </div>
 
     {{-- Seção de testemunho --}}
-    <section id="testimonial" class="testimonial-area about-area pt-15">
-        <div class="about-shape-2">
+    <section id="testimonial" class="testimonial-area about-area pt-15" style="background-color: #F0F8FF">
+        {{-- <div class="about-shape-2">
             <img src="{{asset('assets/img/about-shape-2.svg')}}" alt="shape">
-        </div>
+        </div> --}}
         <div class="container">
-            <div class="row justify-content-right">
-                <div class="col-lg-5">
-                    <div class="section-title pb-40">
-                        <h3 class="title tituloAnimado" id="testemunho">Testemunho <span>dos nossos clientes</span></h3>
+            <div class="row mt-5">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <div class="section-title">
+                        <h3 class="tituloAnimado" id="testemunho" style="color:#2779a7; margin-top:50px;">TESTEMUNHO DE CLIENTES</h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -269,7 +269,7 @@
         <div class="col-lg-12">
             <div class="text-center">
                 <div class="section-title text-center pb-40">
-                    <h3 class="slideShow"><i class="fa fa-heart-o text-danger" aria-hidden="true"></i> LINK DE AFILIADO <i class="fa fa-heart-o text-danger" aria-hidden="true"></i></h3>
+                    <h3 class="slideShow" style="color:#2779a7"><i class="fa fa-heart-o text-danger" aria-hidden="true"></i> LINK DE AFILIADO <i class="fa fa-heart-o text-danger" aria-hidden="true"></i></h3>
                         <hr>
                 </div>
             </div>
@@ -285,7 +285,7 @@
             <div class="tab nav-border-bottom">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a style="font-size:13pt;" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
+                        <a style="font-size:13pt" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
                     </li>
                     <li class="nav-item">
                         <a style="font-size:13pt;" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
@@ -342,7 +342,7 @@
     <div class="row mt-4 mb-2">
             <div class="col-lg-12 d-flex justify-content-center align-items-center" style="background-color:#062f4f">
                 <div>
-                    <h4  class="text-light m-0 p-2" id="produtos">Lista de produtos Amazon</h3>
+                    <h3  class="text-light m-0 p-4" id="produtos">Lista de produtos Amazon</h3>
                 </div>
             </div>
     </div>

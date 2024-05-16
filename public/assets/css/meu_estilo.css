@@ -15,7 +15,8 @@ visibility: hidden;
 #ul_nav li a {
 padding-bottom: 6px;
     position: relative;
-    color: #27282a;
+    /* color: #27282a; */
+        color: #2779a7;
         font-weight: bolder;
 }
 
@@ -280,7 +281,6 @@ padding: 30px;
     transition: all .8s ease;
 }
 #features .feature-item .feature-icon {
-background: skyblue;
     width: 100px;
     height: 100px;
     margin: 0px auto;
@@ -729,4 +729,5 @@ article:nth-of-type(2) {
 }
 article:nth-of-type(3) {
     height: 100px;
+    background-color: #F0F8FF;
 }

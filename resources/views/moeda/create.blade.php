@@ -118,9 +118,9 @@
         <div class="col-lg-6">
             
             <div class="card card-statistics rounded">
-                <div class="card-header bg-gradient">
+                <div class="card-header">
                     <div class="card-heading">
-                        <h4 class="card-title text-light">CONVERSÃO</h4>
+                        <h4 class="card-title text-secondary text-center">CALCULADORA DE CONVERSÃO DE MOEDA</h4>
                     </div>
                 </div>
                 <div class="card-body">

@@ -110,7 +110,7 @@
 
         <div class="col-xl-7">
             <img src="{{asset('assets/img/consultaria-2.png')}}" alt="consultoria" style="border-bottom-left-radius: 50px; border-top-right-radius: 
-            50px;">
+            50px; height:460px;">
         </div>
 
 
