@@ -18,21 +18,21 @@
             <div class="navigation d-flex">
                 <ul class="navbar-nav nav-left">
                     <li class="nav-item">
-                        <a href="javascript:void(0)" class="nav-link sidebar-toggle text-primary">
+                        <a href="javascript:void(0)" class="nav-link sidebar-toggle" style="color:#2779a7">
                             <i class="fe fe-menu"></i>
                         </a>
                     </li>
                     
                     <li class="nav-item dropdown">
-                        <a href="javascript:void(0)" class="nav-link text-primary" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social
+                        <a href="javascript:void(0)" class="nav-link " style="color:#2779a7;" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             
-                            <a class="dropdown-item nav-link text-primary" target="_blank" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6">
+                            <a class="dropdown-item nav-link " style="color:#2779a7;" target="_blank" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6">
                                 Facebook
                             </a>
-                            <a class="dropdown-item nav-link text-primary" target="_blank" href="https://www.instagram.com/sonline_services">Instagram
+                            <a class="dropdown-item nav-link " style="color:#2779a7;" target="_blank" href="https://www.instagram.com/sonline_services">Instagram
                             </a>
                         </div>
                     </li>
@@ -45,8 +45,8 @@
                 <ul class="navbar-nav nav-right ml-auto">
                    
                     <form class="form-inline my-2 mr-3 btnClienteSair">
-                        <i class="ti ti-2x ti-user mr-1 text-primary"></i>
-                        <a href="{{route('logout')}}" class="my-2 text-primary">
+                        <i class="ti ti-2x ti-user mr-1" style="color:#2779a7"></i>
+                        <a href="{{route('logout')}}" class="my-2" style="color:#2779a7">
                             Sair
                         </a>
                     </form>

@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 
     {{-- Font e Icones alternativa --}}
     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
@@ -56,7 +55,7 @@
 
     <div class="row mt-2">
 
-        <div class="col-xl-5">
+        <div class="col-lg-6">
             <div class="card card-statistics rounded">
                 <div class="card-body">
 
@@ -108,13 +107,9 @@
         </div>
 
 
-        <div class="col-xl-7">
-            <img src="{{asset('assets/img/consultaria-2.png')}}" alt="consultoria" style="border-bottom-left-radius: 50px; border-top-right-radius: 
-            50px; height:460px;">
+        <div class="col-lg-4">
+            <img src="{{asset('assets/img/agendamento.png')}}" alt="agendamento">
         </div>
-
-
-        
 
     </div>
     </div>

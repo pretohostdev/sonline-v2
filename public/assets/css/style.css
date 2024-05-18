@@ -348,16 +348,6 @@
             -webkit-appearance: none
         */
 
-                /* [type=search]::-webkit-search-cancel-button,
-        [type=search]::-webkit-search-decoration {
-            -webkit-appearance: none
-        */
-
-                /* ::-webkit-file-upload-button {
-            font: inherit;
-            -webkit-appearance: button
-        */
-
         output {
             display: inline-block
         }
@@ -5039,7 +5029,7 @@
         }
 
         .navbar-collapse {
-            flex-basis: 100%;
+            flex-basis: 100%; 
             flex-grow: 1;
             align-items: center;
         }
@@ -5050,7 +5040,7 @@
             line-height: 1;
             background-color: transparent;
             border: 1px solid transparent;
-            border-radius: .25rem
+            border-radius: .25rem;
         }
 
         .navbar-toggler:focus,
@@ -5107,7 +5097,7 @@
 
             .navbar-expand-xxs .navbar-collapse {
                 display: flex !important;
-                flex-basis: auto
+                flex-basis: auto;
             }
 
             .navbar-expand-xxs .navbar-toggler {
@@ -5150,7 +5140,7 @@
 
             .navbar-expand-xs .navbar-collapse {
                 display: flex !important;
-                flex-basis: auto
+                flex-basis: auto;
             }
 
             .navbar-expand-xs .navbar-toggler {
@@ -17909,14 +17899,14 @@
         }
 
         .sidebar-nav {
-            background: #212529
+            background: #212529;
         }
 
         .sidebar-nav ul {
             padding: 0;
             margin: 0;
             list-style: none;
-            background: #343a40
+            background: #343a40;
         }
 
         .sidebar-nav .metismenu {
@@ -21809,14 +21799,14 @@
         }
 
         .tab .nav.nav-tabs li a.active {
-            background: #8e54e9;
+            background: #1a0acf;
             color: #fff;
             border-color: transparent
         }
 
         .tab .nav.nav-tabs li a.active:focus,
         .tab .nav.nav-tabs li a.active:hover {
-            background: #8e54e9;
+            background: #1a0acf;
             color: #fff;
             border-color: transparent
         }
@@ -21833,15 +21823,15 @@
 
         .nav-border .nav.nav-tabs li a.active {
             color: #fff;
-            background: #8e54e9;
-            border-color: #8e54e9
+            background: #1a0acf;
+            border-color: #1a0acf
         }
 
         .nav-border .nav.nav-tabs li a.active:focus,
         .nav-border .nav.nav-tabs li a.active:hover {
             color: #fff;
-            background: #8e54e9;
-            border-color: #8e54e9
+            background: #1a0acf;
+            border-color: #1a0acf
         }
 
         .tab-border .nav.nav-tabs {
@@ -21849,7 +21839,7 @@
         }
 
         .tab-border .nav.nav-tabs li a.active {
-            color: #8e54e9;
+            color: #1a0acf;
             background: #fff !important;
             border-color: #eee;
             border-bottom: 1px solid #fff
@@ -21857,7 +21847,7 @@
 
         .tab-border .nav.nav-tabs li a.active:focus,
         .tab-border .nav.nav-tabs li a.active:hover {
-            color: #8e54e9;
+            color: #1a0acf;
             background: #fff !important;
             border-color: #eee;
             border-bottom: 1px solid #fff
@@ -21898,7 +21888,7 @@
         }
 
         .shadow .nav.nav-tabs li a.active {
-            color: #8e54e9;
+            color: #1a0acf;
             background: #fff !important;
             border-color: #eee;
             border-bottom: 0;
@@ -21909,7 +21899,7 @@
 
         .shadow .nav.nav-tabs li a.active:focus,
         .shadow .nav.nav-tabs li a.active:hover {
-            color: #8e54e9;
+            color: #1a0acf;
             background: #fff !important;
             border-color: #eee;
             border-bottom: 0;
@@ -21966,8 +21956,8 @@
 
         .tab.nav-bt .nav.nav-tabs li a.active {
             background: #fff;
-            border-top: 3px solid #8e54e9;
-            color: #8e54e9
+            border-top: 3px solid #1a0acf;
+            color: #1a0acf
         }
 
         .tab.nav-bt .nav.nav-tabs li a.active:first-child {
@@ -21998,9 +21988,9 @@
 
         .tab.nav-border-bottom .nav.nav-tabs li a.active,
         .tab.nav-border-bottom .nav.nav-tabs li a:hover {
-            border-color: #8e54e9;
+            border-color: #1a0acf;
             background: 0 0;
-            color: #8e54e9
+            color: #1a0acf
         }
 
         @media (max-width:575px) and (min-width:320px) {
@@ -22054,7 +22044,7 @@
 
         .nestable-contant .dd-handle:focus,
         .nestable-contant .dd-handle:hover {
-            color: #8e54e9
+            color: #1a0acf
         }
 
         .nestable-contant .dd3-content {
@@ -22063,12 +22053,12 @@
         }
 
         .nestable-contant .dd3-content:hover {
-            color: #8e54e9
+            color: #1a0acf
         }
 
         .nestable-contant #nestable2 .dd-handle {
-            background: #8e54e9;
-            border: 1px solid #8e54e9;
+            background: #1a0acf;
+            border: 1px solid #1a0acf;
             color: #fff
         }
 
@@ -22162,12 +22152,12 @@
         }
 
         .fc-state-active {
-            background: #8e54e9;
+            background: #1a0acf;
             color: #fff
         }
 
         .fc-today-button {
-            background: #8e54e9;
+            background: #1a0acf;
             color: #fff
         }
 
@@ -22193,9 +22183,9 @@
         }
 
         .fc-event-primary {
-            background: #8e54e9;
+            background: #1a0acf;
             background: rgba(142, 84, 233, .2) !important;
-            color: #8e54e9
+            color: #1a0acf
         }
 
         .fc-event-primary:before {

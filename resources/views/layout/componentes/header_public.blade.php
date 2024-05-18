@@ -4,12 +4,12 @@
     <nav class="navbar navbar-expand-md">
         <div class="navbar-header d-flex align-items-center bg-white"> 
             <a class="navbar-brand mt-2" href="javascript:void(0)">
-                <img src="{{asset('assets/img/logo.jpg')}}" class="img-fluid logo-desktop logo" alt="logo" style="width: 100px" />
+                <img src="{{asset('assets/img/logo.jpg')}}" class="img-fluid logo-desktop logo" alt="logo" style="width: 90px" />
             </a>
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fe fe-menu"></i>
-        </button>
+        </button> --}}
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navigation d-flex bg-white">
@@ -88,7 +88,7 @@
                     
                 </ul>
 
-                <ul class="navbar-nav ml-aut" id="ul_nav">
+                <ul class="navbar-nav nav-left ml-auto" id="ul_nav">
                     
                     <li class="nav-item">
                         <a class="nav-link" href="#inicio">
@@ -134,16 +134,16 @@
 
                 </ul>
 
-                {{-- <form class="form-inline my-2 mr-3 btnClienteSair"> 
-                    <i class="ti ti-2x ti-user mr-1" style="color:#2779a7;  font-weight: bolder;"></i>
-                    <a href="{{route('login')}}" class="my-2" style="color:#2779a7;  font-weight: bolder;">
-                        Entrar
-                    </a>
-                </form> --}}
+                
             </div>
         </div>
     </nav> 
 
 </header>
 
-
+{{-- <form class="form-inline my-2 mr-3 btnClienteSair"> 
+                    <i class="ti ti-2x ti-user mr-1" style="color:#2779a7;  font-weight: bolder;"></i>
+                    <a href="{{route('login')}}" class="my-2" style="color:#2779a7;  font-weight: bolder;">
+                        Entrar
+                    </a>
+                </form> --}}

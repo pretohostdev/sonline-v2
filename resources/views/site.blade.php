@@ -8,9 +8,9 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-<link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
 <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
+
 
 
 
@@ -153,9 +153,6 @@
 
     {{-- Seção de testemunho --}}
     <section id="testimonial" class="testimonial-area about-area pt-15" style="background-color: #F0F8FF">
-        {{-- <div class="about-shape-2">
-            <img src="{{asset('assets/img/about-shape-2.svg')}}" alt="shape">
-        </div> --}}
         <div class="container">
             <div class="row mt-5">
                 <div class="col-lg-12 d-flex justify-content-center">
@@ -253,7 +250,7 @@
                             </div>
                             <div class="author-content media-body">
                                 <h6 class="holder-name">Audilia Rufino</h6>
-                                <p class="text">Adevogada</p>
+                                <p class="text">Advogada</p>
                             </div>
                         </div>
                     </div> 
@@ -298,7 +295,7 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade py-3 active show" id="home-02" role="tabpanel" aria-labelledby="home-02-tab">
-                        <p class="text-dark" style="font-size: 12pt;">Um link de afiliado é um <b>URL único</b> atribuído a um afiliado que participa de um programa de marketing de 
+                        <p style="font-size: 12pt;">Um link de afiliado é um <b>URL único</b> atribuído a um afiliado que participa de um programa de marketing de 
                             afiliados. Esse tipo de link é usado para rastrear o tráfego e as vendas geradas por um afiliado 
                             específico. Quando um usuário clica em um link de afiliado e realiza uma ação desejada (como fazer 
                             uma compra ou preencher um formulário), o afiliado é creditado pela referência e pode receber uma 
@@ -306,7 +303,7 @@
                         </p>
                     </div>
                     <div class="tab-pane fade py-3" id="profile-02" role="tabpanel" aria-labelledby="profile-02-tab">
-                        <p class="text-dark" style="font-size: 12pt;">
+                        <p style="font-size: 12pt;">
                             Ser afiliado, significa ser um <b>parceiro comercial</b> de uma empresa
                             ou marca que oferece um programa de afiliados. Os afiliados promovem os produtos ou serviços dessa 
                             empresa em troca de uma comissão ou outra forma de compensação por vendas, tráfego ou ações específicas 
@@ -317,17 +314,21 @@
                         <p class="text-dark" style="font-size: 13pt">Tanto a empresa anunciante quanto o afiliado têm a oportunidade de ganhar de diferentes maneiras:</p>
                         <br>
                         <ul>
-                            <li class="text-dark" style="font-size: 12pt;">
-                                <b>Vendas direta</b>: Quando um cliente clicado por um afiliado realiza uma compra, a empresa afiliada recebe 
+                            <li>
+                              <p class="text-dark" style="font-size: 12pt;">
+                              <b>Vendas direta</b>: Quando um cliente clicado por um afiliado realiza uma compra, a empresa afiliada recebe 
                                 uma parte da receita da venda como comissão. Esse é o modelo mais comum de remuneração no marketing de 
                                 afiliados. A comissão pode ser uma porcentagem fixa do valor da venda ou um valor fixo por transação.
+                              </p>  
                             </li>
 
-                            <li class="text-dark" style="font-size: 12pt;">
+                            <li style="font-size: 12pt;">
+                              <p class="text-dark" style="font-size: 12pt;">
                                 <b>Tráfego qualificado</b>: Mesmo se o cliente não realizar uma compra imediata, a empresa afiliada pode ganhar 
                                 com o tráfego direcionado pelo afiliado. Por exemplo, se o cliente clicar no link de afiliado e se 
                                 inscrever para uma lista de e-mails ou preencher um formulário de lead, a empresa afiliada pode ganhar 
                                 uma comissão por cada lead gerado.
+                              </p>
                             </li>
                         </ul>
                     </div>
@@ -348,40 +349,44 @@
                 </div>
             </div>
     </div>
-   
-    <div class="row">
-            <div class="lista-horizontal" style="background-color:#F0F8FF">
+
+  <div class="row">
+    <div class="container">
+            <div class="lista-horizontal">
                 <ul>
                     @foreach ($produtos as $produto )
                    
                     <li>
-                      {{-- style="width: 16rem;" --}}
-                        <div class="card rounded" style="width:17rem">
-                            @if ($produto->imagem)
-                              <div class="card-header d-flex" style="height: 170px; width:170px;">
-                                <img src="{{url("storage/{$produto->imagem}") }}" class="card-img-top" width="100%" height="100%" alt="telefone">
-                              </div>
-                            @endif
-                            <div class="card-body bg-dark" style="border-bottom-right-radius:20px; border-bottom-left-radius:20px;">
-                              <h5 class="card-title text-light">{{$produto->nome}}</h5>
-                              <p class="card-text text-light" style="width: inherit">{{$produto->preco}}</p>
-                              <div class="row">
-                                <div class="col-12" style="overflow: auto">
-                                  <p class="text-light" style="font-size: 9pt;">Descrição - {{$produto->descricao}}</p>
-                                </div>
-                              </div>
-                              <a href="{{$produto->link}}" target="_blank" class="btn btn-block btn-light mt-2">Comprar</a>
-                            </div>
+                        <div class="card_produto">
+                          <img src="{{url("storage/{$produto->imagem}")}}" alt="Denim Jeans" style="width:300px; height:200px;">
+                          <h3 style="font-size: 30px; margin-top:20px;">{{$produto->nome}}</h3>
+                          <p class="text-center p_produto">{{$produto->descricao}}</p>
+                          <p class="price">{{$produto->preco}}</p>
+
+                          <ul class="ul_produto mt-4">
+                            <li>
+                              <i class="fa fa-star fa-2x fa-2x checked"></i>
+                              <i class="fa fa-star fa-2x checked"></i>
+                              <i class="fa fa-star fa-2x checked"></i>
+                              <i class="fa fa-star fa-2x checked"></i>
+                              <i class="fa fa-star fa-2x text-dark"></i>
+                            </li>
+                          </ul>
+                          <div class="card-footer">
+                            <a href="{{$produto->link}}" target="_blank" class="btn btn_produto mt-2">Comprar</a>
                           </div>
+                        </div>
+
                       </li>
                     @endforeach
                   
                 </ul>
               </div>
+            </div>
     </div>
 
     {{-- Consultoria --}}
-    <div class="row">
+    <div class="row mt-5">
       <article class="d-flex align-items-center justify-content-center">
         <div class="col-lg-6" style="height:200px">
           <h2 class="font-weight-bold tituloAnimado" style="color:white">Consultoria & <br>Acompanhamento de visto</h2> 

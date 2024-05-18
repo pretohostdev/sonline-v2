@@ -17,7 +17,7 @@
 </head>
 <body>
 
-     <div class="app_publico">
+     {{-- <div class="app_publico"> --}}
             <!-- Header do sistema --> 
             @yield('header')
             @include('layout.componentes.carrocel')
@@ -25,7 +25,7 @@
             @yield("corpo_publico")
 
             @yield('footer')
-     </div>
+     {{-- </div> --}}
 
      @stack('scripts')
     
