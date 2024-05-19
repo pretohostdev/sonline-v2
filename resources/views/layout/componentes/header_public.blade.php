@@ -15,7 +15,7 @@
             <div class="navigation d-flex bg-white">
                 <ul class="navbar-nav nav-left">
                     <li class="nav-item">
-                        <a class="nav-link" style="color:#2779a7;" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LINKS RÁPIDOS
+                        <a class="nav-link" style="color:#2779a7;" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ACESSO RÁPIDO
                             <i class="fe fe-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
