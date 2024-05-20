@@ -40,7 +40,6 @@
                                             <img src="{{asset('assets/img/logo.jpg')}}" class="logo" alt="">
                                         </div>
                                         <h1 class="mb-2 text-center">Sonline Service</h1>
-                                        <p class="text-center">Seja bem vindo novamente, por favor, faça o login.</p>
 
                                         @if ($errors->any())
                                             <div class="alert alert-danger">
