@@ -49,7 +49,7 @@
                                             <img src="{{asset('assets/img/logo.jpg')}}" class="logo" alt="logo da empresa">
                                         </div>   
 
-                                        <p class="text-center">Seja bem vindo, crie uma conta</p>
+                                        {{-- <p class="text-center">Seja bem vindo, crie uma conta</p> --}}
 
                                         <!-- Se houver erros de validação, exiba-os -->
                                         @if ($errors->any())
@@ -67,13 +67,13 @@
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label class="control-label">Primeiro Nome</label>
+                                                        <label class="control-label">Primeiro nome</label>
                                                         <input type="text" class="form-control" value="{{old('primeiroNome')}}" name="primeiroNome" id="primeiroNome" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label class="control-label">Último Nome</label>
+                                                        <label class="control-label">Último nome</label>
                                                         <input type="text" class="form-control" value="{{old('ultimoNome')}}" name="ultimoNome" id="ultimoNome" required>
                                                     </div>
                                                 </div>
@@ -106,7 +106,7 @@
                                                 <div class="col-12">
                                                     <div class="form-group mt-3">
                                                         <label class="control-label">Email</label>
-                                                        <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="{{old('email')}}" required>
+                                                        <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}" required>
                                                     </div>
                                                 </div>
                                                 <span id="emailMensagem" class="error-message"></span>
@@ -114,7 +114,7 @@
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Senha</label>
-                                                        <input type="password" class="form-control" placeholder="senha" name="password" id="password" value="{{old('password')}}" required>
+                                                        <input type="password" class="form-control" name="password" id="password" value="{{old('password')}}" required>
                                                     </div>
                                                 </div>
                                                 <span id="senhaMensagem" class="error-message"></span>
