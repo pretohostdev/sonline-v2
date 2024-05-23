@@ -68,7 +68,7 @@
                         @if(session('mensagem'))
                         <div class="alert bg-success text-light d-flex alert-dismissible fade show" role="alert">
                             {{ session('mensagem') }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="border-style: none; background:transparent">
                                 <i class="ti ti-close"></i>
                             </button>
                         </div>
@@ -104,8 +104,16 @@
                                                       
                                                     </a>
                                                     <div class="dropdown-menu">
-                                                      <a class="dropdown-item" href="{{route('admin.produto.edit', $produto->id)}}">Editar</a>
-                                                      <a class="dropdown-item" href="{{route('eliminarProduto', $produto->id)}}">Eliminar</a>
+                                                        <form action="{{route('admin.produto.edit', $produto->id)}}" method="GET">
+                                                            @csrf
+                                                            <button type="submit" class="dropdown-item">Editar</button>
+                                                        </form>
+                                                      
+                                                      <form action="{{route('eliminarProduto', $produto->id)}}" method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="submit" class="dropdown-item">Eliminar</button>
+                                                        </form>
                                                     </div>
                                                   </div>
                                             </td>

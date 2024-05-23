@@ -69,9 +69,11 @@ Route::middleware(['admin'])->group(function(){
      Route::get('produtoCreate/', [AdminController::class, 'cadastrarProduto'])->name('admin.produto.create');
      Route::get('listarProduto/', [AdminController::class, 'listarProdutos'])->name('admin.produto.index');
      Route::post('storeProduto/', [AdminController::class, 'storeProduto'])->name('admin.produto.store');
+
      Route::get('editarProduto/{id}', [ProdutoController::class, 'edit'])->name('admin.produto.edit');
+    //  Aqui... Estava put
      Route::put('atualizarProduto/{id}', [ProdutoController::class, 'update'])->name('admin.produto.update');
-     Route::get('eliminarProduto/{id}', [ProdutoController::class, 'eliminarProduto'])->name('eliminarProduto');
+     Route::delete('eliminarProduto/{id}', [ProdutoController::class, 'destroy'])->name('eliminarProduto');
 
      // Visto
      Route::get('listarVistos/', [AdminController::class, 'listarVistos'])->name('admin.visto.index');

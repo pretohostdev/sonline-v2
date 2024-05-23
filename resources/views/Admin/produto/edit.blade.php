@@ -40,14 +40,14 @@
 </div>
 <div class="breadcrumb-bar align-items-center">
 <nav>
-<ol class="breadcrumb p-0 m-b-0">
-<li class="breadcrumb-item">
-<a href="x"></a>
-</li>
-<li>
-Editar produto
-</li>
-</ol>
+    <ol class="breadcrumb p-0 m-b-0">
+        <li class="breadcrumb-item">
+            <a href="x"></a>
+        </li>
+        <li>
+            Editar produto
+        </li>
+    </ol>
 </nav>
 </div>
 
@@ -65,7 +65,7 @@ Editar produto
 <div class="col-xl-6 col-md-6 col-12 border-t border-right">
 <div class="page-account-form">
     <div class="form-titel border-bottom p-3">
-        <h5 class="mb-0 py-2">Cadastrar produtos Amazon</h5>
+        <h5 class="mb-0 py-2">Atualizar produtos Amazon</h5>
     </div>
     <div class="p-4">
 
@@ -79,7 +79,7 @@ Editar produto
             </div>
         @endif
     
-        <form action="{{route('admin.produto.update', $produto->id)}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('admin.produto.update', $produto->id)}}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-row">
@@ -102,8 +102,8 @@ Editar produto
             </div>
             <div class="form-group">
                 <label for="imagem">Imagem do produto</label>
-                <img src="{{asset('assets/img/jpg.png')}}" alt="">
-                <img src="{{asset('assets/img/png.png')}}" alt="">
+                <img src="{{asset('assets/img/jpg.png')}}" alt="arquivo jpg"  style="height:40px;">
+                <img src="{{asset('assets/img/png.png')}}" alt="aqruivo png" style="height:40px;">
                 <input type="text" value="A imagem não poderá ser editada, se desejar apaga..." class="form-control mt-2" name="imagem" readonly>
             </div>
             

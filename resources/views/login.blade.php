@@ -43,7 +43,7 @@
 
                                         @if ($errors->any())
                                             <div class="alert alert-danger">
-                                                <ul>
+                                                <ul style="list-style: none;">
                                                     @foreach ($errors->all() as $error)
                                                         <li class="text-light">{{ $error }}</li>
                                                     @endforeach
@@ -56,28 +56,21 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        {{-- <label class="control-label">Email</label> --}}
                                                         <input type="text" class="form-control" placeholder="Email" name="email" value="{{old("email")}}" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        {{-- <label class="control-label">Senha</label> --}}
                                                         <input type="password" class="form-control" placeholder="Senha" name="password" value="{{old("password")}}" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="d-block d-sm-flex  align-items-center">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                            <label class="form-check-label" for="gridCheck">
-                                                                Remember Me
-                                                            </label>
                                                         </div>
-                                                        <a href="javascript:void(0);" class="ml-auto">Esqueceu a senha ?</a>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 mt-3">
+                                                <div class="col-12 mt-3 d-flex justify-content-center">
                                                     <button type="submit" class="btn btn-primary text-uppercase">Entrar</button>
                                                 </div>
                                                 <div class="col-12  mt-3">

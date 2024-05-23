@@ -357,8 +357,10 @@
                     @foreach ($produtos as $produto )
                    
                     <li>
-                        <div class="card_produto">
-                          <img src="{{url("storage/{$produto->imagem}")}}" alt="Denim Jeans" style="width:300px; height:200px;">
+                        <div class="card_produto" style="width:300px;">
+                          <div style="display:flex; justify-content:center; align-items:center;width:100%;height:150px;">
+                            <img src="{{url("storage/{$produto->imagem}")}}" alt="Denim Jeans" style="max-width:100%; max-height:100%; width:auto; height:auto; margin-top:10px;">
+                          </div>
                           <h3 style="font-size: 30px; margin-top:20px;">{{$produto->nome}}</h3>
                           <p class="text-center p_produto">{{$produto->descricao}}</p>
                           <p class="price">{{$produto->preco}}</p>

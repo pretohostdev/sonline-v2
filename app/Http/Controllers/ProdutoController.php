@@ -47,7 +47,6 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        
         $produto = Produto::find($id);
         $sistema = Sistema::find('1');
 
@@ -67,9 +66,7 @@ class ProdutoController extends Controller
         $produto->link = $request->link;
 
         $produto->save();
-
-        $produtos = Produto::paginate(10);
-        return view('admin.produto.index', compact('produtos'));
+        return redirect()->route('admin.produto.index');
     }
 
     /**
@@ -77,15 +74,10 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        
-    }
-
-    public function eliminarProduto($id){
-
         $produto = Produto::find($id);
         Storage::delete($produto->imagem);
         $produto->delete();
         return redirect()->back()->with('mensagem', 'Produto eliminado com sucesso.');
-
     }
+    
 }
