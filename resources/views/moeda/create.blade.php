@@ -115,12 +115,12 @@
             </div>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-5">
             
             <div class="card card-statistics rounded">
                 <div class="card-header">
                     <div class="card-heading">
-                        <h4 class="card-title text-secondary text-center">CALCULADORA DE CONVERSÃO DE MOEDA</h4>
+                        <h5 class="card-title text-secondary text-center">CALCULADORA DE CONVERSÃO DE MOEDA</h4>
                     </div>
                 </div>
                 <div class="card-body">
