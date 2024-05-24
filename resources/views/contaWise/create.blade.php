@@ -82,22 +82,22 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="data">Dada de emissão</label>
+                            <label for="data" class="text-dark">Dada de emissão</label>
                             <input type="date" class="form-control" id="data" name="data" value="{{ date('Y-m-d') }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="valorconta">Valor</label>
+                            <label for="valorconta" class="text-dark">Valor</label>
                             <input type="number" class="form-control" id="valorconta" value="{{$sistema->precoConta}}" readonly>
                         </div>
 
                         <div class="form-group">
-                            <label for="referenciabancaria">Referencia Bancária</label>
+                            <label for="referenciabancaria" class="text-dark">Referencia Bancária</label>
                             <input type="text" class="form-control" id="referenciabancaria" value="{{$sistema->iban}}" id="iban" readonly>
                         </div>
 
                         <div class="form-group">
-                            <label for="comprovativo">Comprovativo Bancário em pdf</label>
+                            <label for="comprovativo" class="text-dark">Comprovativo Bancário em pdf</label>
                             <img src="{{asset('assets/img/pdf.png')}}" style="height:30px;">
                             <input type="file" class="form-control mt-2" name="comprovativo" id="comprovativo">
                         </div>

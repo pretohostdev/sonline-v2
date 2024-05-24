@@ -84,8 +84,8 @@
                                             <td class="text-dark">{{$cliente->nome}}</td>
                                             <td class="text-dark">{{$conta->tipo}}</td>
                                             <td class="text-dark">{{$conta->data}}</td>
-                                            <td class="text-dark">
-                                                <a href="{{route('verDocumentoConta', $conta->id)}}" class="text-info">Ver</a>
+                                            <td>
+                                                <a href="{{route('verDocumentoConta', $conta->id)}}" class="btn btn-success btn-round">Ver</a>
                                             </td>
                                             
                                             <td class="text-dark">

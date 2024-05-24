@@ -58,7 +58,18 @@
         <div class="col-xl-6">
             <div class="card card-statistics rounded">
                 <div class="card-body">
-                    <form action="{{route('redirecionamento.store')}}" method="POST">
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li class="text-light">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    
+                    <form action="{{route('redirecionamento.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group"> 
@@ -104,6 +115,17 @@
 
                         <div class="form-group">
                             <input type="hidden" class="form-control" value="{{$user_id}}" id="user_id" name="userId">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="peso" class="text-dark">Realizar de pagameno <span style="font-size:8pt"></span></label>
+                            <a href="https://checkout.revolut.com/pay/18d1f014-ff1c-4999-9d68-b13617a96d44" class="btn btn-block btn-info" target="_blank">Pagar</a>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comprovativo" class="text-dark">Comprovativo Bancário</label>
+                            <img src="{{asset('assets/img/pdf.png')}}" style="height:30px;">
+                            <input type="file" class="form-control mt-2" name="comprovativo">
                         </div>
 
                         <div class="form-group">

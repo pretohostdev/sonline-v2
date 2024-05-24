@@ -18,6 +18,7 @@ return new class extends Migration
             $table->double('valor'); 
             $table->string('paisOrigem'); 
             $table->string('paisDestino'); 
+            $table->string('comprovativo'); 
             $table->timestamps();
 
             $table->foreignId('user_id')->constrained('users');

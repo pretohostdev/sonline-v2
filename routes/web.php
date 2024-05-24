@@ -98,6 +98,8 @@ Route::middleware(['admin'])->group(function(){
     // Redirecionamentos
     Route::get('listarRedirecionamento/', [AdminController::class, 'listarRedirecionamento'])->name('admin.redirecionamento.index');
     Route::get('mostrarRedirecionamentos/{id}', [AdminController::class, 'mostrarRedirecionamentos'])->name('admin.redirecionamento.show');
+    Route::get('verDocumentoRedirecionamento/{id}', [AdminController::class, 'verDocumentoRedirecionamento'])->name('verDocumentoRedirecionamento');
+    
 
     Route::get('EditarCliente/', [AdminController::class, 'EditarCliente'])->name('admin.user.editar');
 

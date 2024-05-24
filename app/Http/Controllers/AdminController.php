@@ -142,7 +142,12 @@ class AdminController extends Controller
 
         return view('admin.redirecionamento.show', ['redirecionamentos'=> $redirecionamentos, 'cliente'=> $cliente]);
     }
-    //
+    
+    function verDocumentoRedirecionamento($id){
+        $redirecionamento = Redirecionamento::find($id);
+        return view('admin.redirecionamento.verDocumentoRedirecionamento', compact('redirecionamento'));
+    }
+
     function listarAgendamentos(){
         // Clientes que solicitram agendamento
         $clientes = User::where('tipo', "!=", 'admin')

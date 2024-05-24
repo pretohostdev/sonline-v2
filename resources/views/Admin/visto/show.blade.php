@@ -72,7 +72,7 @@
                                         <th>Tipo de visto</th>
                                         <th>Data de solicitação</th>
                                         <th>Data prevista</th>
-                                        <th>Comprovativo</th>
+                                        <th>Documentos</th>
                                         <th>País desejado</th>
                                         <th>Estado</th>
                                         <th class="text-center">Opção</th>
@@ -88,7 +88,7 @@
                                             <td class="text-dark">{{$visto->dataSolicitacao}}</td>
                                             <td class="text-dark">{{$visto->dataPrevista}}</td>
                                             <td>
-                                                <a href="{{route('verDocumentoVisto', $visto->id)}}" class="text-info">ver</a>
+                                                <a href="{{route('verDocumentoVisto', $visto->id)}}" class="btn btn-success btn-round">ver</a>
                                             </td>
                                             <td class="text-dark">{{$visto->paisDesejado}}</td>
                                             <td class="text-dark">

@@ -7,6 +7,8 @@ use App\Models\Produto;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Database\Eloquent\Builder;
 
 
@@ -42,6 +44,26 @@ class RedirecionamentoController extends Controller
      */
     public function store(Request $request)
     {
+        $validacao = Validator::make($request->all(), [
+            'comprovativo' => 'required|file|mimes:pdf|max:2048',
+        ],
+        [
+            'comprovativo.required' => 'O campo comprovativo não pode se ficar vazio',
+            'comprovativo.mimes' => 'O campo comprovativo deve ser um apenas um arquivo pdf.',
+            'comprovativo.max' => 'O tamanho máximo do arquivo pdf é de 2M.',
+        ]
+        );
+
+        if ($validacao->fails()) {
+            return redirect()->back()->withErrors($validacao)->withInput();
+        }
+
+        $comprovativo = $request->file('comprovativo');
+
+        $path = $request->file('comprovativo')->store(
+            'contas'
+        );
+
         // Adicionar dados a tabela Produto
         $id = Auth::id();
 
@@ -64,6 +86,7 @@ class RedirecionamentoController extends Controller
                 'data' => $data,
                 'estado' => '0',
                 'valor' => $valorPagar,
+                'comprovativo' => $path,
                 'paisOrigem' => $request->paisorigem,
                 'paisDestino' => $request->paisdestino,
                 'user_id' => $request->userId,
@@ -131,6 +154,7 @@ class RedirecionamentoController extends Controller
                 'valor' => $redirecionamento->valor,
                 'paisOrigem' => $redirecionamento->paisOrigem,
                 'paisDestino' => $redirecionamento->paisDestino,
+                'comprovativo' => $redirecionamento->comprovativo,
                 'listaRedirecionamentos' => $listaRedirecionamento
             ];
             
