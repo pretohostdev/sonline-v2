@@ -37,13 +37,18 @@ class VistoController extends Controller
     {
         $validacao = Validator::make($request->all(), [
             'documento' => 'required|file|mimes:pdf|max:1024',
-            'data' => 'required'
+            'data' => 'required', 
+            'comprovativo'
             ],
             [
                 'documento.required' => 'O campo documento não pode se ficar vazio',
                 'documento.mimes' => 'O campo documento deve ser um apenas um arquivo pdf.',
                 'documento.max' => 'O tamanho máximo do arquivo pdf é de 1M.',
                 'data.required' => 'A data de previsão deve ser especificada',
+
+                'comprovativo.required' => 'O campo comprovativo não pode se ficar vazio',
+                'comprovativo.mimes' => 'O campo comprovativo deve ser um apenas um arquivo pdf.',
+                'comprovativo.max' => 'O tamanho máximo do arquivo pdf é de 1M.',
             ]
         );
 
@@ -52,9 +57,14 @@ class VistoController extends Controller
         }
 
         $documento = $request->file('documento');
+        $comprovativo = $request->file('comprovativo');
 
         $path = $request->file('documento')->store(
             'vistos'
+        );
+
+        $pathComprovativo = $request->file('comprovativo')->store(
+            'vistos/comprovativos'
         );
 
         if($request->descricao){
@@ -72,6 +82,7 @@ class VistoController extends Controller
             'dataPrevista' => $request->data,
             'dataSolicitacao' => $request->data,
             'documento' => $path,
+            'comprovativo' => $pathComprovativo,
             'user_id' => Auth::id(),
         ]);
 
@@ -127,6 +138,7 @@ class VistoController extends Controller
                 'estado' => $visto->estado,
                 'tipo' => $visto->tipo,
                 'documento' => $visto->documento,
+                'comprovativo' => $visto->comprovativo,
                 'dataSolicitacao' => $visto->dataSolicitacao,
                 'dataPrevista' => $visto->dataPrevista,
                 'paisDesejado' => $visto->paisDesejado,

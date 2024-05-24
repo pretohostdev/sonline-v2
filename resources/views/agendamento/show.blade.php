@@ -213,20 +213,13 @@
                                 <div class="accordion" id="accordionborderradius">
 
                                     <div class="acd-group border-bottom-0">
-                                        <div class="card-header rounded-0 bg-primary">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse4-3" class="btn-block  text-center text-white acd-heading collapsed" data-toggle="collapse">Sem documentos para ser exibido</a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse4-3" class="collapse" data-parent="#accordionborderradius">
-                                            <div class="card-body">
-                                                <p>
-                                                    Nesta seção não encorporamos nenhum documento adicional, como foto cópia do
-                                                    B.I ou o passport
-                                                </p>
+                                        @if ($agendamento->documento)
+                                            <div class="card-header rounded-0 d-flex justify-content-center">
+                                                <iframe src="{{ url("storage/{$agendamento->documento}") }}" width="80%" height="700px"></iframe>
                                             </div>
-                                        </div>
+                                        @endif
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>

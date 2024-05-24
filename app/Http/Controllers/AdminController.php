@@ -167,6 +167,11 @@ class AdminController extends Controller
         return view('admin.agendamento.show', ['agendamentos'=> $agendamentos, 'cliente'=> $cliente]);
     }
 
+    function verDocumentoAgendamento($id){
+        $agendamento = Agendamento::find($id);
+        return view('admin.agendamento.verDocumentoAgendamento', compact('agendamento'));
+    }
+
     function listarProdutos(){
 
         // Listar produtos do sistema

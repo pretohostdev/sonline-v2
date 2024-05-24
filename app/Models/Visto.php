@@ -17,6 +17,7 @@ class Visto extends Model
         'estado',
         'descricao',
         'documento',
+        'comprovativo',
         'dataPrevista',
         'paisDesejado',
         'dataSolicitacao',

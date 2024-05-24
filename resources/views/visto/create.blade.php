@@ -99,14 +99,25 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="documento" class="text-dark">Cópia do B.I ou Passport</label>
+                            <img src="{{asset('assets/img/pdf.png')}}" style="height:30px;" alt="arquivo pdf">
+                            <input type="file" class="form-control mt-2" id="documento" name="documento">
+                        </div>
+
+                        <div class="form-group">
                             <label for="data" class="text-dark">Valor a pagar</label>
                             <input type="text" class="form-control" value="{{$sistema->precoAgendamentoVisto}} kz" id="data" name="precoVisto" readonly>
                         </div>
 
                         <div class="form-group">
-                            <label for="documento" class="text-dark">Cópia do B.I ou Passport</label>
-                            <img src="{{asset('assets/img/pdf.png')}}" style="height:30px;" alt="arquivo pdf">
-                            <input type="file" class="form-control mt-2" id="documento" name="documento">
+                            <label for="referenciabancaria" class="text-dark">Referencia Bancária</label>
+                            <input type="text" class="form-control" id="referenciabancaria" value="{{$sistema->iban}}" id="iban" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comprovativo" class="text-dark">Comprovativo Bancário em pdf</label>
+                            <img src="{{asset('assets/img/pdf.png')}}" style="height:30px;">
+                            <input type="file" class="form-control mt-2" name="comprovativo" id="comprovativo">
                         </div>
 
                     

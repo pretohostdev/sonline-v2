@@ -71,7 +71,6 @@ Route::middleware(['admin'])->group(function(){
      Route::post('storeProduto/', [AdminController::class, 'storeProduto'])->name('admin.produto.store');
 
      Route::get('editarProduto/{id}', [ProdutoController::class, 'edit'])->name('admin.produto.edit');
-    //  Aqui... Estava put
      Route::put('atualizarProduto/{id}', [ProdutoController::class, 'update'])->name('admin.produto.update');
      Route::delete('eliminarProduto/{id}', [ProdutoController::class, 'destroy'])->name('eliminarProduto');
 
@@ -94,7 +93,8 @@ Route::middleware(['admin'])->group(function(){
      // Agendamento
      Route::get('listarAgendamentos/', [AdminController::class, 'listarAgendamentos'])->name('admin.agendamento.index');
      Route::get('mostrarAgendamentos/{id}', [AdminController::class, 'mostrarAgendamentos'])->name('admin.agendamento.show');
-    
+     Route::get('verDocumentoAgendamento/{id}', [AdminController::class, 'verDocumentoAgendamento'])->name('verDocumentoAgendamento');
+
     // Redirecionamentos
     Route::get('listarRedirecionamento/', [AdminController::class, 'listarRedirecionamento'])->name('admin.redirecionamento.index');
     Route::get('mostrarRedirecionamentos/{id}', [AdminController::class, 'mostrarRedirecionamentos'])->name('admin.redirecionamento.show');

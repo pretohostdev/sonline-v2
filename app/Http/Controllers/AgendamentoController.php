@@ -116,6 +116,7 @@ class AgendamentoController extends Controller
                 'data' => $agendamento->data,
                 'tipo' => $agendamento->tipo,
                 'estado' => $agendamento->estado,
+                'documento' => $agendamento->documento,
                 'observacao' => $agendamento->observacao,
                 'listaAgendamentos' =>  $clientesAgendamentos
             ];

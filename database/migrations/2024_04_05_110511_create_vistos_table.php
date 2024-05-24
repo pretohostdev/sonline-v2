@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('estado');
             $table->string('descricao')->nullable();
             $table->string('documento');
+            $table->string('comprovativo');
             $table->string('dataPrevista');
             $table->string('paisDesejado');
             $table->string('dataSolicitacao');

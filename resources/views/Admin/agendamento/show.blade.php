@@ -70,6 +70,7 @@
                                         <th>Nome</th>
                                         <th>Email</th>
                                         <th>Data de solicitação</th>
+                                        <th>Comprovativo</th>
                                         <th>Estado</th>
                                         <th class="text-center">Opção</th>
                                     </tr>
@@ -82,6 +83,9 @@
                                             <td class="text-dark">{{$cliente->nome}}</td>
                                             <td class="text-dark">{{$cliente->email}}</td>
                                             <td class="text-dark">{{$agendamento->data}}</td>
+                                            <td>
+                                                <a href="{{route('verDocumentoAgendamento', $agendamento->id)}}" class="btn btn-success btn-round">Ver</a>
+                                            </td>
                                             
                                             <td class="text-dark">
                                                 @if ($agendamento->estado == "0")

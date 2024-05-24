@@ -214,14 +214,28 @@
 
                                     <div class="acd-group border-bottom-0">
                                         <div class="card-header rounded-0">
+                                           
                                             @if ($visto->documento)
+                                                <div class="row d-flex justify-content-center">
+                                                    <h5>Documento Pessoal (B.I ou Passport)</h4>
+                                                </div>
                                                 <div class="card-header rounded-0 d-flex justify-content-center">
                                                     <iframe src="{{ url("storage/{$visto->documento}") }}" width="80%" height="700px"></iframe>
                                                 </div>
                                             @endif
+
+                                            @if ($visto->comprovativo)
+                                                    <div class="row d-flex justify-content-center mt-2">
+                                                        <h5>Comprovativo do Pagamento</h4>
+                                                    </div>
+                                                    <div class="card-header rounded-0 d-flex justify-content-center">
+                                                        <iframe src="{{ url("storage/{$visto->comprovativo}") }}" width="80%" height="700px"></iframe>
+                                                    </div>
+                                                @endif
                                         </div>
                                         <div id="collapse4-3" class="collapse" data-parent="#accordionborderradius">
                                             <div class="card-body">
+                                                
                                             </div>
                                         </div>
                                     </div>
