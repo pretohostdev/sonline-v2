@@ -38,11 +38,11 @@ class VistoController extends Controller
         $validacao = Validator::make($request->all(), [
             'documento' => 'required|file|mimes:pdf|max:1024',
             'data' => 'required', 
-            'comprovativo'
+            'comprovativo' => 'required|file|mimes:pdf|max:1024',
             ],
             [
-                'documento.required' => 'O campo documento não pode se ficar vazio',
-                'documento.mimes' => 'O campo documento deve ser um apenas um arquivo pdf.',
+                'documento.required' => 'O campo B.I/Passport não pode se ficar vazio',
+                'documento.mimes' => 'O campo B.I/Passport deve ser um apenas um arquivo pdf.',
                 'documento.max' => 'O tamanho máximo do arquivo pdf é de 1M.',
                 'data.required' => 'A data de previsão deve ser especificada',
 

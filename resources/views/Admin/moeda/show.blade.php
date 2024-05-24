@@ -86,7 +86,8 @@
                                             <td class="text-dark">{{$moeda->nome}}</td>
                                             <td class="text-dark">{{$moeda->data}}</td>
                                             <td class="text-dark">{{$moeda->montante}}</td>
-                                            <td class="text-primary"> <a href="{{ route('verDocumentoMoeda', $moeda) }}" class="text-info">Ver</a></td>
+                                            <td> 
+                                                <a href="{{ route('verDocumentoMoeda', $moeda) }}" class="btn btn-success btn-round">Ver</a></td>
                                             <td class="text-dark">
                                                 @if ($moeda->estado == "0")
                                                     <div class="d-flex align-items-center">
