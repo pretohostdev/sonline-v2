@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('data');
             $table->string('tipo');
+            $table->string('documento');
             $table->enum('estado', [0, 1, 2]);
             $table->text('observacao')->nullable();
             $table->timestamps();

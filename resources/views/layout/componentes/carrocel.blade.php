@@ -7,7 +7,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <div class="row">
                         <div class="col-12">
-                          <div class="d-flex justify-content-start" style="margin-bottom:12rem; margin-left:8rem;">
+                          <div class="d-flex justify-content-start btn-carrocel">
                             <div>
                                 <a href="{{route('login')}}" class="main-btn text-light" style="background-color:#3c9cfd">Solicitar um serviço</a>
                             </div>

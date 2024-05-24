@@ -42,8 +42,8 @@ class MoedaController extends Controller
             'documento' => 'required|file|mimes:pdf|max:1024',
         ],
         [
-            'documento.required' => 'O campo documento não pode ficar vazio',
-            'documento.mimes' => 'O campo documento deve ser um apenas um arquivo pdf.',
+            'documento.required' => 'O campo documento não pode estar vazio',
+            'documento.mimes' => 'O campo documento deve ser apenas um arquivo pdf.',
             'documento.max' => 'O tamanho máximo do arquivo pdf é de 1M.',
         ]
         );
@@ -66,7 +66,7 @@ class MoedaController extends Controller
             'nome' => $request->nome,
             'data' => $dataAtual->toDateString(),
             'valorPagar' => $valor,
-            'documento' => $request->documento,
+            // 'documento' => $request->documento,
             'montante' => $request->montante,
             'estado' => '0',
             'documento' => $path,

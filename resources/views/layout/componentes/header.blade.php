@@ -3,7 +3,6 @@
     <!-- begin navbar -->
     <nav class="navbar navbar-expand-md">
         <div class="navbar-header d-flex align-items-center bg-white"> 
-            
             <a class="navbar-brand mt-2" href="{{ route('homeAdmin')}}">
                 <img src="{{asset('assets/img/logo.jpg')}}" class="img-fluid logo-desktop logo" alt="logo" style="width: 100px"/>
                 <img src="{{asset('assets/img/logo.jpg')}}" class="img-fluid logo-mobile logo" alt="logo" style="width: 100px" />

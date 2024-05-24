@@ -214,7 +214,6 @@
                                                 <iframe src="{{ url("storage/{$conta->comprovativo}") }}" width="80%" height="700px"></iframe>
                                             </div>
                                         @endif
-                                        
                                     </div>
                                 </div>
                             </div>

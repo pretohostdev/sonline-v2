@@ -55,8 +55,8 @@
         </div>
 
     <div class="row mt-2">
-        <div class="col-lg-6">
-            <div class="card card-statistics">
+        <div class="col-lg-12 d-flex justify-content-center">
+            <div class="card card-statistics" style="width:500px">
                 <div class="card-body">
 
                     @if ($errors->any())
@@ -110,11 +110,11 @@
             </div>
         </div>
 
-        <div class="col-xl-6">
+        {{-- <div class="col-xl-6">
 
                 <img src="{{asset('assets/img/visa.png')}}" alt="" style="border-top-left-radius:50px; border-bottom-left-radius:50px">
 
-        </div>
+        </div> --}}
 
 
     </div>

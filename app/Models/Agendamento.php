@@ -16,6 +16,7 @@ class Agendamento extends Model
         'tipo',
         'data', 
         'estado', 
+        'documento',
         'observacao',
 
         'user_id',

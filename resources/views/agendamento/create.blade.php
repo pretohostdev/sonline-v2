@@ -5,7 +5,7 @@
 @push('styles')
 
     {{-- Inclusão do Bootstrap 5 no projecto --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -55,8 +55,8 @@
 
     <div class="row mt-2">
 
-        <div class="col-lg-6">
-            <div class="card card-statistics rounded">
+        <div class="col-lg-12 d-flex justify-content-center">
+            <div class="card card-statistics rounded" style="width:500px">
                 <div class="card-body">
 
                     @if ($errors->any())
@@ -69,7 +69,7 @@
                         </div>
                     @endif
 
-                    <form action="{{route('agendamento.store')}}" method="POST" id="formAgendamento">
+                    <form action="{{route('agendamento.store')}}" method="POST" id="formAgendamento" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="tipo" class="text-dark">Seleciona o tipo de agendamento</label>
@@ -79,12 +79,12 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" id="tipoDocumento">
                             <label for="tipodocumento" class="text-dark">Autenticação de documento</label>
                              <input type="text" class="form-control" id="tipodocumento" value="{{$sistema->precoAgendamentoDocumento}} kz" readonly>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" id="tipoConsultoria">
                             <label for="tipoconsultoria" class="text-dark">Consultoria Completa</label>
                              <input type="text" id="tipoconsultoria" class="form-control" value="{{$sistema->precoAgendamentoVisto}} kz" readonly>
                         </div>
@@ -92,6 +92,17 @@
                         <div class="form-group">
                             <label for="data" class="text-dark">Data do agendamento</label>
                             <input type="date" class="form-control" value="{{date('Y-m-d')}}" id="data" name="data">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referenciabancaria" class="text-dark">IBAN</label>
+                            <input type="text" class="form-control" value="{{$sistema->iban}}" id="referenciabancaria" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comprovativo" class="text-dark">Comprovativo Bancário no formato</label>
+                            <img src="{{asset('assets/img/pdf.png')}}" style="height:30px;">
+                            <input type="file" class="form-control mt-2" id="comprovativo" name="documento">
                         </div>
 
                         <div class="form-group">
@@ -106,13 +117,50 @@
             </div>
         </div>
 
-
-        <div class="col-lg-4">
-            <img src="{{asset('assets/img/agendamento.png')}}" alt="agendamento">
-        </div>
-
     </div>
     </div>
+
+    <script>
+
+        var tipoAgendamento = document.getElementById('tipo');
+
+        var divDocumento = document.getElementById('tipoDocumento');
+        var divConsultoria = document.getElementById('tipoConsultoria'); 
+        var inputDocumento = document.getElementById('tipodocumento');
+        var inputConsultoria = document.getElementById('tipoconsultoria')
+        
+        carregamento();
+
+        tipoAgendamento.addEventListener('change', (e)=>{
+            let tipoAgendamento = e.target;
+
+            if(tipoAgendamento.value == 'consultoria'){
+                show(divConsultoria);
+                hide(divDocumento);
+            }else{
+                show(divDocumento);
+                hide(divConsultoria);
+            }
+        });
+
+        function carregamento(){
+            if(tipoAgendamento.value == 'consultoria'){
+                show(divConsultoria);
+                hide(divDocumento);
+            }else{
+                show(divDocumento);
+                hide(divConsultoria);
+            }
+        }
+
+        function hide(elemento){
+            elemento.style.display = "none";
+        }
+
+        function show(elemento){
+            elemento.style.display = "block";
+        }
+    </script>
 
    
 </div>

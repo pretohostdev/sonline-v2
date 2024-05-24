@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Sistema;
 use App\Models\Agendamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth; // Para pegar o id do usuário autenticado
 
 
@@ -33,10 +34,31 @@ class AgendamentoController extends Controller
      */
     public function store(Request $request)
     {
+        $validacao = Validator::make($request->all(), [
+            'documento' => 'required|file|mimes:pdf|max:1024',
+        ],
+        [
+            'documento.required' => 'O campo documento não pode estar vazio',
+            'documento.mimes' => 'O campo documento deve ser apenas um arquivo pdf.',
+            'documento.max' => 'O tamanho máximo do arquivo pdf é de 1M.',
+        ]
+        );
+
+        if ($validacao->fails()) {
+            return redirect()->back()->withErrors($validacao)->withInput();
+        }
+
+        $documento = $request->file('documento');
+
+        $path = $request->file('documento')->store(
+            'agendamentos'
+        );
+
         $agendamento = Agendamento::create([
             'tipo' => $request->tipo,
             'data' => $request->data,
             'estado' => '0',
+            'documento' => $path,
             'observacao' => $request->observacao,
             'user_id' => Auth::id()
         ]);
