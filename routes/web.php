@@ -42,11 +42,7 @@ Route::get('/login', function () {
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UserController::class, 'site'])->name('site');
 
 Route::get('/sonline', [UserController::class, 'site'])->name('site');
 

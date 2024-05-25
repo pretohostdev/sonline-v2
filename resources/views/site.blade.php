@@ -6,6 +6,7 @@
 {{-- Inclusão do Bootstrap 5 no projecto --}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
@@ -90,7 +91,7 @@
                   </div>
                   <div class="feature-info float-left">
                     <h4 style="color:#2779a7">Agendamento de visto</h4>
-                    <p>Eliminamos a complexidade do processo de  obtenção de <br> vistos, guiando-o através de cada etapa com expertise <br> e para o deixá-lo mais confiante.</p>
+                    <p>Eliminamos a complexidade do processo de  obtenção de <br> vistos, guiando-o através de cada etapa com expertise <br> e para deixá-lo mais confiante.</p>
                   </div>
                </div>
              </div>
@@ -102,7 +103,7 @@
                  </div>
                  <div class="feature-info float-left">
                    <h4 style="color:#2779a7">Outros Agendamentos</h4>
-                   <p>Além do agendamento mencionado, a Sonline service <br> lida com vários outros serviços de caracter online<br> por isso recomendamos entrar em contacto.
+                   <p>Além do agendamento mencionado, a Sonline service <br> lida com vários outros serviços de caracter online,<br> por isso recomendamos entrar em contacto.
                  </div>
               </div>
             </div>
@@ -475,6 +476,7 @@
 @endsection
 
 @push('scripts')
+    
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
     <script src="{{asset('assets/js/animacao.js')}}"></script>
