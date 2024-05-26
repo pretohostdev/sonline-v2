@@ -46,7 +46,7 @@
 
 @section("corpo")
 
-<div class="row" style="margin-top:100px">
+<div class="row" style="margin-top:20px">
     <div class="col-md-12">
 
         <div class="d-block d-lg-flex flex-nowrap align-items-center">

@@ -4,11 +4,30 @@ src: url('../fonts/DIN Neuzeit Grotesk Light.ttf') format('tff');
 font-family: 'Grotesk';
 }
 p {color: #000;}
-.logo {position: fixed; height: auto; }
+.logo {
+    height: auto;
+}
 .agendamentoAnimacao {visibility: hidden;}
-#ul_nav li a {padding-bottom: 6px; position: relative; color: #2779a7;}
-#ul_nav li a::after {content: " "; width: 0%; position: absolute; background-color: rgb(13, 65, 238) !important; height: 2px; left: 0; bottom: 0; transition: 0.5s ease-in-out;}
-#ul_nav li a:hover::after {width: 60px;}
+.ul_nav li a {
+    padding-bottom: 6px;
+    position: relative;
+    color: #2779a7;
+}
+
+.ul_nav li a::after {
+    content: " ";
+    width: 0%;
+    position: absolute;
+    background-color: rgb(13, 65, 238) !important;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.ul_nav li a:hover::after {
+    width: 60px;
+}
 #inputKwanza:focus, #pesoBase:focus, #valorConvertido:focus { box-shadow: none; border-color: var(--secondary); }
 #inputDolar:focus { box-shadow: none; border-color: var(--success); }
 #inputEuro:focus { box-shadow: none; border-color: var(--dark);}

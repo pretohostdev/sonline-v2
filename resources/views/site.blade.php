@@ -12,11 +12,9 @@
 <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
-
-
-
  <!--====== Animate CSS ======-->
  <link rel="stylesheet" href="assets/css/animate.css">
+ <link rel="stylesheet" href="assets/css/navbar.css">
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/LineIcons.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
@@ -146,9 +144,7 @@
                 </div>
             </div> 
         </div> 
-        {{-- <div class="about-shape-1">
-            <img src="{{asset('assets/img/about-shape-1.svg')}}" alt="shape">
-        </div> --}}
+        
     </section>
     </div>
 
@@ -476,9 +472,7 @@
 @endsection
 
 @push('scripts')
-    
-    <script src="{{asset('assets/js/vendors.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
     <script src="{{asset('assets/js/animacao.js')}}"></script>
+    <script src="{{asset('assets/js/navbar.js')}}"></script>
 @endpush 
 
