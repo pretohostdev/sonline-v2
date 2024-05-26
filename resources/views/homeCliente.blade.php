@@ -44,7 +44,7 @@
              </div>
           </div>
        </div>
-       
+
        <!-- row -->
        <div class="row column1">
           <div class="col-md-2"></div>
@@ -57,7 +57,6 @@
                 </div>
                 <div class="full price_table padding_infor_info">
                    <div class="row">
-                      <!-- user profile section --> 
                       <!-- profile image -->
                       <div class="col-lg-12">
                          <div class="full dis_flex center_text">
