@@ -11,4 +11,4 @@ $(document).ready(function () {
       scrollbar js
   --------------------------------------*/
   
-  var ps = new PerfectScrollbar('#sidebar');
+  // var ps = new PerfectScrollbar('#sidebar');

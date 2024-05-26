@@ -24,7 +24,10 @@
     <!-- custom css -->
     <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
 
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}"/>
+
+    <!-- color css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/color_2.css')}}" />
 
     {{-- Font e Icones alternativa --}}
     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">

@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
     <!-- scrollbar css -->
     <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+
+    <!-- color css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/color_2.css')}}" />
     <!-- custom css -->
     <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
 
@@ -43,7 +46,7 @@
 
 @section("corpo")
 
-<div class="row" style="margin-top:100px">
+<div class="row" style="margin-top:20px">
     <div class="col-md-12">
 
         <div class="d-block d-lg-flex flex-nowrap align-items-center">
@@ -241,48 +244,6 @@
 
 
     </div>
-
-    <script>
-        document.getElementById('formConta').addEventListener('submit', function(event) {
-            
-            event.preventDefault(); // Impedir o envio padrão do formulário
-            console.log('Estou funcionando...');
-
-            // Pegar os dados vindo do formulário
-            var dataEmissao = document.getElementById('dataEmissaoConta').value;
-
-            var comprovativo = document.getElementById('comprovativoBancario');
-
-            console.log('Comprovativo: ' + comprovativo.value);
-
-            // console.log('A data é: ' + data);
-            const conta = {
-                data: dataEmissao,
-            };
-
-            fetch('http://localhost:8000/api/conta', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(conta),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao salvar os dados');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data.message); // Mensagem de sucesso
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-        });
-
-    </script>
 </div>
 
 
@@ -297,5 +258,4 @@
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
     <script src="{{asset('assets/pluto/js/meu.js')}}"></script>
-    <script src="{{asset('assets/js/funcoes.js')}}"></script>
 @endpush

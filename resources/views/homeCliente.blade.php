@@ -38,12 +38,13 @@
 <div class="midde_cont">
     <div class="container-fluid">
        <div class="row column_title">
-          <div class="col-md-12">
-             <div class="page_title">
-                <h2>Perfil</h2>
+          <div class="col-md-12" style="margin-top: 0.5px">
+             <div class="page_title orange_bg">
+                <h2 class="text-white">Perfil</h2>
              </div>
           </div>
        </div>
+       
        <!-- row -->
        <div class="row column1">
           <div class="col-md-2"></div>

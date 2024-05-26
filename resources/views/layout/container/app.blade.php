@@ -11,7 +11,7 @@
       <meta name="description" content="Página Principal do site" />
       <meta name="author" content="Cláudio Rufino - PETROHOST" />
 
-        <title>@yield('titulo', 'sonline Services')</title>
+      <title>@yield('titulo', 'sonline Services')</title>
       @stack('styles')
       
    </head>

@@ -4,26 +4,22 @@
 
 @push('styles')
 
-    {{-- Inclusão do Bootstrap 5 no projecto --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
     
     <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
     <!-- site css -->
     <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
     <!-- responsive css -->
     <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
-    <!-- color css -->
-    {{-- <link rel="stylesheet" href="{{asset('assets/pluto/css/colors.css')}}" /> --}}
     <!-- select bootstrap -->
     <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
     <!-- scrollbar css -->
     <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
     <!-- custom css -->
     <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
+    <!-- color css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/color_2.css')}}" />  
 
     {{-- Inclusão do Bootstrap 5 no projecto --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">

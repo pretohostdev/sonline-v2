@@ -5,7 +5,6 @@
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
     <!-- bootstrap css -->
     <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
     <!-- site css -->
@@ -18,9 +17,9 @@
     <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
     <!-- custom css -->
     <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/color_2.css')}}" />
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
-     {{-- Font e Icones alternativa --}}
      <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
      <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
 @endpush
