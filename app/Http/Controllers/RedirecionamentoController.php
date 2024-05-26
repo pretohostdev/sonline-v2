@@ -167,6 +167,7 @@ class RedirecionamentoController extends Controller
                 'valor' => '',
                 'paisOrigem' => '',
                 'paisDestino' => '',
+                'comprovativo' => '',
                 'listaRedirecionamentos' => []
             ];
         }

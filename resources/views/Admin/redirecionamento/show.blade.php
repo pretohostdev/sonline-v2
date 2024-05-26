@@ -2,12 +2,23 @@
 @section('titulo', 'sonline-redirecionamento')
 
 @push('styles')
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
+    <!-- site css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
 
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
      {{-- Font e Icones alternativa --}}
      <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
      <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
@@ -81,7 +92,7 @@
                                         <td class="text-dark">{{$redirecionamento->paisDestino}}</td>
                                         <td class="text-dark">{{$redirecionamento->valor}}</td>
                                         <td>
-                                            <a href="{{route('verDocumentoRedirecionamento', $redirecionamento->id)}}" class="btn btn-success btn-round">Ver</a>
+                                            <a href="{{route('verDocumentoRedirecionamento', $redirecionamento->id)}}" class="btn btn-success btn-block">Ver</a>
                                         </td>
                                         <td class="text-dark">
                                             @if ($redirecionamento->estado == "0")
@@ -119,19 +130,13 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            tabelaClientes.addEventListener('click', function(event) {
-                var elementoClicado = event.target;
-                var linha = elementoClicado.closest('tr');
-                var id = linha.dataset.id;
-            });
-        </script>
     </div>
 
 @endsection
 
 @push('scripts')
-    <script src="{{asset('assets/js/vendors.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
+<script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/meu.js')}}"></script>
 @endpush

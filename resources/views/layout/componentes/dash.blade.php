@@ -14,7 +14,7 @@
                 <img class="img-responsive" src="images/layout_img/user_img.jpg" alt="#" />
             </div> --}}
              <div class="user_info">
-                <h6>John David</h6>
+                <h6>Teste</h6>
                 <p><span class="online_animation"></span> Online</p>
              </div>
           </div>

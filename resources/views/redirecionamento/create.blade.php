@@ -6,12 +6,23 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
+    <!-- site css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
+   
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
+
 
     {{-- Font e Icones alternativa --}}
     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
@@ -20,16 +31,16 @@
 
 
 @section('header')
-    @include('layout.componentes.headerCliente')
+    @include('layout.componentes.topbar')
 @endsection
 
 @section('dashboard')
-    @include('layout.componentes.dashboardCliente')
+    @include('layout.componentes.dash')
 @endsection
 
 @section("corpo")
 
-<div class="row" style="margin-top:100px">
+<div class="row" style="margin-top:20px">
     <div class="col-md-12">
 
         <div class="d-block d-lg-flex flex-nowrap align-items-center">
@@ -108,7 +119,7 @@
 
                         <div class="input-group mb-3" id="divDolarRedirecionamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-gradient text-light">Valor a pagar</span>
+                                <span class="input-group-text bg-secondary text-light">Valor a pagar</span>
                             </div>
                             <input type="text" class="form-control" id="valorConvertido" name="valor" oninput="conversaoMoeda(id)" readonly>
                         </div>
@@ -133,7 +144,7 @@
                             <textarea class="form-control" id="descricao" name="descricaoProduto" required></textarea>
                         </div>
 
-                        <button type="submit" class="btn bg-gradient text-light mr-2">Enviar pedido</button>
+                        <button type="submit" class="btn btn-primary mr-2">Enviar pedido</button>
                     </form>
                 </div>
 
@@ -153,7 +164,7 @@
 
                         <div class="input-group mb-3" id="divKwanzaRedirecionamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-gradient text-light" id="tipoEnvio">
+                                <span class="input-group-text bg-secondary text-light" id="tipoEnvio">
                                 </span>
                             </div>
                             <input type="text" class="form-control" id="pesoBase" readonly>
@@ -162,14 +173,14 @@
 
                           <div class="input-group mb-3" id="divTaxaServico">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-gradient text-light">Taxa de Serviço</span>
+                                <span class="input-group-text bg-secondary text-light">Taxa de Serviço</span>
                             </div>
                             <input type="text" class="form-control" id="inputTaxaServico" value="2,99€" readonly>
                           </div>
 
                           <div class="input-group mb-3" id="divTaxaArmazenamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-gradient text-light">Taxa de armazenamento</span>
+                                <span class="input-group-text bg-secondary text-light">Taxa de armazenamento</span>
                             </div>
                             <input type="text" class="form-control" id="inputTaxaArmazenamento" value="4,99€" readonly>
                           </div>
@@ -248,6 +259,8 @@
 @endsection
 
 @push('scripts')
-    <script src="{{asset('assets/js/vendors.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
+<script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/meu.js')}}"></script>
 @endpush

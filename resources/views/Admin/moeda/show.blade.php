@@ -2,12 +2,23 @@
 @section('titulo', 'sonline-moeda')
 
 @push('styles')
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
+    <!-- site css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
 
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
      {{-- Font e Icones alternativa --}}
      <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
      <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
@@ -87,7 +98,7 @@
                                             <td class="text-dark">{{$moeda->data}}</td>
                                             <td class="text-dark">{{$moeda->montante}}</td>
                                             <td> 
-                                                <a href="{{ route('verDocumentoMoeda', $moeda) }}" class="btn btn-success btn-round">Ver</a></td>
+                                                <a href="{{ route('verDocumentoMoeda', $moeda) }}" class="btn btn-success btn-block">Ver</a></td>
                                             <td class="text-dark">
                                                 @if ($moeda->estado == "0")
                                                     <div class="d-flex align-items-center">
@@ -135,6 +146,8 @@
 @endsection
 
 @push('scripts')
-    <script src="{{asset('assets/js/vendors.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
+<script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/meu.js')}}"></script>
 @endpush

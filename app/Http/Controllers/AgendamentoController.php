@@ -129,6 +129,7 @@ class AgendamentoController extends Controller
                 'data' => '',
                 'tipo' => '',
                 'estado' => '',
+                'documento' => '',
                 'observacao' => '',
                 'listaAgendamentos' => []
             ];   

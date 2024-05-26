@@ -282,4 +282,5 @@
     <script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
     <script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/pluto/js/meu.js')}}"></script>
 @endpush

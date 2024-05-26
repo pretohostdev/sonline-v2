@@ -7,13 +7,22 @@
     {{-- Inclusão do Bootstrap 5 no projecto --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
-
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
+    <!-- site css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
+   
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
     {{-- Font e Icones alternativa --}}
     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
@@ -21,16 +30,16 @@
 
 
 @section('header')
-    @include('layout.componentes.headerCliente')
+    @include('layout.componentes.topbar')
 @endsection
 
 @section('dashboard')
-    @include('layout.componentes.dashboardCliente')
+    @include('layout.componentes.dash')
 @endsection
 
 @section("corpo")
 
-<div class="row" style="margin-top:100px">
+<div class="row" style="margin-top:20px">
     <div class="col-md-12">
 
         <div class="d-block d-lg-flex flex-nowrap align-items-center">
@@ -285,7 +294,9 @@
 @endsection
 
 @push('scripts')
-    <script src="{{asset('assets/js/vendors.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
+    <script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
+    <script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/pluto/js/meu.js')}}"></script>
     <script src="{{asset('assets/js/funcoes.js')}}"></script>
 @endpush

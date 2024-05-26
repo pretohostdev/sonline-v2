@@ -2,12 +2,23 @@
 @section('titulo', 'visto')
 
 @push('styles')
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
+    <!-- site css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
 
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
      {{-- Font e Icones alternativa --}}
      <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
      <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
@@ -15,7 +26,7 @@
 
 
 @section('header')
-    @include('layout.componentes.header')
+    @include('layout.componentes.topbar')
 @endsection
 
 @section('dashboard')
@@ -25,9 +36,9 @@
 
 @section("corpo")
     
-    <div class="">
+    {{-- <div class=""> --}}
 
-        <div class="row" style="margin-top:80px">
+        <div class="row" style="margin-top:20px">
 
             <div class="col-md-12">
                 <!-- begin page title -->
@@ -88,7 +99,7 @@
                                             <td class="text-dark">{{$visto->dataSolicitacao}}</td>
                                             <td class="text-dark">{{$visto->dataPrevista}}</td>
                                             <td>
-                                                <a href="{{route('verDocumentoVisto', $visto->id)}}" class="btn btn-success btn-round">ver</a>
+                                                <a href="{{route('verDocumentoVisto', $visto->id)}}" class="btn btn-success btn-block">ver</a>
                                             </td>
                                             <td class="text-dark">{{$visto->paisDesejado}}</td>
                                             <td class="text-dark">
@@ -131,7 +142,7 @@
             
         </div>
 
-    </div>
+    {{-- </div> --}}
 @endsection
 
 @section('footer')
@@ -140,6 +151,8 @@
 
 
 @push('scripts')
-    <script src="{{asset('assets/js/vendors.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
+<script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/meu.js')}}"></script>
 @endpush

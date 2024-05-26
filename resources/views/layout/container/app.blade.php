@@ -12,12 +12,10 @@
       <meta name="author" content="Cláudio Rufino - PETROHOST" />
 
         <title>@yield('titulo', 'sonline Services')</title>
-
-      {{-- Inclusão de links css adicionais --}}
       @stack('styles')
       
    </head>
-   <body class="dashboard dashboard_1">
+   <body class="dashboard dashboard_2">
       <div class="full_container">
          <div class="inner_container">
 

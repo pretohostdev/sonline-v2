@@ -3,22 +3,21 @@
 @section('titulo', 'Cliente')
 
 @push('styles')
-<!-- site icon -->
-<link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
 <!-- bootstrap css -->
 <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
 <!-- site css -->
 <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
 <!-- responsive css -->
 <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
-<!-- color css -->
-{{-- <link rel="stylesheet" href="{{asset('assets/pluto/css/colors.css')}}" /> --}}
 <!-- select bootstrap -->
 <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
 <!-- scrollbar css -->
 <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
 <!-- custom css -->
 <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
+<!-- color css -->
+<link rel="stylesheet" href="{{asset('assets/pluto/css/color_2.css')}}" />
+
 
 {{-- Inclusão do Bootstrap 5 no projecto --}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -81,7 +80,7 @@
                                         @csrf
                                         @method('POST')
                                         <div class="mb-3">
-                                            <label for="nome">Nome completo</label>
+                                            <label for="nomeCompleto">Nome completo</label>
                                             <input type="text" class="form-control" name="nome" id="nomeCompleto" value="{{$cliente->nome}}">
                                         </div>
 
@@ -158,59 +157,7 @@
                                </div>
                             </div>
                          </div>
-
-
-                         <!-- profile contant section -->
-                         {{-- <div class="full inner_elements margin_top_30">
-                            <div class="tab_style2">
-                               <div class="tabbar">
-                                  <nav>
-                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#recent_activity" role="tab" aria-selected="true">Recent Activity</a>
-                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#project_worked" role="tab" aria-selected="false">Projects Worked on</a>
-                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#profile_section" role="tab" aria-selected="false">Profile</a>
-                                     </div>
-                                  </nav>
-                                  <div class="tab-content" id="nav-tabContent">
-                                     <div class="tab-pane fade show active" id="recent_activity" role="tabpanel" aria-labelledby="nav-home-tab">
-                                        <div class="msg_list_main">
-                                           <ul class="msg_list">
-                                              <li>
-                                                 <span><img src="images/layout_img/msg2.png" class="img-responsive" alt="#"></span>
-                                                 <span>
-                                                 <span class="name_user">Taison Jack</span>
-                                                 <span class="msg_user">Sed ut perspiciatis unde omnis.</span>
-                                                 <span class="time_ago">12 min ago</span>
-                                                 </span>
-                                              </li>
-                                              <li>
-                                                 <span><img src="images/layout_img/msg3.png" class="img-responsive" alt="#"></span>
-                                                 <span>
-                                                 <span class="name_user">Mike John</span>
-                                                 <span class="msg_user">On the other hand, we denounce.</span>
-                                                 <span class="time_ago">12 min ago</span>
-                                                 </span>
-                                              </li>
-                                           </ul>
-                                        </div>
-                                     </div>
-                                     <div class="tab-pane fade" id="project_worked" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et 
-                                           quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos 
-                                           qui ratione voluptatem sequi nesciunt.
-                                        </p>
-                                     </div>
-                                     <div class="tab-pane fade" id="profile_section" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et 
-                                           quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos 
-                                           qui ratione voluptatem sequi nesciunt.
-                                        </p>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                         </div> --}}
-                         <!-- end user profile section -->
+                        
                       </div>
                    </div>
                 </div>
@@ -327,24 +274,12 @@
 <script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
 <script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
 <script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
-<!-- wow animation -->
-{{-- <script src="{{asset('assets/pluto/js/animate.js')}}"></script> --}}
-<!-- select country -->
-{{-- <script src="{{asset('assets/pluto/js/bootstrap-select.js')}}"></script> --}}
-<!-- owl carousel -->
-{{-- <script src="{{asset('assets/pluto/js/owl.carousel.js')}}"></script>  --}}
-<!-- chart js -->
-{{-- <script src="{{asset('assets/pluto/js/Chart.min.js')}}"></script> --}}
-{{-- <script src="{{asset('assets/pluto/js/Chart.bundle.min.js')}}"></script> --}}
-{{-- <script src="{{asset('assets/pluto/js/utils.js')}}"></script> --}}
-{{-- <script src="{{asset('assets/pluto/js/analyser.js')}}"></script> --}}
-<!-- nice scrollbar -->
+
 <script src="{{asset('assets/pluto/js/perfect-scrollbar.min.js')}}"></script>
 <script>
    var ps = new PerfectScrollbar('#sidebar');
 </script>
 <!-- custom js -->
-{{-- <script src="{{asset('assets/pluto/js/custom.js')}}"></script> --}}
-{{-- <script src="{{asset('assets/pluto/js/chart_custom_style1.js')}}"></script> --}}
+<script src="{{asset('assets/pluto/js/meu.js')}}"></script>
 @endpush
 

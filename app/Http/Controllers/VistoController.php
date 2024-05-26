@@ -152,6 +152,7 @@ class VistoController extends Controller
                 'estado' => '',
                 'tipo' => '',
                 'documento' => '',
+                'comprovativo' => '',
                 'dataSolicitacao' => '',
                 'dataPrevista' => '',
                 'paisDesejado' => '',

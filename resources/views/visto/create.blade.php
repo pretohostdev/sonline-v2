@@ -13,24 +13,20 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
-    <!-- site icon -->
-<link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
-<!-- bootstrap css -->
-<link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
-<!-- site css -->
-<link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
-<!-- responsive css -->
-<link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
-<!-- color css -->
-{{-- <link rel="stylesheet" href="{{asset('assets/pluto/css/colors.css')}}" /> --}}
-<!-- select bootstrap -->
-<link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
-<!-- scrollbar css -->
-<link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
-<!-- custom css -->
-<link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
+    <!-- site css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
 
-<link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
 
     {{-- Font e Icones alternativa --}}
@@ -207,4 +203,5 @@
     <script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
     <script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/pluto/js/meu.js')}}"></script>
 @endpush

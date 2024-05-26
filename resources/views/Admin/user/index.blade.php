@@ -4,10 +4,22 @@
 @push('styles')
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
+    <!-- site css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
 
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
      {{-- Font e Icones alternativa --}}
      <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
      <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
@@ -52,7 +64,6 @@
                     
                     </div>
 
-
                 </div>
     
                 <!-- end page title -->
@@ -91,7 +102,6 @@
 
                                     @endforeach
                                     
-                                    
                                 </tbody>
                                 
                             </table>
@@ -104,98 +114,15 @@
                     </div>
                 </div>
             </div>
-
-            <script>
-                tabelaClientes.addEventListener('click', function(event) {
-                var elementoClicado = event.target;
-                var linha = elementoClicado.closest('tr');
-                var id = linha.dataset.id;
-
-                console.log(id);
-        
-                // if (elementoClicado.classList.contains('btn-eliminar')) {
-                //     console.log('Editar produto com ID:', id);
-                // }
-            });
-            </script>
-            
-
-            
         </div>
 
-
-
-        {{-- <div class="row">
-            <div class="col-12">
-                <div class="card card-statistics clients-contant">
-                    <div class="card-header">
-                        <div class="d-xxs-flex justify-content-between align-items-center">
-                            <div class="card-heading">
-                                <h4 class="card-title">Total clientes inscritos</h4> 
-                            </div>
-                            <div class="mt-xxs-0 mt-3 btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-sm btn-round  btn-primary">
-                                    <input type="radio" name="options" id="option1" checked="">
-                                    Diário
-                                </label>
-                                <label class="btn btn-sm btn-outline-primary">
-                                    <input type="radio" name="options" id="option2">
-                                    Semanal
-                                </label>
-                                <label class="btn btn-sm btn-round btn-outline-primary">
-                                    <input type="radio" name="options" id="option3"> Mensalmente
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body py-0 table-responsive">
-                        <table class="table clients-contant-table mb-0">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Contacto</th>
-                                    <th scope="col">Gênero</th>
-                                    <th scope="col">Editar & Deletar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <p class="font-weight-bold">Adrian Demiandro</p>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                20/07/2018
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>$230.00</td>
-                                    <td><span>Masculino</span></td>
-                                    <td>
-                                        <a href="javascript:void(0)" class="btn btn-icon btn-outline-primary btn-round mr-2 mb-2 mb-sm-0 btn-sm"><i class="ti ti-pencil"></i></a>
-                                        <a href="javascript:void(0)" class="btn btn-icon btn-outline-danger btn-round btn-sm"><i class="ti, ti-close"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-
-
-
     </div>
-
-
 
 @endsection
 
 @push('scripts')
-    <script src="{{asset('assets/js/vendors.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
+<script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/meu.js')}}"></script>
 @endpush

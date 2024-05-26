@@ -2,10 +2,22 @@
 @section('titulo', 'Enviar Email')
 
 @push('styles')
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
+    <!-- site css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
+
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
      {{-- Font e Icones alternativa --}}
@@ -15,7 +27,7 @@
 
 
 @section('header')
-    @include('layout.componentes.header')
+    @include('layout.componentes.topbar')
 @endsection
 
 @section('dashboard')
@@ -27,7 +39,7 @@
     
     <div class="">
 
-        <div class="row" style="margin-top:80px">
+        <div class="row" style="margin-top:20px">
 
             <div class="col-md-12">
                 <!-- begin page title -->
@@ -89,7 +101,6 @@
                                     <button type="submit" class="btn btn-lg bg-gradient text-light btn-block mt-2">Enviar Email</button>
                                     </form>
 
-
                                 </div>
 
                         </div>
@@ -105,8 +116,10 @@
 @endsection
 
 @push('scripts')
-    <script src="{{asset('assets/js/vendors.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
+<script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/meu.js')}}"></script>
 @endpush
     
     
