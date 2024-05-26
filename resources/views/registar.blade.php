@@ -14,9 +14,9 @@
     <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <!-- plugin stylesheets -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" >
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" > --}}
     <!-- app style -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" >
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/pluto/style.css')}}" >
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/registar.css')}}" >
 
 
@@ -33,19 +33,19 @@
         <div class="app-wrap">
 
             <!-- Início do pré-carregamento da página -->
-            @include('layout.componentes.carregamentoPagina')
+            {{-- @include('layout.componentes.carregamentoPagina') --}}
             <!-- end pre-loader -->
 
             <div class="app-contant">
-                <div class="bg-white">
-                    <div class="container-fluid p-0">
-                        <div class="row no-gutters">
-                            <div class="col-sm-6 col-lg-5 col-xxl-3  align-self-center order-2 order-sm-1">
-                                <div class="d-flex align-items-center h-100-vh">
+                <div class="" style="background-color: #cbcbcb">
+                    <div class="container-fluid">
+                        <div class="row no-gutters d-flex justify-content-center">
+                            <div class="col-sm-6 col-lg-5 col-xxl-3">
+                                <div class="d-flex align-items-center justify-content-center h-100-vh secao-registar">
                                     
                                     <div class="register p-5">
 
-                                        <div class="d-flex justify-content-center bg-inf">
+                                        <div class="d-flex justify-content-center">
                                             <img src="{{asset('assets/img/logo.jpg')}}" class="logo" alt="logo da empresa">
                                         </div>   
 
@@ -67,7 +67,7 @@
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label class="control-label">Primeiro nome</label>
+                                                        <label class="">Primeiro nome</label>
                                                         <input type="text" class="form-control" value="{{old('primeiroNome')}}" name="primeiroNome" id="primeiroNome" required>
                                                     </div>
                                                 </div>
@@ -129,7 +129,7 @@
                                                 </div>
                                                 
                                                 <div class="col-12 mt-3" id="divRegistar">
-                                                    <button type="submit" class="btn bg-gradient text-uppercase text-light" id="btn_testar">Registar</button>
+                                                    <button type="submit" class="btn btn-primary" id="btn_testar">Registar</button>
 
                                                     <div class="spinner-border text-primary" role="status" id="spinnerRegistar" style="margin-right: 10px">
                                                         <span class="sr-only">Loading...</span>
@@ -147,13 +147,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-xxl-9 col-lg-7 bg-gradient o-hidden order-1 order-sm-2">
+
+                            {{-- <div class="col-sm-6 col-xxl-9 col-lg-7 bg-gradient o-hidden order-1 order-sm-2">
                                 <div class="row align-items-center h-100">
                                     <div class="col-7 mx-auto ">
                                         <img class="img-fluid" src="assets/img/login.png" alt="">
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
+
                         </div>
                     </div>
                 </div>
@@ -234,10 +236,10 @@
     </div>
 
     <!-- plugins -->
-    <script src="assets/js/vendors.js"></script>
+    {{-- <script src="assets/js/vendors.js"></script> --}}
 
     <!-- custom app -->
-    <script src="assets/js/app.js"></script>
+    {{-- <script src="assets/js/app.js"></script> --}}
 </body>
 
 </html>

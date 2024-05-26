@@ -1202,7 +1202,7 @@ a[data-toggle="collapse"] {
     margin-top: 10px;
 }
 
-#rebenue {}
+/* #rebenue {} */
 
 .graph_revenue {
     padding: 0;
@@ -1747,7 +1747,7 @@ a[data-toggle="collapse"] {
     min-width: 125px;
     height: auto;
     float: left;
-    background: #1ed085;
+    background: #007bff;
     text-align: center;
     color: #fff;
     padding: 10px 25px;
@@ -2397,7 +2397,7 @@ h2.invoice_head small {
     background-color: #fff;
 }
 
-.table_row tbody {}
+/* .table_row tbody {} */
 
 .table_row tbody tr {
     border: none;
@@ -2631,7 +2631,7 @@ ul.inbox-nav li a i {
     top: 1px;
 }
 
-ul.inbox-nav li a span.label {}
+/* ul.inbox-nav li a span.label {} */
 
 ul.labels-info li h4 {
     color: #5c5c5e;
@@ -3163,7 +3163,7 @@ ul.labels-category li p {
     padding: 7px 0;
 }
 
-.bottom_list .left_rating p.ratings a {}
+/* .bottom_list .left_rating p.ratings a {} */
 
 .fa.fa-star {
     color: #ff9800;
@@ -3277,7 +3277,8 @@ table.projects tr td:first-child {
 }
 
 .logo_login {
-    background: url('images/layout_img/login_image.jpg');
+    /* background: url('images/layout_img/foto-logo.jpg'); */
+        /* background-color: rgb(235, 97, 47); */
     padding: 50px 0;
     background-position: center center;
     position: relative;
@@ -3289,7 +3290,8 @@ table.projects tr td:first-child {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: rgba(21, 40, 60, .8);
+    background-color: rgb(237, 91, 38);
+        /* background: rgba(21, 40, 60, .8); */
     top: 0px;
     left: 0;
 }

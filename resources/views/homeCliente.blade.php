@@ -1,230 +1,254 @@
 @extends('layout.container.app')
 
-@section('titulo', 'Inicio')
+@section('titulo', 'Cliente')
 
 @push('styles')
+<!-- site icon -->
+<link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
+<!-- bootstrap css -->
+<link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
+<!-- site css -->
+<link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
+<!-- responsive css -->
+<link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
+<!-- color css -->
+{{-- <link rel="stylesheet" href="{{asset('assets/pluto/css/colors.css')}}" /> --}}
+<!-- select bootstrap -->
+<link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
+<!-- scrollbar css -->
+<link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+<!-- custom css -->
+<link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
 
-    {{-- Inclusão do Bootstrap 5 no projecto --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
-
-    {{-- Font e Icones alternativa --}}
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
+{{-- Inclusão do Bootstrap 5 no projecto --}}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 @endpush
 
 
 @section('header')
-    @include('layout.componentes.headerCliente')
+    @include('layout.componentes.topbar')
 @endsection
 
 @section('dashboard')
-    @include('layout.componentes.dashboardCliente')
+    @include('layout.componentes.dash')
 @endsection
 
 @section("corpo")
 
-<div class="row" style="margin-top:100px">
-    <div class="col-md-12">
+<div class="midde_cont">
+    <div class="container-fluid">
+       <div class="row column_title">
+          <div class="col-md-12">
+             <div class="page_title">
+                <h2>Perfil</h2>
+             </div>
+          </div>
+       </div>
+       <!-- row -->
+       <div class="row column1">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+             <div class="white_shd full margin_bottom_30">
+                <div class="full graph_head">
+                   <div class="heading1 margin_0">
+                      <h2>Dados Pessoais</h2>
+                   </div>
+                </div>
+                <div class="full price_table padding_infor_info">
+                   <div class="row">
+                      <!-- user profile section --> 
+                      <!-- profile image -->
+                      <div class="col-lg-12">
+                         <div class="full dis_flex center_text">
+                            <div class="profile_img">
+                                <img src="{{asset('assets/img/perfil.png')}}" width="180" class="rounded-circle" class="img-fluid" alt="users-avatar">
+                            </div>
+                            <div class="profile_contant">
+                               <div class="contact_inner">
+                                  <h3>{{ $cliente->nome }}</h3>
+                                  <p><strong>Sobre: </strong>Cliente Sonline</p>
+                                  <ul class="list-unstyled">
+                                     <li><i class="fa fa-envelope-o"></i> : {{ $cliente->email }}</li>
+                                     <li><i class="fa fa-phone mb-3"></i> : {{ $cliente->contacto }}</li>
+                                  </ul>
+                               </div>
 
-        <div class="d-block d-lg-flex flex-nowrap align-items-center">
-            <div class="page-title mr-4 pr-4 border-right">
-                <h1>Sonline</h1>
-            </div>
-            <div class="breadcrumb-bar align-items-center">
-                <nav>
-                    <ol class="breadcrumb p-0 m-b-0">
-                        <li class="breadcrumb-item">
-                            <a href="x"></a>
-                        </li>
-                        <li>
-                            Página Principal
-                        </li>
-                    </ol>
-                </nav>
-            </div>
+                               <div class="user_progress_bar">
+                                  <div class="progress_bar">
+                                     <!-- Skill Bars -->
+                                     <form method="POST" id="formEditarDados">
+                                        @csrf
+                                        @method('POST')
+                                        <div class="mb-3">
+                                            <label for="nome">Nome completo</label>
+                                            <input type="text" class="form-control" name="nome" id="nomeCompleto" value="{{$cliente->nome}}">
+                                        </div>
 
-            @include('layout.componentes.cabecalho_2')
+                                        <div class="mb-3">
+                                            <label for="contacto">Número do Telefone</label>
+                                            <input type="text" class="form-control" name="contacto" id="contacto" value="{{$cliente->contacto}}">
+                                        </div>
 
+                                        <div class="mb-3">
+                                            <label for="genero">Género</label>
+                                            <input type="email" class="form-control" name="genero" id="genero" value="{{$cliente->genero}}" readonly>
+                                        </div>
 
-        </div>
-
-
-        <!--mail-Compose-contant-start-->
-        <div class="row account-contant mt-2">
-            <div class="col-12">
-                <div class="card card-statistics">
-                    <div class="card-body p-0">
-                        <div class="row no-gutters">
-                            <div class="col-xl-3 pb-xl-0 pb-5 border-right">
-                                <div class="page-account-profil pt-5">
-                                    <div class="profile-img text-center rounded-circle">
-                                        <div class="pt-5">
-                                            <div class="bg-img m-auto">
-                                                <img src="{{asset('assets/img/perfil.png')}}" class="img-fluid" alt="users-avatar">
+                                        <div class="form-row">
+                                            <div class="col-12">
+                                                <label class="mb-1">Data de Nascimento</label>
                                             </div>
-                                            <div class="profile pt-4">
-                                                <h4 class="mb-1">{{ $cliente->nome }}</h4>
-                                                <p>cliente</p>
+                                            <div class="form-group col-md-4">
+                                                <input id="diaNascimento" class="form-control" name="diaNascimento" value="{{$cliente->diaNascimento}}">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input id="mesNascimento" class="form-control" name="mesNascimento" value="{{$cliente->mesNascimento}}">
+                                            </div>
+
+                                            <div class="form-group col-md-4">
+                                                <input id="anoNascimento" class="form-control" name="anoNascimento" value="{{$cliente->anoNascimento}}">
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="py-5 profile-counter">
-                                        <ul class="nav justify-content-center text-center">
-                                            <li class="nav-item border-right px-3">
-                                                <div>
-                                                    <h4 class="mb-0">{{ $cliente->totalMoedas }}</h4>
-                                                    <p>Moedas</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="nav-item border-right px-3">
-                                                <div>
-                                                    <h4 class="mb-0">{{ $cliente->totalContas }}</h4>
-                                                    <p>Conta</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="nav-item px-3">
-                                                <div>
-                                                    <h4 class="mb-0">{{ $cliente->totalRedirecionamentos }}</h4>
-                                                    <p>Redire...</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-xl-5 col-md-6 col-12 border-t border-right">
-                                <div class="page-account-form">
-                                    <div class="form-titel border-bottom p-3">
-                                        <h5 class="mb-0 py-2">Editar dados pessoais</h5>
-                                    </div>
-                                    <div class="p-4">
-                                        <form method="POST" id="formEditarDados">
-                                            @csrf
-                                            @method('POST')
-
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label for="nome">Nome completo</label>
-                                                    <input type="text" class="form-control" name="nome" id="nomeCompleto" value="{{$cliente->nome}}">
-                                                </div>
-                                                <div class="form-group col-md-12">
-                                                    <label for="email">Email</label>
-                                                    <input type="text" class="form-control" name="email" id="email" value="{{$cliente->email}}" readonly>
-                                                </div>
-                                                <div class="form-group col-md-12">
-                                                    <label for="contacto">Número do Telefone</label>
-                                                    <input type="text" class="form-control" name="contacto" id="contacto" value="{{$cliente->contacto}}">
-                                                </div>
-                                                <div class="form-group col-md-12">
-                                                    <label for="genero">Gênero</label>
-                                                    <input type="email" class="form-control" name="genero" id="genero" value="{{$cliente->genero}}" readonly>
-                                                </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="pais">País</label>
+                                                <input id="pais" class="form-control" name="pais" value="{{$cliente->pais}}" required>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="cidade">Cidade</label>
+                                                <input id="cidade" class="form-control" name="cidade" value="{{$cliente->cidade}}" required>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="bairro">Bairro</label>
+                                                <input type="text" class="form-control" name="bairro" id="bairro" value="{{$cliente->bairro}}" required>
                                             </div>
 
-                                            <div class="form-row">
-                                                <div class="col-12">
-                                                    <label class="mb-1">Data de Nascimento</label>
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <input id="diaNascimento" class="form-control" name="diaNascimento" value="{{$cliente->diaNascimento}}">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <input id="mesNascimento" class="form-control" name="mesNascimento" value="{{$cliente->mesNascimento}}">
-                                                </div>
-
-                                                <div class="form-group col-md-4">
-                                                    <input id="anoNascimento" class="form-control" name="anoNascimento" value="{{$cliente->anoNascimento}}">
-                                                </div>
+                                            <div class="form-group col-md-4">
+                                                <input type="hidden" class="form-control" id="user_id" value="{{$cliente->id}}">
                                             </div>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="pais">País</label>
-                                                    <input id="pais" class="form-control" name="pais" value="{{$cliente->pais}}" required>
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="cidade">Cidade</label>
-                                                    <input id="cidade" class="form-control" name="cidade" value="{{$cliente->cidade}}" required>
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="bairro">Bairro</label>
-                                                    <input type="text" class="form-control" name="bairro" id="bairro" value="{{$cliente->bairro}}" required>
-                                                </div>
 
-                                                <div class="form-group col-md-4">
-                                                    <input type="hidden" class="form-control" id="user_id" value="{{$cliente->id}}">
-                                                </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                <label class="form-check-label" for="gridCheck">
+                                                    Concordo com as alterações.
+                                                </label>
+                                            </div>
+                                        </div>
 
+                                        <div class="d-flex justify-content-space-between">
+                                            <div class="mr-4 bg-dark">
+                                                <button type="submit" class="btn btn-primary">Atualizar dados</button> 
                                             </div>
-                                            <div class="form-group">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                    <label class="form-check-label" for="gridCheck">
-                                                        Concordo com as alterações.
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-space-round">
-                                                <button type="submit" class="btn bg-gradient text-light">Atualizar dados</button> 
-                                                <i class="fa fa-check fa-2x text-success" id="atualizadoDadosSucesso"></i>
+                                            <div>
+                                                <i class="fa fa-check fa-2x text-success mr-2" id="atualizadoDadosSucesso"></i>
                                                 <i class="fa fa-close fa-2x text-danger" id="atualizadoDadosErro"></i>
-                                                <div class="spinner-border text-primary" role="status" id="spinnerAtualizar">
+                                                <div class="spinner-border text-primary mr-2" role="status" id="spinnerAtualizar">
                                                     <span class="sr-only">Loading...</span>
-                                                  </div>
+                                                </div>
                                             </div>
                                             
-                                        </form>
-                                    </div>
+                                        </div>
+                                     </form>
+                                     
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+
+
+                         <!-- profile contant section -->
+                         {{-- <div class="full inner_elements margin_top_30">
+                            <div class="tab_style2">
+                               <div class="tabbar">
+                                  <nav>
+                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#recent_activity" role="tab" aria-selected="true">Recent Activity</a>
+                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#project_worked" role="tab" aria-selected="false">Projects Worked on</a>
+                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#profile_section" role="tab" aria-selected="false">Profile</a>
+                                     </div>
+                                  </nav>
+                                  <div class="tab-content" id="nav-tabContent">
+                                     <div class="tab-pane fade show active" id="recent_activity" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="msg_list_main">
+                                           <ul class="msg_list">
+                                              <li>
+                                                 <span><img src="images/layout_img/msg2.png" class="img-responsive" alt="#"></span>
+                                                 <span>
+                                                 <span class="name_user">Taison Jack</span>
+                                                 <span class="msg_user">Sed ut perspiciatis unde omnis.</span>
+                                                 <span class="time_ago">12 min ago</span>
+                                                 </span>
+                                              </li>
+                                              <li>
+                                                 <span><img src="images/layout_img/msg3.png" class="img-responsive" alt="#"></span>
+                                                 <span>
+                                                 <span class="name_user">Mike John</span>
+                                                 <span class="msg_user">On the other hand, we denounce.</span>
+                                                 <span class="time_ago">12 min ago</span>
+                                                 </span>
+                                              </li>
+                                           </ul>
+                                        </div>
+                                     </div>
+                                     <div class="tab-pane fade" id="project_worked" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et 
+                                           quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos 
+                                           qui ratione voluptatem sequi nesciunt.
+                                        </p>
+                                     </div>
+                                     <div class="tab-pane fade" id="profile_section" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et 
+                                           quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos 
+                                           qui ratione voluptatem sequi nesciunt.
+                                        </p>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div> --}}
+                         <!-- end user profile section -->
+                      </div>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="container orange_bg">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="heading1" style="box-shadow: -1px 1px 4px -2px rgba(0, 0, 0, 0.2);">
+                                    <h2 class="text-center text-light">
+                                        Meus Serviços
+                                    </h2>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-md-6 border-t col-12">
-                                <div class="page-account-form">
-                                    <div class="form-titel border-bottom p-3">
-                                        <h5 class="mb-0 py-2">Links Rápidos</h5>
-                                    </div>
-                                    <div class="p-4">
-                                        <form>
-                                            <div class="form-group">
-                                                <a href="{{ route('visto.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoVisto" >Estado do visto</a>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <a href="{{ route('conta.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoConta" >Estado da abertura de conta</a>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <a href="{{ route('moeda.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoMoeda" >Estado da solicitação da moeda</a>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <a href="{{ route('agendamento.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoAgendamento" >Estado de solicitação de agendamento</a>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <a href="{{ route('redirecionamento.estado') }}" class="btn btn-block bg-gradient text-light" id="estadoRedirecionamento" >Estado do redirecionamento de Produto</a>
-                                            </div>
-                                            
-                                        </form>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                            <div class="mb-5">
+                                <a href="{{ route('visto.estado') }}" class="btn btn-outline-light">Vistos</a>
+                                <a href="{{ route('conta.estado') }}" class="btn btn-outline-light">Contas</a>
+                                <a href="{{ route('moeda.estado') }}" class="btn btn-outline-light">Moedas</a>
+                                <a href="{{ route('agendamento.estado') }}" class="btn btn-outline-light">Agendamentos</a>
+                                <a href="{{ route('redirecionamento.estado') }}" class="btn btn-outline-light">Redirecionamentos</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+             </div>
+             <div class="col-md-2"></div>
+          </div>
+          <!-- end row -->
+       </div>
+       <!-- footer -->
+       @section('footer')
+            @include('layout.componentes.footer')
+       @endsection
 
-
-</div>
+    </div>
+    <!-- end dashboard inner -->
+ </div>
 
     <script>
         document.getElementById('formEditarDados').addEventListener('submit', function(event) {
@@ -296,18 +320,31 @@
         });
     </script>
 
-</div>
-    
-
-
 @endsection
 
-@section('footer')
-    @include('layout.componentes.footer')
-@endsection
 
 @push('scripts')
-    <script src="{{asset('assets/js/vendors.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
+<script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
+<script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+<!-- wow animation -->
+{{-- <script src="{{asset('assets/pluto/js/animate.js')}}"></script> --}}
+<!-- select country -->
+{{-- <script src="{{asset('assets/pluto/js/bootstrap-select.js')}}"></script> --}}
+<!-- owl carousel -->
+{{-- <script src="{{asset('assets/pluto/js/owl.carousel.js')}}"></script>  --}}
+<!-- chart js -->
+{{-- <script src="{{asset('assets/pluto/js/Chart.min.js')}}"></script> --}}
+{{-- <script src="{{asset('assets/pluto/js/Chart.bundle.min.js')}}"></script> --}}
+{{-- <script src="{{asset('assets/pluto/js/utils.js')}}"></script> --}}
+{{-- <script src="{{asset('assets/pluto/js/analyser.js')}}"></script> --}}
+<!-- nice scrollbar -->
+<script src="{{asset('assets/pluto/js/perfect-scrollbar.min.js')}}"></script>
+<script>
+   var ps = new PerfectScrollbar('#sidebar');
+</script>
+<!-- custom js -->
+{{-- <script src="{{asset('assets/pluto/js/custom.js')}}"></script> --}}
+{{-- <script src="{{asset('assets/pluto/js/chart_custom_style1.js')}}"></script> --}}
 @endpush
 

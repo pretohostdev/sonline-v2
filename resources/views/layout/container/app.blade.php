@@ -1,4 +1,56 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <meta name="description" content="Página Principal do site" />
+      <meta name="author" content="Cláudio Rufino - PETROHOST" />
+
+        <title>@yield('titulo', 'sonline Services')</title>
+
+      {{-- Inclusão de links css adicionais --}}
+      @stack('styles')
+      
+   </head>
+   <body class="dashboard dashboard_1">
+      <div class="full_container">
+         <div class="inner_container">
+
+
+            <!-- Sidebar  -->
+            @yield('dashboard')
+            <!-- end sidebar -->
+
+
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+                    @include('layout.componentes.topbar')
+               <!-- end topbar -->
+
+
+               <!-- dashboard inner -->
+                    @yield("corpo")
+               <!-- end dashboard inner -->
+
+
+            </div>
+            
+         </div>
+      </div>
+      
+      @stack('scripts') 
+   </body>
+</html>
+
+
+
+{{-- <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +59,6 @@
     <meta name="description" content="Página Principal do site" />
     <meta name="author" content="Cláudio Rufino - PETROHOST" />
 
-    {{-- Inclusão de links Css --}}
     @stack('styles')
 
     <title>@yield('titulo', 'sonline Services')</title>
@@ -28,7 +79,6 @@
             <div class="app-container">
                 @yield('dashboard')
                 
-                <!-- Esse é o corpo do sistema -->
                 <div class="app-main" id="main">
                     
                     <div class="container-fluid">
@@ -47,4 +97,4 @@
      @stack('scripts')
     
 </body>
-</html>
+</html> --}}

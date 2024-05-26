@@ -1,109 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Login</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+      <link rel="icon" href="{{asset('assets/img/favicon.jpg" type="image/jpg')}}" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
+      <!-- site css -->
+      <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
+      <!-- color css -->
+      <link rel="stylesheet" href="{{asset('assets/pluto/css/colors.css')}}" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
+      <!-- calendar file css -->
+      <link rel="stylesheet" href="{{asset('assets/pluto/js/semantic.min.css')}}" />
+     
+   </head>
+   <body class="inner_page login">
+      <div class="full_container">
+         <div class="container">
+            <div class="center verticle_center full_height">
+               <div class="login_section">
+                  <div class="logo_login">
+                     <div class="center">
+                        <img width="210" src="{{asset('assets/img/logo2.jpg')}}" alt="#" />
+                     </div>
+                  </div>
+                  <div class="login_form">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="author" content="PETROHOST" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- app favicon -->
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <!-- plugin stylesheets -->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors.css"/>
-    <!-- app style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/registar.css')}}">
-    <title>Login</title>
-</head>
-
-<body class="bg-white">
-    <!-- begin app -->
-    <div class="app">
-        <!-- begin app-wrap -->
-        <div class="app-wrap">
-           
-             <!-- Início do pré-carregamento da página -->
-             @include('layout.componentes.carregamentoPagina')
-
-            <!--start login contant-->
-            <div class="app-contant">
-                
-                <div class="bg-white">
-                    <div class="container-fluid p-0">
-                        <div class="row no-gutters">
-                            <div class="col-sm-6 col-lg-5 col-xxl-3  align-self-center order-2 order-sm-1">
-                                <div class="d-flex align-items-center h-100-vh">
-                                    <div class="login p-50">
-                                        <div class="d-flex justify-content-center">
-                                            <img src="{{asset('assets/img/logo.jpg')}}" class="logo" alt="">
-                                        </div>
-                                        <h1 class="mb-2 text-center">Sonline Service</h1>
-
-                                        @if ($errors->any())
-                                            <div class="alert alert-danger">
-                                                <ul style="list-style: none;">
-                                                    @foreach ($errors->all() as $error)
-                                                        <li class="text-light">{{ $error }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        @endif
-
-                                        <form action="{{route('login.store')}}"  method="POST" class="mt-3 mt-sm-5">
-                                            @csrf
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Email" name="email" value="{{old("email")}}" required />
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <input type="password" class="form-control" placeholder="Senha" name="password" value="{{old("password")}}" required />
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="d-block d-sm-flex  align-items-center">
-                                                        <div class="form-check">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 mt-3 d-flex justify-content-center">
-                                                    <button type="submit" class="btn btn-primary text-uppercase">Entrar</button>
-                                                </div>
-                                                <div class="col-12  mt-3">
-                                                    <p>Não tem uma conta ?<a href="{{route('registar')}}" class="text-primary"> Registra-se</a></p>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xxl-9 col-lg-7 bg-gradient o-hidden order-1 order-sm-2">
-                                <div class="row align-items-center h-100">
-                                    <div class="col-7 mx-auto ">
-                                        <img class="img-fluid" src="assets/img/login.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
+                    @if ($errors->any())
+                        <div class="alert alert-danger text-center">
+                            <ul style="list-style: none;">
+                                @foreach ($errors->all() as $error)
+                                    <li class="text-dark"><strong>{{ $error }}</strong></li>
+                                @endforeach
+                            </ul>
                         </div>
-                    </div>
-                </div>
+                    @endif
+
+                     <form action="{{route('login.store')}}"  method="POST" class="mt-3 mt-sm-5">
+                        @csrf
+                        <fieldset>
+                           <div class="field">
+                              <label class="label_field">Email</label>
+                              <input type="email" name="email" value="{{old("email")}}" required />
+                           </div>
+                           <div class="field">
+                              <label class="label_field">Senha</label>
+                              <input type="password" name="password" placeholder="Password" />
+                           </div>
+                           <div class="field">
+                              <label class="label_field hidden">hidden label</label>
+                              <label class="form-check-label"><input type="checkbox" class="form-check-input"> Remember Me</label>
+                              <a class="forgot" href="{{route('registar')}}">Criar conta</a>
+                           </div>
+                           <div class="field margin_0">
+                              <label class="label_field hidden">hidden label</label>
+                              <button type="submit" class="main_bt">Entrar</button>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
             </div>
-            <!--end login contant-->
-        </div>
-        <!-- end app-wrap -->
-    </div>
-    <!-- end app -->
-
-    <!-- plugins -->
-    <script src="{{asset('assets/js/vendors.js')}}"></script>
-
-    <!-- custom app -->
-    <script src="{{asset('assets/js/app.js')}}"></script>
-</body>
-
-
+         </div>
+      </div>
+      <!-- jQuery -->
+      <script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
+      <script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
+      <script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
+      <!-- wow animation -->
+      <script src="{{asset('assets/pluto/js/animate.js')}}"></script>
+      <!-- select country -->
+      <script src="{{asset('assets/pluto/js/bootstrap-select.js')}}"></script>
+      <!-- nice scrollbar -->
+      <script src="{{asset('assets/pluto/js/perfect-scrollbar.min.js')}}"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="{{asset('assets/pluto/js/custom.js')}}"></script>
+   </body>
 </html>
