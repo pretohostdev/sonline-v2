@@ -50,13 +50,6 @@ header {
     font-weight: 400px;
 }
 
-.login-button a {
-    background-color: #0187a7;
-    padding: 10px 15px;
-    border-radius: 5px;
-    color: #fff;
-}
-
 .mobile-menu-icon {
     display: none;
 }
