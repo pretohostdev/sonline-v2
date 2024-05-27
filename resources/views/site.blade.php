@@ -123,18 +123,19 @@
       </section>
     {{-- <hr> --}}
     <section class="about-area pt-10">
-        <div class="container" style="backgroun-color: #F0F8FF; margin-top:4px; border-top-left-radius:20px;border-top-right-radius:20px;">
+        <div class="container" style="margin-top:4px;">
             <div class="row">
                 <div class="col-lg-6 d-flex align-items-center">
                     <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="section-title">
-                            <div class="line"></div>
-                            <h3 class="title tituloAnimado" style="color:#2779a7"><span>Somos a filial da</span> Amazon</h3>
+                        <div class="section-title ">
+                            {{-- <div class="line"></div> --}}
+                            <h2 class="title tituloAnimado" style="color:#2779a7">Somos a filial da Amazon</h2>
                         </div>
-                        <p class="text-dark"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
+                        <p> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
                             segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
-                            praticidade de fazer suas compras online conosco. Como filial da amazon, trazemos para si os melhores produtos do mercado.</p>
-                        <a href="#produtos" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Ver Produtos</a>
+                            praticidade de fazer suas compras online conosco. Como filial da amazon, trazemos para si os melhores produtos do mercado.
+                       </p>
+                       <a href="#produtos" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Ver Produtos</a>
                     </div>                
                 </div>
                 <div class="col-lg-6">
@@ -207,7 +208,7 @@
                             </div>
                         </div>
                         <div class="testimonial-text">
-                            <p class="text">Este site superou todas as minhas expectativas! Além de uma ampla seleção de produtos, o atendimento ao cliente foi excepcional. Minha dúvida foi respondida rapidamente.</p>
+                            <p class="text">Este site superou todas as minhas expectativas! Além de uma ampla variedade de serviços, o atendimento ao cliente foi excepcional. Minhas dúvidas foram respondidas rapidamente.</p>
                         </div>
                         <div class="testimonial-author d-flex align-items-center">
                             <div class="author-image">
@@ -394,18 +395,14 @@
       </article> 
 
       <article class="d-flex align-items-center justify-content-center">
-        <div class="row">
-          <div class="col-lg-12" style="height:200px">
-            <h2 class="font-weight-bold tituloAnimado text-center" style="color:white">Sonline Service</h2> 
-            <h2 class="font-weight-bold tituloAnimado" style="color:white">Melhores preços do Mercado</h2> 
-            <div class="d-flex align-items-center justify-content-center">
-              <a href="{{route('login')}}" class="main-btn mt-4">Solicitar Serviço</a>
-            </div>
-          </div> 
-        </div>
-      </article> 
-
-      <article></article>
+        <div class="col-lg-6" style="height:200px">
+          <h2 class="font-weight-bold tituloAnimado" style="color:white">Divisas & <br>Preços competitivos</h2> 
+          <a href="{{route('login')}}" class="main-btn mt-4">Solicitar Serviço</a>
+        </div>  
+      </article>
+      {{-- <article></article> --}}
+    </div>
+    <div class="row mt-1">
     </div>
     
   <footer id="contacto" style="background-color:#062f4f">
@@ -459,7 +456,6 @@
               <ul class="footer-social">
                 <li><a class="facebook" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6" target="_blank"><i class="lni-facebook-filled"></i></a></li>
                 <li><a class="twitter" href="https://www.instagram.com/sonline_services"  target="_blank"><i class="lni lni-instagram-original"></i></a></li>
-                <li><a class="google-plus" href="javascript:void()"><i class="lni-google-plus"></i></a></li>
               </ul> 
             </div>
           </div>

@@ -30,8 +30,10 @@
             </ul>
         </div>
 
-        <div class="login-button">
-            <a href="{{route('login')}}" class="">Entrar</a>
+        <div class="login-butto">
+            <a href="{{route('login')}}" class="btn btn-info btn-round">
+                <i class="ti ti-2x ti-user mr-1" aria-hidden="true"></i>
+                Entrar</a>
         </div>
 
         <div class="mobile-menu">

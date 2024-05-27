@@ -117,7 +117,7 @@
                                                         <input type="password" class="form-control" name="password" id="password" value="{{old('password')}}" required>
                                                     </div>
                                                 </div>
-                                                <span id="senhaMensagem" class="error-message"></span>
+                                                <span id="senhaMensagem" class="error-message mt-3"></span>
 
                                                 <div class="col-12">
                                                     <div class="form-check">
