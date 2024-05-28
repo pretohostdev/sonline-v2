@@ -12,24 +12,11 @@
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
-      <!-- site icon -->
-      <link rel="icon" href="{{asset('assets/img/favicon.jpg" type="image/jpg')}}" />
-      <!-- bootstrap css -->
+
+      <link rel="icon" href="{{asset('assets/img/favicon.jpg')}}" type="image/jpg" />
       <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
-      <!-- site css -->
       <link rel="stylesheet" href="{{asset('assets/pluto/style.css')}}" />
-      <!-- responsive css -->
       <link rel="stylesheet" href="{{asset('assets/pluto/css/responsive.css')}}" />
-      <!-- color css -->
-      <link rel="stylesheet" href="{{asset('assets/pluto/css/colors.css')}}" />
-      <!-- select bootstrap -->
-      <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap-select.css')}}" />
-      <!-- scrollbar css -->
-      <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
-      <!-- custom css -->
-      <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
-      <!-- calendar file css -->
-      <link rel="stylesheet" href="{{asset('assets/pluto/js/semantic.min.css')}}" />
      
    </head>
    <body class="inner_page login">
@@ -85,16 +72,5 @@
       <script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
       <script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
       <script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
-      <!-- wow animation -->
-      <script src="{{asset('assets/pluto/js/animate.js')}}"></script>
-      <!-- select country -->
-      <script src="{{asset('assets/pluto/js/bootstrap-select.js')}}"></script>
-      <!-- nice scrollbar -->
-      <script src="{{asset('assets/pluto/js/perfect-scrollbar.min.js')}}"></script>
-      <script>
-         var ps = new PerfectScrollbar('#sidebar');
-      </script>
-      <!-- custom js -->
-      <script src="{{asset('assets/pluto/js/custom.js')}}"></script>
    </body>
 </html>

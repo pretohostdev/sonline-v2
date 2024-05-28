@@ -61,7 +61,7 @@
 
         <div class="mobile-menu-icon">
             <button onclick="menuShow()">
-                <img src="{{asset('assets/img/menu-open.svg')}}" alt="" class="icon">
+                <img src="{{asset('assets/img/menu.svg')}}" alt="" class="icon">
             </button>
         </div>
         

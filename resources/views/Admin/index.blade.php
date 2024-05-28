@@ -37,8 +37,6 @@
 
 @section("corpo")
 
-{{-- <div class="conteudo"> --}}
-   
     <div class="row" style="margin-top:20px">
         <div class="col-md-12">
             <!-- begin page title -->
@@ -153,16 +151,12 @@
         </div>
     </div>
 
-    
-
-   
-
-
+    {{-- @section('footer') --}}
+        @include('layout.componentes.footer')
+    {{-- @endsection --}}
 @endsection
 
-@section('footer')
-    @include('layout.componentes.footer')
-@endsection
+
 
 @push('scripts')
 <script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>

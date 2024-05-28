@@ -39,7 +39,7 @@
         <div class="app-wrap">
 
             <!-- Início do pré-carregamento da página -->
-            @include('layout.componentes.carregamentoPagina')
+            {{-- @include('layout.componentes.carregamentoPagina') --}}
             <!-- end pre-loader -->
             <div class="error-contant">
                 <div class="error-innr">
