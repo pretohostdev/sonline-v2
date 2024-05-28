@@ -36,9 +36,9 @@
         <div class="container">
 
           <div class="row">
-            <div class="col-12 col-lg-12">
-               <div class="features-text section-header text-center bg-dark">  
-                  <div class="bg-info">   
+            <div class="col-12 col-lg-12 d-flex justify-content-center">
+               <div class="features-text section-header text-center">  
+                  <div class="section-header-div">   
                     <h2 class="section-title tituloAnimado" style="font-family:Roboto; color:#2779a7" id="servicos">NOSSOS SERVIÇOS</h2>
                     <div class="desc-text text-center">
                         <p style="color:#2779a7">A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
@@ -49,8 +49,8 @@
           </div>
 
           <div class="row featured-bg">
-            <div class="col-lg-6 col-md-6 col-xs-12 p-0">
-              <div class="feature-item featured-border1">
+            <div class="col-12 col-md-6 col-lg-6 p-0">
+              <div class="feature-item featured-border1 feature-body">
                  <div class="feature-icon float-left">
                    <i class="lni lni-coin"></i>
                  </div>
@@ -61,8 +61,8 @@
               </div>
             </div>
             
-            <div class="col-lg-6 col-md-6 col-xs-12 p-0">
-              <div class="feature-item featured-border2">
+            <div class="col-12 col-md-6 col-lg-6 p-0">
+              <div class="feature-item featured-border2 feature-body">
                  <div class="feature-icon float-left">
                    <i class="lni lni-visa"></i>
                  </div>
@@ -72,8 +72,9 @@
                  </div>
               </div>
             </div>
+
             
-            <div class="col-lg-6 col-md-6 col-xs-12 p-0">
+            <div class="col-lg-6 col-md-6 col-12 p-0">
               <div class="feature-item featured-border1">
                  <div class="feature-icon float-left">
                     <i class="lni lni-producthunt"></i>
@@ -85,7 +86,7 @@
               </div>
             </div>
 
-             <div class="col-lg-6 col-md-6 col-xs-12 p-0">
+             <div class="col-lg-6 col-md-6 col-12 p-0">
                <div class="feature-item featured-border2">
                   <div class="feature-icon float-left">
                     <i class="lni-briefcase"></i>
@@ -97,7 +98,7 @@
                </div>
              </div>
             
-            <div class="col-lg-6 col-md-6 col-xs-12 p-0">
+            <div class="col-lg-6 col-md-6 col-12 p-0">
               <div class="feature-item featured-border3">
                  <div class="feature-icon float-left">
                    <i class="lni-reload"></i>
@@ -108,9 +109,8 @@
                  </div>
               </div>
             </div>
-             <!-- End Col -->
             
-            <div class="col-lg-6 col-md-6 col-xs-12 p-0">
+            <div class="col-lg-6 col-md-6 col-12 p-0">
               <div class="feature-item">
                  <div class="feature-icon float-left">
                     <i class="lni lni-amazon-original"></i>
@@ -121,6 +121,7 @@
                  </div>
               </div>
             </div>
+
           </div>
         </div>
 
@@ -129,7 +130,7 @@
     <section class="about-area pt-10">
         <div class="container" style="margin-top:4px;">
             <div class="row">
-                <div class="col-lg-6 d-flex align-items-center">
+                <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
                     <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="section-title ">
                             {{-- <div class="line"></div> --}}
@@ -142,9 +143,9 @@
                        <a href="#produtos" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Ver Produtos</a>
                     </div>                
                 </div>
-                <div class="col-lg-6">
+                <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
                     <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img src="{{asset('assets/img/filial.jpg')}}" alt="about">
+                        <img src="{{asset('assets/img/filial.jpg')}}" alt="about" id="img-filial">
                     </div> 
                 </div>
             </div> 
@@ -194,7 +195,7 @@
                         </div>
                     </div> <!-- single testimonial -->
                 </div>
-                <div class="col-lg-4">
+                <div class="col-12 col-md-12 col-lg-4">
                     <div class="single-testimonial">
                         <div class="testimonial-review d-flex align-items-center justify-content-between">
                             <div class="quota">
@@ -225,7 +226,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="col-lg-4">
+                <div class="col-12 col-md-12 col-lg-4">
                     <div class="single-testimonial">
                         <div class="testimonial-review d-flex align-items-center justify-content-between">
                             <div class="quota">
@@ -267,7 +268,7 @@
 <div class="row mt-5">
     <div class="container">
         <div class="col-lg-12">
-            <div class="text-center">
+            <div class="text-center d-flex justify-content-center">
                 <div class="section-title text-center pb-40">
                     <h3 class="slideShow" style="color:#2779a7"><i class="fa fa-heart-o text-danger" aria-hidden="true"></i> LINK DE AFILIADO <i class="fa fa-heart-o text-danger" aria-hidden="true"></i></h3>
                         <hr>
@@ -280,8 +281,8 @@
       
   <div class="row">
 
-    <div class="container d-flex justify-content-center">
-        <div class="col-lg-12">
+    <div class="container ">
+        <div class="col-12 col-lg-12 d-flex justify-content-center">
             <div class="tab nav-border-bottom">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
