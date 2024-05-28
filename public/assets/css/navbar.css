@@ -5,6 +5,7 @@
 }
 
 header {
+width: 100%;
     background-color: #fff;
     box-shadow: 0px 3px 10px #464646;
 }
@@ -57,45 +58,46 @@ header {
 .mobile-menu {
     display: none;
 }
+.login-sm-button{display: none;}
 
 @media screen and (max-width: 730px) {
     .meu-navbar {
         padding: 1.5rem 4rem;
+	}
+	.logo-nav {
+		display: flex;
+		justify-content: center;
+	}
+	.logo-nav img {
+			height: 45px;
     }
-
-    .meu-nav-item {
-        display: none;
+	.mobile-menu {
+		display: none;
+		margin-right: 12px;
+	}
+ 	.mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+		align-items: center;
+		padding-left: 0;	
+		padding-right: 0;
+        padding-bottom: 1rem;
     }
-
-    .mobile-menu-icon {
-        display: block;
-    }
-
-        .mobile-menu-icon svg {
-            width: 50px;
-        }
-    .login-button a {
-        display: none;
-    }
-
-    .mobile-menu-icon button {
+	.mobile-menu ul li a{
+		text-align: center;
+	}
+	.mobile-menu-icon button {
         background-color: transparent;
         border: none;
         cursor: pointer;
     }
-
-    .mobile-menu ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-
-    .mobile-menu .meu-nav-item {
+	.mobile-menu-icon button img {
+		width: 40px;
+	}
+	.mobile-menu .meu-nav-item {
         display: block;
         padding-top: 1.2rem;
     }
-
     .mobile-menu .login-button {
         display: block;
         padding: 1rem 2rem;
@@ -103,6 +105,29 @@ header {
 
     .mobile-menu .login-button a {
         width: 100%;
+		background-color: #464646;
+    }
+    .meu-nav-item {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+	.login-sm-button{
+		display: block;
+		width: 100%;
+		cursor: pointer;
+		text-align: center;
+		border-radius: 10px;
+	}
+	.login-sm-button a{
+		display: block;
+		padding: 10px;
+		background: rgb(221, 101, 58);
+		color: #fff;
+	}
+    .login-button a {
+        display: none;
     }
 }
 

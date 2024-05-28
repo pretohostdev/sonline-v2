@@ -1,0 +1,18 @@
+@media screen and (max-width: 730px) {
+
+    .carrocel-sm-img {
+        height: 180px;
+    }
+
+    .btn-carrocel {
+        margin-left: -20px;
+        margin-bottom: -5px;
+    }
+
+    .btn-sm-carrocel {
+        height: 30px;
+        line-height: 30px;
+        padding: 0 20px;
+        font-size: 10px;
+    }
+}

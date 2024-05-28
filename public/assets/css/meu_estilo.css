@@ -34,7 +34,6 @@ p {color: #000;}
 #lateral {background: hsla(185, 64%, 51%, 1); background: linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%); background: -moz-linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%); background: -webkit-linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%); filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#30C5D2", endColorstr="#471069") }
 .banner { max-width: 100%;}
 .conteudo { width: 100%;}
-.conteudo_publico { width: 100%; background: #fff;}
 .btn-cor {background: #007bff;}
 .btn-cor:hover { background: #492bf3;}
 .agendamento-img {height: 350px;background-color: white;display: flex;justify-content: right;align-items: center;}
@@ -104,15 +103,13 @@ p {color: #000;}
 .section-title .title span {font-weight: 400;display: contents;}
 /*===== All Section Title Style =====*/
 .section-title .sub-title {font-size: 18px;font-weight: 400;color: #361CC1;text-transform: uppercase;}
-@media (max-width: 767px) {
-.section-title .sub-title {font-size: 16px;}
-}
 .section-title .title {font-size: 32px;padding-top: 10px;}
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 .section-title .title {font-size: 30px;}
 }
 @media (max-width: 767px) {
 .section-title .title {font-size: 24px;}
+.section-title .sub-title {font-size: 16px;}
 }
 .section-title .title span {font-weight: 400;display: contents;}
 header-hero-content .text {color: #fff;margin-top: 30px;}
@@ -122,6 +119,11 @@ header-hero-content .text {color: #fff;margin-top: 30px;}
 .main-btn:hover {color: #fff;background-position: right center;}
 .about-shape-1 {position: absolute;top: 0;right: 0;width: 35%;height: 100%;z-index: -1;}
 .about-shape-1 img {width: 100%;}
+
+.main-btn-gradient{
+    background-color: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);;
+}
+
 @media (max-width: 767px) {
 .about-shape-1 {display: none;}
 }
@@ -198,3 +200,4 @@ article:nth-of-type(3) {height: 100px;background-color: #F0F8FF;}
 }
 @media (max-width: 880px) {.btn-carrocel{margin-bottom:60px;}}
 #tipoDocumentos{display: none;}#tipoConsultoria{display: none;}
+.div-sociais{display: flex; flex-direction: column; justify-content: center; background: url('../img/fundo-carrocel.jpg');}

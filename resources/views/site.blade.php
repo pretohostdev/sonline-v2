@@ -5,7 +5,7 @@
 @push('styles')
 {{-- Inclusão do Bootstrap 5 no projecto --}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+<link rel="stylesheet" href="assets/pluto/style.css">
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -15,6 +15,9 @@
  <!--====== Animate CSS ======-->
  <link rel="stylesheet" href="assets/css/animate.css">
  <link rel="stylesheet" href="assets/css/navbar.css">
+ <link rel="stylesheet" href="assets/css/responsividade.css">
+
+ 
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/LineIcons.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
@@ -29,22 +32,22 @@
 
 @section("corpo_publico")
 
-<div class="conteudo_publico">
-
-    <section id="features" class="section" style="background-color: #F0F8FF;">
+    <section class="section d-flex justify-content-center" id="features" style="background-color: #F0F8FF;">
         <div class="container">
+
           <div class="row">
-            <div class="col-lg-12">
-              <div class="features-text section-header text-center">  
-                <div>   
-                  <h2 class="section-title tituloAnimado" style="font-family:Roboto; color:#2779a7" id="servicos">NOSSOS SERVIÇOS</h2>
-                  <div class="desc-text">
-                    <p style="color:#2779a7">A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
-                  </div>
-                </div> 
-              </div>
+            <div class="col-12 col-lg-12">
+               <div class="features-text section-header text-center bg-dark">  
+                  <div class="bg-info">   
+                    <h2 class="section-title tituloAnimado" style="font-family:Roboto; color:#2779a7" id="servicos">NOSSOS SERVIÇOS</h2>
+                    <div class="desc-text text-center">
+                        <p style="color:#2779a7">A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
+                    </div>
+                 </div> 
+             </div>
             </div>
           </div>
+
           <div class="row featured-bg">
             <div class="col-lg-6 col-md-6 col-xs-12 p-0">
               <div class="feature-item featured-border1">
@@ -120,8 +123,9 @@
             </div>
           </div>
         </div>
+
       </section>
-    {{-- <hr> --}}
+
     <section class="about-area pt-10">
         <div class="container" style="margin-top:4px;">
             <div class="row">
@@ -147,7 +151,6 @@
         </div> 
         
     </section>
-    </div>
 
     {{-- Seção de testemunho --}}
     <section id="testimonial" class="testimonial-area about-area pt-15" style="background-color: #F0F8FF">
@@ -335,18 +338,14 @@
 
         </div>
     </div>
-
     </div>
-
 
     {{-- Lista de Produtos da Amazon --}}
-    <div class="row mt-4 mb-2">
-            <div class="col-lg-12 d-flex justify-content-center align-items-center" style="background-color:#062f4f">
-                <div>
-                    <h3  class="text-light m-0 p-4" id="produtos">Lista de produtos Amazon</h3>
-                </div>
-            </div>
-    </div>
+      <div class="col-lg-12 d-flex justify-content-center align-items-center mb-2" style="background-color:#062f4f">
+          <div>
+              <h3  class="text-light m-0 p-4" id="produtos">Lista de produtos Amazon</h3>
+          </div>
+      </div>
 
   <div class="row">
     <div class="container">
@@ -386,7 +385,6 @@
     </div>
 
     {{-- Consultoria --}}
-    <div class="row mt-5">
       <article class="d-flex align-items-center justify-content-center">
         <div class="col-lg-6" style="height:200px">
           <h2 class="font-weight-bold tituloAnimado" style="color:white">Consultoria & <br>Acompanhamento de visto</h2> 
@@ -400,8 +398,7 @@
           <a href="{{route('login')}}" class="main-btn mt-4">Solicitar Serviço</a>
         </div>  
       </article>
-      {{-- <article></article> --}}
-    </div>
+
     <div class="row mt-1">
     </div>
     
@@ -470,5 +467,8 @@
 @push('scripts')
     <script src="{{asset('assets/js/animacao.js')}}"></script>
     <script src="{{asset('assets/js/navbar.js')}}"></script>
+    <script src="{{asset('assets/pluto/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/pluto/js/popper.min.js')}}"></script>
+    <script src="{{asset('assets/pluto/js/bootstrap.min.js')}}"></script>
 @endpush 
 

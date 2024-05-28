@@ -8,6 +8,8 @@
     <meta name="author" content="Cláudio Rufino - PETROHOST" />
     
     <script src="https://unpkg.com/scrollreveal"></script>
+    @vite('resources/js/app.js')
+    @vite('resources/css/app.css')
 
     {{-- Inclusão de links Css --}}
     @stack('styles')
@@ -16,15 +18,27 @@
 
 </head>
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            @yield('header')
+        </div>
 
-    @yield('header')
-    @include('layout.componentes.carrocel')
+        <div class="row">
+            @include('layout.componentes.carrocel')
+        </div>
 
-    @yield("corpo_publico")
+        <div class="row">
+            @yield("corpo_publico")
+        </div>
+           
+        <div class="row">
+             @yield('footer')
+        </div>
+           
 
-    @yield('footer')
-
-@stack('scripts')
+            @stack('scripts')
+        
+    </div>
 
 </body>
 </html>

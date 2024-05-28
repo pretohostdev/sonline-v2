@@ -21,7 +21,7 @@
                 </li>
                 <li class="meu-nav-item">
                     <i class="fa fa-users" aria-hidden="true"></i>
-                    <a href="#testemunho" class="meu-nav-link">Testemunho</a>
+                    <a href="#testemunho" class="meu-nav-link">Testemunhos</a>
                 </li>
                 <li class="meu-nav-item">
                     <i class="fa fa-phone" aria-hidden="true"></i>
@@ -33,7 +33,8 @@
         <div class="login-button">
             <a href="{{route('login')}}" class="btn btn-info btn-round">
                 <i class="ti ti-2x ti-user mr-1" aria-hidden="true"></i>
-                Entrar</a>
+                Entrar
+            </a>
         </div>
 
         <div class="mobile-menu">
@@ -48,14 +49,14 @@
                     <a href="#produtos" class="meu-nav-link">Produtos</a>
                 </li>
                 <li class="meu-nav-item">
-                    <a href="#testemunho" class="meu-nav-link">Testemunho</a>
+                    <a href="#testemunho" class="meu-nav-link">Testemunhos</a>
                 </li>
                 <li class="meu-nav-item">
                     <a href="#contacto" class="meu-nav-link">Contactos</a>
                 </li>
             </ul>
-            <div class="login-button">
-                <a href="{{route('login')}}" class="btn btn-info btn-block">Entrar</a>
+            <div class="login-sm-button">
+                <a href="{{route('login')}}" class="">Entrar</a>
             </div>
         </div>
 
