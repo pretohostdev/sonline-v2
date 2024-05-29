@@ -1,7 +1,7 @@
 <header>
     <nav class="meu-navbar">
         <div class="logo-nav">
-            <img src="{{asset('assets/img/nav-logo.jpg')}}" class="img-fluid logo">
+            <img src="{{asset('assets/img/favicon.jpg')}}" class="img-fluid logo">
         </div>
 
         <div class="meu-nav-list">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="login-button">
-            <a href="{{route('login')}}" class="btn btn-info btn-round">
+            <a href="{{route('login')}}" class="btn btn-round text-white" style="background: #0081cf">
                 <i class="ti ti-2x ti-user mr-1" aria-hidden="true"></i>
                 Entrar
             </a>

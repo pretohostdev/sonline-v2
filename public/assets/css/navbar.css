@@ -69,12 +69,11 @@ width: 100%;
 		justify-content: center;
 	}
 	.logo-nav img {
-		height: 50px;
+		height: 40px;
     }
 	.mobile-menu {
 		display: none;
 		margin-right: 20%;
-        background-color: #ddd;
 	}
  	.mobile-menu ul {
         display: flex;
@@ -106,7 +105,6 @@ width: 100%;
 
     .mobile-menu .login-button a {
         width: 100%;
-		background-color: #464646;
     }
     .meu-nav-item {
         display: none;
@@ -134,10 +132,8 @@ width: 100%;
 @media screen and (max-width: 500px) {
 .mobile-menu {
 		margin-right: 15px;
-        background-color: #ddd;
 	}
 #img-filial{padding: 20px; }
-
  }
 
 .open {

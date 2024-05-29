@@ -30,24 +30,20 @@
         <!-- begin app-wrap -->
         <div class="app-wrap">
 
-            <!-- Início do pré-carregamento da página -->
-            {{-- @include('layout.componentes.carregamentoPagina') --}}
-            <!-- end pre-loader -->
-
             <div class="app-contant">
                 <div class="" style="background-color: #cbcbcb">
                     <div class="container-fluid">
                         <div class="row no-gutters d-flex justify-content-center">
                             <div class="col-sm-6 col-lg-5 col-xxl-3">
-                                <div class="d-flex align-items-center justify-content-center h-100-vh secao-registar">
+                                <div class="d-flex align-items-center justify-content-center secao-registar">
                                     
                                     <div class="register p-5">
 
                                         <div class="d-flex justify-content-center">
-                                            <img src="{{asset('assets/img/logo.jpg')}}" class="logo" alt="logo da empresa">
+                                            <img src="{{asset('assets/img/favicon.jpg')}}" class="logo" alt="logo da empresa">
                                         </div>   
 
-                                        {{-- <p class="text-center">Seja bem vindo, crie uma conta</p> --}}
+                                        <p class="text-center">Seja bem vindo, crie uma conta</p>
 
                                         <!-- Se houver erros de validação, exiba-os -->
                                         @if ($errors->any())
@@ -59,6 +55,8 @@
                                             </ul>
                                         </div>
                                         @endif
+
+                                        <div class="row mb-3"></div>
 
                                         <form action="{{route('cadastrar')}}" method="POST" class="mt-2 mt-sm-4" id="formRegistar">
                                             @csrf

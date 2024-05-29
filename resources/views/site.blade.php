@@ -36,8 +36,8 @@
         <div class="container">
 
           <div class="row">
-            <div class="col-12 col-lg-12 d-flex justify-content-center">
-               <div class="features-text section-header text-center">  
+            <div class="d-none d-md-block col-lg-12 ">
+               <div class="features-text section-header text-center d-flex justify-content-center">  
                   <div class="section-header-div">   
                     <h2 class="section-title tituloAnimado" style="font-family:Roboto; color:#2779a7" id="servicos">NOSSOS SERVIÇOS</h2>
                     <div class="desc-text text-center">
@@ -49,7 +49,7 @@
           </div>
 
           <div class="row featured-bg">
-            <div class="col-12 col-md-6 col-lg-6 p-0">
+            <div class="d-none d-md-block col-md-6 col-lg-6 p-0">
               <div class="feature-item featured-border1 feature-body">
                  <div class="feature-icon float-left">
                    <i class="lni lni-coin"></i>
@@ -60,8 +60,9 @@
                  </div>
               </div>
             </div>
+
             
-            <div class="col-12 col-md-6 col-lg-6 p-0">
+            <div class="d-none d-md-block col-md-6 col-lg-6 p-0">
               <div class="feature-item featured-border2 feature-body">
                  <div class="feature-icon float-left">
                    <i class="lni lni-visa"></i>
@@ -74,7 +75,7 @@
             </div>
 
             
-            <div class="col-lg-6 col-md-6 col-12 p-0">
+            <div class="d-none d-md-block col-lg-6 col-md-6 p-0">
               <div class="feature-item featured-border1">
                  <div class="feature-icon float-left">
                     <i class="lni lni-producthunt"></i>
@@ -86,7 +87,7 @@
               </div>
             </div>
 
-             <div class="col-lg-6 col-md-6 col-12 p-0">
+             <div class="d-none d-md-block col-lg-6 col-md-6 p-0">
                <div class="feature-item featured-border2">
                   <div class="feature-icon float-left">
                     <i class="lni-briefcase"></i>
@@ -98,7 +99,7 @@
                </div>
              </div>
             
-            <div class="col-lg-6 col-md-6 col-12 p-0">
+            <div class="d-none d-md-block col-lg-6 col-md-6 p-0">
               <div class="feature-item featured-border3">
                  <div class="feature-icon float-left">
                    <i class="lni-reload"></i>
@@ -110,7 +111,7 @@
               </div>
             </div>
             
-            <div class="col-lg-6 col-md-6 col-12 p-0">
+            <div class="d-none d-md-block col-lg-6 col-md-6 p-0">
               <div class="feature-item">
                  <div class="feature-icon float-left">
                     <i class="lni lni-amazon-original"></i>
@@ -121,11 +122,35 @@
                  </div>
               </div>
             </div>
-
           </div>
         </div>
 
       </section>
+
+    <section class="d-block d-md-none about-area pt-10">
+        <div class="container" style="margin-top:4px;">
+            <div class="row">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="section-title ">
+                            <h2 class="title tituloAnimado" style="color:#2779a7">SERVIÇOS</h2>
+                        </div>
+                    </div>                
+                </div>
+            </div> 
+        </div> 
+    </section>
+
+    <div class="row d-block d-md-none">
+        <div class="col-12 d-flex " style="flex-direction: column">
+        <a href="" class="btn btn-primary m-2">Divisas</a>
+        <a href="" class="btn btn-primary m-2">Abertura de contas</a>
+        <a href="" class="btn btn-primary m-2">Redirecionamento</a>
+        <a href="" class="btn btn-primary m-2">Agendamento de visto</a>
+        <a href="" class="btn btn-primary m-2">Produtos Amazon</a>
+    </div>
+
+    </div>
 
     <section class="about-area pt-10">
         <div class="container" style="margin-top:4px;">
@@ -164,7 +189,7 @@
                 </div>
             </div> <!-- row -->
             <div class="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div class="col-lg-4">
+                <div class="d-none d-md-block col-md-12 col-lg-4">
                     <div class="single-testimonial">
                         <div class="testimonial-review d-flex align-items-center justify-content-between">
                             <div class="quota">
@@ -195,7 +220,7 @@
                         </div>
                     </div> <!-- single testimonial -->
                 </div>
-                <div class="col-12 col-md-12 col-lg-4">
+                <div class="d-none d-md-block col-md-12 col-lg-4">
                     <div class="single-testimonial">
                         <div class="testimonial-review d-flex align-items-center justify-content-between">
                             <div class="quota">
@@ -226,7 +251,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="col-12 col-md-12 col-lg-4">
+                <div class="d-none d-md-block col-md-12 col-lg-4">
                     <div class="single-testimonial">
                         <div class="testimonial-review d-flex align-items-center justify-content-between">
                             <div class="quota">
@@ -263,6 +288,49 @@
        
     </section>
 
+    <section class="d-block d-md-none d-flex" style="flex-direction: column">
+        <div class="testimonial-author d-flex align-items-center">
+            <div class="m-2">
+                <p class="text">Estou realmente impressionado com a variedade de produtos oferecidos neste site! Encontrei tudo o que precisava em um só lugar. Definitivamente vou voltar mais vezes. - <strong>Sabino Solias</strong></p>
+            </div>
+            <ul style="">
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+            </ul>
+        </div>
+
+        <div class="testimonial-author d-flex align-items-center">
+            <div class="m-2"><p class="text">Este site superou todas as minhas expectativas! Além de uma ampla variedade de serviços, o atendimento ao cliente foi excepcional. Minhas dúvidas foram respondidas rapidamente. - <strong>Manuel Chatanda</strong></p>
+            </div>
+            <ul style="">
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+            </ul>
+        </div>
+
+        <div class="testimonial-author d-flex align-items-center">
+            <div class="m-2"><p class="text"><. class="text">A navegação fácil e intuitiva tornou simples encontrar o que eu estava procurando, e o processo de pagamento foi rápido e seguro. Recomendo totalmente. - <strong>Manuel Chatanda</strong></p>
+            </div>
+            <ul style="">
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled"></i></li>
+            </ul>
+        </div>
+
+    </section>
+
+
+
+        
     
 
 <div class="row mt-5">
@@ -402,13 +470,13 @@
 
     <div class="row mt-1">
     </div>
-    
-  <footer id="contacto" style="background-color:#062f4f">
+
+  <footer id="contacto" class="bg-dark">
   <section class="footer-Content">
     <div class="container">
       <div class="row d-flex justify-content-around">
         
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12 mt-4">
+        <div class="col-12 col-lg-3 col-md-6 col-xs-12 mt-4">
           <div class="widget">
             <h3 class="block-title">Crie uma conta</h3>
             <ul class="menu" style="list-style:none">
@@ -419,7 +487,7 @@
           </div>
         </div>
         
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-1 mt-4">
+        <div class="col-12 col-lg-3 col-md-6 col-xs-12 mt-4">
           <div class="widget">
             <h3 class="block-title">Contacto</h3>
             <ul class="menu" style="list-style:none">
@@ -431,7 +499,7 @@
         </div>
         
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12 mt-4">
+        <div class="col-12 col-lg-3 col-md-6 col-xs-12 mt-4">
           <div class="widget">
             <h3 class="block-title">Endereço</h3>
             <ul class="menu" style="list-style:none">
