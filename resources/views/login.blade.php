@@ -45,12 +45,12 @@
                         @csrf
                         <fieldset>
                            <div class="field">
-                              <label class="label_field">Email</label>
+                              <label class="label_field">*Email</label>
                               <input type="email" name="email" value="{{old("email")}}" required />
                            </div>
                            <div class="field">
-                              <label class="label_field">Senha</label>
-                              <input type="password" name="password" placeholder="Password" />
+                              <label class="label_field">*Senha</label>
+                              <input type="password" name="password" />
                            </div>
                            <div class="field">
                               <label class="label_field hidden">hidden label</label>

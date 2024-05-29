@@ -28,7 +28,7 @@
 
 
 @section('header')
-    @include('layout.componentes.header')
+    @include('layout.componentes.topbar')
 @endsection
 
 @section('dashboard')

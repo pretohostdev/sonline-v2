@@ -143,11 +143,11 @@
 
     <div class="row d-block d-md-none">
         <div class="col-12 d-flex " style="flex-direction: column">
-        <a href="" class="btn btn-primary m-2">Divisas</a>
-        <a href="" class="btn btn-primary m-2">Abertura de contas</a>
-        <a href="" class="btn btn-primary m-2">Redirecionamento</a>
-        <a href="" class="btn btn-primary m-2">Agendamento de visto</a>
-        <a href="" class="btn btn-primary m-2">Produtos Amazon</a>
+        <a href="" class="btn m-2" style="background: #2779a7; color:white">Divisas</a>
+        <a href="" class="btn m-2" style="background: #2779a7; color:white">Abertura de contas</a>
+        <a href="" class="btn m-2" style="background: #2779a7; color:white">Redirecionamento</a>
+        <a href="" class="btn m-2" style="background: #2779a7; color:white">Agendamento de visto</a>
+        <a href="" class="btn m-2" style="background: #2779a7; color:white">Produtos Amazon</a>
     </div>
 
     </div>
@@ -158,7 +158,6 @@
                 <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
                     <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="section-title ">
-                            {{-- <div class="line"></div> --}}
                             <h2 class="title tituloAnimado" style="color:#2779a7">Somos a filial da Amazon</h2>
                         </div>
                         <p> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
@@ -175,7 +174,6 @@
                 </div>
             </div> 
         </div> 
-        
     </section>
 
     {{-- Seção de testemunho --}}
@@ -185,9 +183,9 @@
                 <div class="col-lg-12 d-flex justify-content-center">
                     <div class="section-title">
                         <h3 class="tituloAnimado" id="testemunho" style="color:#2779a7; margin-top:50px;">TESTEMUNHO DE CLIENTES</h3>
-                    </div> <!-- section title -->
+                    </div>
                 </div>
-            </div> <!-- row -->
+            </div>
             <div class="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
                 <div class="d-none d-md-block col-md-12 col-lg-4">
                     <div class="single-testimonial">
@@ -218,7 +216,7 @@
                                 <p class="text">Programador, Laravel</p>
                             </div>
                         </div>
-                    </div> <!-- single testimonial -->
+                    </div> 
                 </div>
                 <div class="d-none d-md-block col-md-12 col-lg-4">
                     <div class="single-testimonial">
@@ -285,58 +283,53 @@
                 
             </div> 
         </div> 
-       
     </section>
 
     <section class="d-block d-md-none d-flex" style="flex-direction: column">
         <div class="testimonial-author d-flex align-items-center">
-            <div class="m-2">
-                <p class="text">Estou realmente impressionado com a variedade de produtos oferecidos neste site! Encontrei tudo o que precisava em um só lugar. Definitivamente vou voltar mais vezes. - <strong>Sabino Solias</strong></p>
+            <div class="m-2 card p-5">
+                <p>Estou realmente impressionado com a variedade de produtos oferecidos neste site! Encontrei tudo o que precisava em um só lugar. Definitivamente vou voltar mais vezes. - <strong>Sabino Solias</strong></p>
             </div>
-            <ul style="">
+            <ul>
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+            </ul>
+        </div>
+
+
+        <div class="testimonial-author d-flex align-items-center">
+            <div class="m-2 card p-5">
+                <p class="text">Este site superou todas as minhas expectativas! Além de uma ampla variedade de serviços, o atendimento ao cliente foi excepcional. Minhas dúvidas foram respondidas rapidamente. - <strong>Manuel Chatanda</strong></p>
+            </div>
+            <ul>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
             </ul>
         </div>
 
         <div class="testimonial-author d-flex align-items-center">
-            <div class="m-2"><p class="text">Este site superou todas as minhas expectativas! Além de uma ampla variedade de serviços, o atendimento ao cliente foi excepcional. Minhas dúvidas foram respondidas rapidamente. - <strong>Manuel Chatanda</strong></p>
+            <div class="m-2 card p-5">
+                <p class="text">A navegação fácil e intuitiva tornou simples encontrar o que eu estava procurando, e o processo de pagamento foi rápido e seguro. Recomendo totalmente. - <strong>Manuel Chatanda</strong></p>
             </div>
-            <ul style="">
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
+            <ul>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
+                <li><i class="lni-star-filled" style="color:orange"></i></li>
             </ul>
         </div>
-
-        <div class="testimonial-author d-flex align-items-center">
-            <div class="m-2"><p class="text"><. class="text">A navegação fácil e intuitiva tornou simples encontrar o que eu estava procurando, e o processo de pagamento foi rápido e seguro. Recomendo totalmente. - <strong>Manuel Chatanda</strong></p>
-            </div>
-            <ul style="">
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
-                <li><i class="lni-star-filled"></i></li>
-            </ul>
-        </div>
-
     </section>
 
-
-
-        
-    
-
-<div class="row mt-5">
-    <div class="container">
+    <div class="row mt-5">
         <div class="col-lg-12">
-            <div class="text-center d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
                 <div class="section-title text-center pb-40">
                     <h3 class="slideShow" style="color:#2779a7"><i class="fa fa-heart-o text-danger" aria-hidden="true"></i> LINK DE AFILIADO <i class="fa fa-heart-o text-danger" aria-hidden="true"></i></h3>
                         <hr>
@@ -344,14 +337,10 @@
             </div>
         </div>
     </div>
-
-</div>
       
   <div class="row">
-
-    <div class="container ">
-        <div class="col-12 col-lg-12 d-flex justify-content-center">
-            <div class="tab nav-border-bottom">
+        <div class="col-12 col-md-12 col-lg-9" style="margin:auto">
+            <div class="tab nav-border-bottom ">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
                         <a style="font-size:13pt" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
@@ -363,7 +352,7 @@
                         <a style="font-size:13pt;" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
                     </li>
                 </ul>
-                <div class="tab-content">
+                <div class="tab-content card p-4">
                     <div class="tab-pane fade py-3 active show" id="home-02" role="tabpanel" aria-labelledby="home-02-tab">
                         <p style="font-size: 12pt;">Um link de afiliado é um <b>URL único</b> atribuído a um afiliado que participa de um programa de marketing de 
                             afiliados. Esse tipo de link é usado para rastrear o tráfego e as vendas geradas por um afiliado 
@@ -404,53 +393,48 @@
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
     </div>
 
     {{-- Lista de Produtos da Amazon --}}
-      <div class="col-lg-12 d-flex justify-content-center align-items-center mb-2" style="background-color:#062f4f">
-          <div>
-              <h3  class="text-light m-0 p-4" id="produtos">Lista de produtos Amazon</h3>
-          </div>
-      </div>
+    <div class="col-lg-12 d-flex justify-content-center align-items-center mb-2" style="background-color:#062f4f">
+        <div>
+            <h3  class="text-light m-0 p-4" id="produtos">Lista de produtos Amazon</h3>
+        </div>
+    </div>
 
   <div class="row">
     <div class="container">
-            <div class="lista-horizontal">
-                <ul>
-                    @foreach ($produtos as $produto )
-                   
-                    <li>
-                        <div class="card_produto" style="width:300px;">
-                          <div style="display:flex; justify-content:center; align-items:center;width:100%;height:150px;">
+        <div class="lista-horizontal">
+            <ul>
+                @foreach ($produtos as $produto )
+                <li>
+                    <div class="card_produto" style="width:300px;">
+                        <div style="display:flex; justify-content:center; align-items:center;width:100%;height:150px;">
                             <img src="{{url("storage/{$produto->imagem}")}}" alt="Denim Jeans" style="max-width:100%; max-height:100%; width:auto; height:auto; margin-top:10px;">
-                          </div>
-                          <h3 style="font-size: 30px; margin-top:20px;">{{$produto->nome}}</h3>
-                          <p class="text-center p_produto">{{$produto->descricao}}</p>
-                          <p class="price">{{$produto->preco}}</p>
-
-                          <ul class="ul_produto mt-4">
-                            <li>
-                              <i class="fa fa-star fa-2x fa-2x checked"></i>
-                              <i class="fa fa-star fa-2x checked"></i>
-                              <i class="fa fa-star fa-2x checked"></i>
-                              <i class="fa fa-star fa-2x checked"></i>
-                              <i class="fa fa-star fa-2x text-dark"></i>
-                            </li>
-                          </ul>
-                          <div class="card-footer">
-                            <a href="{{$produto->link}}" target="_blank" class="btn btn_produto mt-2">Comprar</a>
-                          </div>
                         </div>
+                        <h3 style="font-size: 30px; margin-top:20px;">{{$produto->nome}}</h3>
+                        <p class="text-center p_produto">{{$produto->descricao}}</p>
+                        <p class="price">{{$produto->preco}}</p>
 
-                      </li>
-                    @endforeach
-                  
-                </ul>
-              </div>
-            </div>
+                        <ul class="ul_produto mt-4">
+                        <li>
+                            <i class="fa fa-star fa-2x fa-2x checked"></i>
+                            <i class="fa fa-star fa-2x checked"></i>
+                            <i class="fa fa-star fa-2x checked"></i>
+                            <i class="fa fa-star fa-2x checked"></i>
+                            <i class="fa fa-star fa-2x text-dark"></i>
+                        </li>
+                        </ul>
+                        <div class="card-footer">
+                            <a href="{{$produto->link}}" target="_blank" class="btn btn_produto mt-2">Comprar</a>
+                        </div>
+                    </div>
+                    </li>
+                @endforeach
+            </ul>
+          </div>
+        </div>
     </div>
 
     {{-- Consultoria --}}
@@ -468,67 +452,55 @@
         </div>  
       </article>
 
-    <div class="row mt-1">
-    </div>
+    <div class="row mt-1"></div>
 
   <footer id="contacto" class="bg-dark">
-  <section class="footer-Content">
-    <div class="container">
-      <div class="row d-flex justify-content-around">
-        
-        <div class="col-12 col-lg-3 col-md-6 col-xs-12 mt-4">
-          <div class="widget">
-            <h3 class="block-title">Crie uma conta</h3>
-            <ul class="menu" style="list-style:none">
-              <li><a href="{{route('login')}}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Entrar</a></li>
-              <li><a href="{{route('login')}}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Sobre</a></li>
-              <li><a href="{{route('login')}}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Preços</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="col-12 col-lg-3 col-md-6 col-xs-12 mt-4">
-          <div class="widget">
-            <h3 class="block-title">Contacto</h3>
-            <ul class="menu" style="list-style:none">
-              <li><a href="javascript:void()"><i class="fa fa-phone" aria-hidden="true"></i> 947937025</a></li>
-              <li><a href="javascript:void()"><i class="fa fa-phone" aria-hidden="true"></i> 936132172</a></li>
-              <li><a href="javascript:void()"><i class="fa fa-envelope-o" aria-hidden="true"></i> sonlinesolucoes@gmail.com</a></li>
-            </ul>
-          </div>
-        </div>
-        
-
-        <div class="col-12 col-lg-3 col-md-6 col-xs-12 mt-4">
-          <div class="widget">
-            <h3 class="block-title">Endereço</h3>
-            <ul class="menu" style="list-style:none">
-              <li><a href="javascript:void()">Cacuaco - Centralidade do sequele, Bloco 4, Prédio 7, Junto à empresa Eco-fluxo</a></li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="site-info float-left">
-              <p>Todos os direitos reservados, produzido pela <a href="https://www.petrohost.ao/" target="_blank"><strong>PetroHost</strong></a> &copy; 2024 - Sonline Service </p>
-            </div>              
-            <div class="float-right">  
-              <ul class="footer-social">
-                <li><a class="facebook" href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6" target="_blank"><i class="lni-facebook-filled"></i></a></li>
-                <li><a class="twitter" href="https://www.instagram.com/sonline_services"  target="_blank"><i class="lni lni-instagram-original"></i></a></li>
-              </ul> 
+    <section class="footer-Content">
+        <div class="row d-flex justify-content-around">
+            <div class="col-12 col-md-6 col-lg-3 mt-4">
+                <div class="widget">
+                    <h3 class="block-title">Crie uma conta</h3>
+                    <ul class="menu" style="list-style:none">
+                    <li><a href="{{route('login')}}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Entrar</a></li>
+                    <li><a href="{{route('login')}}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Sobre</a></li>
+                    <li><a href="{{route('login')}}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Preços</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
+            
+            <div class="col-12 col-md-6 col-lg-3 mt-4">
+                <div class="widget">
+                    <h3 class="block-title">Contacto</h3>
+                    <ul class="menu" style="list-style:none">
+                    <li><a href="javascript:void()"><i class="fa fa-phone" aria-hidden="true"></i> 947937025</a></li>
+                    <li><a href="javascript:void()"><i class="fa fa-phone" aria-hidden="true"></i> 936132172</a></li>
+                    <li><a href="javascript:void()"><i class="fa fa-envelope-o" aria-hidden="true"></i> sonlinesolucoes@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mt-4">
+                <div class="widget">
+                    <h3 class="block-title">Endereço</h3>
+                    <ul class="menu" style="list-style:none">
+                        <li>
+                            <a href="javascript:void()">
+                                Cacuaco - Centralidade do sequele, Bloco 4, Prédio 7, Junto à empresa Eco-fluxo
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-      </div>
-    </div>
-  </section>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-12 col-lg-6 d-flex">
+                <p class="text-light">Todos os direitos reservados, produzido pela <a href="https://www.petrohost.ao/" target="_blank"><strong>PetroHost</strong></a> &copy; 2024 - Sonline Service </p>
+            </div>
+        </div>
+
+    </section>
 </footer>
 
 @endsection
