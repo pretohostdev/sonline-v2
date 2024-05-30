@@ -43,7 +43,7 @@
                     <a href="#inicio" class="meu-nav-link">Início</a>
                 </li>
                 <li class="meu-nav-item">
-                    <a href="#servicos" class="meu-nav-link">Serviços</a>
+                    <a href="#servicos2" class="meu-nav-link">Serviços</a>
                 </li>
                 <li class="meu-nav-item">
                     <a href="#produtos" class="meu-nav-link">Produtos</a>

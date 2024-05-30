@@ -16,6 +16,7 @@ use App\Http\Controllers\VistoController;
 use App\Http\Controllers\RedirecionamentoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeClienteController;
+use App\Http\Controllers\ComandosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,12 @@ use App\Http\Controllers\HomeClienteController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+/* COMUNICAÇÃO COM O SERVIDOR VIA COMANDO  */
+
+// Rota da comunicação
+Route::get('/comando',  [ComandosController::class, 'servidor'])->name('comando');
+
 Route::resources([
     'login' => LoginController::class,
 ]);

@@ -32,7 +32,7 @@
 
 @section("corpo_publico")
 
-    <section class="section d-flex justify-content-center" id="features" style="background-color: #F0F8FF;">
+    <section class="section servicos d-fle justify-content-center secao-servicos" id="features" style="background-color: #F0F8FF;">
         <div class="container">
 
           <div class="row">
@@ -124,7 +124,6 @@
             </div>
           </div>
         </div>
-
       </section>
 
     <section class="d-block d-md-none about-area pt-10">
@@ -133,7 +132,7 @@
                 <div class="col-12 d-flex align-items-center justify-content-center">
                     <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="section-title ">
-                            <h2 class="title tituloAnimado" style="color:#2779a7">SERVIÇOS</h2>
+                            <h2 class="title tituloAnimado" style="color:#2779a7" id="servicos2">SERVIÇOS</h2>
                         </div>
                     </div>                
                 </div>
@@ -143,36 +142,34 @@
 
     <div class="row d-block d-md-none">
         <div class="col-12 d-flex " style="flex-direction: column">
-        <a href="" class="btn m-2" style="background: #2779a7; color:white">Divisas</a>
-        <a href="" class="btn m-2" style="background: #2779a7; color:white">Abertura de contas</a>
-        <a href="" class="btn m-2" style="background: #2779a7; color:white">Redirecionamento</a>
-        <a href="" class="btn m-2" style="background: #2779a7; color:white">Agendamento de visto</a>
-        <a href="" class="btn m-2" style="background: #2779a7; color:white">Produtos Amazon</a>
+            <a href="" class="btn m-2" style="background: #2779a7; color:white">Divisas</a>
+            <a href="" class="btn m-2" style="background: #2779a7; color:white">Abertura de contas</a>
+            <a href="" class="btn m-2" style="background: #2779a7; color:white">Redirecionamento</a>
+            <a href="" class="btn m-2" style="background: #2779a7; color:white">Agendamento de visto</a>
+            <a href="" class="btn m-2" style="background: #2779a7; color:white">Produtos Amazon</a>
     </div>
 
     </div>
 
     <section class="about-area pt-10">
-        <div class="container" style="margin-top:4px;">
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
-                    <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="section-title ">
-                            <h2 class="title tituloAnimado" style="color:#2779a7">Somos a filial da Amazon</h2>
-                        </div>
-                        <p> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
-                            segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
-                            praticidade de fazer suas compras online conosco. Como filial da amazon, trazemos para si os melhores produtos do mercado.
-                       </p>
-                       <a href="#produtos" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Ver Produtos</a>
-                    </div>                
-                </div>
-                <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
-                    <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img src="{{asset('assets/img/filial.jpg')}}" alt="about" id="img-filial">
-                    </div> 
-                </div>
-            </div> 
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
+                <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="section-title ">
+                        <h2 class="title tituloAnimado" style="color:#2779a7">Somos a filial da Amazon</h2>
+                    </div>
+                    <p> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
+                        segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
+                        praticidade de fazer suas compras online conosco. Como filial da amazon, trazemos para si os melhores produtos do mercado.
+                    </p>
+                    <a href="#produtos" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Ver Produtos</a>
+                </div>                
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
+                <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <img src="{{asset('assets/img/filial.jpg')}}" alt="about" id="img-filial">
+                </div> 
+            </div>
         </div> 
     </section>
 

@@ -201,3 +201,8 @@ article:nth-of-type(3) {height: 100px;background-color: #F0F8FF;}
 @media (max-width: 880px) {.btn-carrocel{margin-bottom:60px;}}
 #tipoDocumentos{display: none;}#tipoConsultoria{display: none;}
 .div-sociais{display: flex; flex-direction: column; justify-content: center; background: url('../img/fundo-carrocel.jpg');}
+@media screen and (max-width:600px) {
+    .secao-servicos {
+        display: none;
+    }
+}
