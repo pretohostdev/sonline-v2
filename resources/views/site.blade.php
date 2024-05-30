@@ -36,7 +36,7 @@
         <div class="container">
 
           <div class="row">
-            <div class="d-none d-md-block col-lg-12 ">
+            <div class="d-none d-md-block col-lg-12">
                <div class="features-text section-header text-center d-flex justify-content-center">  
                   <div class="section-header-div">   
                     <h2 class="section-title tituloAnimado" style="font-family:Roboto; color:#2779a7" id="servicos">NOSSOS SERVIÇOS</h2>
@@ -127,42 +127,53 @@
       </section>
 
     <section class="d-block d-md-none about-area pt-10">
-        <div class="container" style="margin-top:4px;">
-            <div class="row">
-                <div class="col-12 d-flex align-items-center justify-content-center">
-                    <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="section-title ">
-                            <h2 class="title tituloAnimado" style="color:#2779a7" id="servicos2">SERVIÇOS</h2>
-                        </div>
-                    </div>                
-                </div>
-            </div> 
+        <div class="row">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="section-title ">
+                        <h2 class="title tituloAnimado" style="color:#2779a7" id="servicos2">NOSSOS SERVIÇOS</h2>
+                    </div>
+                </div>                
+            </div>
         </div> 
     </section>
 
-    <div class="row d-block d-md-none">
-        <div class="col-12 d-flex " style="flex-direction: column">
-            <a href="" class="btn m-2" style="background: #2779a7; color:white">Divisas</a>
-            <a href="" class="btn m-2" style="background: #2779a7; color:white">Abertura de contas</a>
-            <a href="" class="btn m-2" style="background: #2779a7; color:white">Redirecionamento</a>
-            <a href="" class="btn m-2" style="background: #2779a7; color:white">Agendamento de visto</a>
-            <a href="" class="btn m-2" style="background: #2779a7; color:white">Produtos Amazon</a>
+    <section>
+        <div class="row d-block d-md-none">
+            <div class="col-12 d-flex justify-content-center" style="flex-direction: column">
+                <div style="margin: 0 auto">
+                    <a href="{{route('login')}}" class="btn m-2" style="background: #2779a7; color:white">Divisas</a>
+                </div> 
+                <div style="margin: 0 auto">
+                    <a href="{{route('login')}}" class="btn m-2" style="background: #2779a7; color:white">Produtos Amazon</a>
+                </div>   
+                <div style="margin: 0 auto">
+                    <a href="{{route('login')}}" class="btn m-2" style="background: #2779a7; color:white">Redirecionamento</a>
+                </div>
+                <div style="margin: 0 auto">
+                    <a href="{{route('login')}}" class="btn m-2" style="background: #2779a7; color:white">Abertura de contas</a>
+                </div>
+                <div style="margin: 0 auto">
+                    <a href="{{route('login')}}" class="btn m-2" style="background: #2779a7; color:white">Agendamento de visto</a>
+                </div>
+            </div>
     </div>
-
-    </div>
+    </section>
 
     <section class="about-area pt-10">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md-6 col-lg-6 secao-filial">
                 <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <div class="section-title ">
-                        <h2 class="title tituloAnimado" style="color:#2779a7">Somos a filial da Amazon</h2>
+                    <div class="section-title">
+                        <h2 class="title title-filial tituloAnimado" style="color:#2779a7; font-family:Roboto">FILIAL DA AMAZON</h2>
                     </div>
-                    <p> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
+                    <p class="content-filial"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
                         segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
                         praticidade de fazer suas compras online conosco. Como filial da amazon, trazemos para si os melhores produtos do mercado.
                     </p>
-                    <a href="#produtos" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Ver Produtos</a>
+                    <div class="btn-filial">
+                        <a href="#produtos" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Ver Produtos</a>
+                    </div>
                 </div>                
             </div>
             <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
@@ -179,7 +190,7 @@
             <div class="row mt-5">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <div class="section-title">
-                        <h3 class="tituloAnimado" id="testemunho" style="color:#2779a7; margin-top:50px;">TESTEMUNHO DE CLIENTES</h3>
+                        <h2 class="tituloAnimado" id="testemunho" style="color:#2779a7; margin-top:50px;">TESTEMUNHO DE CLIENTES</h2>
                     </div>
                 </div>
             </div>
@@ -282,6 +293,8 @@
         </div> 
     </section>
 
+    {{-- Testemunho para versão mobile --}}
+    
     <section class="d-block d-md-none d-flex" style="flex-direction: column">
         <div class="testimonial-author d-flex align-items-center">
             <div class="m-2 card p-5">
@@ -324,34 +337,37 @@
         </div>
     </section>
 
-    <div class="row mt-5">
-        <div class="col-lg-12">
-            <div class="d-flex justify-content-center">
-                <div class="section-title text-center pb-40">
-                    <h3 class="slideShow" style="color:#2779a7"><i class="fa fa-heart-o text-danger" aria-hidden="true"></i> LINK DE AFILIADO <i class="fa fa-heart-o text-danger" aria-hidden="true"></i></h3>
-                        <hr>
+    <section>
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <div class="d-flex justify-content-center">
+                    <div class="section-title text-center pb-40">
+                        <h2 class="slideShow" style="color:#2779a7"><i class="fa fa-heart-o text-danger" aria-hidden="true"></i> LINK DE AFILIADO <i class="fa fa-heart-o text-danger" aria-hidden="true"></i></h2>
+                            <hr>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
       
-  <div class="row">
+    <section>
+    <div class="row">
         <div class="col-12 col-md-12 col-lg-9" style="margin:auto">
-            <div class="tab nav-border-bottom ">
-                <ul class="nav nav-tabs" role="tablist">
+            <div class="tab nav-border-bottom">
+                <ul class="nav nav-tabs cabecalho-link-afiliado" role="tablist">
                     <li class="nav-item">
-                        <a style="font-size:13pt" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true">O que é?</a>
+                        <a style="font-size:13pt;" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true"> O QUE É?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:13pt;" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O que significa ser Afiliado?</a>
+                        <a style="font-size:13pt;" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O QUE SIGNIFICA SER AFILIADO?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:13pt;" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">Como a empresa ganha?</a>
+                        <a style="font-size:13pt;" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">COMO A EMPRESA GNHA?</a>
                     </li>
                 </ul>
-                <div class="tab-content card p-4">
-                    <div class="tab-pane fade py-3 active show" id="home-02" role="tabpanel" aria-labelledby="home-02-tab">
-                        <p style="font-size: 12pt;">Um link de afiliado é um <b>URL único</b> atribuído a um afiliado que participa de um programa de marketing de 
+                <div class="tab-content card rounded p-4">
+                    <div class="tab-pane fade py-3 active show" id="home-02" role="tabpanel" aria-labelledby="home-02-tab" style="margin: 0 auto">
+                        <p style="font-size: 13pt; font-family:sans-serif;">Um link de afiliado é um <strong>URL único</strong> atribuído a um afiliado que participa de um programa de marketing de 
                             afiliados. Esse tipo de link é usado para rastrear o tráfego e as vendas geradas por um afiliado 
                             específico. Quando um usuário clica em um link de afiliado e realiza uma ação desejada (como fazer 
                             uma compra ou preencher um formulário), o afiliado é creditado pela referência e pode receber uma 
@@ -359,7 +375,7 @@
                         </p>
                     </div>
                     <div class="tab-pane fade py-3" id="profile-02" role="tabpanel" aria-labelledby="profile-02-tab">
-                        <p style="font-size: 12pt;">
+                        <p style="font-size: 13pt; font-family:sans-serif;">
                             Ser afiliado, significa ser um <b>parceiro comercial</b> de uma empresa
                             ou marca que oferece um programa de afiliados. Os afiliados promovem os produtos ou serviços dessa 
                             empresa em troca de uma comissão ou outra forma de compensação por vendas, tráfego ou ações específicas 
@@ -367,31 +383,26 @@
                         </p>
                     </div>
                     <div class="tab-pane fade py-3" id="portfolio-02" role="tabpanel" aria-labelledby="portfolio-02-tab">
-                        <p class="text-dark" style="font-size: 13pt">Tanto a empresa anunciante quanto o afiliado têm a oportunidade de ganhar de diferentes maneiras:</p>
+                        <p class="text-dark" style="font-size: 13pt; font-family:sans-serif;">Tanto a empresa anunciante quanto o afiliado têm a oportunidade de ganhar de diferentes maneiras:</p>
                         <br>
-                        <ul>
-                            <li>
-                              <p class="text-dark" style="font-size: 12pt;">
-                              <b>Vendas direta</b>: Quando um cliente clicado por um afiliado realiza uma compra, a empresa afiliada recebe 
-                                uma parte da receita da venda como comissão. Esse é o modelo mais comum de remuneração no marketing de 
-                                afiliados. A comissão pode ser uma porcentagem fixa do valor da venda ou um valor fixo por transação.
-                              </p>  
-                            </li>
-
-                            <li style="font-size: 12pt;">
-                              <p class="text-dark" style="font-size: 12pt;">
-                                <b>Tráfego qualificado</b>: Mesmo se o cliente não realizar uma compra imediata, a empresa afiliada pode ganhar 
-                                com o tráfego direcionado pelo afiliado. Por exemplo, se o cliente clicar no link de afiliado e se 
-                                inscrever para uma lista de e-mails ou preencher um formulário de lead, a empresa afiliada pode ganhar 
-                                uma comissão por cada lead gerado.
-                              </p>
-                            </li>
-                        </ul>
+                        <p class="p-2 rounded" style="font-size: 13pt; font-family:sans-serif; background-color:#c0dcf5;">
+                            <span style="text-decoration: underline;">Vendas direta</span>: Quando um cliente clicado por um afiliado realiza uma compra, a empresa afiliada recebe 
+                            uma parte da receita da venda como comissão. Esse é o modelo mais comum de remuneração no marketing de 
+                            afiliados. A comissão pode ser uma porcentagem fixa do valor da venda ou um valor fixo por transação.
+                        </p>  
+                        <br>
+                        <p class="text-dark p-2 rounded" style="font-size: 13pt; font-family:sans-serif; background-color:#f3c2a5;">
+                            <span style="text-decoration: underline">Tráfego qualificado</span>: Mesmo se o cliente não realizar uma compra imediata, a empresa afiliada pode ganhar 
+                            com o tráfego direcionado pelo afiliado. Por exemplo, se o cliente clicar no link de afiliado e se 
+                            inscrever para uma lista de e-mails ou preencher um formulário de lead, a empresa afiliada pode ganhar 
+                            uma comissão por cada lead gerado.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
     {{-- Lista de Produtos da Amazon --}}
     <div class="col-lg-12 d-flex justify-content-center align-items-center mb-2" style="background-color:#062f4f">
@@ -435,26 +446,26 @@
     </div>
 
     {{-- Consultoria --}}
-      <article class="d-flex align-items-center justify-content-center">
-        <div class="col-lg-6" style="height:200px">
-          <h2 class="font-weight-bold tituloAnimado" style="color:white">Consultoria & <br>Acompanhamento de visto</h2> 
-          <a href="{{route('login')}}" class="main-btn mt-4">Solicitar Serviço</a>
-        </div>  
-      </article> 
+    <article class="d-flex align-items-center justify-content-center">
+    <div class="col-lg-6" style="height:200px">
+        <h2 class="font-weight-bold tituloAnimado" style="color:white">Consultoria & <br>Acompanhamento de visto</h2> 
+        <a href="{{route('login')}}" class="main-btn mt-4">Solicitar Serviço</a>
+    </div>  
+    </article> 
 
-      <article class="d-flex align-items-center justify-content-center">
-        <div class="col-lg-6" style="height:200px">
-          <h2 class="font-weight-bold tituloAnimado" style="color:white">Divisas & <br>Preços competitivos</h2> 
-          <a href="{{route('login')}}" class="main-btn mt-4">Solicitar Serviço</a>
-        </div>  
-      </article>
+    <article class="d-flex align-items-center justify-content-center">
+    <div class="col-lg-6" style="height:200px">
+        <h2 class="font-weight-bold tituloAnimado" style="color:white">Divisas & <br>Preços competitivos</h2> 
+        <a href="{{route('login')}}" class="main-btn mt-4">Solicitar Serviço</a>
+    </div>  
+    </article>
 
     <div class="row mt-1"></div>
 
   <footer id="contacto" class="bg-dark">
     <section class="footer-Content">
-        <div class="row d-flex justify-content-around">
-            <div class="col-12 col-md-6 col-lg-3 mt-4">
+        <div class="row d-flex justify-content-around mt-5">
+            <div class="col-12 col-md-6 col-lg-3">
                 <div class="widget">
                     <h3 class="block-title">Crie uma conta</h3>
                     <ul class="menu" style="list-style:none">
@@ -465,9 +476,9 @@
                 </div>
             </div>
             
-            <div class="col-12 col-md-6 col-lg-3 mt-4">
+            <div class="col-12 col-md-6 col-lg-3">
                 <div class="widget">
-                    <h3 class="block-title">Contacto</h3>
+                    <h3 class="block-title">Contactos</h3>
                     <ul class="menu" style="list-style:none">
                     <li><a href="javascript:void()"><i class="fa fa-phone" aria-hidden="true"></i> 947937025</a></li>
                     <li><a href="javascript:void()"><i class="fa fa-phone" aria-hidden="true"></i> 936132172</a></li>
@@ -476,7 +487,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3 mt-4">
+            <div class="col-12 col-md-6 col-lg-3">
                 <div class="widget">
                     <h3 class="block-title">Endereço</h3>
                     <ul class="menu" style="list-style:none">
@@ -490,14 +501,15 @@
             </div>
 
         </div>
+    </section>
 
-        <div class="row d-flex justify-content-center">
-            <div class="col-12 col-md-12 col-lg-6 d-flex">
-                <p class="text-light">Todos os direitos reservados, produzido pela <a href="https://www.petrohost.ao/" target="_blank"><strong>PetroHost</strong></a> &copy; 2024 - Sonline Service </p>
+    {{-- <section class="bg-secondary mt-5"> --}}
+        <div class="row d-flex justify-content-center bg-secondary mt-5">
+            <div class="col-12 col-md-12">
+                <p class="text-light text-center p-2">Todos os direitos reservados, produzido pela <a href="https://www.petrohost.ao/" target="_blank"><strong>PetroHost</strong></a> &copy; 2024 - Sonline Service </p>
             </div>
         </div>
-
-    </section>
+    {{-- </section> --}}
 </footer>
 
 @endsection

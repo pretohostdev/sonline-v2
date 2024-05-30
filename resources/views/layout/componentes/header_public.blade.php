@@ -31,7 +31,7 @@
         </div>
 
         <div class="login-button">
-            <a href="{{route('login')}}" class="btn btn-round text-white" style="background: #0081cf">
+            <a href="{{route('login')}}" class="btn text-light btn-round" style="background: #0081cf">
                 <i class="ti ti-2x ti-user mr-1" aria-hidden="true"></i>
                 Entrar
             </a>

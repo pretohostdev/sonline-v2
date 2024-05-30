@@ -8,8 +8,8 @@
     <meta name="author" content="Cláudio Rufino - PETROHOST" />
     
     <script src="https://unpkg.com/scrollreveal"></script>
-    @vite('resources/js/app.js')
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/js/app.js') --}}
+    {{-- @vite('resources/css/app.css') --}}
 
     {{-- Inclusão de links Css --}}
     @stack('styles')
