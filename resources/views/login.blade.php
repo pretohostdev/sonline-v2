@@ -24,9 +24,12 @@
          <div class="container">
             <div class="center verticle_center full_height">
                <div class="login_section">
+                  <div class="row mt-5 mb-1">
+                     <img width="70" src="{{asset('assets/img/favicon.jpg')}}" alt="#" style="margin:0 auto" />
+                  </div>
                   <div class="logo_login">
                      <div class="center">
-                        <img width="210" src="{{asset('assets/img/logo2.jpg')}}" alt="#" />
+                        <h2 class="text-light">Sonline Service</h2>
                      </div>
                   </div>
                   <div class="login_form">
@@ -44,23 +47,39 @@
                      <form action="{{route('login.store')}}"  method="POST" class="mt-3 mt-sm-5">
                         @csrf
                         <fieldset>
-                           <div class="field">
-                              <label class="label_field">*Email</label>
-                              <input type="email" name="email" value="{{old("email")}}" required />
+
+                           <div class="col-12">
+                              <div class="form-group mb-2">
+                                  <label class="control-label">Email</label>
+                                  <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}" required>
+                              </div>
                            </div>
-                           <div class="field">
-                              <label class="label_field">*Senha</label>
-                              <input type="password" name="password" />
+
+                           <div class="col-12">
+                              <div class="form-group mb-2">
+                                  <label class="control-label">Senha</label>
+                                  <input type="password" class="form-control" name="password" value="{{old('email')}}" id="senha" required>
+                              </div>
                            </div>
-                           <div class="field">
-                              <label class="label_field hidden">hidden label</label>
-                              <label class="form-check-label"><input type="checkbox" class="form-check-input"> Remember Me</label>
-                              <a class="forgot" href="{{route('registar')}}">Criar conta</a>
+
+                           <div class="col-12">
+                              <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                 <label class="form-check-label" for="flexCheckDefault">
+                                 Lembrar senha
+                                 </label>
+                              </div>
                            </div>
-                           <div class="field margin_0">
-                              <label class="label_field hidden">hidden label</label>
-                              <button type="submit" class="main_bt">Entrar</button>
+
+                           <div class="col-12">
+                              <div class="d-flex justify-content-end mt-2">
+                                 <button type="submit" class="main_bt">Entrar</button>
+                              </div>
                            </div>
+                           <div class="col-12 d-flex justify-content-start mt-2">
+                              <a class="forgot text-primary" href="{{route('registar')}}">Criar conta</a>
+                           </div>
+                           
                         </fieldset>
                      </form>
                   </div>

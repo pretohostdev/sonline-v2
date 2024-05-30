@@ -12,7 +12,6 @@
                 <ul class="user_profile_dd">
                    <li>
                       <a class="dropdown-toggle" data-toggle="dropdown">
-                        {{-- <img class="img-responsive rounded-circle" src="images/layout_img/user_img.jpg" alt="#" /> --}}
                         <span class="name_user">SESSÃO</span></a>
                       <div class="dropdown-menu">
                         @auth

@@ -131,7 +131,7 @@
 
                         <div class="form-group">
                             <label for="peso" class="text-dark">Realizar de pagameno <span style="font-size:8pt"></span></label>
-                            <a href="https://checkout.revolut.com/pay/18d1f014-ff1c-4999-9d68-b13617a96d44" class="btn btn-block btn-info" target="_blank">Pagar</a>
+                            <a href="https://checkout.revolut.com/pay/18d1f014-ff1c-4999-9d68-b13617a96d44" class="btn btn-block btn-primary" target="_blank">Pagar</a>
                         </div>
 
                         <div class="form-group">

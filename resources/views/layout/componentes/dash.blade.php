@@ -23,6 +23,9 @@
           <li><a href="{{ route('moeda.create') }}"><i class="fa fa-credit-card red_color"></i> <span>Moeda</span></a></li>
           <li><a href="{{ route('agendamento.create') }}"><i class="fa fa-clock-o green_color"></i> <span>Agendamento</span></a></li>
           <li><a href="{{ route('redirecionamento.create') }}"><i class="fa fa-external-link orange_color"></i> <span>Redirecionamento</span></a></li>
+          <div class="d-block d-md-none">
+            <li><a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> <span>Sair</span></a></li>
+         </div>
        </ul>
     </div>
  </nav>

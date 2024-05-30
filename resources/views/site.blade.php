@@ -162,7 +162,7 @@
 
     <section class="about-area pt-10">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-6 secao-filial">
+            <div class="col-12 col-md-12 col-lg-6 secao-filial">
                 <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="section-title">
                         <h2 class="title title-filial tituloAnimado" style="color:#2779a7; font-family:Roboto">FILIAL DA AMAZON</h2>
