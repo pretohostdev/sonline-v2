@@ -61,6 +61,8 @@ header {
 }
 .login-sm-button{display: none;}
 
+.nav-entra-criar li{display: inline; margin-left: 15px;}
+
 @media screen and (max-width: 768px) {
     .meu-navbar {
         padding: 1.5rem 4rem;

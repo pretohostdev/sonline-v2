@@ -29,12 +29,21 @@
                 </li>
             </ul>
         </div>
-                {{-- btn text-light btn-round background: #3b5998--}}
         <div class="login-button d-flex align-items-center">
-            <a href="{{route('login')}}" class="" style="font-family:'Arvo', sans-serif; color:#3b5998;">
-                <i class="ti ti-2x ti-user mr-1" aria-hidden="true"></i>
-                ENTRAR
-            </a>
+            <ul class="nav-entra-criar">
+                <li>
+                    <a href="{{route('registar')}}" style="font-family:'Arvo', sans-serif; color:#6235e9">
+                            REGISTAR
+                    </a>
+                   
+                    </li>
+                <li class="">
+                   <a href="{{route('login')}}" style="font-family:'Arvo', sans-serif; text-decoration: none">
+                           <span style="color:#6235e9; text-decoration: none;">ENTRAR</span> 
+                    </a>
+                </li>
+            </ul>
+            
         </div>
 
         <div class="mobile-menu">

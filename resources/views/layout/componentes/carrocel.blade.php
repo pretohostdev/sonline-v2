@@ -15,7 +15,7 @@
 
 <div class="col-12 col-md-2 div-sociais card-body">
     <div class="text-center mb-1">
-        <h4 style="font-family:'Arvo'; color:#3b5998">SOCIAIS</h4> 
+        <h5 class="text-light" style="font-family:'Arvo';">REDES SOCIAIS</h5> 
     </div>
     <div class="social">
         <div class="full socile_icons fb" style="margin-bottom: 20px">

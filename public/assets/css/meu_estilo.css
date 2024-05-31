@@ -226,7 +226,12 @@ article:nth-of-type(3) {height: 100px;background-color: #F0F8FF;}
 }
 @media (max-width: 880px) {.btn-carrocel{margin-bottom:60px;}}
 #tipoDocumentos{display: none;}#tipoConsultoria{display: none;}
-.div-sociais{display: flex; flex-direction: column; justify-content: center; background: url('../img/fundo-carrocel.jpg');}
+.div-sociais{display: flex; flex-direction: column; justify-content: center; 
+/* background: url('../img/fundo-carrocel.jpg'); */
+background: url("../img/viagem-login.jpg");
+    background-position: center center;
+    position: relative;
+}
 .content-filial{font-family: 'Roboto', sans-serif; font-size:16px;text-align: justify;}
 @media screen and (max-width:750px) {
     .secao-servicos {
