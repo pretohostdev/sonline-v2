@@ -132,7 +132,7 @@
                 <div class="col-12 d-flex align-items-center justify-content-center">
                     <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="section-title ">
-                            <h2 class="title tituloAnimado" style="color:#2779a7" id="servicos2">SERVIÇOS</h2>
+                            <h2 class="title tituloAnimado" style="color:#2779a7" ;>SERVIÇOS</h2>
                         </div>
                     </div>                
                 </div>
