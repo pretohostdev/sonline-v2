@@ -31,7 +31,7 @@
         <div class="app-wrap">
 
             <div class="app-contant">
-                <div class="" style="background-color: #cbcbcb">
+                <div style="background-color: #cbcbcb">
                     <div class="container-fluid">
                         <div class="row no-gutters d-flex justify-content-center">
                             <div class="col-sm-6 col-lg-5 col-xxl-3">
@@ -40,7 +40,7 @@
                                     <div class="register p-5">
 
                                         <div class="d-flex justify-content-center">
-                                            <img src="{{asset('assets/img/favicon.jpg')}}" class="logo" alt="logo da empresa">
+                                            <img width="70" src="{{asset('assets/img/favicon.jpg')}}" class="log" alt="logo da empresa">
                                         </div>   
 
                                         <p class="text-center">Seja bem vindo, crie uma conta</p>

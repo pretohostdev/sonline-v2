@@ -201,8 +201,35 @@ article:nth-of-type(3) {height: 100px;background-color: #F0F8FF;}
 @media (max-width: 880px) {.btn-carrocel{margin-bottom:60px;}}
 #tipoDocumentos{display: none;}#tipoConsultoria{display: none;}
 .div-sociais{display: flex; flex-direction: column; justify-content: center; background: url('../img/fundo-carrocel.jpg');}
-@media screen and (max-width:600px) {
+@media screen and (max-width:750px) {
     .secao-servicos {
         display: none;
     }
+    .secao-filial{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .title-filial{
+        text-align: center;
+    }
+    .content-filial{
+        text-align: center;
+    }
+    .btn-filial{
+        display: flex;
+        justify-content: center;
+    }
+    .cabecalho-link-afiliado{
+        text-align: center;
+    }
+}
+
+.secao-filial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-group-text{
+    background-color: #000;
 }

@@ -150,7 +150,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="d-none d-md-block col-lg-4">
             <img src="{{asset('assets/img/agendamento.png')}}" alt="agendamento">
         </div>
 

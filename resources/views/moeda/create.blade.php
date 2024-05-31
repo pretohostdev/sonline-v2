@@ -103,7 +103,7 @@
 
                         <div class="input-group mb-3" id="divValorPagar">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Valor a pagar</span>
+                                <span class="input-group-text bg-secondary text-light">Valor a pagar</span>
                             </div>
                             <input type="text" class="form-control" id="valorPagar" name="valorPagar" readonly>
                         </div>
@@ -124,7 +124,7 @@
                             <input type="file" class="form-control mt-2" id="comprovativo" name="documento">
                         </div>
 
-                        <button type="submit" class="btn bg-gradient text-light mt-3">Enviar Pedido</button>
+                        <button type="submit" class="btn btn-primary text-light mt-3">Enviar Pedido</button>
                     </form>
                 </div>
 
@@ -155,7 +155,7 @@
 
                         <div class="input-group mb-3" id="divDolar">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-gradient text-light">USD</span>
+                                <span class="input-group-text bg-primary text-light">USD</span>
                             </div>
                             <input type="text" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
                             <div class="spinner-border text-primary spinner-border-sm" role="status" id="spinnerInputDolar">
@@ -175,14 +175,14 @@
 
                           <div class="input-group mb-3" id="divTaxaDolar">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Taxa do dolar</span>
+                                <span class="input-group-text bg-secondary text-light">Taxa do dolar</span>
                             </div>
                             <input type="text" class="form-control" value=" {{"1 USD - Câmbio +". $sistema->taxa." kz"}}"  id="taxaDolar" readonly>
                           </div>
 
                           <div class="input-group mb-3" id="divTaxaEuro">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Taxa do Euro</span>
+                                <span class="input-group-text bg-secondary text-light">Taxa do Euro</span>
                             </div>
                             <input type="text" class="form-control" value="{{"1 USD - Câmbio +". $sistema->taxa." kz"}}" readonly>
                           </div>

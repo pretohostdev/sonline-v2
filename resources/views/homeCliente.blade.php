@@ -39,7 +39,7 @@
     <div class="container-fluid">
        <div class="row column_title">
           <div class="col-md-12" style="margin-top: 0.5px">
-             <div class="page_title orange_bg">
+             <div class="page_title" style="background-color:#243147">
                 <h2 class="text-white">Perfil</h2>
              </div>
           </div>
@@ -139,8 +139,8 @@
                                         </div>
 
                                         <div class="d-flex justify-content-space-between">
-                                            <div class="mr-4 bg-dark">
-                                                <button type="submit" class="btn btn-primary">Atualizar dados</button> 
+                                            <div class="mr-4">
+                                                <button type="submit" class="main_bt">Atualizar dados</button> 
                                             </div>
                                             <div>
                                                 <i class="fa fa-check fa-2x text-success mr-2" id="atualizadoDadosSucesso"></i>
@@ -161,8 +161,9 @@
                       </div>
                    </div>
                 </div>
+
                 <div class="row">
-                    <div class="container orange_bg">
+                    <div class="container" style="background-color:#243147">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="heading1" style="box-shadow: -1px 1px 4px -2px rgba(0, 0, 0, 0.2);">
@@ -172,17 +173,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12 d-flex justify-content-center align-items-center">
-                            <div class="mb-5">
+                        <div class="col-12 col-lg-12 d-flex justify-content-center align-items-center">
+                            <div class="mb-1">
                                 <a href="{{ route('visto.estado') }}" class="btn btn-outline-light">Vistos</a>
                                 <a href="{{ route('conta.estado') }}" class="btn btn-outline-light">Contas</a>
                                 <a href="{{ route('moeda.estado') }}" class="btn btn-outline-light">Moedas</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-12 d-flex justify-content-center align-items-center">
+                            <div class="mb-5">
                                 <a href="{{ route('agendamento.estado') }}" class="btn btn-outline-light">Agendamentos</a>
                                 <a href="{{ route('redirecionamento.estado') }}" class="btn btn-outline-light">Redirecionamentos</a>
                             </div>
                         </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
              </div>
              <div class="col-md-2"></div>
           </div>
