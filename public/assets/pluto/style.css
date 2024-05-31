@@ -1500,7 +1500,7 @@ a[data-toggle="collapse"] {
 .socile_icons .social_cont ul li span {
     float: left;
     width: 100%;
-    color: #99abb4;
+    color: rgb(240, 85, 29);
     font-size: 17px;
     font-weight: 300;
 }

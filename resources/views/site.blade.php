@@ -8,7 +8,14 @@
 <link rel="stylesheet" href="assets/pluto/style.css">
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
+
+{{-- Fontes externas --}}
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
 <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.jpg')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
@@ -16,6 +23,8 @@
  <link rel="stylesheet" href="assets/css/animate.css">
  <link rel="stylesheet" href="assets/css/navbar.css">
  <link rel="stylesheet" href="assets/css/responsividade.css">
+
+@vite('resources/js/app.js')
 
  
 
@@ -125,38 +134,39 @@
           </div>
         </div>
       </section>
-
-    <section class="d-block d-md-none about-area pt-10">
+    <section class="d-block d-md-none about-area pt-10 card-header" style="background-color:#F0F8FF">
         <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-center">
-                <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <div class="section-title ">
-                        <h2 class="title tituloAnimado" style="color:#2779a7" id="servicos2">NOSSOS SERVIÇOS</h2>
+                <div class="section-title">
+                    <h2 class="title tituloAnimado text-center" style="color:#2779a7" id="servicos2">NOSSOS SERVIÇOS</h2>
+                    <div class="desc-text text-center">
+                        <p style="color:#2779a7">A sonline Service é uma empresa cuja missão é simplificar e agilizar os serviços digitais</p>
                     </div>
-                </div>                
+                </div>
             </div>
         </div> 
     </section>
 
     <section>
-        <div class="row d-block d-md-none">
-            <div class="col-12 d-flex justify-content-center" style="flex-direction: column">
+        <div class="row d-block d-md-none mb-5 card-body p-2">
+            <div class="col-12 d-flex justify-content-center" style="flex-direction: column;">
                 <div style="margin: 0 auto">
-                    <a href="{{route('login')}}" class="btn m-2" style="background: #2779a7; color:white">Divisas</a>
-                </div> 
-                <div style="margin: 0 auto">
-                    <a href="{{route('login')}}" class="btn m-2" style="background: #2779a7; color:white">Produtos Amazon</a>
-                </div>   
-                <div style="margin: 0 auto">
-                    <a href="{{route('login')}}" class="btn m-2" style="background: #2779a7; color:white">Redirecionamento</a>
+                    <a href="{{route('login')}}" class="main-btn m-2 btn-block">Agendar de visto</a>
                 </div>
                 <div style="margin: 0 auto">
-                    <a href="{{route('login')}}" class="btn m-2" style="background: #2779a7; color:white">Abertura de contas</a>
+                    <a href="{{route('login')}}" class="main-btn m-2 btn-block">Abertura de contas</a>
+                </div>
+                 <div style="margin: 0 auto">
+                    <a href="{{route('login')}}" class="main-btn m-2 btn-block">Redirecionamento</a>
                 </div>
                 <div style="margin: 0 auto">
-                    <a href="{{route('login')}}" class="btn m-2" style="background: #2779a7; color:white">Agendamento de visto</a>
+                    <a href="{{route('login')}}" class="main-btn m-2 btn-block">Produtos Amazon</a>
+                </div>
+                 <div style="margin: 0 auto">
+                    <a href="{{route('login')}}" class="main-btn m-2 btn-block">Solicita Divisas</a>
                 </div>
             </div>
+        <hr class="mt-4">
     </div>
     </section>
 
@@ -356,18 +366,18 @@
             <div class="tab nav-border-bottom">
                 <ul class="nav nav-tabs cabecalho-link-afiliado" role="tablist">
                     <li class="nav-item">
-                        <a style="font-size:13pt;" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true"> O QUE É?</a>
+                        <a style="font-size:13pt; font-family:'Arvo', sans-serif;" class="nav-link show text-dark" id="home-02-tab" data-toggle="tab" href="#home-02" role="tab" aria-controls="home-02" aria-selected="true"> O QUE É?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:13pt;" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O QUE SIGNIFICA SER AFILIADO?</a>
+                        <a style="font-size:13pt; font-family:'Arvo', sans-serif;" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O QUE SIGNIFICA SER AFILIADO?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:13pt;" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">COMO A EMPRESA GNHA?</a>
+                        <a style="font-size:13pt; font-family:'Arvo', sans-serif;" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">COMO A EMPRESA GNHA?</a>
                     </li>
                 </ul>
                 <div class="tab-content card rounded p-4">
                     <div class="tab-pane fade py-3 active show" id="home-02" role="tabpanel" aria-labelledby="home-02-tab" style="margin: 0 auto">
-                        <p style="font-size: 13pt; font-family:sans-serif;">Um link de afiliado é um <strong>URL único</strong> atribuído a um afiliado que participa de um programa de marketing de 
+                        <p style="font-size: 15px; font-family:'Roboto', sans-serif; text-align: justify;">Um link de afiliado é um <strong>URL único</strong> atribuído a um afiliado que participa de um programa de marketing de 
                             afiliados. Esse tipo de link é usado para rastrear o tráfego e as vendas geradas por um afiliado 
                             específico. Quando um usuário clica em um link de afiliado e realiza uma ação desejada (como fazer 
                             uma compra ou preencher um formulário), o afiliado é creditado pela referência e pode receber uma 
@@ -375,7 +385,7 @@
                         </p>
                     </div>
                     <div class="tab-pane fade py-3" id="profile-02" role="tabpanel" aria-labelledby="profile-02-tab">
-                        <p style="font-size: 13pt; font-family:sans-serif;">
+                        <p style="font-size: 15px; font-family:'Roboto', sans-serif; text-align: justify;">
                             Ser afiliado, significa ser um <b>parceiro comercial</b> de uma empresa
                             ou marca que oferece um programa de afiliados. Os afiliados promovem os produtos ou serviços dessa 
                             empresa em troca de uma comissão ou outra forma de compensação por vendas, tráfego ou ações específicas 
@@ -383,16 +393,16 @@
                         </p>
                     </div>
                     <div class="tab-pane fade py-3" id="portfolio-02" role="tabpanel" aria-labelledby="portfolio-02-tab">
-                        <p class="text-dark" style="font-size: 13pt; font-family:sans-serif;">Tanto a empresa anunciante quanto o afiliado têm a oportunidade de ganhar de diferentes maneiras:</p>
+                        <p style="font-size: 15px; font-family:'Roboto', sans-serif;text-align: justify;">Tanto a empresa anunciante quanto o afiliado têm a oportunidade de ganhar de diferentes maneiras:</p>
                         <br>
-                        <p class="p-2 rounded" style="font-size: 13pt; font-family:sans-serif; background-color:#c0dcf5;">
-                            <span style="text-decoration: underline;">Vendas direta</span>: Quando um cliente clicado por um afiliado realiza uma compra, a empresa afiliada recebe 
+                        <p style="font-size: 15px; font-family:'Roboto', sans-serif;text-align: justify;">
+                            <strong>Vendas direta</strong>: Quando um cliente clicado por um afiliado realiza uma compra, a empresa afiliada recebe 
                             uma parte da receita da venda como comissão. Esse é o modelo mais comum de remuneração no marketing de 
                             afiliados. A comissão pode ser uma porcentagem fixa do valor da venda ou um valor fixo por transação.
                         </p>  
                         <br>
-                        <p class="text-dark p-2 rounded" style="font-size: 13pt; font-family:sans-serif; background-color:#f3c2a5;">
-                            <span style="text-decoration: underline">Tráfego qualificado</span>: Mesmo se o cliente não realizar uma compra imediata, a empresa afiliada pode ganhar 
+                        <p style="font-size: 15px; font-family:'Roboto', sans-serif;text-align: justify;">
+                            <strong>Tráfego qualificado</strong>: Mesmo se o cliente não realizar uma compra imediata, a empresa afiliada pode ganhar 
                             com o tráfego direcionado pelo afiliado. Por exemplo, se o cliente clicar no link de afiliado e se 
                             inscrever para uma lista de e-mails ou preencher um formulário de lead, a empresa afiliada pode ganhar 
                             uma comissão por cada lead gerado.
@@ -412,36 +422,34 @@
     </div>
 
   <div class="row">
-    <div class="container">
-        <div class="lista-horizontal">
-            <ul>
-                @foreach ($produtos as $produto )
-                <li>
-                    <div class="card_produto" style="width:300px;">
-                        <div style="display:flex; justify-content:center; align-items:center;width:100%;height:150px;">
-                            <img src="{{url("storage/{$produto->imagem}")}}" alt="Denim Jeans" style="max-width:100%; max-height:100%; width:auto; height:auto; margin-top:10px;">
-                        </div>
-                        <h3 style="font-size: 30px; margin-top:20px;">{{$produto->nome}}</h3>
-                        <p class="text-center p_produto">{{$produto->descricao}}</p>
-                        <p class="price">{{$produto->preco}}</p>
-
-                        <ul class="ul_produto mt-4">
-                        <li>
-                            <i class="fa fa-star fa-2x fa-2x checked"></i>
-                            <i class="fa fa-star fa-2x checked"></i>
-                            <i class="fa fa-star fa-2x checked"></i>
-                            <i class="fa fa-star fa-2x checked"></i>
-                            <i class="fa fa-star fa-2x text-dark"></i>
-                        </li>
-                        </ul>
-                        <div class="card-footer">
-                            <a href="{{$produto->link}}" target="_blank" class="btn btn_produto mt-2">Comprar</a>
-                        </div>
+    <div class="lista-horizontal mt-5 mb-5">
+        <ul>
+            @foreach ($produtos as $produto )
+            <li>
+                <div class="card_produto" style="width:300px;">
+                    <div style="display:flex; justify-content:center; align-items:center;width:100%;height:150px;">
+                        <img src="{{url("storage/{$produto->imagem}")}}" alt="Denim Jeans" style="max-width:100%; max-height:100%; width:auto; height:auto; margin-top:10px;">
                     </div>
+                    <h3 style="font-size: 30px; margin-top:20px;">{{$produto->nome}}</h3>
+                    <p class="text-center p_produto">{{$produto->descricao}}</p>
+                    <p class="price">{{$produto->preco}}</p>
+
+                    <ul class="ul_produto mt-4">
+                    <li>
+                        <i class="fa fa-star fa-2x fa-2x checked"></i>
+                        <i class="fa fa-star fa-2x checked"></i>
+                        <i class="fa fa-star fa-2x checked"></i>
+                        <i class="fa fa-star fa-2x checked"></i>
+                        <i class="fa fa-star fa-2x text-dark"></i>
                     </li>
-                @endforeach
-            </ul>
-          </div>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="{{$produto->link}}" target="_blank" class="btn btn_produto mt-2">Comprar</a>
+                    </div>
+                </div>
+                </li>
+            @endforeach
+        </ul>
         </div>
     </div>
 

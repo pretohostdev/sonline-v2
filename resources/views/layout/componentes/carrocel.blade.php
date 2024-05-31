@@ -1,5 +1,5 @@
 <div class="col-12 col-md-10" style="position: relative; padding:0">
-    <img class="d-block carrocel-sm-img w-100"  src="{{asset('assets/img/banner-1.png')}}" alt="banner">
+    <img class="d-block carrocel-sm-img banner"  src="{{asset('assets/img/banner-1.png')}}" alt="banner">
     <div class="carousel-caption d-md-block">
         <div class="row">
             <div class="col-12">
@@ -15,7 +15,7 @@
 
 <div class="col-12 col-md-2 div-sociais card-body">
     <div class="text-center mb-1">
-        <h5 class="text-secondary">SOCIAIS</h5> 
+        <h4 style="font-family:'Arvo'; color:#3b5998">SOCIAIS</h4> 
     </div>
     <div class="social">
         <div class="full socile_icons fb" style="margin-bottom: 20px">
