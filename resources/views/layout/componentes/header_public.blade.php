@@ -29,11 +29,11 @@
                 </li>
             </ul>
         </div>
-
-        <div class="login-button">
-            <a href="{{route('login')}}" class="btn text-light btn-round" style="background: #3b5998; font-family:'Arvo',  sans-serif;">
+                {{-- btn text-light btn-round background: #3b5998--}}
+        <div class="login-button d-flex align-items-center">
+            <a href="{{route('login')}}" class="" style="font-family:'Arvo', sans-serif; color:#3b5998;">
                 <i class="ti ti-2x ti-user mr-1" aria-hidden="true"></i>
-                Entrar
+                ENTRAR
             </a>
         </div>
 
