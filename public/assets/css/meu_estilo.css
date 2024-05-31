@@ -227,7 +227,6 @@ article:nth-of-type(3) {height: 100px;background-color: #F0F8FF;}
 @media (max-width: 880px) {.btn-carrocel{margin-bottom:60px;}}
 #tipoDocumentos{display: none;}#tipoConsultoria{display: none;}
 .div-sociais{display: flex; flex-direction: column; justify-content: center; 
-/* background: url('../img/fundo-carrocel.jpg'); */
 background: url("../img/viagem-login.jpg");
     background-position: center center;
     position: relative;
@@ -265,3 +264,5 @@ background: url("../img/viagem-login.jpg");
 .input-group-text{
     background-color: #000;
 }
+
+.ul-testemunho-mobile li{display: inline;}

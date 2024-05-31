@@ -26,8 +26,6 @@
 
 @vite('resources/js/app.js')
 
- 
-
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/LineIcons.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
@@ -134,7 +132,9 @@
           </div>
         </div>
       </section>
-    <section class="d-block d-md-none about-area pt-10 card-header" style="background-color:#F0F8FF">
+
+    {{-- Nossos serviços para o modo mobile --}}
+    <section class="d-block d-md-none about-area pt-10 card-header mt-5" style="background-color:#fff">
         <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-center">
                 <div class="section-title">
@@ -148,7 +148,7 @@
     </section>
 
     <section>
-        <div class="row d-block d-md-none mb-5 card-body p-2">
+        <div class="row d-block d-md-none card-body p-2">
             <div class="col-12 d-flex justify-content-center" style="flex-direction: column;">
                 <div style="margin: 0 auto">
                     <a href="{{route('login')}}" class="main-btn m-2 btn-block">Agendar de visto</a>
@@ -198,9 +198,9 @@
     <section id="testimonial" class="testimonial-area about-area pt-15" style="background-color: #F0F8FF">
         <div class="container">
             <div class="row mt-5">
-                <div class="col-lg-12 d-flex justify-content-center">
-                    <div class="section-title">
-                        <h2 class="tituloAnimado" id="testemunho" style="color:#2779a7; margin-top:50px;">TESTEMUNHO DE CLIENTES</h2>
+                <div class="d-none d-md-block col-lg-12">
+                    <div class="section-title d-flex justify-content-center">
+                        <h2 class="tituloAnimado p-4 m-0" id="testemunho" style="color:#2779a7; margin-top:0px;">TESTEMUNHO DE CLIENTES</h2>
                     </div>
                 </div>
             </div>
@@ -236,6 +236,7 @@
                         </div>
                     </div> 
                 </div>
+
                 <div class="d-none d-md-block col-md-12 col-lg-4">
                     <div class="single-testimonial">
                         <div class="testimonial-review d-flex align-items-center justify-content-between">
@@ -306,11 +307,18 @@
     {{-- Testemunho para versão mobile --}}
     
     <section class="d-block d-md-none d-flex" style="flex-direction: column">
-        <div class="testimonial-author d-flex align-items-center">
-            <div class="m-2 card p-5">
+        <div class="row">
+            <div class="d-block d-md-none">
+                <div class="d-flex justify-content-center bg-dark">
+                    <h2 class="tituloAnimado p-4 m-0 text-center text-light" id="testemunho">TESTEMUNHO DE CLIENTES</h2>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-author d-fle align-items-center card p-5">
+            <div>
                 <p>Estou realmente impressionado com a variedade de produtos oferecidos neste site! Encontrei tudo o que precisava em um só lugar. Definitivamente vou voltar mais vezes. - <strong>Sabino Solias</strong></p>
             </div>
-            <ul>
+            <ul class="ul-testemunho-mobile">
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
@@ -320,11 +328,11 @@
         </div>
 
 
-        <div class="testimonial-author d-flex align-items-center">
-            <div class="m-2 card p-5">
+        <div class="testimonial-author d-fle align-items-center card p-5">
+            <div>
                 <p class="text">Este site superou todas as minhas expectativas! Além de uma ampla variedade de serviços, o atendimento ao cliente foi excepcional. Minhas dúvidas foram respondidas rapidamente. - <strong>Manuel Chatanda</strong></p>
             </div>
-            <ul>
+            <ul class="ul-testemunho-mobile">
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
@@ -333,11 +341,11 @@
             </ul>
         </div>
 
-        <div class="testimonial-author d-flex align-items-center">
-            <div class="m-2 card p-5">
+        <div class="testimonial-author d-fle align-items-center card p-5">
+            <div>
                 <p class="text">A navegação fácil e intuitiva tornou simples encontrar o que eu estava procurando, e o processo de pagamento foi rápido e seguro. Recomendo totalmente. - <strong>Manuel Chatanda</strong></p>
             </div>
-            <ul>
+            <ul class="ul-testemunho-mobile">
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
@@ -415,9 +423,9 @@
 </section>
 
     {{-- Lista de Produtos da Amazon --}}
-    <div class="col-lg-12 d-flex justify-content-center align-items-center mb-2" style="background-color:#062f4f">
+    <div class="col-12 col-lg-12 d-flex justify-content-center mb-2" style="background-color:#062f4f">
         <div>
-            <h3  class="text-light m-0 p-4" id="produtos">Lista de produtos Amazon</h3>
+            <h3  class="text-light text-center m-0 p-4" id="produtos">Lista de produtos Amazon</h3>
         </div>
     </div>
 

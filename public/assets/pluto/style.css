@@ -1446,9 +1446,8 @@ a[data-toggle="collapse"] {
 .socile_icons {
     border-radius: 5px;
     overflow: hidden;
-    /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     background: #fff;
-    /* background: rgb(14, 97, 179); */
     min-height: 165px;
 }
 

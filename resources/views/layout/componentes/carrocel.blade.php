@@ -56,6 +56,4 @@
             </div>
         </div>
     </div>
-
-    {{-- <div class="social bg-success">Social-3</div> --}}
 </div>
