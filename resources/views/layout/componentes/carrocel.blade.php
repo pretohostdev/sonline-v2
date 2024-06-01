@@ -1,20 +1,21 @@
 <div class="col-12 col-md-10" style="position: relative; padding:0">
-    <img class="d-block carrocel-sm-img banner"  src="{{asset('assets/img/banner-1.png')}}" alt="banner">
+    <img class="d-none d-md-block carrocel-sm-img banner"  src="{{asset('assets/img/banner-1.png')}}" alt="banner">
+    <img class="d-block d-md-none carrocel-sm-img banner"  src="{{asset('assets/img/banner-2.jpg')}}" alt="banner">
     <div class="carousel-caption d-md-block">
         <div class="row">
-            <div class="col-12">
-                <div class="d-flex justify-content-start btn-carrocel">
-                <div>
-                    <a href="{{route('login')}}" class="main-btn btn-sm-carrocel text-light" style="background-color:#3c9cfd;">Solicitar um serviço</a>
-                </div>
+            <div class="d-none d-md-block col-12">
+                <div class="btn-carrocel">
+                    <div>
+                        <a href="{{route('login')}}" class="main-btn btn-sm-carrocel text-light">Solicitar um serviço</a>
+                    </div>
                 </div>
             </div>
             </div>
         </div>
 </div>
 
-<div class="col-12 col-md-2 div-sociais card-body">
-    <div class="text-center mb-1">
+<div class="d-none d-md-block col-md-2 div-sociais card-body">
+    <div class="text-center mb-1 mt-2">
         <h5 class="text-light" style="font-family:'Arvo';">REDES SOCIAIS</h5> 
     </div>
     <div class="social">

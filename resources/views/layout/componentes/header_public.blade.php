@@ -33,7 +33,7 @@
             <ul class="nav-entra-criar">
                 <li>
                     <a href="{{route('registar')}}" style="font-family:'Arvo', sans-serif; color:#6235e9">
-                            REGISTAR
+                        REGISTAR
                     </a>
                    
                     </li>

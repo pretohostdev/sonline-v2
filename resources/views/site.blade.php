@@ -186,7 +186,7 @@
                     </div>
                 </div>                
             </div>
-            <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center">
                 <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
                     <img src="{{asset('assets/img/filial.jpg')}}" alt="about" id="img-filial">
                 </div> 
@@ -309,14 +309,14 @@
     <section class="d-block d-md-none d-flex" style="flex-direction: column">
         <div class="row">
             <div class="d-block d-md-none">
-                <div class="d-flex justify-content-center bg-dark">
+                <div class="d-flex justify-content-center" style="background-color: #062f4f">
                     <h2 class="tituloAnimado p-4 m-0 text-center text-light" id="testemunho">TESTEMUNHO DE CLIENTES</h2>
                 </div>
             </div>
         </div>
         <div class="testimonial-author d-fle align-items-center card p-5">
             <div>
-                <p>Estou realmente impressionado com a variedade de produtos oferecidos neste site! Encontrei tudo o que precisava em um só lugar. Definitivamente vou voltar mais vezes. - <strong>Sabino Solias</strong></p>
+                <p style="text-align: justify">Estou realmente impressionado com a variedade de produtos oferecidos neste site! Encontrei tudo o que precisava em um só lugar. Definitivamente vou voltar mais vezes. - <strong>Sabino Solias</strong></p>
             </div>
             <ul class="ul-testemunho-mobile">
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
@@ -330,7 +330,7 @@
 
         <div class="testimonial-author d-fle align-items-center card p-5">
             <div>
-                <p class="text">Este site superou todas as minhas expectativas! Além de uma ampla variedade de serviços, o atendimento ao cliente foi excepcional. Minhas dúvidas foram respondidas rapidamente. - <strong>Manuel Chatanda</strong></p>
+                <p class="text" style="text-align: justify">Este site superou todas as minhas expectativas! Além de uma ampla variedade de serviços, o atendimento ao cliente foi excepcional. Minhas dúvidas foram respondidas rapidamente. - <strong>Manuel Chatanda</strong></p>
             </div>
             <ul class="ul-testemunho-mobile">
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
@@ -343,7 +343,7 @@
 
         <div class="testimonial-author d-fle align-items-center card p-5">
             <div>
-                <p class="text">A navegação fácil e intuitiva tornou simples encontrar o que eu estava procurando, e o processo de pagamento foi rápido e seguro. Recomendo totalmente. - <strong>Manuel Chatanda</strong></p>
+                <p class="text" style="text-align: justify">A navegação fácil e intuitiva tornou simples encontrar o que eu estava procurando, e o processo de pagamento foi rápido e seguro. Recomendo totalmente. - <strong>Manuel Chatanda</strong></p>
             </div>
             <ul class="ul-testemunho-mobile">
                 <li><i class="lni-star-filled" style="color:orange"></i></li>
@@ -380,7 +380,7 @@
                         <a style="font-size:13pt; font-family:'Arvo', sans-serif;" class="nav-link text-dark" id="profile-02-tab" data-toggle="tab" href="#profile-02" role="tab" aria-controls="profile-02" aria-selected="false">O QUE SIGNIFICA SER AFILIADO?</a>
                     </li>
                     <li class="nav-item">
-                        <a style="font-size:13pt; font-family:'Arvo', sans-serif;" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">COMO A EMPRESA GNHA?</a>
+                        <a style="font-size:13pt; font-family:'Arvo', sans-serif;" class="nav-link text-dark" id="portfolio-02-tab" data-toggle="tab" href="#portfolio-02" role="tab" aria-controls="portfolio-02" aria-selected="false">COMO A EMPRESA GANHA?</a>
                     </li>
                 </ul>
                 <div class="tab-content card rounded p-4">

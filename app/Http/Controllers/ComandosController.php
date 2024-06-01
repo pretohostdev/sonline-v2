@@ -9,7 +9,7 @@ class ComandosController extends Controller
 {
     public function servidor(){
          // Execute o comando desejado
-        Artisan::call('storage:link');
+        Artisan::call('cache:clear');
 
         return 'Comando executado com sucesso!';
     }

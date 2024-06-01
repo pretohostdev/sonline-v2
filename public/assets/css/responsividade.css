@@ -1,4 +1,5 @@
 .banner{width: 100%;}
+.btn-carrocel{display: flex; justify-content: start;}
 
 @media screen and (max-width: 730px) {
 
@@ -20,5 +21,6 @@
     .banner {
         height: auto;
     }
-   
+    .social_icon{   
+    width: 100%;}
 }
