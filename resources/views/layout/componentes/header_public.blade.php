@@ -29,13 +29,12 @@
                 </li>
             </ul>
         </div>
-        <div class="login-button d-flex align-items-center">
+        <div class="login-button">
             <ul class="nav-entra-criar">
                 <li>
                     <a href="{{route('registar')}}" style="font-family:'Arvo', sans-serif; color:#6235e9">
                         REGISTAR
                     </a>
-                   
                     </li>
                 <li class="">
                    <a href="{{route('login')}}" style="font-family:'Arvo', sans-serif; text-decoration: none">
