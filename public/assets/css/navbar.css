@@ -1,49 +1,24 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header {
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0px 3px 10px #464646;
-}
-
-.meu-navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem 6rem;
-}
-
-.logo-nav {
-    display: flex;
-    justify-content: center;
-}
-
-.logo-nav img {
-    height: 50px;
-}
-
-.meu-nav-list {
-    display: flex;
-    align-items: center;
-}
-
-.meu-nav-list ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+ul{
+    margin: 0;
+    padding: 0;
 }
 
 .meu-nav-item {
     margin: 0 15px;
 }
-
 .meu-nav-item i {
-    color: rgb(221, 101, 58)
+    color: rgb(221, 101, 58);
 }
-
+.meu-nav-mobile-item i {
+    color: whitesmoke;
+text-shadow: 1px 1px 1px #000;
+}
 .meu-nav-link {
     color: #1142c4;
     text-decoration: none;
@@ -52,100 +27,63 @@ header {
     font-family: 'Arvo';
 }
 
-.mobile-menu-icon {
-    display: none;
-}
-
-.mobile-menu {
-    display: none;
-}
-.login-sm-button{display: none;}
-
-.nav-entra-criar li{display: inline; margin-left: 15px;}
-
-.login-button{
-    display:flex;
-    align-items:center;
-}
-
-@media screen and (max-width: 768px) {
-    .meu-navbar {
-        padding: 1.5rem 4rem;
-	}
-	.logo-nav {
-		display: flex;
-		justify-content: center;
-	}
-	.logo-nav img {
-        width: 100%;
-		height: 40px;
-    }
-	.mobile-menu {
-		display: none;
-		margin-right: 20%;
-	}
- 	.mobile-menu ul {
-        display: flex;
-        flex-direction: column;
-		align-items: center;
-		padding-left: 0;	
-		padding-right: 0;
-        padding-bottom: 1rem;
-    }
-	.mobile-menu ul li a{
-		text-align: center;
-	}
-	.mobile-menu-icon button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-	.mobile-menu-icon button img {
-		width: 40px;
-	}
-	.mobile-menu .meu-nav-item {
-        display: block;
-        padding-top: 1.2rem;
-    }
-    .mobile-menu .login-button {
-        display: block;
-        padding: 1rem 2rem;
-    }
-
-    .mobile-menu .login-button a {
-        width: 100%;
-    }
-    .meu-nav-item {
-        display: none;
-    }
-    .mobile-menu-icon {
-        display: block;
-    }
-	.login-sm-button{
-		display: block;
-		width: 100%;
-		cursor: pointer;
-		text-align: center;
-		border-radius: 10px;
-	}
-	.login-sm-button a{
-		display: block;
-		padding: 10px;
-		background: rgb(221, 101, 58);
-		color: #fff;
-	}
-    .login-button a {
-        display: none;
-    }
-    .nav-entra-criar li{display: none; margin-left: 0px;}
-}
-@media screen and (max-width: 500px) {
-.mobile-menu {
-		margin-right: 15px;
-	}
-#img-filial{padding: 20px; }
+ .navbar-web {
+     padding: 15px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
  }
 
-.open {
-    display: block;
+ .navbar-web ul {
+     list-style: none;
+ }
+
+ .navbar-web ul li {
+     display: inline;
+ }
+
+ .logo-web {
+     width: 90px;
+     height: 60px;
+ }
+
+ .logo-web img {
+     width: 100%;
+     height: 100%;
+ }
+
+ .logo-mobile {
+     width: 70px;
+     height: 50px;
+ }
+
+ .logo-mobile img {
+     width: 100%;
+     height: 100%;
+ }
+
+ .menu-mobile {
+     display: none;
+padding:10px;
 }
+
+.menu-mobile ul {
+    list-style: none;
+}
+
+.botoes-navbar-web a{margin-left: 8px; padding: 4px; border:1px solid #48aaf4; border-radius: 4px;}
+.botoes-navbar-mobile button {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.botoes-navbar-mobile button img {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+}
+.botoes-navbar-mobile a{margin-left: 10px; font-family: 'Arvo', sans-serif; padding: 4px; border:1px solid #48aaf4; border-radius: 4px;}
+.open {
+     display: block;
+ }

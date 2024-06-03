@@ -149,22 +149,40 @@
 
     <section>
         <div class="row d-block d-md-none card-body p-2">
-            <div class="col-12 d-flex justify-content-center" style="flex-direction: column;">
-                <div style="margin: 0 auto">
-                    <a href="{{route('login')}}" class="main-btn m-2 btn-block">Agendar de visto</a>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <div class="bg-info p-4 text-center text-white" style="border-radius:10px;">
+                            <a href="{{route('login')}}">Agendar Vistos</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="bg-info p-4 text-center text-white" style="border-radius:10px;">
+                            <a href="{{route('login')}}">Abertura Contas</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="bg-info p-4 text-center text-white" style="border-radius:10px;">
+                            <a href="{{route('login')}}">Solicitar Divisas</a>
+                        </div>
+                    </div>
                 </div>
-                <div style="margin: 0 auto">
-                    <a href="{{route('login')}}" class="main-btn m-2 btn-block">Abertura de contas</a>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="bg-info p-4 text-center text-white" style="border-radius:10px;">
+                           <a href="{{route('login')}}" class="">Redirecionamento</a>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="bg-info p-4 text-center text-white" style="border-radius:10px;">
+                            <a href="{{route('login')}}">Produtos Amazon</a>
+                        </div>
+                    </div>
                 </div>
-                 <div style="margin: 0 auto">
-                    <a href="{{route('login')}}" class="main-btn m-2 btn-block">Redirecionamento</a>
-                </div>
-                <div style="margin: 0 auto">
-                    <a href="{{route('login')}}" class="main-btn m-2 btn-block">Produtos Amazon</a>
-                </div>
-                 <div style="margin: 0 auto">
-                    <a href="{{route('login')}}" class="main-btn m-2 btn-block">Solicita Divisas</a>
-                </div>
+            </div>
             </div>
         <hr class="mt-4">
     </div>
@@ -310,7 +328,7 @@
         <div class="row">
             <div class="d-block d-md-none">
                 <div class="d-flex justify-content-center" style="background-color: #062f4f">
-                    <h2 class="tituloAnimado p-4 m-0 text-center text-light" id="testemunho">TESTEMUNHO DE CLIENTES</h2>
+                    <h2 class="tituloAnimado p-4 m-0 text-center text-light" id="testemunho-mobile">TESTEMUNHO DE CLIENTES</h2>
                 </div>
             </div>
         </div>
