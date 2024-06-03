@@ -35,8 +35,8 @@
                 </div>
 
                 <div class="botoes-navbar-web">
-                    <a href="X" class="text-info">Registar</a>
-                    <a href="X" class="text-info">Entrar</a>
+                    <a href="{{route('registar')}}" class="text-info">Registar</a>
+                    <a href="{{route('login')}}" class="text-info">Entrar</a>
                 </div>
             </nav>
         </div>

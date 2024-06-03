@@ -10,7 +10,9 @@
        <div class="sidebar_user_inf">
           <div class="d-flex justify-content-center">
              <div class="user_img">
-                <img class="img-responsive" src="{{asset('assets/img/logo.jpg')}}" alt="#" />
+               <a href="{{ route('homeCliente') }}">
+                  <img class="img-responsive" src="{{asset('assets/img/logo.jpg')}}" alt="logotipo" />
+               </a>
             </div>
           </div>
        </div>

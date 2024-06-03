@@ -123,7 +123,7 @@
                             <textarea type="text" id="observar" class="form-control" name="observacao"></textarea>
                         </div>
 
-                        <button type="submit" class="btn bg-gradient text-light">Enviar Pedido</button>
+                        <button type="submit" class="btn btn-primary">Enviar Pedido</button>
                     </form>
                 </div>
 

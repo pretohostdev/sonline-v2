@@ -7,6 +7,7 @@
     {{-- Inclusão do Bootstrap 5 no projecto --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
@@ -103,7 +104,7 @@
 
                         <div class="input-group mb-3" id="divValorPagar">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-secondary text-light">Valor a pagar</span>
+                                <span class="input-group-text" style="background-color: #ececec">Valor a pagar</span>
                             </div>
                             <input type="text" class="form-control" id="valorPagar" name="valorPagar" readonly>
                         </div>
@@ -175,14 +176,14 @@
 
                           <div class="input-group mb-3" id="divTaxaDolar">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-secondary text-light">Taxa do dolar</span>
+                                <span class="input-group-text" style="background-color: #ececec">Taxa do dolar</span>
                             </div>
                             <input type="text" class="form-control" value=" {{"1 USD - Câmbio +". $sistema->taxa." kz"}}"  id="taxaDolar" readonly>
                           </div>
 
                           <div class="input-group mb-3" id="divTaxaEuro">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-secondary text-light">Taxa do Euro</span>
+                                <span class="input-group-text" style="background-color: #ececec">Taxa do Euro</span>
                             </div>
                             <input type="text" class="form-control" value="{{"1 USD - Câmbio +". $sistema->taxa." kz"}}" readonly>
                           </div>
