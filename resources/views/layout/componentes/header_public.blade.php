@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="row">
-                <div class="d-flex justify-content-center mb-1" style="background-color:#666; border-radius:20px;">
+                <div class="d-flex justify-content-center mb-2" style="background-color:rgb(5, 55, 86); border-radius:10px;">
                     <div class="menu-mobile">
                         <ul class="ul_nav">
                             <li class="meu-nav-mobile-item">
