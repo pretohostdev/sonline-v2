@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Redirecionamento;
 use App\Models\Produto;
+use App\Models\Sistema;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,8 @@ class RedirecionamentoController extends Controller
     public function create()
     {
         $user_id = Auth::id();
-        return view('redirecionamento.create', compact('user_id'));
+        $sistema = Sistema::find(1);
+        return view('redirecionamento.create', ['sistema'=>$sistema,'user_id'=> $user_id]);
     }
 
     /**

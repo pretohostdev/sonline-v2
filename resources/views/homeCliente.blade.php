@@ -3,6 +3,8 @@
 @section('titulo', 'Cliente')
 
 @push('styles')
+
+<link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
 <!-- bootstrap css -->
 <link rel="stylesheet" href="{{asset('assets/pluto/css/bootstrap.min.css')}}" />
 <!-- site css -->
@@ -259,7 +261,7 @@
         );
 
         async function atualizarDados(cliente){
-            const response = await fetch('http://localhost:8000/api/userAtualizar',
+            const response = await fetch('https://sonlinedigital.com/api/userAtualizar',
             {
                 method:'POST',
                 headers: {

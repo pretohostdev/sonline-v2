@@ -6,6 +6,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
@@ -120,16 +121,46 @@
 
                         <div class="input-group mb-3" id="divDolarRedirecionamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-secondary text-light">Valor a pagar</span>
+                                <span class="input-group-text" style="background-color: #ececec">Preço de envio</span>
                             </div>
                             <input type="text" class="form-control" id="valorConvertido" name="valor" oninput="conversaoMoeda(id)" readonly>
                         </div>
+
+                        <div class="input-group mb-3" id="divTaxaServico">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="background-color: #ececec">Taxa de Serviço p/dia</span>
+                            </div>
+                            <input type="text" class="form-control" id="inputTaxaServico" value="2,99€" readonly>
+                          </div>
+
+                          <div class="input-group mb-3" id="divTaxaArmazenamento">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="background-color: #ececec">Taxa de armazenamento p/dia</span>
+                            </div>
+                            <input type="text" class="form-control" id="inputTaxaArmazenamento" value="4,99€" readonly>
+                            <div class="col-12">
+                                <span style="font-size: 11px; color:red">A comissão de armazenamento do produto é de apenas sete (7) dias.</span>
+                            </div>
+                          </div>
 
                         <div class="form-group">
                             <input type="hidden" class="form-control" value="{{$user_id}}" id="user_id" name="userId">
                         </div>
 
                         <div class="form-group">
+                            <label for="paisDestino" class="text-dark">Forma de pagamento</label>
+                            <select class="form-control" id="metodoPagamento" name="metodoPagamento">
+                                <option value="Iban">Iban</option>
+                                <option value="Resolut">Resolut</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="divIban">
+                            <label for="referenciabancaria" class="text-dark">IBAN</label>
+                            <input type="text" class="form-control" value="{{$sistema->iban}}" id="referenciabancaria" readonly>
+                        </div>
+
+                        <div class="form-group" id="divResolut">
                             <label for="peso" class="text-dark">Realizar de pagameno <span style="font-size:8pt"></span></label>
                             <a href="https://checkout.revolut.com/pay/18d1f014-ff1c-4999-9d68-b13617a96d44" class="btn btn-block btn-primary" target="_blank">Pagar</a>
                         </div>
@@ -165,26 +196,11 @@
 
                         <div class="input-group mb-3" id="divKwanzaRedirecionamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-secondary text-light" id="tipoEnvio">
+                                <span class="input-group-text" style="background-color: #ececec" id="tipoEnvio">
                                 </span>
                             </div>
                             <input type="text" class="form-control" id="pesoBase" readonly>
                         </div>
-
-
-                          <div class="input-group mb-3" id="divTaxaServico">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-secondary text-light">Taxa de Serviço</span>
-                            </div>
-                            <input type="text" class="form-control" id="inputTaxaServico" value="2,99€" readonly>
-                          </div>
-
-                          <div class="input-group mb-3" id="divTaxaArmazenamento">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-secondary text-light">Taxa de armazenamento</span>
-                            </div>
-                            <input type="text" class="form-control" id="inputTaxaArmazenamento" value="4,99€" readonly>
-                          </div>
 
                     </div>
                 </div>
@@ -246,7 +262,52 @@
             else{
                 valorConvertido.value = (peso.value*40)/1000 + "€";
             }
-        })
+        });
+
+
+        var metodoPagamento = document.getElementById('metodoPagamento');
+
+        var divIban = document.getElementById('divIban');
+        var divResolute = document.getElementById('divResolut'); 
+
+        // Método de pagamento
+
+        carregamento();
+
+        metodoPagamento.addEventListener('change', (e)=>{
+            let metodoPagamento = e.target.value;
+
+            if(metodoPagamento == "Iban"){
+                show(divIban);
+                hide(divResolute);
+            }else{
+                show(divResolute);
+                hide(divIban);
+            }
+        });
+
+        function carregamento(){
+            if(metodoPagamento.value == "Iban"){
+                var divIban = document.getElementById('divIban');
+                var divResolute = document.getElementById('divResolut');
+                show(divIban);
+                hide(divResolute);
+            }
+            else{
+                var divResolute = document.getElementById('divResolut');
+                var divResolute = document.getElementById('divResolut');
+                show(divResolute);
+                hide(divIban);
+            }
+        }
+
+        function hide(elemento){
+            elemento.style.display = "none";
+        }
+
+        function show(elemento){
+            elemento.style.display = "block";
+        }
 
     </script>
 </div>

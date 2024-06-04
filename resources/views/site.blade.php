@@ -24,8 +24,6 @@
  <link rel="stylesheet" href="assets/css/navbar.css">
  <link rel="stylesheet" href="assets/css/responsividade.css">
 
-@vite('resources/js/app.js')
-
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/LineIcons.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/awesome/css/font-awesome.css') }}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/themify-icons/themify-icons.css') }}">
