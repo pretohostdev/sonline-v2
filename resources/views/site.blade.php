@@ -184,21 +184,20 @@
                 </div>
             </div>
             </div>
-        <hr class="mt-4">
     </div>
     </section>
 
-    <section class="about-area pt-10">
+    <section class="about-area pt-10" style="background-color: #fff">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-6 secao-filial">
                 <div class="about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="section-title">
                         <h2 class="title title-filial tituloAnimado" style="color:#2779a7; font-family:Roboto">FILIAL DA AMAZON</h2>
                     </div>
-                    <p class="content-filial"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
-                        segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
-                        praticidade de fazer suas compras online conosco. Como filial da amazon, trazemos para si os melhores produtos do mercado.
-                    </p>
+                        <p class="content-filial"> Com a confiança e qualidade da marca Amazon, oferecemos uma experiência de compra 
+                            segura e conveniente. Encontre tudo o que você precisa em um só lugar e desfrute da 
+                            praticidade de fazer suas compras online conosco. Como filial da amazon, trazemos para si os melhores produtos do mercado.
+                        </p>
                     <div class="btn-filial">
                         <a href="#produtos" class="main-btn mt-4 text-light" style="background-color:#3c9cfd">Ver Produtos</a>
                     </div>
@@ -213,7 +212,7 @@
     </section>
 
     {{-- Seção de testemunho --}}
-    <section id="testimonial" class="testimonial-area about-area pt-15" style="background-color: #F0F8FF">
+    <section id="testimonial" class="testimonial-area about-area pt-1" style="background-color: #F0F8FF">
         <div class="container">
             <div class="row mt-5">
                 <div class="d-none d-md-block col-lg-12">
@@ -448,7 +447,7 @@
     </div>
 
   <div class="row">
-    <div class="lista-horizontal mt-5 mb-5">
+    <div class="lista-horizontal mt-2 mb-2">
         <ul>
             @foreach ($produtos as $produto )
             <li>
@@ -494,13 +493,13 @@
     </div>  
     </article>
 
-    <div class="row mt-1"></div>
+    {{-- <div class="row mt-1"></div> --}}
 
   <footer id="contacto" class="bg-dark">
     <section class="footer-Content">
-        <div class="row d-flex justify-content-around mt-5">
+        <div class="row d-flex justify-content-around mt-2">
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="widget">
+                <div class="widget mt-5 p-4">
                     <h3 class="block-title">Crie uma conta</h3>
                     <ul class="menu" style="list-style:none">
                     <li><a href="{{route('login')}}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Entrar</a></li>
@@ -511,7 +510,7 @@
             </div>
             
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="widget">
+                <div class="widget mt-5 p-4">
                     <h3 class="block-title">Contactos</h3>
                     <ul class="menu" style="list-style:none">
                     <li><a href="javascript:void()"><i class="fa fa-phone" aria-hidden="true"></i> 947937025</a></li>
@@ -522,7 +521,7 @@
             </div>
 
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="widget">
+                <div class="widget mt-5 p-4">
                     <h3 class="block-title">Endereço</h3>
                     <ul class="menu" style="list-style:none">
                         <li>

@@ -246,6 +246,7 @@ background: url("../img/viagem-login.jpg");
     }
     .content-filial{
         font-size: 14px;
+        padding: 10px;
     }
     .btn-filial{
         display: flex;

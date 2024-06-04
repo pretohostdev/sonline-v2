@@ -17,7 +17,7 @@
     <title>@yield('titulo', 'sonline')</title>
 
 </head>
-<body>
+<body style="background-color: #fff;">
     <div class="container-fluid">
         <div class="row">
             @yield('header')
