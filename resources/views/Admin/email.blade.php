@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{asset('assets/pluto/css/perfect-scrollbar.css')}}" />
     <!-- custom css -->
     <link rel="stylesheet" href="{{asset('assets/pluto/css/custom.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/pluto/css/color_2.css')}}" />
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
 
