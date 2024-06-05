@@ -18,6 +18,12 @@ return new class extends Migration
             $table->decimal('preco', 10, 2)->nullable();
             $table->string('marca')->nullable();
             $table->string('link')->nullable();
+
+            // Novos atributos
+            $table->double('largura')->nullable();
+            $table->double('altura')->nullable();
+
+
             $table->string('imagem')->nullable();
             $table->timestamps();
         });

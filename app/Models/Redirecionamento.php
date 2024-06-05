@@ -14,11 +14,14 @@ class Redirecionamento extends Model
 
      protected $fillable = [
         'data', 
-        'valor',
         'estado', 
         'paisOrigem', 
         'paisDestino',
         'comprovativo',
+
+        // Novos campos
+        'total',
+        'fotoProduto',
 
         'user_id',  /* Chave Estrangeira */
         'produto_id'  /* Chave Estrangeira */

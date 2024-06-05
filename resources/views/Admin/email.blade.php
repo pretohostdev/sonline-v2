@@ -2,6 +2,9 @@
 @section('titulo', 'Enviar Email')
 
 @push('styles')
+
+    <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/meu_estilo.css')}}" />
@@ -41,7 +44,6 @@
     <div class="">
 
         <div class="row" style="margin-top:20px">
-
             <div class="col-md-12">
                 <!-- begin page title -->
                 <div class="d-block d-lg-flex flex-nowrap align-items-center">
@@ -73,45 +75,87 @@
 
         </div>
 
-        {{-- Lista de todos os clientes --}}
-
-        <div class="row editable-wrapper mt-3">
-            <div class="col-lg-12 ">
-                <div class="card card-statistics">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            
-                            <div class="container" style="height:500px" >
-                                <div class="row">
-                                <div class="col-8">
-
-                                    <h4>Enviar email de confirmação</h4>
-                                    <form target="_blank" action="https://formsubmit.co/{{ $cliente->email }}" method="POST">
-                                        @csrf
-                                    <div class="form-group">
-                                        <div class="form-row">
-                                            <div class="col mt-2">
-                                                <input type="text" name="name" class="form-control" value="{{$cliente->name}}" required>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="form-group mt-2">
-                                        <textarea placeholder="Mensagem" class="form-control" name="message" rows="10" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-lg bg-gradient text-light btn-block mt-2">Enviar Email</button>
-                                    </form>
-
-                                </div>
-
+        <div class="row  mt-3">
+            <div class="col-12 col-md-12 col-lg-6">
+                <div class="card bg-padrao p-4">
+                    <div class="card-header">
+                        <h5 class="text-center p-0 m-0 text-light">Entrar em comunicação com o cliente</h5>
+                    </div>
+                
+                <form target="_blank" action="https://formsubmit.co/{{ $cliente->email }}" method="POST">
+                    @csrf
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col mt-2">
+                            <input type="text" name="name" class="form-control" value="{{$cliente->name}}" required>
                         </div>
+                        
                     </div>
                 </div>
+                <div class="form-group mt-2">
+                    <textarea placeholder="Mensagem" class="form-control" name="message" rows="10" required></textarea>
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-success btn-bloc mt-2 mb-2">Enviar Email</button>
+                </div>
+                </form>
+                </div>
             </div>
-            
-        </div>
-    </div>
 
+            <div class="col-12 col-md-12 col-lg-6">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-header bg-padrao">
+                                    <h4 class="text-center p-0 m-0">Gerenciando estado</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="row">
+                        <div class="card-body">
+                            <div class="col-12 d-flex justify-content-center">
+                                <div class="">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="switch_pendente" onchange="estadoAlterado(this)">
+                                        <label class="form-check-label" for="switch_pendente">Pendente</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="switch_aceite" onchange="estadoAlterado(this)">
+                                        <label class="form-check-label" for="switch_aceite">Aceite</label>
+                                    </div>
+
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="switch_rejeitado" onchange="estadoAlterado(this)">
+                                        <label class="form-check-label" for="switch_rejeitado">Rejeitado</label>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <script>
+                    var switch_pendente = document.getElementById('switch_pendente'); 
+                    var switch_aceite = document.getElementById('switch_aceite'); 
+                    var switch_rejeitado = document.getElementById('switch_rejeitado');
+                    
+                    switch_pendente.checked = "true";
+
+                    function estadoAlterado(elemento){
+                        if(elemento.checked){
+                            console.log("Activado");
+                        }else{
+                            console.log("Desativado");
+                        }
+                    }
+                    
+                </script>
+    
+            </div>
+
+           
 
 
 @endsection

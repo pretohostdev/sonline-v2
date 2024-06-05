@@ -48,11 +48,15 @@ class RedirecionamentoController extends Controller
     {
         $validacao = Validator::make($request->all(), [
             'comprovativo' => 'required|file|mimes:pdf|max:2048',
+            'fotoProduto' => 'file|mimes:jpg,jpeg,png|max:2048',
         ],
         [
             'comprovativo.required' => 'O campo comprovativo não pode se ficar vazio',
-            'comprovativo.mimes' => 'O campo comprovativo deve ser um apenas um arquivo pdf.',
+            'comprovativo.mimes' => 'O campo comprovativo deve ser apenas um arquivo pdf.',
             'comprovativo.max' => 'O tamanho máximo do arquivo pdf é de 2M.',
+
+            'fotoProduto.mimes' => 'O campo foto deve ser apenas no formato jpg, jpeg e png',
+            'fotoProduto.max' => 'O tamanho máximo da foto é de 2M.',
         ]
         );
 
@@ -63,14 +67,26 @@ class RedirecionamentoController extends Controller
         $comprovativo = $request->file('comprovativo');
 
         $path = $request->file('comprovativo')->store(
-            'contas'
+            'redirecionamentos'
         );
+
+        if($request->fotoProduto){
+
+            $fotoProduto = $request->file('fotoProduto');
+
+            $path_foto = $request->file('comprovativo')->store('redirecionamentos');
+        }else{
+             $path_foto = "";
+        }
+        
 
         // Adicionar dados a tabela Produto
         $id = Auth::id();
 
         $produto = Produto::create([
             'nome' => $request->nome,
+            'largura' => $request->largura,
+            'altura' => $request->altura,
             'descricao' => $request->descricaoProduto,
         ]);
             
@@ -82,12 +98,14 @@ class RedirecionamentoController extends Controller
             $idProduto = $produto->latest()->value('id');  // Obter o último ID do produto
             $data = Carbon::today()->format('Y-m-d'); 
 
-            $valorPagar = str_replace("€", "", $request->valor);
+            $total = str_replace("€", "", $request->total_a_pagar);
+
             
             $redirecionamento = Redirecionamento::create([
                 'data' => $data,
                 'estado' => '0',
-                'valor' => $valorPagar,
+                'total' => $total,
+                'fotoProduto' => $path_foto,
                 'comprovativo' => $path,
                 'paisOrigem' => $request->paisorigem,
                 'paisDestino' => $request->paisdestino,
@@ -153,7 +171,7 @@ class RedirecionamentoController extends Controller
                 'id' => $redirecionamento->id,
                 'data' => $redirecionamento->data,
                 'estado' => $redirecionamento->estado,
-                'valor' => $redirecionamento->valor,
+                'total' => $redirecionamento->total,
                 'paisOrigem' => $redirecionamento->paisOrigem,
                 'paisDestino' => $redirecionamento->paisDestino,
                 'comprovativo' => $redirecionamento->comprovativo,
@@ -166,7 +184,7 @@ class RedirecionamentoController extends Controller
             $redirecionamento = (Object)[
                 'data' => '',
                 'estado' => '',
-                'valor' => '',
+                'total' => '',
                 'paisOrigem' => '',
                 'paisDestino' => '',
                 'comprovativo' => '',

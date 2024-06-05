@@ -87,7 +87,7 @@
 
                         <div class="form-group"> 
                             <label for="nomeProduto" class="text-dark">Nome do produto</label>
-                            <input type="text" class="form-control" value="" id="nomeProduto" name="nome" required>
+                            <input type="text" class="form-control" value="{{ old('nome') }}" id="nomeProduto" name="nome" required>
                         </div>
 
                         <div class="form-group">
@@ -115,27 +115,42 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="largura" class="text-dark">Largura</label>
+                            <input type="number" class="form-control" value="{{ old('largura') }}" id="largura" name="largura">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="altura" class="text-dark">Altura</label>
+                            <input type="number" class="form-control" value="{{ old('altura') }}" id="altura" name="altura">
+                        </div>
+
+                        <div class="form-group">
                             <label for="peso" class="text-dark">Peso <span style="font-size:8pt">(em grama)</span></label>
-                            <input type="number" class="form-control" value="" id="peso" required>
+                            <input type="number" class="form-control" id="peso" name="peso"  required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fotoProduto" class="text-dark">Foto do produto</label>
+                            <input type="file" class="form-control mt-2" name="fotoProduto">
                         </div>
 
                         <div class="input-group mb-3" id="divDolarRedirecionamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" style="background-color: #ececec">Preço de envio</span>
+                                <span class="input-group-text" style="background-color: #ececec">Frete ou Preço de envio</span>
                             </div>
                             <input type="text" class="form-control" id="valorConvertido" name="valor" oninput="conversaoMoeda(id)" readonly>
                         </div>
 
                         <div class="input-group mb-3" id="divTaxaServico">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" style="background-color: #ececec">Taxa de Serviço p/dia</span>
+                                <span class="input-group-text" style="background-color: #ececec">Taxa de Serviço</span>
                             </div>
                             <input type="text" class="form-control" id="inputTaxaServico" value="2,99€" readonly>
-                          </div>
+                        </div>
 
                           <div class="input-group mb-3" id="divTaxaArmazenamento">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" style="background-color: #ececec">Taxa de armazenamento p/dia</span>
+                                <span class="input-group-text" style="background-color: #ececec">Taxa de armazenamento</span>
                             </div>
                             <input type="text" class="form-control" id="inputTaxaArmazenamento" value="4,99€" readonly>
                             <div class="col-12">
@@ -147,11 +162,18 @@
                             <input type="hidden" class="form-control" value="{{$user_id}}" id="user_id" name="userId">
                         </div>
 
+                        <div class="input-group mb-3" id="divTaxaServico">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="background-color: #ececec">Total ou valor a pagar</span>
+                            </div>
+                            <input type="text" class="form-control" id="total_a_pagar" name="total_a_pagar" readonly>
+                          </div>
+
                         <div class="form-group">
                             <label for="paisDestino" class="text-dark">Forma de pagamento</label>
                             <select class="form-control" id="metodoPagamento" name="metodoPagamento">
-                                <option value="Iban">Iban</option>
-                                <option value="Resolut">Resolut</option>
+                                <option value="Iban">Em kwanza</option>
+                                <option value="Resolut">Em Euro</option>
                             </select>
                         </div>
 
@@ -161,7 +183,7 @@
                         </div>
 
                         <div class="form-group" id="divResolut">
-                            <label for="peso" class="text-dark">Realizar de pagameno <span style="font-size:8pt"></span></label>
+                            <label for="pagamentoResolut" class="text-dark">Pagar no Revolut <span style="font-size:8pt"></span></label>
                             <a href="https://checkout.revolut.com/pay/18d1f014-ff1c-4999-9d68-b13617a96d44" class="btn btn-block btn-primary" target="_blank">Pagar</a>
                         </div>
 
@@ -224,6 +246,7 @@
         var pesoBase = document.getElementById('pesoBase');
 
         var valorConvertido = document.getElementById('valorConvertido');
+        var total_a_pagar = document.getElementById('total_a_pagar');
 
         var peso = document.getElementById('peso');
 
@@ -231,11 +254,13 @@
             tipoEnvio.innerHTML = "DHL";
             pesoBase.value = "1kg - 90€";
             valorConvertido.value = "0";
+            total_a_pagar.value = "0";
         }
         else{
             tipoEnvio.innerHTML = "CTT";
             pesoBase.value = "1kg - 40€";
             valorConvertido.value = "0";
+            total_a_pagar.value = "0";
         }
 
         metodoEnvio.addEventListener('change', function(){
@@ -245,11 +270,13 @@
                 tipoEnvio.innerHTML = "DHL";
                 pesoBase.value = "1kg - 90€";
                 valorConvertido.value = "0";
+                total_a_pagar.value = "0";
             }
             else{
                 tipoEnvio.innerHTML = "CTT";
                 pesoBase.value = "1kg - 40€";
                 valorConvertido.value = "0";
+                total_a_pagar.value = "0";
             }
             
             
@@ -258,9 +285,11 @@
         peso.addEventListener('input', function(){
             if(metodoEnvio.value == "DHL"){
                 valorConvertido.value = (peso.value*90)/1000 + "€";
+                total_a_pagar.value = ( Number((peso.value*90)/1000) + 2.99 + 4.99) + "€";
             }
             else{
                 valorConvertido.value = (peso.value*40)/1000 + "€";
+                total_a_pagar.value = ( Number( (peso.value*90) / 1000 ) + 2.99 + 4.99) + "€";
             }
         });
 

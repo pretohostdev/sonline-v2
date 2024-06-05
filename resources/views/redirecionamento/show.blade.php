@@ -99,7 +99,7 @@
                                                 @if($redirecionamento->estado == '0')
                                                     <div class="card-header bg-primary rounded-0">
                                                         <h5 class="mb-0">
-                                                            <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Pendente</a>
+                                                            <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">PENDENTE</a>
                                                         </h5>
                                                     </div>
 
@@ -165,7 +165,7 @@
                                                     @if (isset($redirecionamento->id))
                                                         
                                                     <ul class="list-group">
-                                                        <li class="list-group-item text-dark">Valor a pagar: <strong>{{ $redirecionamento->valor }}€</strong></li>
+                                                        <li class="list-group-item text-dark">Valor a pagar: <strong>{{ $redirecionamento->total }}€</strong></li>
                                                         <li class="list-group-item text-dark">País de origem do produto: <strong>{{ $redirecionamento->paisOrigem }}</strong></strong> </li>
                                                         <li class="list-group-item text-dark">Data de destino do produto: <strong>{{ $redirecionamento->paisDestino }}</strong></li>
                                                         <li class="list-group-item text-dark">Data do redirecionamento:<strong>{{ $redirecionamento->data }}</strong></li>

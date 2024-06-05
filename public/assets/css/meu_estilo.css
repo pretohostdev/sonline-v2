@@ -4,6 +4,14 @@ src: url('../fonts/DIN Neuzeit Grotesk Light.ttf') format('tff');
 font-family: 'Grotesk';
 }
 
+.text-padrao{
+    color:#09588f;
+}
+
+.bg-padrao{
+    background-color: #09588f;
+}
+
 .arvo-regular {
   font-family: "Arvo", serif;
   font-weight: 400;

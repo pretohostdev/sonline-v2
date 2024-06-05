@@ -17,17 +17,15 @@
 
 <div class="row d-none d-md-block col-md-12 col-lg-2">
 <div class="div-sociais card-body" style="">
-    {{-- <div class="text-center mb-1 mt-2">
-        <h5 class="text-light" style="font-family:'Arvo';">REDES SOCIAIS</h5> 
-    </div> --}}
-{{-- <div class="d-flex bg-dark"> --}}
-{{-- <div class="col- col-md-12 bg-succes d-fle justify-content-center" style="border:2px solid black"> --}}
+    
     <div class="">
     <div class="social" >
         <div class="full socile_icons fb" style="margin-bottom: 20px">
-            <div class="social_icon">
-                <i class="fa fa-facebook"></i>
-            </div>
+            <a href="https://www.facebook.com/share/yncW4ujbVL8MMPQK/?mibextid=dGKdO6" target="_blank">
+                <div class="social_icon">
+                    <i class="fa fa-facebook"></i>
+                </div>
+            </a>
             <div class="social_cont">
                 <ul>
                 <li>
@@ -45,9 +43,11 @@
 
     <div class="social">
         <div class="full socile_icons tw mb-0">
-            <div class="social_icon">
-                <i class="fa fa-instagram"></i>
-            </div>
+            <a href="https://www.instagram.com/sonline_services">
+                <div class="social_icon">
+                    <i class="fa fa-instagram"></i>
+                </div>
+            </a>
             <div class="social_cont">
                 <ul>
                 <li>

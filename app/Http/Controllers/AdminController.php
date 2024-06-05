@@ -443,7 +443,8 @@ class AdminController extends Controller
             $agendamento->estado = '1';
             $agendamento->save();
 
-            $idCliente = $agendmento->user_id;
+            $idCliente = $agendamento->user_id;
+            
         }
 
         $cliente = User::find($idCliente);

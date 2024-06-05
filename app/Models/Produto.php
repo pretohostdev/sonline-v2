@@ -19,6 +19,11 @@ class Produto extends Model
         'marca',
         'imagem',
         'link',
+
+        // Novos atributos
+        'altura',
+        'largura',
+
         'redirecionamento_id'
     ];
 
