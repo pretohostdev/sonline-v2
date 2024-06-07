@@ -412,36 +412,33 @@ class AdminController extends Controller
 
         if($modelo == 'visto'){
             $visto = Visto::find($id);
-            $visto->estado = '1';
-            $visto->save();
-
             $idCliente = $visto->user_id;
         }
         else if($modelo == 'moeda'){
             $moeda = Moeda::find($id);
-            $moeda->estado = '1';
-            $moeda->save();
+            // $moeda->estado = '1';
+            // $moeda->save();
 
             $idCliente = $moeda->user_id;
         }
         else if($modelo == 'conta'){
             $conta = ContaWise::find($id);
-            $conta->estado = '1';
-            $conta->save();
+            // $conta->estado = '1';
+            // $conta->save();
 
             $idCliente = $conta->user_id;
         }
         else if($modelo == 'redirecionamento'){
             $redirecionamento = Redirecionamento::find($id);
-            $redirecionamento->estado = '1';
-            $redirecionamento->save();
+            // $redirecionamento->estado = '1';
+            // $redirecionamento->save();
 
             $idCliente = $redirecionamento->user_id;
         }
         else if($modelo == 'agendamento'){
             $agendamento = Agendamento::find($id);
-            $agendamento->estado = '1';
-            $agendamento->save();
+            // $agendamento->estado = '1';
+            // $agendamento->save();
 
             $idCliente = $agendamento->user_id;
             
@@ -449,7 +446,7 @@ class AdminController extends Controller
 
         $cliente = User::find($idCliente);
 
-        return view('admin.email', compact('cliente'));
+        return view('admin.email', ['cliente'=>$cliente, 'id_servico' => $id, 'modelo' => $modelo]);
     }
 
     public function verComprovativo($moeda){

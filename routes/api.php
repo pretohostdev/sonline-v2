@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\SistemaController;
 use App\Http\Controllers\ContaWiseController;
 use App\Http\Controllers\RedirecionamentoController;
@@ -34,5 +35,10 @@ Route::post('/userAtualizar', [UserController::class, 'update']);
 Route::get('/existeEmail/{email}', [UserController::class, 'existeEmail']);
 
 Route::delete('/produto/{id}', [ProdutoController::class, 'destroy']);
+
+// Estado
+Route::post('/getEstado', [EstadoController::class, 'getEstado'])->name('getEstado');
+Route::post('/updateEstado', [EstadoController::class, 'updateEstado'])->name('updateEstado');
+
 
 

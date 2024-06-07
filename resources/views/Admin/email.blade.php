@@ -41,11 +41,9 @@
 
 @section("corpo")
     
-    <div class="">
-
+    <div>
         <div class="row" style="margin-top:20px">
             <div class="col-md-12">
-                <!-- begin page title -->
                 <div class="d-block d-lg-flex flex-nowrap align-items-center">
                     <div class="page-title mr-4 pr-4 border-right">
                         <h1>Sonline</h1>
@@ -62,42 +60,43 @@
                             </ol>
                         </nav>
                     </div>
-
                     @include('layout.componentes.cabecalho_admin_2')
-                    
-                    </div>
-
-
                 </div>
-    
-                <!-- end page title -->
             </div>
+        </div>
 
         </div>
 
         <div class="row  mt-3">
             <div class="col-12 col-md-12 col-lg-6">
-                <div class="card bg-padrao p-4">
-                    <div class="card-header">
-                        <h5 class="text-center p-0 m-0 text-light">Entrar em comunicação com o cliente</h5>
+                <div class="card">
+                    <div class="card-header" style="background:#09588f">
+                        <h6 class="text-center text-light p-1 m-0 fs-5">Entrar em comunicação com o cliente</h6>
                     </div>
                 
-                <form target="_blank" action="https://formsubmit.co/{{ $cliente->email }}" method="POST">
+                <form target="_blank" action="https://formsubmit.co/{{ $cliente->email }}" method="POST" class="p-2">
                     @csrf
-                <div class="form-group">
-                    <div class="form-row">
-                        <div class="col mt-2">
-                            <input type="text" name="name" class="form-control" value="{{$cliente->name}}" required>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-12 mt-2">
+                                <input type="text" name="name" class="form-control text-center text-secondary" value="{{"Nome do cliente - " .$cliente->name}}" readonly>
+                            </div>
+
+                            <div class="col-12 mt-2">
+                                <input type="hidden" name="name" class="form-control" value="{{$id_servico}}" id="id_servico">
+                            </div>
+                            
+                            <div class="col-12 mt-2">
+                                <input type="text" name="name" class="form-control text-center text-secondary" value="{{$modelo}}" id="modelo" readonly>
+                            </div>
                         </div>
-                        
                     </div>
-                </div>
-                <div class="form-group mt-2">
-                    <textarea placeholder="Mensagem" class="form-control" name="message" rows="10" required></textarea>
-                </div>
-                <div class="text-right">
-                    <button type="submit" class="btn btn-success btn-bloc mt-2 mb-2">Enviar Email</button>
-                </div>
+                    <div class="form-group mt-2">
+                        <textarea placeholder="Mensagem" class="form-control" name="message" rows="10" required></textarea>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-success mt-2 mb-2">Enviar Email</button>
+                    </div>
                 </form>
                 </div>
             </div>
@@ -106,8 +105,8 @@
                     <div class="card">
                         <div class="row">
                             <div class="col-12">
-                                <div class="card-header bg-padrao">
-                                    <h4 class="text-center p-0 m-0">Gerenciando estado</h4>
+                                <div class="card-header" style="background:#09588f">
+                                    <h6 class="text-center p-1 m-0 text-light fs-5">Gerenciando estado</h6>
                                 </div>
                             </div>
                         </div>
@@ -140,15 +139,96 @@
                     var switch_pendente = document.getElementById('switch_pendente'); 
                     var switch_aceite = document.getElementById('switch_aceite'); 
                     var switch_rejeitado = document.getElementById('switch_rejeitado');
+                    var id_servico = document.getElementById('id_servico');
+                    var modelo = document.getElementById('modelo');
                     
-                    switch_pendente.checked = "true";
-
                     function estadoAlterado(elemento){
                         if(elemento.checked){
-                            console.log("Activado");
+                            if(elemento.id == "switch_pendente"){
+                                const servico = {
+                                    modelo:modelo.value,
+                                    id:id_servico.value,
+                                    valorEstado:'0'
+                                }
+                                switch_pendente.checked = true;
+                                switch_aceite.checked = false;
+                                switch_rejeitado.checked = false;
+
+                                const alteracao = atualizaEstado(servico);
+                            }
+                            else if(elemento.id == "switch_aceite"){
+                                const servico = {
+                                    modelo:modelo.value,
+                                    id:id_servico.value,
+                                    valorEstado:'1'
+                                }
+                                switch_pendente.checked = false;
+                                switch_aceite.checked = true;
+                                switch_rejeitado.checked = false;
+
+                                const alteracao = atualizaEstado(servico);
+                            }
+                            else if(elemento.id == "switch_rejeitado"){
+                                const servico = {
+                                    modelo:modelo.value,
+                                    id:id_servico.value,
+                                    valorEstado:'2'
+                                }
+                                switch_pendente.checked = false;
+                                switch_aceite.checked = false;
+                                switch_rejeitado.checked = true;
+
+                                const alteracao = atualizaEstado(servico);
+                            }
                         }else{
                             console.log("Desativado");
                         }
+                    }
+                    
+                    const servico = {
+                        modelo:modelo.value,
+                        id:id_servico.value
+                    }
+                    const estadoSelecionado = estadoAtual(servico);
+
+                    estadoSelecionado.then(
+                        estado=>{
+                            if(estado == '0'){
+                                switch_pendente.checked = "true";
+                            }
+                            else if(estado == '1'){
+                                switch_aceite.checked = "true";
+                            }
+                            else if(estado == '2'){
+                                switch_rejeitado.checked = "true";
+                            }
+                        }
+                    );
+
+                    async function estadoAtual(servico){
+                        const response = await fetch('http://localhost:8000/api/getEstado',
+                        {
+                            method:'POST',
+                            headers: {
+                                'Accept': 'application/json'
+                            },
+                            body:JSON.stringify(servico)
+                        });
+                        const estado = await response.json();
+                        return estado;
+                    }
+
+                    async function atualizaEstado(servico){
+                        const response = await fetch('http://localhost:8000/api/updateEstado',
+                        {
+                            method:'POST',
+                            headers: {
+                                'Accept': 'application/json'
+                            },
+                            body:JSON.stringify(servico)
+                        });
+                        const estado = await response.json();
+                        return estado;
                     }
                     
                 </script>
