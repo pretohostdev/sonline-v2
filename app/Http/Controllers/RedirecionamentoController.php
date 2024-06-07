@@ -144,6 +144,24 @@ class RedirecionamentoController extends Controller
         //
     }
 
+    public function updateEnderecoEntrega(Request $request){
+
+        $entrega = json_decode($request->getContent(), true);
+        $id = $entrega['id'];
+        $endereco = $entrega['endereco'];
+
+        if($endereco){
+            $atualiza = Redirecionamento::find($id);
+            $atualiza->enderecoEntrega = $endereco;
+            $atualiza->save();
+            return response()->json(true);
+        }
+        else{
+            return response()->json(false);
+        }
+
+    }
+
     /**
      * Remove the specified resource from storage.
      */
@@ -161,10 +179,12 @@ class RedirecionamentoController extends Controller
         $cliente = User::find($id);
 
         $clienteRedirecionamento = User::with('redirecionamentos.produto')->find($id);
-
+        
+        
         // Verificar se o cliente já efectuou algum redirecionamento de produto
         if($clienteRedirecionamento->redirecionamentos->count() > 0){
 
+            $nome_produto =  $clienteRedirecionamento->redirecionamentos[0]->produto->nome;
             $listaRedirecionamento = $clienteRedirecionamento->redirecionamentos;
 
             $redirecionamento = (Object)[
@@ -172,6 +192,7 @@ class RedirecionamentoController extends Controller
                 'data' => $redirecionamento->data,
                 'estado' => $redirecionamento->estado,
                 'total' => $redirecionamento->total,
+                'produto' => $nome_produto,
                 'paisOrigem' => $redirecionamento->paisOrigem,
                 'paisDestino' => $redirecionamento->paisDestino,
                 'comprovativo' => $redirecionamento->comprovativo,
@@ -182,9 +203,11 @@ class RedirecionamentoController extends Controller
         else{
             
             $redirecionamento = (Object)[
+                'id' => '',
                 'data' => '',
                 'estado' => '',
                 'total' => '',
+                'produto' => '',
                 'paisOrigem' => '',
                 'paisDestino' => '',
                 'comprovativo' => '',

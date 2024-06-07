@@ -22,6 +22,7 @@ class Redirecionamento extends Model
         // Novos campos
         'total',
         'fotoProduto',
+        'enderecoEntrega',
 
         'user_id',  /* Chave Estrangeira */
         'produto_id'  /* Chave Estrangeira */

@@ -5,7 +5,7 @@
 @push('styles')
 
     {{-- Inclusão do Bootstrap 5 no projecto --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.jpg')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -85,7 +85,7 @@
                                     Histórico </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="result-tab" data-toggle="tab" href="#result" role="tab" aria-controls="result" aria-selected="false"> Documentos
+                                <a class="nav-link" id="result-tab" data-toggle="tab" href="#result" role="tab" aria-controls="result" aria-selected="false"> Comprovativo
                                 </a>
                             </li>
                         </ul>
@@ -117,7 +117,7 @@
                                                 @elseif($redirecionamento->estado == '1')
                                                     <div class="card-header bg-success rounded-0">
                                                         <h5 class="mb-0">
-                                                            <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Confirmado</a>
+                                                            <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">CONFIRMADO</a>
                                                         </h5>
                                                     </div>
 
@@ -125,15 +125,96 @@
                                                         <div class="card-body">
                                                             <p>
                                                                 O estado <span class="text-dark">confirmado</span> significa que o seu pedido já foi analizado pela nossa equipa
-                                                            e confirmou a verecidade dos seus dados. Em breve lhe mandaremos uma mensagem de email, confirmando a sua operação.
+                                                                e confirmou a verecidade dos seus dados.
                                                             </p>
-
                                                         </div>
+                                                        <div class="d-flex justify-content-start" style="background:#F8F8FF">
+                                                            <div class="col-12 mb-3 p-2">
+                                                                <span>Processo em curso</span><b class="float-right">80%</b>
+                                                                <div class="progress my-2" style="height: 5px;">
+                                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="row p-2 d-flex justify-content-center" style="">
+                                                            <div class="col-12 col-md-4 p-2 bg-dark m-0 rounded">
+                                                                <div class="col-12">
+                                                                    <span class="text-light"> <strong>Informações do nosso endereço</strong></span>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    Nome: Muanda Mateus BTCAAQB
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    Rua: Rua da Guarda,  N. 718
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    Código-postal:4458-00
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    Localidade: PERAFITA
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    Distrito:Porto
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    País : Portugal
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    Contacto: +351 936 557 046
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="endereco" class="form-label">Endereço de entrega</label>
+                                                                        <input type="text" class="form-control" id="endereco" placeholder="Província, Município, Bairro, Rua, Número da casa..." required>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <input type="hidden" class="form-control" value="{{ $redirecionamento->id }}" id="idRedirecionamento">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+
+                                                        <div class="row d-flex justify-content-center">
+                                                            <div class="col-10 text-center">
+                                                                <button class="btn btn-dark" onclick="enviarEndereco()">Enviar Endereco</button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12 text-center mt-2" id="spinnerEnviarEndereco">
+                                                            <div class="spinner-border text-dark " role="status">
+                                                                <span class="visually-hidden">Loading...</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row d-flex justify-content-center">
+                                                            <div class="col-6 mb-2 mt-2" id="atualizarEnderecoSucessoDiv">
+                                                                <div class="alert alert-success text-center" role="alert">
+                                                                    Endereço enviado com sucesso!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row d-flex justify-content-center">
+                                                            <div class="col-6 mb-2 mt-3" id="atualizarEnderecoErroDiv">
+                                                                <div class="alert alert-danger text-center" role="alert">
+                                                                    Endereço enviado com sucesso!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
-                                                @else
+                                                @elseif($redirecionamento->estado == '2')
                                                     <div class="card-header bg-danger rounded-0">
                                                         <h5 class="mb-0">
-                                                            <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">Cancelado</a>
+                                                            <a href="#collapse" class="btn-block text-white text-center acd-heading" data-toggle="collapse">CANCELADO</a>
                                                         </h5>
                                                     </div>
 
@@ -162,9 +243,10 @@
                                             <div class="card-body d-flex justify-content-center">
 
                                                 <div class="col-lg-6">
-                                                    @if (isset($redirecionamento->id))
+                                                    @if (isset($redirecionamento->id) && ($redirecionamento->id!== ''))
                                                         
                                                     <ul class="list-group">
+                                                        <li class="list-group-item text-dark">Produto: <strong>{{ $redirecionamento->produto }}</strong></li>
                                                         <li class="list-group-item text-dark">Valor a pagar: <strong>{{ $redirecionamento->total }}€</strong></li>
                                                         <li class="list-group-item text-dark">País de origem do produto: <strong>{{ $redirecionamento->paisOrigem }}</strong></strong> </li>
                                                         <li class="list-group-item text-dark">Data de destino do produto: <strong>{{ $redirecionamento->paisDestino }}</strong></li>
@@ -174,7 +256,6 @@
                                                     @endif
                                                     
                                                 </div>
-                                               
                                                 
                                             </div>
                                         </div>
@@ -219,7 +300,6 @@
     
                                         </div>
 
-
                                     </div>
 
                                 </div>
@@ -250,6 +330,59 @@
     </div>
 
     </div>
+
+    <script>
+        function enviarEndereco(){
+            var idRedirecionamento = document.getElementById('idRedirecionamento').value;
+            var endereco = document.getElementById('endereco').value;
+            var atualizarEnderecoSucessoDiv = document.getElementById('atualizarEnderecoSucessoDiv');
+            var atualizarEnderecoErroDiv = document.getElementById('atualizarEnderecoErroDiv');
+
+            hide(atualizarEnderecoSucessoDiv)
+            hide(atualizarEnderecoErroDiv)
+            
+            var novoEndereco ={
+                id:idRedirecionamento,
+                endereco:endereco
+            }
+            var atualizacao = updateAdress(novoEndereco);
+
+            atualizacao.then(
+                estado=>{
+                        if(estado == true){
+                            show(atualizarEnderecoSucessoDiv);
+                            hide(spinnerEnviarEndereco);
+                        }
+                        else{
+                            show(atualizarEnderecoErroDiv);
+                            hide(spinnerEnviarEndereco);
+                        }
+                }
+            )
+
+            async function updateAdress(entrega){
+                show(spinnerEnviarEndereco)
+                const response = await fetch('http://localhost:8000/api/updateEnderecoEntrega/',
+                {
+                    method:'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body:JSON.stringify(entrega),
+                });
+                const estado = await response.json();
+                return estado;
+            }
+
+            function hide(elemento){
+                elemento.style.display = "none";
+            }
+
+            function show(elemento){
+                elemento.style.display = "block";
+            }
+        }
+    </script>
 </div>
 
 @endsection

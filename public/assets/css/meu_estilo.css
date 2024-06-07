@@ -99,7 +99,11 @@ p {color: #000;}
 #atualizadoDadosErro {display: none;}
 #divIban{display: none;}
 #divResolut{display: none;}
-
+#atualizarEnderecoSucessoDiv{
+    display: none;
+}
+#atualizarEnderecoErroDiv{display: none;}
+#spinnerEnviarEndereco{display: none;}
 
 .btn_sair {border: none;background: none;margin-top: 40%;}
 .btn_sair:hover {cursor: pointer;background: var(--light);color: red;}

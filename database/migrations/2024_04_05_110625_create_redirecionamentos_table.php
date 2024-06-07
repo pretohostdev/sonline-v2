@@ -23,6 +23,7 @@ return new class extends Migration
             // Novos campos
             $table->double('total'); 
             $table->string('fotoProduto')->nullable();
+            $table->string('enderecoEntrega')->nullable();
 
             $table->timestamps();
             $table->foreignId('user_id')->constrained('users');

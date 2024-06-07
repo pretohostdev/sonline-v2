@@ -208,7 +208,7 @@
  </div>
 
     <script>
-        document.getElementById('formEditarDados').addEventListener('submit', function(event) {
+            document.getElementById('formEditarDados').addEventListener('submit', function(event) {
             
             event.preventDefault(); // Impedir o envio padrão do formulário
             console.log('Estou funcionando...');

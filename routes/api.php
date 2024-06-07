@@ -42,3 +42,8 @@ Route::post('/updateEstado', [EstadoController::class, 'updateEstado'])->name('u
 
 
 
+// Atualizar o endereço de entreg
+Route::POST('/updateEnderecoEntrega', [RedirecionamentoController::class, 'updateEnderecoEntrega']);
+
+
+
