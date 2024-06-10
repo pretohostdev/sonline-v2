@@ -119,7 +119,7 @@
                                                 <input type="file" class="form-control mt-2" id="imagem" name="imagem">
                                             </div>
                                             
-                                            <button type="submit" class="btn bg-gradient text-light">Cadastrar produto</button>
+                                            <button type="submit" class="btn bg-padrao text-light">Cadastrar produto</button>
                                         </form>
                                     </div>
                                 </div>
@@ -164,7 +164,7 @@
                                             </div>
 
                                             <div class="d-flex justify-content-space-round align-items:center">
-                                                <button type="submit" class="btn bg-gradient text-light mr-2">Atualizar</button>
+                                                <button type="submit" class="btn bg-padrao text-light mr-2">Atualizar</button>
                                                 <i class="fa fa-check fa-2x text-success" id="atualizadoSucesso"></i>
                                                 <i class="fa fa-close fa-2x text-danger" id="atualizadoErro"></i>
                                                 <div class="spinner-border text-primary" role="status" id="spinnerSistema">
@@ -212,7 +212,7 @@
                     precoConsultoria : precoConsultoria
                 };
     
-                fetch('http://localhost:8000/api/sistema', {
+                fetch('https://sonlinedigital.com/api/sistema', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -231,12 +231,14 @@
                         spinnerSistema.style.display = "none";
                         atualizadoSucesso.style.display = "block";
                     }else{
-                        pinnerSistema.style.display = "none";
+                        spinnerSistema.style.display = "none";
                         atualizadoErro.style.display = "block";
                     }
                 })
                 .catch(error => {
                     console.error(error);
+                    spinnerSistema.style.display = "none";
+                    atualizadoErro.style.display = "block";
                 });
     
             });

@@ -37,7 +37,6 @@ class ContaWiseController extends Controller
      */
     public function store(Request $request)
     {
-
         $validacao = Validator::make($request->all(), [
                 'comprovativo' => 'required|file|mimes:pdf|max:2048',
             ],
@@ -52,6 +51,11 @@ class ContaWiseController extends Controller
             return redirect()->back()->withErrors($validacao)->withInput();
         }
 
+        $check = $this->checkRequest();
+        if($check){
+            return redirect()->back()->withErrors(['mensagem' => 'Já tens uma solicitação pendente!']);
+        }
+        
         $comprovativo = $request->file('comprovativo');
 
         $path = $request->file('comprovativo')->store(
@@ -102,10 +106,21 @@ class ContaWiseController extends Controller
         //
     }
 
+    public function checkRequest(){
+        $id = Auth::id();
+        $conta = ContaWise::where('user_id', $id)->latest()->first();
+        if($conta){
+            $estado = $conta->estado;
+            if($estado == "0"){
+                return true;
+            }
+            return false;
+        }
+    }
+
     public function estado()
     {
 
-        // return "Clicou no estado de solicitação da conta";
         $id = Auth::id();
 
         $conta = ContaWise::where('user_id', $id)->latest()->first();
@@ -131,7 +146,7 @@ class ContaWiseController extends Controller
 
             $conta = (Object)[
                 'id' => '',
-                'tipo',
+                'tipo' => '',
                 'nome' => '',
                 'data' => '',
                 'estado' => '',
@@ -143,5 +158,6 @@ class ContaWiseController extends Controller
 
         return view('contaWise.show', compact('conta'));
     }
+
 
 }

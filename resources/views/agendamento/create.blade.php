@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="data" class="text-dark">Data do agendamento</label>
+                            <label for="data" class="text-dark">Data Prevista</label>
                             <input type="date" class="form-control" value="{{date('Y-m-d')}}" id="data" name="data">
                         </div>
 

@@ -35,8 +35,8 @@
                 </div>
 
                 <div class="botoes-navbar-web">
-                    <a href="{{route('registar')}}" class="text-info">Registar</a>
-                    <a href="{{route('login')}}" class="text-info">Entrar</a>
+<a href="{{route('registar')}}" class="text-info" target="_blank">Registar</a>
+                    <a href="{{route('login')}}" class="text-info" target="_blank">Entrar</a>
                 </div>
             </nav>
         </div>
@@ -100,6 +100,4 @@
             </div>
             </nav>
         </div>
-    </header>
-{{-- </div> --}}
-{{-- </div> --}}
+</header>

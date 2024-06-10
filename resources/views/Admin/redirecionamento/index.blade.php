@@ -72,7 +72,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="tabelaClientes" class="table display responsive nowrap table-light table-bordered">
-                                <thead class="bg-gradient text-light">
+                                <thead class="bg-padrao text-light">
                                     <tr>
                                         <th>Nome</th>
                                         <th>Email</th>
@@ -92,17 +92,9 @@
                                             <td class="text-dark">{{$cliente->genero}}</td>
                                             <td class="text-dark">{{$cliente->contacto}}</td>
                                             <td class="text-dark"> {{$cliente->dataNascimento}}</td>
-                                                {{-- @if ($cliente->estado == "0")
-                                                    <div class='fc-event fc-event-primary' data-color="fc-event-primary"><span></span> 
-                                                        Pendente
-                                                    </div>
-                                                @endif --}}
-                                                {{-- <td class="text-dark">{{$cliente->dataNascimento}}</td> --}}
-                                                
-                                            
                                             <td>
                                                 <form action="{{ route('admin.redirecionamento.show', $cliente->id) }}">
-                                                    <button type="submit" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Ver</button>
+                                                    <button type="submit" class="btn bg-padrao btn-sm btn-block text-light btn-eliminar">Ver</button>
                                                 </form>
                                             </td>
                                         </tr>

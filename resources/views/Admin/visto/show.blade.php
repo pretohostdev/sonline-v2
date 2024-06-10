@@ -76,7 +76,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="tabelaClientes" class="table display responsive nowrap table-light table-bordered">
-                                <thead class="bg-gradient text-light">
+                                <thead class="bg-padrao text-light">
                                     <tr>
                                         <th>Nome</th>
                                         <th>Tipo de visto</th>
@@ -120,7 +120,7 @@
                                                 @endif
                                             </td>
                                             
-                                            <td><a href="{{route('enviarEmail', ['id' => $visto->id, 'modelo' => 'visto'])}}" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</> </td>
+                                            <td><a href="{{route('enviarEmail', ['id' => $visto->id, 'modelo' => 'visto'])}}" class="btn bg-padrao btn-sm btn-block text-light btn-eliminar">Enviar Email</> </td>
                                         </tr>
 
                                     @endforeach

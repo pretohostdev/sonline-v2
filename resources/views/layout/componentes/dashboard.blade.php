@@ -7,17 +7,19 @@
             </a>
           </div>
        </div>
-       <div class="sidebar_user_inf">
+       <div class="sidebar_user_info">
           <div class="user_profle_side">
              <div class="user_info">
                 <h6>{{Auth::user()->name}}</h6>
-                <p><span class="online_animation"></span> Online</p>
+                <p><span class="online_animation"></span> Admin Online</p>
              </div>
           </div>
        </div>
     </div>
     <div class="sidebar_blog_2">
-       <h4 class="text-secondary"><a href="{{route('homeAdmin')}}" style="cursor: pointer">Home</a> </h4>
+       <h4>
+            <a href="{{route('homeAdmin')}}" style="cursor: pointer">Home</a>
+        </h4>
        <ul class="list-unstyled components">
           <li><a href="{{ route('admin.visto.index') }}"><i class="fa fa-clock-o orange_color"></i> <span>Visto</span></a></li>
           <li><a href="{{ route('admin.conta.index') }}"><i class="fa fa fa-cc-visa blue1_color"></i> <span>Conta</span></a></li>

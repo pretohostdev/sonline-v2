@@ -148,6 +148,41 @@ class AdminController extends Controller
         return view('admin.redirecionamento.verDocumentoRedirecionamento', compact('redirecionamento'));
     }
 
+    function verMaisRedirecionamento($id){
+
+        $redirecionamento = Redirecionamento::where('user_id', $id)->latest()->first();
+        
+        $cliente = User::find($id);
+
+        $clienteRedirecionamento = User::with('redirecionamentos.produto')->find($id);
+        
+        // Verificar se o cliente já efectuou algum redirecionamento de produto
+        if($clienteRedirecionamento->redirecionamentos->count() > 0){
+
+            $nome_produto =  $clienteRedirecionamento->redirecionamentos[0]->produto->nome;
+            $fotoProduto =  $clienteRedirecionamento->redirecionamentos[0]->fotoProduto;
+            $largura =  $clienteRedirecionamento->redirecionamentos[0]->produto->largura;
+            $altura =  $clienteRedirecionamento->redirecionamentos[0]->produto->altura;
+            $descricao =  $clienteRedirecionamento->redirecionamentos[0]->produto->descricao;
+            $redirecionamento = (Object)[
+                'id' => $redirecionamento->id,
+                'data' => $redirecionamento->data,
+                'estado' => $redirecionamento->estado,
+                'total' => $redirecionamento->total,
+                'produto' => $nome_produto,
+                'altura' => $altura,
+                'largura' => $largura,
+                'descricao' => $descricao,
+                'fotoProduto' => $fotoProduto,
+                'paisOrigem' => $redirecionamento->paisOrigem,
+                'paisDestino' => $redirecionamento->paisDestino,
+                'comprovativo' => $redirecionamento->comprovativo,
+                'enderecoEntrega' => $redirecionamento->enderecoEntrega,
+            ];
+        return view('admin.redirecionamento.verMais', ['redirecionamento'=>$redirecionamento, 'cliente'=> $cliente]);
+        }
+    }
+
     function listarAgendamentos(){
         // Clientes que solicitram agendamento
         $clientes = User::where('tipo', "!=", 'admin')
@@ -416,32 +451,19 @@ class AdminController extends Controller
         }
         else if($modelo == 'moeda'){
             $moeda = Moeda::find($id);
-            // $moeda->estado = '1';
-            // $moeda->save();
-
             $idCliente = $moeda->user_id;
         }
         else if($modelo == 'conta'){
             $conta = ContaWise::find($id);
-            // $conta->estado = '1';
-            // $conta->save();
-
             $idCliente = $conta->user_id;
         }
         else if($modelo == 'redirecionamento'){
             $redirecionamento = Redirecionamento::find($id);
-            // $redirecionamento->estado = '1';
-            // $redirecionamento->save();
-
             $idCliente = $redirecionamento->user_id;
         }
         else if($modelo == 'agendamento'){
             $agendamento = Agendamento::find($id);
-            // $agendamento->estado = '1';
-            // $agendamento->save();
-
             $idCliente = $agendamento->user_id;
-            
         }
 
         $cliente = User::find($idCliente);

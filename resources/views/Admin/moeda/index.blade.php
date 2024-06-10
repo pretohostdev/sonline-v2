@@ -74,7 +74,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="tabelaClientes" class="table display responsive nowrap table-light table-bordered">
-                                <thead class="bg-gradient text-light">
+                                <thead class="bg-padrao text-light">
                                     <tr>
                                         <th>Nome</th>
                                         <th>Email</th>
@@ -97,7 +97,7 @@
                                             
                                             <td>
                                                 <form action="{{ route('admin.moeda.show', $cliente->id) }}">
-                                                    <button type="submit" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Ver</button>
+                                                    <button type="submit" class="btn bg-padrao btn-sm btn-block text-light btn-eliminar">Ver</button>
                                                 </form>
                                             </td>
                                         </tr>

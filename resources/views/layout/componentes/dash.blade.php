@@ -10,7 +10,7 @@
        <div class="sidebar_user_inf">
           <div class="d-flex justify-content-center">
              <div class="user_img">
-               <a href="{{ route('homeCliente') }}">
+<a href="{{ route('site') }}">
                   <img class="img-responsive" src="{{asset('assets/img/logo.jpg')}}" alt="logotipo" />
                </a>
             </div>
@@ -18,7 +18,12 @@
        </div>
     </div>
     <div class="sidebar_blog_2">
-       <h4>SONLINE</h4>
+<div class="d-block d-md-none">
+    <h4><a href="{{ route('homeCliente') }}">Perfil</a></h4>
+</div>
+<div class="d-none d-md-block col-lg-12">
+<h4>SONLINE</h4>
+</div>
        <ul class="list-unstyled components">
           <li><a href="{{ route('visto.create') }}"><i class="fa fa-clock-o orange_color"></i> <span>Visto</span></a></li>
           <li><a href="{{ route('contaWise.create') }}"><i class="fa fa fa-cc-visa blue1_color"></i> <span>Conta</span></a></li>

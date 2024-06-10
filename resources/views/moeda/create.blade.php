@@ -145,7 +145,7 @@
 
                         <div class="input-group mb-3" id="divKwanza">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-danger text-light">AOA</span>
+                                <span class="input-group-text" style="background-color: #ececec">AOA</span>
                             </div>
                                 <input type="text" class="form-control" id="inputKwanza" oninput="conversaoMoeda(id)">
                                 <div class="spinner-border text-danger spinner-border-sm" role="status" id="spinnerInputKwanza">
@@ -156,7 +156,7 @@
 
                         <div class="input-group mb-3" id="divDolar">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-primary text-light">USD</span>
+                                <span class="input-group-text" style="background-color: #ececec">USD</span>
                             </div>
                             <input type="text" class="form-control" id="inputDolar" oninput="conversaoMoeda(id)">
                             <div class="spinner-border text-primary spinner-border-sm" role="status" id="spinnerInputDolar">
@@ -166,7 +166,7 @@
 
                           <div class="input-group mb-3" id="divEuro">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-success text-light">EUR</span>
+                                <span class="input-group-text" style="background-color: #ececec">EUR</span>
                             </div>
                             <input type="text" class="form-control" id="inputEuro" oninput="conversaoMoeda(id)">
                             <div class="spinner-border text-success spinner-border-sm" role="status" id="spinnerInputEuro">

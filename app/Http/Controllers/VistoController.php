@@ -56,6 +56,11 @@ class VistoController extends Controller
             return redirect()->back()->withErrors($validacao)->withInput();
         }
 
+        $check = $this->checkRequest();
+        if($check){
+            return redirect()->back()->withErrors(['mensagem' => 'Já tens uma solicitação pendente!']);
+        }
+
         $documento = $request->file('documento');
         $comprovativo = $request->file('comprovativo');
 
@@ -87,6 +92,18 @@ class VistoController extends Controller
         ]);
 
         return redirect()->route('visto.estado');
+    }
+
+    public function checkRequest(){
+        $id = Auth::id();
+        $visto = Visto::where('user_id', $id)->latest()->first();
+        if($visto){
+            $estado = $visto->estado;
+            if($estado == "0"){
+                return true;
+            }
+            return false;
+        }
     }
 
     /**

@@ -52,6 +52,11 @@ class MoedaController extends Controller
             return redirect()->back()->withErrors($validacao)->withInput();
         }
 
+        $check = $this->checkRequest();
+        if($check){
+            return redirect()->back()->withErrors(['mensagem' => 'Já tens uma solicitação pendente!']);
+        }
+
         $documento = $request->file('documento');
 
         $path = $request->file('documento')->store(
@@ -74,6 +79,18 @@ class MoedaController extends Controller
         ]);
 
         return redirect()->route('moeda.estado');
+    }
+
+    public function checkRequest(){
+        $id = Auth::id();
+        $moeda = Moeda::where('user_id', $id)->latest()->first();
+        if($moeda){
+            $estado = $moeda->estado;
+            if($estado == "0"){
+                return true;
+            }
+            return false;
+        }
     }
 
     /**

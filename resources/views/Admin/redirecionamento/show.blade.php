@@ -35,7 +35,7 @@
 
 @section("corpo")
     
-    <div class="row" style="margin-top:80px">
+<div class="row" style="margin-top:20px">
 
         <div class="col-md-12">
             <div class="d-block d-lg-flex flex-nowrap align-items-center">
@@ -66,17 +66,16 @@
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="tabelaClientes" class="table display responsive nowrap table-light table-bordered">
-                            <thead class="bg-gradient text-light">
+<thead class="bg-padrao text-light">
                                 <tr>
-                                    <th>Nome</th>
+<th>Cliente</th>
                                     <th>Produto</th>
                                     <th>Data</th>
                                     <th>País Origem</th>
                                     <th>País Destino</th>
-                                    <th>Valor</th>
-                                    <th>Comprovativo</th>
+<th>Preço</th>
                                     <th>Estado</th>
-                                    <th class="text-center">Opção</th>
+<th>Opção</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -89,10 +88,7 @@
                                         <td class="text-dark">{{$redirecionamento->data}}</td>
                                         <td class="text-dark">{{$redirecionamento->paisOrigem}}</td>
                                         <td class="text-dark">{{$redirecionamento->paisDestino}}</td>
-                                        <td class="text-dark">{{$redirecionamento->valor}}</td>
-                                        <td>
-                                            <a href="{{route('verDocumentoRedirecionamento', $redirecionamento->id)}}" class="btn btn-success btn-block">Ver</a>
-                                        </td>
+<td class="text-dark">{{$redirecionamento->total}}</td>
                                         <td class="text-dark">
                                             @if ($redirecionamento->estado == "0")
                                                 <div class="d-flex align-items-center">
@@ -112,7 +108,21 @@
                                             @endif
                                         </td>
                                         
-                                        <td><a href="{{route('enviarEmail', ['id'=>$redirecionamento->id, 'modelo'=> 'redirecionamento'])}}" class="btn bg-gradient btn-sm btn-block text-light btn-eliminar">Enviar Email</a> </td>
+<td>
+    <div class="dropdown">
+        <a class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+            Escolher
+        </a>
+        <div class="dropdown-menu">
+            <a href="{{route('verMaisRedirecionamento', ['id'=>$cliente->id])}}" class="dropdown-item">Ver
+                mais</a>
+            <a href="{{route('enviarEmail', ['id'=>$redirecionamento->id, 'modelo'=> 'redirecionamento'])}}"
+                class="dropdown-item">Enviar Email</a>
+            <a href="{{route('verDocumentoRedirecionamento', $redirecionamento->id)}}" class="dropdown-item">Ver
+                comprovativo</a>
+        </div>
+    </div>
+</td>
                                     </tr>
 
                                 @endforeach

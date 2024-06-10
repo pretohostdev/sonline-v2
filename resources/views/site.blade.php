@@ -454,7 +454,11 @@
                         <img src="{{url("storage/{$produto->imagem}")}}" alt="Denim Jeans" style="max-width:100%; max-height:100%; width:auto; height:auto; margin-top:10px;">
                     </div>
                     <h3 style="font-size: 30px; margin-top:20px;">{{$produto->nome}}</h3>
-                    <p class="text-center p_produto">{{$produto->descricao}}</p>
+                    <div class="col-12">
+                        <div style="white-space: normal">
+                        <p class="text-center p_produto">{{$produto->descricao}}</p>
+                        </div>
+                    </div>
                     <p class="price">{{$produto->preco}}</p>
 
                     <ul class="ul_produto mt-4">

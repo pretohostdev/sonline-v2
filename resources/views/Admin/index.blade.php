@@ -69,7 +69,7 @@
     <!-- Notification -->
     <div class="row">
         <div class="col-md-12 mt-4">
-            <div class="alert border-0 alert-primary bg-gradient m-b-30 alert-dismissible fade show border-radius-none" role="alert">
+            <div class="alert border-0 alert-primary bg-padrao m-b-30 alert-dismissible fade show border-radius-none p-4" role="alert">
                 <strong>{{ $nomeAdmin }}!</strong> Recomendamos a verificação constante das estatísticas abaixo.
                 <button type="button" class="close bg-transparent" data-dismiss="alert" aria-label="Close" style="border-style: none;">
                     <i class="ti ti-close"></i>

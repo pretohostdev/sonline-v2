@@ -171,20 +171,20 @@
 
                         <div class="form-group">
                             <label for="paisDestino" class="text-dark">Forma de pagamento</label>
-                            <select class="form-control" id="metodoPagamento" name="metodoPagamento">
-                                <option value="Iban">Em kwanza</option>
-                                <option value="Resolut">Em Euro</option>
+<select class="form-control" id="metodoPagamento" name="metodoPagamento">
+<option value="Revolut">Em Euro</option>
+<option value="Iban">Em kwanza</option>
                             </select>
                         </div>
 
+<div class="form-group" id="divResolut">
+    <label for="pagamentoResolut" class="text-dark">Pagar no Revolut <span style="font-size:8pt"></span></label>
+    <a href="https://checkout.revolut.com/pay/18d1f014-ff1c-4999-9d68-b13617a96d44" class="btn btn-block btn-primary"
+        target="_blank">Pagar</a>
+</div>
                         <div class="form-group" id="divIban">
                             <label for="referenciabancaria" class="text-dark">IBAN</label>
                             <input type="text" class="form-control" value="{{$sistema->iban}}" id="referenciabancaria" readonly>
-                        </div>
-
-                        <div class="form-group" id="divResolut">
-                            <label for="pagamentoResolut" class="text-dark">Pagar no Revolut <span style="font-size:8pt"></span></label>
-                            <a href="https://checkout.revolut.com/pay/18d1f014-ff1c-4999-9d68-b13617a96d44" class="btn btn-block btn-primary" target="_blank">Pagar</a>
                         </div>
 
                         <div class="form-group">
@@ -194,8 +194,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="descricao" class="text-dark">Descrição do produto</label>
-                            <textarea class="form-control" id="descricao" name="descricaoProduto" required></textarea>
+<label for="descricao" class="text-dark">Informação adicional</label>
+<textarea class="form-control" id="descricao" name="descricaoProduto"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary mr-2">Enviar pedido</button>
@@ -285,59 +285,99 @@
         peso.addEventListener('input', function(){
             if(metodoEnvio.value == "DHL"){
                 valorConvertido.value = (peso.value*90)/1000 + "€";
-                total_a_pagar.value = ( Number((peso.value*90)/1000) + 2.99 + 4.99) + "€";
-            }
-            else{
-                valorConvertido.value = (peso.value*40)/1000 + "€";
-                total_a_pagar.value = ( Number( (peso.value*90) / 1000 ) + 2.99 + 4.99) + "€";
-            }
-        });
+total_a_pagar.value = ( Number((peso.value*90)/1000) + 2.99 + 4.99).toFixed(2) + "€";
+}
+else{
+valorConvertido.value = (peso.value*40)/1000 + "€";
+total_a_pagar.value = ( Number( (peso.value*90) / 1000 ) + 2.99 + 4.99).toFixed(2) + "€";
+}
+});
 
 
-        var metodoPagamento = document.getElementById('metodoPagamento');
+var metodoPagamento = document.getElementById('metodoPagamento');
 
-        var divIban = document.getElementById('divIban');
-        var divResolute = document.getElementById('divResolut'); 
+var divIban = document.getElementById('divIban');
+var divResolute = document.getElementById('divResolut');
 
         // Método de pagamento
 
-        carregamento();
+carregamento();
 
-        metodoPagamento.addEventListener('change', (e)=>{
-            let metodoPagamento = e.target.value;
+metodoPagamento.addEventListener('change', (e)=>{
+let metodoPagamento = e.target.value;
 
-            if(metodoPagamento == "Iban"){
-                show(divIban);
-                hide(divResolute);
-            }else{
-                show(divResolute);
-                hide(divIban);
-            }
-        });
+if(metodoPagamento == "Revolut"){
+show(divResolute);
+hide(divIban);
 
-        function carregamento(){
-            if(metodoPagamento.value == "Iban"){
-                var divIban = document.getElementById('divIban');
-                var divResolute = document.getElementById('divResolut');
-                show(divIban);
-                hide(divResolute);
-            }
-            else{
-                var divResolute = document.getElementById('divResolut');
-                var divResolute = document.getElementById('divResolut');
-                show(divResolute);
-                hide(divIban);
-            }
-        }
+const montante = total_a_pagar.value;
+converte("AOA", "EUR", montante)
+.then(data => {
+total_a_pagar.value = data.toFixed(2);
+})
+.catch(error => {
+console.error('Erro ao buscar dados:', error);
+});
 
-        function hide(elemento){
-            elemento.style.display = "none";
-        }
+}
+else{
+show(divIban);
+hide(divResolute);
+const montante = ( Number( (peso.value*90) / 1000 ) + 2.99 + 4.99);
 
-        function show(elemento){
-            elemento.style.display = "block";
-        }
+converte("EUR", "AOA", montante)
+.then(data => {
+total_a_pagar.value = data.toFixed(2);
+})
+.catch(error => {
+console.error('Erro ao buscar dados:', error);
+});
 
+}
+});
+
+function carregamento(){
+if(metodoPagamento.value == "Revolut"){
+var divResolute = document.getElementById('divResolut');
+var divIban = document.getElementById('divIban');
+show(divResolute);
+hide(divIban);
+}
+else{
+var divIban = document.getElementById('divIban');
+var divResolute = document.getElementById('divResolut');
+show(divIban);
+hide(divResolute);
+}
+}
+
+function hide(elemento){
+elemento.style.display = "none";
+}
+
+function show(elemento){
+elemento.style.display = "block";
+}
+
+async function converte(moedaBase, moedaPretendida, qtd) {
+
+var url =
+"https://www.bna.ao/service/rest/taxas/conversor/moeda?moedaOrigem="+moedaBase+"&"+"moedaDestino="+moedaPretendida+"&montante"+"="+qtd
+
+try {
+const response = await fetch(url);
+const data = await response.json();
+if(JSON.stringify(data) === '{}'){
+return "indisponivel de momento, tente mais tarde";
+}
+else{
+return data.genericResponse[1].montanteConvertido;
+}
+} catch (error) {
+console.error('Erro ao buscar dados:', error);
+throw error;
+}
+}
     </script>
 </div>
 

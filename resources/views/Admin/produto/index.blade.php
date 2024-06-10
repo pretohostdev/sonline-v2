@@ -37,7 +37,7 @@
     
     <div class="">
 
-        <div class="row" style="margin-top:80px">
+        <div class="row mt-4" style="">
 
             <div class="col-md-12">
                 <!-- begin page title -->
@@ -87,7 +87,7 @@
 
                         <div class="table-responsive">
                             <table id="tabelaProdutos" class="table display responsive nowrap table-light table-bordered">
-                                <thead class="bg-gradient text-light">
+                                <thead class="bg-padrao text-light">
                                     <tr>
                                         <th>Nome</th>
                                         <th>Preço</th>
@@ -111,7 +111,7 @@
                                             <td>
                                                 <div class="dropdown">
                                                     <a class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                                                      
+                                                      ver mais
                                                     </a>
                                                     <div class="dropdown-menu">
                                                         <form action="{{route('admin.produto.edit', $produto->id)}}" method="GET">

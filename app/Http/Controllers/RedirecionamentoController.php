@@ -64,6 +64,11 @@ class RedirecionamentoController extends Controller
             return redirect()->back()->withErrors($validacao)->withInput();
         }
 
+        $check = $this->checkRequest();
+        if($check){
+            return redirect()->back()->withErrors(['mensagem' => 'Já tens uma solicitação pendente!']);
+        }
+
         $comprovativo = $request->file('comprovativo');
 
         $path = $request->file('comprovativo')->store(
@@ -74,7 +79,7 @@ class RedirecionamentoController extends Controller
 
             $fotoProduto = $request->file('fotoProduto');
 
-            $path_foto = $request->file('comprovativo')->store('redirecionamentos');
+            $path_foto = $request->file('fotoProduto')->store('redirecionamentos/foto');
         }else{
              $path_foto = "";
         }
@@ -117,6 +122,18 @@ class RedirecionamentoController extends Controller
             return redirect()->route('redirecionamento.estado');
         } catch (\Throwable $th) {
             DB::rollback();
+        }
+    }
+
+    public function checkRequest(){
+        $id = Auth::id();
+        $redirecionamento = Redirecionamento::where('user_id', $id)->latest()->first();
+        if($redirecionamento){
+            $estado = $redirecionamento->estado;
+            if($estado == "0"){
+                return true;
+            }
+            return false;
         }
     }
 
